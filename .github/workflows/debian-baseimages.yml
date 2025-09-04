@@ -155,13 +155,15 @@ jobs:
           grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > grype-report-${{ matrix.os_name }}.html
 
       - name: 'Upload vulnerability reports'
-        if: steps.check_package_changes.outputs.push == 'true'
+        if: steps.check_changes.outputs.changed == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: vuln-reports-${{ matrix.os_name }}
           path: |
             grype-report-${{ matrix.os_name }}.json
             grype-report-${{ matrix.os_name }}.sarif
+            grype-report-${{ matrix.os_name }}.cyclonedx.xml
+            grype-report-${{ matrix.os_name }}.cyclonedx.json
             grype-report-${{ matrix.os_name }}.csv
             grype-report-${{ matrix.os_name }}.html
             
