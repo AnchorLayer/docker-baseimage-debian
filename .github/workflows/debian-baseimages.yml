@@ -1,0 +1,195 @@
+name: 'Check Debian Repos and Rebuild Base Images'
+
+on:
+  schedule:
+    - cron: '0,20,40 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os_version: "14"
+            os_name: "forky"
+          - os_version: "13"
+            os_name: "trixie"
+          - os_version: "12"
+            os_name: "bookworm"
+          - os_version: "11"
+            os_name: "bullseye"
+
+    steps:
+      - name: 'Check out the repo'
+        uses: actions/checkout@v4
+
+      - name: 'Cache APT state hash for Debian ${{ matrix.os_version }}'
+        uses: actions/cache@v4
+        id: cache-apt-state
+        with:
+          path: apt-state-${{ matrix.os_version }}.hash
+          key: debian-repo-state-${{ matrix.os_version }}
+
+      - name: 'Generate current APT state hash for Debian ${{ matrix.os_version }}'
+        id: generate_hash
+        run: |
+          echo "Checking APT lists for debian:${{ matrix.os_version }}..."
+          CURRENT_HASH=$(docker run --rm debian:${{ matrix.os_version }} bash -c "apt-get update > /dev/null && find /var/lib/apt/lists/ -type f -print0 | xargs -0 sha256sum | sort | sha256sum | awk '{print \$1}'")
+          echo "Current state hash: $CURRENT_HASH"
+          echo "new_hash=$CURRENT_HASH" >> $GITHUB_OUTPUT
+
+      - name: 'Compare hashes for Debian ${{ matrix.os_version }}'
+        id: check_changes
+        run: |
+          OLD_HASH=$(cat apt-state-${{ matrix.os_version }}.hash 2>/dev/null || echo "no-previous-hash")
+          NEW_HASH="${{ steps.generate_hash.outputs.new_hash }}"
+          if [ "$OLD_HASH" == "$NEW_HASH" ]; then
+            echo "✅ No changes detected for Debian ${{ matrix.os_version }}."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "🚨 Changes detected for Debian ${{ matrix.os_version }}! Triggering rebuild."
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo $NEW_HASH > apt-state-${{ matrix.os_version }}.hash
+          fi
+
+      - name: 'Set up Docker Buildx'
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: docker/setup-buildx-action@v3
+
+      - name: 'Log in to Docker Hub'
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Get current date
+        if: steps.check_changes.outputs.changed == 'true'
+        id: get_date
+        run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: 'Build Docker image'
+        if: steps.check_changes.outputs.changed == 'true'
+        id: build-image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.debian
+          push: false
+          load: true
+          build-args: |
+            DEBIAN_VERSION=${{ matrix.os_version }}
+          tags: |
+            anchorlayer/debian-${{ matrix.os_name }}:latest
+            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian-${{ matrix.os_version }}:latest
+            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_version }}-latest
+            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_name }}-latest
+            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+      
+      - name: 'Install Grype and clone templates'
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+          git clone --depth 1 https://github.com/anchore/grype.git
+          
+      - name: 'Scan image with Grype and generate reports'
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          IMAGE_TAG="anchorlayer/debian-${{ matrix.os_name }}:latest"
+          grype --scope all-layers $IMAGE_TAG -o table
+          grype --scope all-layers $IMAGE_TAG -o json > grype-report-${{ matrix.os_name }}.json
+          grype --scope all-layers $IMAGE_TAG -o sarif > grype-report-${{ matrix.os_name }}.sarif
+          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/csv.tmpl > grype-report-${{ matrix.os_name }}.csv
+          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > grype-report-${{ matrix.os_name }}.html
+
+      - name: 'Upload vulnerability reports'
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vuln-reports-${{ matrix.os_name }}
+          path: |
+            grype-report-${{ matrix.os_name }}.json
+            grype-report-${{ matrix.os_name }}.sarif
+            grype-report-${{ matrix.os_name }}.csv
+            grype-report-${{ matrix.os_name }}.html
+
+      - name: 'Push Docker image'
+        if: ${{ steps.check_changes.outputs.changed == 'true' && success() }}
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.debian
+          push: true
+          load: true
+          build-args: |
+            DEBIAN_VERSION=${{ matrix.os_version }}
+          tags: |
+            anchorlayer/debian-${{ matrix.os_name }}:latest
+            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian-${{ matrix.os_version }}:latest
+            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_version }}-latest
+            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_name }}-latest
+            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+            
+  update-readme:
+    needs: check-and-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 'Check out the repo'
+        uses: actions/checkout@v4
+
+      - name: 'Download vulnerability reports'
+        uses: actions/download-artifact@v4
+
+      - name: 'Update README with vuln badges'
+        run: |
+          for report_dir in vuln-reports-*; do
+              OS_NAME=$(echo "$report_dir" | sed 's/vuln-reports-//')
+              report_path="$report_dir/grype-report-$OS_NAME.csv"
+
+              if [ ! -f "$report_path" ]; then
+                echo "Vulnerability report not found for $OS_NAME. Skipping."
+                continue
+              fi
+
+              CRITICAL=$(grep -c "Critical" "$report_path" || true)
+              HIGH=$(grep -c "High" "$report_path" || true)
+              MEDIUM=$(grep -c "Medium" "$report_path" || true)
+              LOW=$(grep -c "Low" "$report_path" || true)
+
+              VULN_BADGES_LINE="![Critical Vulns](https://img.shields.io/badge/Critical-$CRITICAL-red.svg) ![High Vulns](https://img.shields.io/badge/High-$HIGH-orange.svg) ![Medium Vulns](https://img.shields.io/badge/Medium-$MEDIUM-yellow.svg) ![Low Vulns](https://img.shields.io/badge/Low-$LOW-blue.svg)"
+
+              # This sed command finds the heading and replaces the line immediately after it.
+              case "$OS_NAME" in
+                  forky)
+                      sed -i "/### Debian 14 Forky/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+                  trixie)
+                      sed -i "/### Debian 13 Trixie/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+                  bookworm)
+                      sed -i "/### Debian 12 Bookworm/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+                  bullseye)
+                      sed -i "/### Debian 11 Bullseye/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+              esac
+          done
+
+      - name: 'Commit and push changes'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update vulnerability badges in README.md"
