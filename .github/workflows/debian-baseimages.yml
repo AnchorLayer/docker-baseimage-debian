@@ -122,8 +122,33 @@ jobs:
             grype-report-${{ matrix.os_name }}.csv
             grype-report-${{ matrix.os_name }}.html
 
-      - name: 'Push Docker image'
-        if: ${{ steps.check_changes.outputs.changed == 'true' && success() }}
+      - name: 'Get remote image digest'
+        if: steps.check_changes.outputs.changed == 'true'
+        id: get_remote_digest
+        run: |
+          if docker pull anchorlayer/debian-${{ matrix.os_name }}:latest; then
+            REMOTE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' anchorlayer/debian-${{ matrix.os_name }}:latest | cut -d'@' -f2)
+            echo "digest=$REMOTE_DIGEST" >> $GITHUB_OUTPUT
+          else
+            echo "digest=not_found" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 'Check if push is needed'
+        if: steps.check_changes.outputs.changed == 'true'
+        id: check_push
+        run: |
+          LOCAL_DIGEST="${{ steps.build-image.outputs.digest }}"
+          REMOTE_DIGEST="sha256:${{ steps.get_remote_digest.outputs.digest }}"
+          if [ "$LOCAL_DIGEST" == "$REMOTE_DIGEST" ]; then
+            echo "Image already up-to-date."
+            echo "push=false" >> $GITHUB_OUTPUT
+          else
+            echo "New image build. Pushing to registry."
+            echo "push=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 'Push Docker image if changed'
+        if: ${{ steps.check_changes.outputs.changed == 'true' && success() && steps.check_push.outputs.push == 'true' }}
         uses: docker/build-push-action@v5
         with:
           context: .
