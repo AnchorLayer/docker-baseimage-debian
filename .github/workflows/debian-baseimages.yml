@@ -95,6 +95,26 @@ jobs:
             cp new-packages.txt packages-${{ matrix.os_name }}.txt
           fi
 
+      - name: 'Push Docker image if changed'
+        if: ${{ success() && steps.check_package_changes.outputs.push == 'true' }}
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.debian
+          push: true
+          load: true
+          build-args: |
+            DEBIAN_VERSION=${{ matrix.os_name }}
+          tags: |
+            anchorlayer/debian-${{ matrix.os_name }}:latest
+            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian-${{ matrix.os_version }}:latest
+            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_version }}-latest
+            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_name }}-latest
+            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+
       - name: 'Install Grype and clone templates'
         if: steps.check_package_changes.outputs.push == 'true'
         run: |
@@ -104,7 +124,7 @@ jobs:
       - name: 'Scan image with Grype and generate all reports'
         if: steps.check_package_changes.outputs.push == 'true'
         run: |
-          IMAGE_TAG="anchorlayer/ubuntu-${{ matrix.os_name }}:latest"
+          IMAGE_TAG="anchorlayer/debian-${{ matrix.os_name }}:latest"
         
           # Human-readable summary for the logs (doesn't save a file)
           echo "--- Generating Grype Table Report (for logs) ---"
@@ -144,26 +164,6 @@ jobs:
             grype-report-${{ matrix.os_name }}.sarif
             grype-report-${{ matrix.os_name }}.csv
             grype-report-${{ matrix.os_name }}.html
-
-      - name: 'Push Docker image if changed'
-        if: ${{ success() && steps.check_package_changes.outputs.push == 'true' }}
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile.debian
-          push: true
-          load: true
-          build-args: |
-            DEBIAN_VERSION=${{ matrix.os_name }}
-          tags: |
-            anchorlayer/debian-${{ matrix.os_name }}:latest
-            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
-            anchorlayer/debian-${{ matrix.os_version }}:latest
-            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
-            anchorlayer/debian:${{ matrix.os_version }}-latest
-            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
-            anchorlayer/debian:${{ matrix.os_name }}-latest
-            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
             
   update-readme:
     needs: check-and-build
