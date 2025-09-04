@@ -29,33 +29,33 @@ jobs:
       - name: 'Check out the repo'
         uses: actions/checkout@v4
 
-      - name: 'Cache APT state hash for Debian ${{ matrix.os_version }}'
+      - name: 'Cache APT state hash for Debian ${{ matrix.os_name }}'
         uses: actions/cache@v4
         id: cache-apt-state
         with:
-          path: apt-state-${{ matrix.os_version }}.hash
-          key: debian-repo-state-${{ matrix.os_version }}
+          path: apt-state-${{ matrix.os_name }}.hash
+          key: debian-repo-state-${{ matrix.os_name }}
 
-      - name: 'Generate current APT state hash for Debian ${{ matrix.os_version }}'
+      - name: 'Generate current APT state hash for Debian ${{ matrix.os_name }}'
         id: generate_hash
         run: |
-          echo "Checking APT lists for debian:${{ matrix.os_version }}..."
-          CURRENT_HASH=$(docker run --rm debian:${{ matrix.os_version }} bash -c "apt-get update > /dev/null && find /var/lib/apt/lists/ -type f -print0 | xargs -0 sha256sum | sort | sha256sum | awk '{print \$1}'")
+          echo "Checking APT lists for debian:${{ matrix.os_name }}..."
+          CURRENT_HASH=$(docker run --rm debian:${{ matrix.os_name }} bash -c "apt-get update > /dev/null && find /var/lib/apt/lists/ -type f -print0 | xargs -0 sha256sum | sort | sha256sum | awk '{print \$1}'")
           echo "Current state hash: $CURRENT_HASH"
           echo "new_hash=$CURRENT_HASH" >> $GITHUB_OUTPUT
 
-      - name: 'Compare hashes for Debian ${{ matrix.os_version }}'
+      - name: 'Compare hashes for Debian ${{ matrix.os_name }}'
         id: check_changes
         run: |
-          OLD_HASH=$(cat apt-state-${{ matrix.os_version }}.hash 2>/dev/null || echo "no-previous-hash")
+          OLD_HASH=$(cat apt-state-${{ matrix.os_name }}.hash 2>/dev/null || echo "no-previous-hash")
           NEW_HASH="${{ steps.generate_hash.outputs.new_hash }}"
           if [ "$OLD_HASH" == "$NEW_HASH" ]; then
-            echo "✅ No changes detected for Debian ${{ matrix.os_version }}."
+            echo "✅ No changes detected for Debian ${{ matrix.os_name }}."
             echo "changed=false" >> $GITHUB_OUTPUT
           else
-            echo "🚨 Changes detected for Debian ${{ matrix.os_version }}! Triggering rebuild."
+            echo "🚨 Changes detected for Debian ${{ matrix.os_name }}! Triggering rebuild."
             echo "changed=true" >> $GITHUB_OUTPUT
-            echo $NEW_HASH > apt-state-${{ matrix.os_version }}.hash
+            echo $NEW_HASH > apt-state-${{ matrix.os_name }}.hash
           fi
 
       - name: 'Set up Docker Buildx'
@@ -84,7 +84,7 @@ jobs:
           push: false
           load: true
           build-args: |
-            DEBIAN_VERSION=${{ matrix.os_version }}
+            DEBIAN_CODENAME=${{ matrix.os_name }}
           tags: |
             anchorlayer/debian-${{ matrix.os_name }}:latest
             anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
@@ -131,7 +131,7 @@ jobs:
           push: true
           load: true
           build-args: |
-            DEBIAN_VERSION=${{ matrix.os_version }}
+            DEBIAN_CODENAME=${{ matrix.os_name }}
           tags: |
             anchorlayer/debian-${{ matrix.os_name }}:latest
             anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
