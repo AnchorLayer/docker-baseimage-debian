@@ -8,6 +8,8 @@ on:
 jobs:
   check-and-build:
     runs-on: ubuntu-latest
+    outputs:
+      packages_changed: ${{ steps.check_package_changes.outputs.push }}
     permissions:
       contents: write
       packages: write
@@ -29,53 +31,20 @@ jobs:
       - name: 'Check out the repo'
         uses: actions/checkout@v4
 
-      - name: 'Cache APT state hash for Debian ${{ matrix.os_name }}'
-        uses: actions/cache@v4
-        id: cache-apt-state
-        with:
-          path: apt-state-${{ matrix.os_name }}.hash
-          key: debian-repo-state-${{ matrix.os_name }}
-
-      - name: 'Generate current APT state hash for Debian ${{ matrix.os_name }}'
-        id: generate_hash
-        run: |
-          echo "Checking APT lists for debian:${{ matrix.os_name }}..."
-          CURRENT_HASH=$(docker run --rm debian:${{ matrix.os_name }} bash -c "apt-get update > /dev/null && find /var/lib/apt/lists/ -type f -print0 | xargs -0 sha256sum | sort | sha256sum | awk '{print \$1}'")
-          echo "Current state hash: $CURRENT_HASH"
-          echo "new_hash=$CURRENT_HASH" >> $GITHUB_OUTPUT
-
-      - name: 'Compare hashes for Debian ${{ matrix.os_name }}'
-        id: check_changes
-        run: |
-          OLD_HASH=$(cat apt-state-${{ matrix.os_name }}.hash 2>/dev/null || echo "no-previous-hash")
-          NEW_HASH="${{ steps.generate_hash.outputs.new_hash }}"
-          if [ "$OLD_HASH" == "$NEW_HASH" ]; then
-            echo "✅ No changes detected for Debian ${{ matrix.os_name }}."
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "🚨 Changes detected for Debian ${{ matrix.os_name }}! Triggering rebuild."
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo $NEW_HASH > apt-state-${{ matrix.os_name }}.hash
-          fi
-
       - name: 'Set up Docker Buildx'
-        if: steps.check_changes.outputs.changed == 'true'
         uses: docker/setup-buildx-action@v3
 
       - name: 'Log in to Docker Hub'
-        if: steps.check_changes.outputs.changed == 'true'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
       - name: Get current date
-        if: steps.check_changes.outputs.changed == 'true'
         id: get_date
         run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
 
       - name: 'Build Docker image'
-        if: steps.check_changes.outputs.changed == 'true'
         id: build-image
         uses: docker/build-push-action@v5
         with:
@@ -96,14 +65,12 @@ jobs:
             anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
             
       - name: 'Generate package list'
-        if: steps.check_changes.outputs.changed == 'true'
         id: generate_package_list
         run: |
           docker run --rm anchorlayer/debian-${{ matrix.os_name }}:latest dpkg-query -W -f='${Package} ${Version}\n' | sort > new-packages.txt
           echo "path=new-packages.txt" >> $GITHUB_OUTPUT
           
       - name: 'Cache package list'
-        if: steps.check_changes.outputs.changed == 'true'
         uses: actions/cache@v4
         id: cache-packages
         with:
@@ -111,32 +78,31 @@ jobs:
           key: debian-packages-${{ matrix.os_name }}-${{ hashFiles(steps.generate_package_list.outputs.path) }}
           
       - name: 'Compare package lists'
-        if: steps.check_changes.outputs.changed == 'true'
         id: check_package_changes
         run: |
           if [ -f "packages-${{ matrix.os_name }}.txt" ]; then
             if cmp -s "new-packages.txt" "packages-${{ matrix.os_name }}.txt"; then
               echo "✅ No package changes detected."
-              echo "changed=false" >> $GITHUB_OUTPUT
+              echo "push=false" >> $GITHUB_OUTPUT
             else
               echo "🚨 Package changes detected! Triggering push."
-              echo "changed=true" >> $GITHUB_OUTPUT
+              echo "push=true" >> $GITHUB_OUTPUT
               cp new-packages.txt packages-${{ matrix.os_name }}.txt
             fi
           else
             echo "🚨 No previous package list found. Triggering push."
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "push=true" >> $GITHUB_OUTPUT
             cp new-packages.txt packages-${{ matrix.os_name }}.txt
           fi
 
       - name: 'Install Grype and clone templates'
-        if: steps.check_changes.outputs.changed == 'true'
+        if: steps.check_package_changes.outputs.push == 'true'
         run: |
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           git clone --depth 1 https://github.com/anchore/grype.git
           
       - name: 'Scan image with Grype and generate reports'
-        if: steps.check_changes.outputs.changed == 'true'
+        if: steps.check_package_changes.outputs.push == 'true'
         run: |
           IMAGE_TAG="anchorlayer/debian-${{ matrix.os_name }}:latest"
           grype --scope all-layers $IMAGE_TAG -o table
@@ -146,7 +112,7 @@ jobs:
           grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > grype-report-${{ matrix.os_name }}.html
 
       - name: 'Upload vulnerability reports'
-        if: steps.check_changes.outputs.changed == 'true'
+        if: steps.check_package_changes.outputs.push == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: vuln-reports-${{ matrix.os_name }}
@@ -157,7 +123,7 @@ jobs:
             grype-report-${{ matrix.os_name }}.html
 
       - name: 'Push Docker image if changed'
-        if: steps.check_changes.outputs.changed == 'true'
+        if: ${{ success() && steps.check_package_changes.outputs.push == 'true' }}
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -178,6 +144,7 @@ jobs:
             
   update-readme:
     needs: check-and-build
+    if: needs.check-and-build.outputs.packages_changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
