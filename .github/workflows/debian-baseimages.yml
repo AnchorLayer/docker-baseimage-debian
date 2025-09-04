@@ -94,7 +94,41 @@ jobs:
             anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
             anchorlayer/debian:${{ matrix.os_name }}-latest
             anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
-      
+            
+      - name: 'Generate package list'
+        if: steps.check_changes.outputs.changed == 'true'
+        id: generate_package_list
+        run: |
+          docker run --rm anchorlayer/debian-${{ matrix.os_name }}:latest dpkg-query -W -f='${Package} ${Version}\n' | sort > new-packages.txt
+          echo "path=new-packages.txt" >> $GITHUB_OUTPUT
+          
+      - name: 'Cache package list'
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: actions/cache@v4
+        id: cache-packages
+        with:
+          path: packages-${{ matrix.os_name }}.txt
+          key: debian-packages-${{ matrix.os_name }}-${{ hashFiles(steps.generate_package_list.outputs.path) }}
+          
+      - name: 'Compare package lists'
+        if: steps.check_changes.outputs.changed == 'true'
+        id: check_package_changes
+        run: |
+          if [ -f "packages-${{ matrix.os_name }}.txt" ]; then
+            if cmp -s "new-packages.txt" "packages-${{ matrix.os_name }}.txt"; then
+              echo "✅ No package changes detected."
+              echo "push=false" >> $GITHUB_OUTPUT
+            else
+              echo "🚨 Package changes detected! Triggering push."
+              echo "push=true" >> $GITHUB_OUTPUT
+              cp new-packages.txt packages-${{ matrix.os_name }}.txt
+            fi
+          else
+            echo "🚨 No previous package list found. Triggering push."
+            echo "push=true" >> $GITHUB_OUTPUT
+            cp new-packages.txt packages-${{ matrix.os_name }}.txt
+          fi
+
       - name: 'Install Grype and clone templates'
         if: steps.check_changes.outputs.changed == 'true'
         run: |
@@ -122,33 +156,8 @@ jobs:
             grype-report-${{ matrix.os_name }}.csv
             grype-report-${{ matrix.os_name }}.html
 
-      - name: 'Get remote image digest'
-        if: steps.check_changes.outputs.changed == 'true'
-        id: get_remote_digest
-        run: |
-          if docker pull anchorlayer/debian-${{ matrix.os_name }}:latest; then
-            REMOTE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' anchorlayer/debian-${{ matrix.os_name }}:latest | cut -d'@' -f2)
-            echo "digest=$REMOTE_DIGEST" >> $GITHUB_OUTPUT
-          else
-            echo "digest=not_found" >> $GITHUB_OUTPUT
-          fi
-
-      - name: 'Check if push is needed'
-        if: steps.check_changes.outputs.changed == 'true'
-        id: check_push
-        run: |
-          LOCAL_DIGEST="${{ steps.build-image.outputs.digest }}"
-          REMOTE_DIGEST="sha256:${{ steps.get_remote_digest.outputs.digest }}"
-          if [ "$LOCAL_DIGEST" == "$REMOTE_DIGEST" ]; then
-            echo "Image already up-to-date."
-            echo "push=false" >> $GITHUB_OUTPUT
-          else
-            echo "New image build. Pushing to registry."
-            echo "push=true" >> $GITHUB_OUTPUT
-          fi
-
       - name: 'Push Docker image if changed'
-        if: ${{ steps.check_changes.outputs.changed == 'true' && success() && steps.check_push.outputs.push == 'true' }}
+        if: ${{ steps.check_changes.outputs.changed == 'true' && success() && steps.check_package_changes.outputs.push == 'true' }}
         uses: docker/build-push-action@v5
         with:
           context: .
