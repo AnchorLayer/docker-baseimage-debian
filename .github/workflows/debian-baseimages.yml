@@ -120,12 +120,12 @@ jobs:
               echo "push=false" >> $GITHUB_OUTPUT
             else
               echo "🚨 Package changes detected! Triggering push."
-              echo "push=true" >> $GITHUB_OUTPUT
+              echo "changed=true" >> $GITHUB_OUTPUT
               cp new-packages.txt packages-${{ matrix.os_name }}.txt
             fi
           else
             echo "🚨 No previous package list found. Triggering push."
-            echo "push=true" >> $GITHUB_OUTPUT
+            echo "changed=true" >> $GITHUB_OUTPUT
             cp new-packages.txt packages-${{ matrix.os_name }}.txt
           fi
 
