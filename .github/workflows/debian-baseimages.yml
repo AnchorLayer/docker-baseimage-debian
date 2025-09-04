@@ -117,7 +117,7 @@ jobs:
           if [ -f "packages-${{ matrix.os_name }}.txt" ]; then
             if cmp -s "new-packages.txt" "packages-${{ matrix.os_name }}.txt"; then
               echo "✅ No package changes detected."
-              echo "push=false" >> $GITHUB_OUTPUT
+              echo "changed=false" >> $GITHUB_OUTPUT
             else
               echo "🚨 Package changes detected! Triggering push."
               echo "changed=true" >> $GITHUB_OUTPUT
@@ -157,7 +157,7 @@ jobs:
             grype-report-${{ matrix.os_name }}.html
 
       - name: 'Push Docker image if changed'
-        if: ${{ steps.check_changes.outputs.changed == 'true' && success() && steps.check_package_changes.outputs.push == 'true' }}
+        if: steps.check_changes.outputs.changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
