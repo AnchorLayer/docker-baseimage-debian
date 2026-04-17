@@ -8,6 +8,9 @@ This repository provides Docker base images for various Debian versions, with vu
 
 The following badges display the number of vulnerabilities found in the latest build of each Debian base image. The scan is run automatically via GitHub Actions.
 
+### Debian 15 Duke
+[![Critical Vulns](https://img.shields.io/badge/Critical-0-red.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Duke/grype-report-Duke.html) [![High Vulns](https://img.shields.io/badge/High-0-orange.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Duke/grype-report-Duke.html) [![Medium Vulns](https://img.shields.io/badge/Medium-0-yellow.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Duke/grype-report-Duke.html) [![Low Vulns](https://img.shields.io/badge/Low-0-blue.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Duke/grype-report-Duke.html)
+
 ### Debian 14 Forky
 [![Critical Vulns](https://img.shields.io/badge/Critical-2-red.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Forky/grype-report-Forky.html) [![High Vulns](https://img.shields.io/badge/High-13-orange.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Forky/grype-report-Forky.html) [![Medium Vulns](https://img.shields.io/badge/Medium-2-yellow.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Forky/grype-report-Forky.html) [![Low Vulns](https://img.shields.io/badge/Low-12-blue.svg)](https://htmlpreview.github.io/?https://github.com/AnchorLayer/docker-baseimage-debian/blob/main/vuln-reports-Forky/grype-report-Forky.html)
 
