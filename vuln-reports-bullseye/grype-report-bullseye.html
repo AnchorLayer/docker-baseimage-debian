@@ -812,6 +812,64 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 <body>
     <div class="main-container">
@@ -824,11 +882,15 @@
 
                     <dt>Type:</dt>
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
-                    <dd id="checksumValue">sha256:9ec211a8693ea67b70f36082af044254906b05342b1137c5c41b9116360cce53</dd><dt>Date:</dt>
+                    <dd id="checksumValue">sha256:cf065ef30a05760d328e839b2d6290dac5bdb29e0c1e1a066636122d7811a764</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2025-09-04T16:52:05.295180188Z</span>
+                        <span id="dateElement">2026-04-17T14:05:56.505313533Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
+                    <dt>Grype Version:</dt>
+                    <dd>0.111.0</dd>
+                    <dt>DB Built:</dt>
+                    <dd>2026-04-17 06:58:16 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -843,19 +905,19 @@
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">13</div>
+                <div class="severity-count" id="highCount">27</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
-                <div class="severity-count" id="mediumCount">24</div>
+                <div class="severity-count" id="mediumCount">45</div>
             </div>
             <div class="severity-box" id="low">
                 <div class="severity-title">Low</div>
-                <div class="severity-count" id="lowCount">7</div>
+                <div class="severity-count" id="lowCount">12</div>
             </div>
             <div class="severity-box" id="unknown">
                 <div class="severity-title">Unknown</div>
-                <div class="severity-count" id="unknownCount">0</div>
+                <div class="severity-count" id="unknownCount">2</div>
             </div>
         </div>
         <div class="data-table">
@@ -951,7 +1013,7 @@
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in glibc. In an extremely rare situation, the getaddrinfo function may access memory that has been freed, resulting in an application crash. This issue is only exploitable when a NSS module implements only the _nss_*_gethostbyname2_r and _nss_*_getcanonname_r hooks without implementing the _nss_*_gethostbyname3_r hook. The resolved name should return a large number of IPv6 and IPv4, and the call to the getaddrinfo function should have the AF_INET6 address family with AI_CANONNAME, AI_ALL and AI_V4MAPPED as flags.</td>
+                        <td>A flaw has been identified in glibc. In an extremely rare situation, the getaddrinfo function may access memory that has been freed, resulting in an application crash. This issue is only exploitable when a NSS module implements only the _nss_*_gethostbyname2_r and _nss_*_getcanonname_r hooks without implementing the _nss_*_gethostbyname3_r hook. The resolved name should return a large number of IPv6 and IPv4, and the call to the getaddrinfo function should have the AF_INET6 address family with AI_CANONNAME, AI_ALL and AI_V4MAPPED as flags.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
                     </tr>
@@ -967,9 +1029,41 @@
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in glibc. In an extremely rare situation, the getaddrinfo function may access memory that has been freed, resulting in an application crash. This issue is only exploitable when a NSS module implements only the _nss_*_gethostbyname2_r and _nss_*_getcanonname_r hooks without implementing the _nss_*_gethostbyname3_r hook. The resolved name should return a large number of IPv6 and IPv4, and the call to the getaddrinfo function should have the AF_INET6 address family with AI_CANONNAME, AI_ALL and AI_V4MAPPED as flags.</td>
+                        <td>A flaw has been identified in glibc. In an extremely rare situation, the getaddrinfo function may access memory that has been freed, resulting in an application crash. This issue is only exploitable when a NSS module implements only the _nss_*_gethostbyname2_r and _nss_*_getcanonname_r hooks without implementing the _nss_*_gethostbyname3_r hook. The resolved name should return a large number of IPv6 and IPv4, and the call to the getaddrinfo function should have the AF_INET6 address family with AI_CANONNAME, AI_ALL and AI_V4MAPPED as flags.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-9681">CVE-2024-9681</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When curl is asked to use HSTS, the expiry time for a subdomain might overwrite a parent domain&#39;s cache entry, making it end sooner or later than otherwise intended.  This affects curl using applications that enable HSTS and use URLs with the insecure `HTTP://` scheme and perform transfers with hosts like `x.example.com` as well as `example.com` where the first host is a subdomain of the second host.  (The HSTS cache either needs to have been populated manually or there needs to have been previous HTTPS accesses done as the cache needs to have entries for the domains involved to trigger this problem.)  When `x.example.com` responds with `Strict-Transport-Security:` headers, this bug can make the subdomain&#39;s expiry timeout *bleed over* and get set for the parent domain `example.com` in curl&#39;s HSTS cache.  The result of a triggered bug is that HTTP accesses to `example.com` get converted to HTTPS for a different period of time than what was asked for by the origin server. If `example.com` for example stops supporting HTTPS at its expiry time, curl might then fail to access `http://example.com` until the (wrongly set) timeout expires. This bug can also expire the parent&#39;s entry *earlier*, thus making curl inadvertently switch back to insecure HTTP earlier than otherwise intended.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-9681">CVE-2024-9681</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When curl is asked to use HSTS, the expiry time for a subdomain might overwrite a parent domain&#39;s cache entry, making it end sooner or later than otherwise intended.  This affects curl using applications that enable HSTS and use URLs with the insecure `HTTP://` scheme and perform transfers with hosts like `x.example.com` as well as `example.com` where the first host is a subdomain of the second host.  (The HSTS cache either needs to have been populated manually or there needs to have been previous HTTPS accesses done as the cache needs to have entries for the domains involved to trigger this problem.)  When `x.example.com` responds with `Strict-Transport-Security:` headers, this bug can make the subdomain&#39;s expiry timeout *bleed over* and get set for the parent domain `example.com` in curl&#39;s HSTS cache.  The result of a triggered bug is that HTTP accesses to `example.com` get converted to HTTPS for a different period of time than what was asked for by the origin server. If `example.com` for example stops supporting HTTPS at its expiry time, curl might then fail to access `http://example.com` until the (wrongly set) timeout expires. This bug can also expire the parent&#39;s entry *earlier*, thus making curl inadvertently switch back to insecure HTTP earlier than otherwise intended.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>libgcrypt20</td>
@@ -988,38 +1082,6 @@
                         <td>pkg:deb/debian/libgcrypt20@1.8.7-6?arch=amd64&distro=debian-11</td>
                     </tr>
                     <tr>
-                        <td>curl</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-9681">CVE-2024-9681</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When curl is asked to use HSTS, the expiry time for a subdomain might overwrite a parent domain&#39;s cache entry, making it end sooner or later than otherwise intended.  This affects curl using applications that enable HSTS and use URLs with the insecure `HTTP://` scheme and perform transfers with hosts like `x.example.com` as well as `example.com` where the first host is a subdomain of the second host.  (The HSTS cache either needs to have been populated manually or there needs to have been previous HTTPS accesses done as the cache needs to have entries for the domains involved to trigger this problem.)  When `x.example.com` responds with `Strict-Transport-Security:` headers, this bug can make the subdomain&#39;s expiry timeout *bleed over* and get set for the parent domain `example.com` in curl&#39;s HSTS cache.  The result of a triggered bug is that HTTP accesses to `example.com` get converted to HTTPS for a different period of time than what was asked for by the origin server. If `example.com` for example stops supporting HTTPS at its expiry time, curl might then fail to access `http://example.com` until the (wrongly set) timeout expires. This bug can also expire the parent&#39;s entry *earlier*, thus making curl inadvertently switch back to insecure HTTP earlier than otherwise intended.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-9681">CVE-2024-9681</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When curl is asked to use HSTS, the expiry time for a subdomain might overwrite a parent domain&#39;s cache entry, making it end sooner or later than otherwise intended.  This affects curl using applications that enable HSTS and use URLs with the insecure `HTTP://` scheme and perform transfers with hosts like `x.example.com` as well as `example.com` where the first host is a subdomain of the second host.  (The HSTS cache either needs to have been populated manually or there needs to have been previous HTTPS accesses done as the cache needs to have entries for the domains involved to trigger this problem.)  When `x.example.com` responds with `Strict-Transport-Security:` headers, this bug can make the subdomain&#39;s expiry timeout *bleed over* and get set for the parent domain `example.com` in curl&#39;s HSTS cache.  The result of a triggered bug is that HTTP accesses to `example.com` get converted to HTTPS for a different period of time than what was asked for by the origin server. If `example.com` for example stops supporting HTTPS at its expiry time, curl might then fail to access `http://example.com` until the (wrongly set) timeout expires. This bug can also expire the parent&#39;s entry *earlier*, thus making curl inadvertently switch back to insecure HTTP earlier than otherwise intended.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11&upstream=curl</td>
-                    </tr>
-                    <tr>
                         <td>libc-bin</td>
                         <td>2.31-13+deb11u13</td>
                         <td>deb</td>
@@ -1031,7 +1093,7 @@
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in glibc. In an uncommon situation, the gaih_inet function may use memory that has been freed, resulting in an application crash. This issue is only exploitable when the getaddrinfo function is called and the hosts database in /etc/nsswitch.conf is configured with SUCCESS=continue or SUCCESS=merge.</td>
+                        <td>A flaw has been identified in glibc. In an uncommon situation, the gaih_inet function may use memory that has been freed, resulting in an application crash. This issue is only exploitable when the getaddrinfo function is called and the hosts database in /etc/nsswitch.conf is configured with SUCCESS=continue or SUCCESS=merge.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
                     </tr>
@@ -1047,73 +1109,9 @@
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in glibc. In an uncommon situation, the gaih_inet function may use memory that has been freed, resulting in an application crash. This issue is only exploitable when the getaddrinfo function is called and the hosts database in /etc/nsswitch.conf is configured with SUCCESS=continue or SUCCESS=merge.</td>
+                        <td>A flaw has been identified in glibc. In an uncommon situation, the gaih_inet function may use memory that has been freed, resulting in an application crash. This issue is only exploitable when the getaddrinfo function is called and the hosts database in /etc/nsswitch.conf is configured with SUCCESS=continue or SUCCESS=merge.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23914">CVE-2023-23914</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality fail when multiple URLs are requested serially. Using its HSTS support, curl can be instructed to use HTTPS instead of usingan insecure clear-text HTTP step even when HTTP is provided in the URL. ThisHSTS mechanism would however surprisingly be ignored by subsequent transferswhen done on the same command line because the state would not be properlycarried on.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23914">CVE-2023-23914</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality fail when multiple URLs are requested serially. Using its HSTS support, curl can be instructed to use HTTPS instead of usingan insecure clear-text HTTP step even when HTTP is provided in the URL. ThisHSTS mechanism would however surprisingly be ignored by subsequent transferswhen done on the same command line because the state would not be properlycarried on.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-42916">CVE-2022-42916</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In curl before 7.86.0, the HSTS check could be bypassed to trick it into staying with HTTP. Using its HSTS support, curl can be instructed to use HTTPS directly (instead of using an insecure cleartext HTTP step) even when HTTP is provided in the URL. This mechanism could be bypassed if the host name in the given URL uses IDN characters that get replaced with ASCII counterparts as part of the IDN conversion, e.g., using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop of U+002E (.). The earliest affected version is 7.77.0 2021-05-26.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-42916">CVE-2022-42916</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In curl before 7.86.0, the HSTS check could be bypassed to trick it into staying with HTTP. Using its HSTS support, curl can be instructed to use HTTPS directly (instead of using an insecure cleartext HTTP step) even when HTTP is provided in the URL. This mechanism could be bypassed if the host name in the given URL uses IDN characters that get replaced with ASCII counterparts as part of the IDN conversion, e.g., using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop of U+002E (.). The earliest affected version is 7.77.0 2021-05-26.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>libzstd1</td>
@@ -1132,6 +1130,102 @@
                         <td>pkg:deb/debian/libzstd1@1.4.8%2Bdfsg-2.1?arch=amd64&distro=debian-11&upstream=libzstd</td>
                     </tr>
                     <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23914">CVE-2023-23914</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality fail when multiple URLs are requested serially. Using its HSTS support, curl can be instructed to use HTTPS instead of usingan insecure clear-text HTTP step even when HTTP is provided in the URL. ThisHSTS mechanism would however surprisingly be ignored by subsequent transferswhen done on the same command line because the state would not be properlycarried on.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23914">CVE-2023-23914</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality fail when multiple URLs are requested serially. Using its HSTS support, curl can be instructed to use HTTPS instead of usingan insecure clear-text HTTP step even when HTTP is provided in the URL. ThisHSTS mechanism would however surprisingly be ignored by subsequent transferswhen done on the same command line because the state would not be properlycarried on.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-46219">CVE-2023-46219</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When saving HSTS data to an excessively long file name, curl could end up removing all contents, making subsequent requests using that file unaware of the HSTS status they should otherwise use.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-46219">CVE-2023-46219</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When saving HSTS data to an excessively long file name, curl could end up removing all contents, making subsequent requests using that file unaware of the HSTS status they should otherwise use.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-42916">CVE-2022-42916</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In curl before 7.86.0, the HSTS check could be bypassed to trick it into staying with HTTP. Using its HSTS support, curl can be instructed to use HTTPS directly (instead of using an insecure cleartext HTTP step) even when HTTP is provided in the URL. This mechanism could be bypassed if the host name in the given URL uses IDN characters that get replaced with ASCII counterparts as part of the IDN conversion, e.g., using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop of U+002E (.). The earliest affected version is 7.77.0 2021-05-26.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-42916">CVE-2022-42916</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In curl before 7.86.0, the HSTS check could be bypassed to trick it into staying with HTTP. Using its HSTS support, curl can be instructed to use HTTPS directly (instead of using an insecure cleartext HTTP step) even when HTTP is provided in the URL. This mechanism could be bypassed if the host name in the given URL uses IDN characters that get replaced with ASCII counterparts as part of the IDN conversion, e.g., using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop of U+002E (.). The earliest affected version is 7.77.0 2021-05-26.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
                         <td>dpkg</td>
                         <td>1.20.13</td>
                         <td>deb</td>
@@ -1148,68 +1242,372 @@
                         <td>pkg:deb/debian/dpkg@1.20.13?arch=amd64&distro=debian-11</td>
                     </tr>
                     <tr>
-                        <td>libpam-modules</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>libc-bin</td>
+                        <td>2.31-13+deb11u13</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-22365">CVE-2024-22365</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15281">CVE-2025-15281</a>
                         </td>
-                        <td>Medium</td>
+                        <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.</td>
+                        <td>Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-modules@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libpam-modules-bin</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>libc6</td>
+                        <td>2.31-13+deb11u13</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-22365">CVE-2024-22365</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15281">CVE-2025-15281</a>
                         </td>
-                        <td>Medium</td>
+                        <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.</td>
+                        <td>Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-modules-bin@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libpam-runtime</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>libtasn1-6</td>
+                        <td>4.16.0-2+deb11u2</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-22365">CVE-2024-22365</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-13151">CVE-2025-13151</a>
                         </td>
-                        <td>Medium</td>
+                        <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.</td>
+                        <td>Stack-based buffer overflow in libtasn1 version: v4.20.0. The function fails to validate the size of input data resulting in a buffer overflow in asn1_expend_octet_string.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-runtime@1.4.0-9%2Bdeb11u1?arch=all&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libtasn1-6@4.16.0-2%2Bdeb11u2?arch=amd64&distro=debian-11</td>
                     </tr>
                     <tr>
-                        <td>libpam0g</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>libssl1.1</td>
+                        <td>1.1.1w-0+deb11u5</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2024-22365">CVE-2024-22365</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-28389">CVE-2026-28389</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Issue summary: During processing of a crafted CMS EnvelopedData message with KeyAgreeRecipientInfo a NULL pointer dereference can happen.  Impact summary: Applications that process attacker-controlled CMS data may crash before authentication or cryptographic operations occur resulting in Denial of Service.  When a CMS EnvelopedData message that uses KeyAgreeRecipientInfo is processed, the optional parameters field of KeyEncryptionAlgorithmIdentifier is examined without checking for its presence. This results in a NULL pointer dereference if the field is missing.  Applications and services that call CMS_decrypt() on untrusted input (e.g., S/MIME processing or CMS-based protocols) are vulnerable.  The FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u5?arch=amd64&distro=debian-11&upstream=openssl</td>
+                    </tr>
+                    <tr>
+                        <td>libssl1.1</td>
+                        <td>1.1.1w-0+deb11u5</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-28390">CVE-2026-28390</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Issue summary: During processing of a crafted CMS EnvelopedData message with KeyTransportRecipientInfo a NULL pointer dereference can happen.  Impact summary: Applications that process attacker-controlled CMS data may crash before authentication or cryptographic operations occur resulting in Denial of Service.  When a CMS EnvelopedData message that uses KeyTransportRecipientInfo with RSA-OAEP encryption is processed, the optional parameters field of RSA-OAEP SourceFunc algorithm identifier is examined without checking for its presence. This results in a NULL pointer dereference if the field is missing.  Applications and services that call CMS_decrypt() on untrusted input (e.g., S/MIME processing or CMS-based protocols) are vulnerable.  The FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u5?arch=amd64&distro=debian-11&upstream=openssl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-1965">CVE-2026-1965</a>
                         </td>
                         <td>Medium</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.</td>
+                        <td>libcurl can in some circumstances reuse the wrong connection when asked to do an Negotiate-authenticated HTTP or HTTPS request.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criterion must first be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials. One underlying reason being that Negotiate sometimes authenticates *connections* and not *requests*, contrary to how HTTP is designed to work.  An application that allows Negotiate authentication to a server (that responds wanting Negotiate) with `user1:password1` and then does another operation to the same server also using Negotiate but with `user2:password2` (while the previous connection is still alive) - the second request wrongly reused the same connection and since it then sees that the Negotiate negotiation is already made, it just sends the request over that connection thinking it uses the user2 credentials when it is in fact still using the connection authenticated for user1...  The set of authentication methods to use is set with  `CURLOPT_HTTPAUTH`.  Applications can disable libcurl&#39;s reuse of connections and thus mitigate this problem, by using one of the following libcurl options to alter how connections are or are not reused: `CURLOPT_FRESH_CONNECT`, `CURLOPT_MAXCONNECTS` and `CURLMOPT_MAX_HOST_CONNECTIONS` (if using the curl_multi API).</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam0g@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-1965">CVE-2026-1965</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>libcurl can in some circumstances reuse the wrong connection when asked to do an Negotiate-authenticated HTTP or HTTPS request.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criterion must first be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials. One underlying reason being that Negotiate sometimes authenticates *connections* and not *requests*, contrary to how HTTP is designed to work.  An application that allows Negotiate authentication to a server (that responds wanting Negotiate) with `user1:password1` and then does another operation to the same server also using Negotiate but with `user2:password2` (while the previous connection is still alive) - the second request wrongly reused the same connection and since it then sees that the Negotiate negotiation is already made, it just sends the request over that connection thinking it uses the user2 credentials when it is in fact still using the connection authenticated for user1...  The set of authentication methods to use is set with  `CURLOPT_HTTPAUTH`.  Applications can disable libcurl&#39;s reuse of connections and thus mitigate this problem, by using one of the following libcurl options to alter how connections are or are not reused: `CURLOPT_FRESH_CONNECT`, `CURLOPT_MAXCONNECTS` and `CURLMOPT_MAX_HOST_CONNECTIONS` (if using the curl_multi API).</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libtinfo6</td>
+                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6141">CVE-2025-6141</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified as problematic. This vulnerability affects the function postprocess_termcap of the file tinfo/parse_entry.c. The manipulation leads to stack-based buffer overflow. The attack needs to be approached locally. Upgrading to version 6.5-20250329 is able to address this issue. It is recommended to upgrade the affected component.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libtinfo6@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>ncurses-base</td>
+                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6141">CVE-2025-6141</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified as problematic. This vulnerability affects the function postprocess_termcap of the file tinfo/parse_entry.c. The manipulation leads to stack-based buffer overflow. The attack needs to be approached locally. Upgrading to version 6.5-20250329 is able to address this issue. It is recommended to upgrade the affected component.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/ncurses-base@6.2%2B20201114-2%2Bdeb11u2?arch=all&distro=debian-11&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>ncurses-bin</td>
+                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6141">CVE-2025-6141</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified as problematic. This vulnerability affects the function postprocess_termcap of the file tinfo/parse_entry.c. The manipulation leads to stack-based buffer overflow. The attack needs to be approached locally. Upgrading to version 6.5-20250329 is able to address this issue. It is recommended to upgrade the affected component.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/ncurses-bin@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4437">CVE-2026-4437</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C Library version 2.34 to version 2.43 could, with a crafted response from the configured DNS server, result in a violation of the DNS specification that causes the application to treat a non-answer section of the DNS response as a valid answer.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4437">CVE-2026-4437</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C Library version 2.34 to version 2.43 could, with a crafted response from the configured DNS server, result in a violation of the DNS specification that causes the application to treat a non-answer section of the DNS response as a valid answer.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>bsdutils</td>
+                        <td>1:2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/bsdutils@1%3A2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux%402.36.1-8%2Bdeb11u2</td>
+                    </tr>
+                    <tr>
+                        <td>libblkid1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libblkid1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libmount1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libmount1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libsmartcols1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsmartcols1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libuuid1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libuuid1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>mount</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/mount@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>util-linux</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-43551">CVE-2022-43551</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability exists in curl &lt;7.87.0 HSTS check that could be bypassed to trick it to keep using HTTP. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. However, the HSTS mechanism could be bypassed if the host name in the given URL first uses IDN characters that get replaced to ASCII counterparts as part of the IDN conversion. Like using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop (U+002E) `.`. Then in a subsequent request, it does not detect the HSTS state and makes a clear text transfer. Because it would store the info IDN encoded but look for it IDN decoded.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-43551">CVE-2022-43551</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability exists in curl &lt;7.87.0 HSTS check that could be bypassed to trick it to keep using HTTP. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. However, the HSTS mechanism could be bypassed if the host name in the given URL first uses IDN characters that get replaced to ASCII counterparts as part of the IDN conversion. Like using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop (U+002E) `.`. Then in a subsequent request, it does not detect the HSTS state and makes a clear text transfer. Because it would store the info IDN encoded but look for it IDN decoded.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>bash</td>
@@ -1226,38 +1624,6 @@
                         <td>A flaw was found in the bash package, where a heap-buffer overflow can occur in valid parameter_transform. This issue may lead to memory problems.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/bash@5.1-2%2Bdeb11u1?arch=amd64&distro=debian-11</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-46219">CVE-2023-46219</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When saving HSTS data to an excessively long file name, curl could end up removing all contents, making subsequent requests using that file unaware of the HSTS status they should otherwise use.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-46219">CVE-2023-46219</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When saving HSTS data to an excessively long file name, curl could end up removing all contents, making subsequent requests using that file unaware of the HSTS status they should otherwise use.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>libtinfo6</td>
@@ -1308,68 +1674,52 @@
                         <td>pkg:deb/debian/ncurses-bin@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
                     </tr>
                     <tr>
-                        <td>libpam-modules</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>liblzma5</td>
+                        <td>5.2.5-2.1~deb11u1</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6020">CVE-2025-6020</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-34743">CVE-2026-34743</a>
                         </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in linux-pam. The module pam_namespace may use access user-controlled paths without proper protection, allowing local users to elevate their privileges to root via multiple symlink attacks and race conditions.</td>
+                        <td>XZ Utils provide a general-purpose data-compression library plus command-line tools. Prior to version 5.8.3, if lzma_index_decoder() was used to decode an Index that contained no Records, the resulting lzma_index was left in a state where where a subsequent lzma_index_append() would allocate too little memory, and a buffer overflow would occur. This issue has been patched in version 5.8.3.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-modules@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/liblzma5@5.2.5-2.1~deb11u1?arch=amd64&distro=debian-11&upstream=xz-utils</td>
                     </tr>
                     <tr>
-                        <td>libpam-modules-bin</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6020">CVE-2025-6020</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23915">CVE-2023-23915</a>
                         </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in linux-pam. The module pam_namespace may use access user-controlled paths without proper protection, allowing local users to elevate their privileges to root via multiple symlink attacks and race conditions.</td>
+                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality to behave incorrectly when multiple URLs are requested in parallel. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. This HSTS mechanism would however surprisingly fail when multiple transfers are done in parallel as the HSTS cache file gets overwritten by the most recentlycompleted transfer. A later HTTP-only transfer to the earlier host name would then *not* get upgraded properly to HSTS.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-modules-bin@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
                     </tr>
                     <tr>
-                        <td>libpam-runtime</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6020">CVE-2025-6020</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23915">CVE-2023-23915</a>
                         </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>A flaw was found in linux-pam. The module pam_namespace may use access user-controlled paths without proper protection, allowing local users to elevate their privileges to root via multiple symlink attacks and race conditions.</td>
+                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality to behave incorrectly when multiple URLs are requested in parallel. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. This HSTS mechanism would however surprisingly fail when multiple transfers are done in parallel as the HSTS cache file gets overwritten by the most recentlycompleted transfer. A later HTTP-only transfer to the earlier host name would then *not* get upgraded properly to HSTS.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-runtime@1.4.0-9%2Bdeb11u1?arch=all&distro=debian-11&upstream=pam</td>
-                    </tr>
-                    <tr>
-                        <td>libpam0g</td>
-                        <td>1.4.0-9+deb11u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6020">CVE-2025-6020</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in linux-pam. The module pam_namespace may use access user-controlled paths without proper protection, allowing local users to elevate their privileges to root via multiple symlink attacks and race conditions.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libpam0g@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>coreutils</td>
@@ -1388,8 +1738,40 @@
                         <td>pkg:deb/debian/coreutils@8.32-4%2Bb1?arch=amd64&distro=debian-11&upstream=coreutils%408.32-4</td>
                     </tr>
                     <tr>
+                        <td>libssl1.1</td>
+                        <td>1.1.1w-0+deb11u5</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-28388">CVE-2026-28388</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Issue summary: When a delta CRL that contains a Delta CRL Indicator extension is processed a NULL pointer dereference might happen if the required CRL Number extension is missing.  Impact summary: A NULL pointer dereference can trigger a crash which leads to a Denial of Service for an application.  When CRL processing and delta CRL processing is enabled during X.509 certificate verification, the delta CRL processing does not check whether the CRL Number extension is NULL before dereferencing it. When a malformed delta CRL file is being processed, this parameter can be NULL, causing a NULL pointer dereference.  Exploiting this issue requires the X509_V_FLAG_USE_DELTAS flag to be enabled in the verification context, the certificate being verified to contain a freshestCRL extension or the base CRL to have the EXFLAG_FRESHEST flag set, and an attacker to provide a malformed CRL to an application that processes it.  The vulnerability is limited to Denial of Service and cannot be escalated to achieve code execution or memory disclosure. For that reason the issue was assessed as Low severity according to our Security Policy.  The FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u5?arch=amd64&distro=debian-11&upstream=openssl</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.32.1-4+deb11u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-40909">CVE-2025-40909</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Perl threads have a working directory race condition where file operations may target unintended paths.  If a directory handle is open at thread creation, the process-wide current working directory is temporarily changed in order to clone that handle for the new thread, which is visible from any third (or more) thread already running.   This may lead to unintended operations such as loading code or accessing files from unexpected locations, which a local attacker may be able to exploit.  The bug was introduced in commit 11a11ecf4bea72b17d250cfb43c897be1341861e and released in Perl version 5.13.6</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.32.1-4%2Bdeb11u4?arch=amd64&distro=debian-11&upstream=perl</td>
+                    </tr>
+                    <tr>
                         <td>libpam-modules</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>1.4.0-9+deb11u2</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2024-10041">CVE-2024-10041</a>
@@ -1401,11 +1783,11 @@
                         </td>
                         <td>A vulnerability was found in PAM. The secret information is stored in memory, where the attacker can trigger the victim program to execute by sending characters to its standard input (stdin). As this occurs, the attacker can train the branch predictor to execute an ROP chain speculatively. This flaw could result in leaked passwords, such as those found in /etc/shadow while performing authentications.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-modules@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libpam-modules@1.4.0-9%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=pam</td>
                     </tr>
                     <tr>
                         <td>libpam-modules-bin</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>1.4.0-9+deb11u2</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2024-10041">CVE-2024-10041</a>
@@ -1417,11 +1799,11 @@
                         </td>
                         <td>A vulnerability was found in PAM. The secret information is stored in memory, where the attacker can trigger the victim program to execute by sending characters to its standard input (stdin). As this occurs, the attacker can train the branch predictor to execute an ROP chain speculatively. This flaw could result in leaked passwords, such as those found in /etc/shadow while performing authentications.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-modules-bin@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libpam-modules-bin@1.4.0-9%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=pam</td>
                     </tr>
                     <tr>
                         <td>libpam-runtime</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>1.4.0-9+deb11u2</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2024-10041">CVE-2024-10041</a>
@@ -1433,11 +1815,11 @@
                         </td>
                         <td>A vulnerability was found in PAM. The secret information is stored in memory, where the attacker can trigger the victim program to execute by sending characters to its standard input (stdin). As this occurs, the attacker can train the branch predictor to execute an ROP chain speculatively. This flaw could result in leaked passwords, such as those found in /etc/shadow while performing authentications.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam-runtime@1.4.0-9%2Bdeb11u1?arch=all&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libpam-runtime@1.4.0-9%2Bdeb11u2?arch=all&distro=debian-11&upstream=pam</td>
                     </tr>
                     <tr>
                         <td>libpam0g</td>
-                        <td>1.4.0-9+deb11u1</td>
+                        <td>1.4.0-9+deb11u2</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2024-10041">CVE-2024-10041</a>
@@ -1449,71 +1831,439 @@
                         </td>
                         <td>A vulnerability was found in PAM. The secret information is stored in memory, where the attacker can trigger the victim program to execute by sending characters to its standard input (stdin). As this occurs, the attacker can train the branch predictor to execute an ROP chain speculatively. This flaw could result in leaked passwords, such as those found in /etc/shadow while performing authentications.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libpam0g@1.4.0-9%2Bdeb11u1?arch=amd64&distro=debian-11&upstream=pam</td>
+                        <td>pkg:deb/debian/libpam0g@1.4.0-9%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=pam</td>
                     </tr>
                     <tr>
-                        <td>curl</td>
-                        <td>7.74.0-1.3+deb11u15</td>
+                        <td>libc-bin</td>
+                        <td>2.31-13+deb11u13</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-43551">CVE-2022-43551</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A vulnerability exists in curl &lt;7.87.0 HSTS check that could be bypassed to trick it to keep using HTTP. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. However, the HSTS mechanism could be bypassed if the host name in the given URL first uses IDN characters that get replaced to ASCII counterparts as part of the IDN conversion. Like using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop (U+002E) `.`. Then in a subsequent request, it does not detect the HSTS state and makes a clear text transfer. Because it would store the info IDN encoded but look for it IDN decoded.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2022-43551">CVE-2022-43551</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A vulnerability exists in curl &lt;7.87.0 HSTS check that could be bypassed to trick it to keep using HTTP. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. However, the HSTS mechanism could be bypassed if the host name in the given URL first uses IDN characters that get replaced to ASCII counterparts as part of the IDN conversion. Like using the character UTF-8 U+3002 (IDEOGRAPHIC FULL STOP) instead of the common ASCII full stop (U+002E) `.`. Then in a subsequent request, it does not detect the HSTS state and makes a clear text transfer. Because it would store the info IDN encoded but look for it IDN decoded.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.74.0-1.3+deb11u15</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23915">CVE-2023-23915</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4438">CVE-2026-4438</a>
                         </td>
                         <td>Medium</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality to behave incorrectly when multiple URLs are requested in parallel. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. This HSTS mechanism would however surprisingly fail when multiple transfers are done in parallel as the HSTS cache file gets overwritten by the most recentlycompleted transfer. A later HTTP-only transfer to the earlier host name would then *not* get upgraded properly to HSTS.</td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C library version 2.34 to version 2.43 could result in an invalid DNS hostname being returned to the caller in violation of the DNS specification.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11</td>
+                        <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libcurl4</td>
-                        <td>7.74.0-1.3+deb11u15</td>
+                        <td>libc6</td>
+                        <td>2.31-13+deb11u13</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-23915">CVE-2023-23915</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4438">CVE-2026-4438</a>
                         </td>
                         <td>Medium</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>A cleartext transmission of sensitive information vulnerability exists in curl &lt;v7.88.0 that could cause HSTS functionality to behave incorrectly when multiple URLs are requested in parallel. Using its HSTS support, curl can be instructed to use HTTPS instead of using an insecure clear-text HTTP step even when HTTP is provided in the URL. This HSTS mechanism would however surprisingly fail when multiple transfers are done in parallel as the HSTS cache file gets overwritten by the most recentlycompleted transfer. A later HTTP-only transfer to the earlier host name would then *not* get upgraded properly to HSTS.</td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C library version 2.34 to version 2.43 could result in an invalid DNS hostname being returned to the caller in violation of the DNS specification.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u15?arch=amd64&distro=debian-11&upstream=curl</td>
+                        <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libtinfo6</td>
+                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-69720">CVE-2025-69720</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libtinfo6@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>ncurses-base</td>
+                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-69720">CVE-2025-69720</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/ncurses-base@6.2%2B20201114-2%2Bdeb11u2?arch=all&distro=debian-11&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>ncurses-bin</td>
+                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-69720">CVE-2025-69720</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/ncurses-bin@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0915">CVE-2026-0915</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0915">CVE-2026-0915</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-14524">CVE-2025-14524</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a cross-protocol redirect to a second URL that uses an IMAP, LDAP, POP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new target host.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-14524">CVE-2025-14524</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a cross-protocol redirect to a second URL that uses an IMAP, LDAP, POP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new target host.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libnghttp2-14</td>
+                        <td>1.43.0-1+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27135">CVE-2026-27135</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>nghttp2 is an implementation of the Hypertext Transfer Protocol version 2 in C. Prior to version 1.68.1, the nghttp2 library stops reading the incoming data when user facing public API `nghttp2_session_terminate_session` or `nghttp2_session_terminate_session2` is called by the application. They might be called internally by the library when it detects the situation that is subject to connection error. Due to the missing internal state validation, the library keeps reading the rest of the data after one of those APIs is called. Then receiving a malformed frame that causes FRAME_SIZE_ERROR causes assertion failure. nghttp2 v1.68.1 adds missing state validation to avoid assertion failure. No known workarounds are available.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libnghttp2-14@1.43.0-1%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=nghttp2</td>
+                    </tr>
+                    <tr>
+                        <td>tar</td>
+                        <td>1.34+dfsg-1+deb11u1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5704">CVE-2026-5704</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/tar@1.34%2Bdfsg-1%2Bdeb11u1?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>gpgv</td>
+                        <td>2.2.27-2+deb11u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-30258">CVE-2025-30258</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In GnuPG before 2.5.5, if a user chooses to import a certificate with certain crafted subkey data that lacks a valid backsig or that has incorrect usage flags, the user loses the ability to verify signatures made from certain other signing keys, aka a &#34;verification DoS.&#34;</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/gpgv@2.2.27-2%2Bdeb11u3?arch=amd64&distro=debian-11&upstream=gnupg2</td>
+                    </tr>
+                    <tr>
+                        <td>libssl1.1</td>
+                        <td>1.1.1w-0+deb11u5</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-28387">CVE-2026-28387</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Issue summary: An uncommon configuration of clients performing DANE TLSA-based server authentication, when paired with uncommon server DANE TLSA records, may result in a use-after-free and/or double-free on the client side.  Impact summary: A use after free can have a range of potential consequences such as the corruption of valid data, crashes or execution of arbitrary code.  However, the issue only affects clients that make use of TLSA records with both the PKIX-TA(0/PKIX-EE(1) certificate usages and the DANE-TA(2) certificate usage.  By far the most common deployment of DANE is in SMTP MTAs for which RFC7672 recommends that clients treat as &#39;unusable&#39; any TLSA records that have the PKIX certificate usages.  These SMTP (or other similar) clients are not vulnerable to this issue.  Conversely, any clients that support only the PKIX usages, and ignore the DANE-TA(2) usage are also not vulnerable.  The client would also need to be communicating with a server that publishes a TLSA RRset with both types of TLSA records.  No FIPS modules are affected by this issue, the problem code is outside the FIPS module boundary.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u5?arch=amd64&distro=debian-11&upstream=openssl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3784">CVE-2026-3784</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a server, even if the new request uses different credentials for the HTTP proxy. The proper behavior is to create or use a separate connection.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3784">CVE-2026-3784</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a server, even if the new request uses different credentials for the HTTP proxy. The proper behavior is to create or use a separate connection.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3783">CVE-2026-3783</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a redirect to a second URL, curl could leak that token to the second hostname under some circumstances.  If the hostname that the first request is redirected to has information in the used .netrc file, with either of the `machine` or `default` keywords, curl would pass on the bearer token set for the first host also to the second one.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.74.0-1.3+deb11u16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3783">CVE-2026-3783</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a redirect to a second URL, curl could leak that token to the second hostname under some circumstances.  If the hostname that the first request is redirected to has information in the used .netrc file, with either of the `machine` or `default` keywords, curl would pass on the bearer token set for the first host also to the second one.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.74.0-1.3%2Bdeb11u16?arch=amd64&distro=debian-11&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0861">CVE-2026-0861</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.  Note that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1&lt;&lt;62+ 1, 1&lt;&lt;63] and exactly 1&lt;&lt;63 for posix_memalign and aligned_alloc.  Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.31-13+deb11u13</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0861">CVE-2026-0861</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.  Note that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1&lt;&lt;62+ 1, 1&lt;&lt;63] and exactly 1&lt;&lt;63 for posix_memalign and aligned_alloc.  Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libssl1.1</td>
+                        <td>1.1.1w-0+deb11u5</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-31789">CVE-2026-31789</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Issue summary: Converting an excessively large OCTET STRING value to a hexadecimal string leads to a heap buffer overflow on 32 bit platforms.  Impact summary: A heap buffer overflow may lead to a crash or possibly an attacker controlled code execution or other undefined behavior.  If an attacker can supply a crafted X.509 certificate with an excessively large OCTET STRING value in extensions such as the Subject Key Identifier (SKID) or Authority Key Identifier (AKID) which are being converted to hex, the size of the buffer needed for the result is calculated as multiplication of the input length by 3. On 32 bit platforms, this multiplication may overflow resulting in the allocation of a smaller buffer and a heap buffer overflow.  Applications and services that print or log contents of untrusted X.509 certificates are vulnerable to this issue. As the certificates would have to have sizes of over 1 Gigabyte, printing or logging such certificates is a fairly unlikely operation and only 32 bit platforms are affected, this issue was assigned Low severity.  The FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u5?arch=amd64&distro=debian-11&upstream=openssl</td>
+                    </tr>
+                    <tr>
+                        <td>bsdutils</td>
+                        <td>1:2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/bsdutils@1%3A2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux%402.36.1-8%2Bdeb11u2</td>
+                    </tr>
+                    <tr>
+                        <td>libblkid1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libblkid1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libmount1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libmount1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libsmartcols1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsmartcols1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libuuid1</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libuuid1@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>mount</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/mount@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>util-linux</td>
+                        <td>2.36.1-8+deb11u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27456">CVE-2026-27456</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u2?arch=amd64&distro=debian-11</td>
                     </tr>
                     <tr>
                         <td>libc-bin</td>
@@ -1548,84 +2298,68 @@
                         <td>pkg:deb/debian/libc6@2.31-13%2Bdeb11u13?arch=amd64&distro=debian-11&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libtinfo6</td>
-                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>libsystemd0</td>
+                        <td>247.3-7+deb11u8</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6141">CVE-2025-6141</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40228">CVE-2026-40228</a>
                         </td>
                         <td>Low</td>
-                        <td>wont-fix</td>
+                        <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td>A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified as problematic. This vulnerability affects the function postprocess_termcap of the file tinfo/parse_entry.c. The manipulation leads to stack-based buffer overflow. The attack needs to be approached locally. Upgrading to version 6.5-20250329 is able to address this issue. It is recommended to upgrade the affected component.</td>
+                        <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libtinfo6@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
+                        <td>pkg:deb/debian/libsystemd0@247.3-7%2Bdeb11u8?arch=amd64&distro=debian-11&upstream=systemd</td>
                     </tr>
                     <tr>
-                        <td>ncurses-base</td>
-                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>libudev1</td>
+                        <td>247.3-7+deb11u8</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6141">CVE-2025-6141</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40228">CVE-2026-40228</a>
                         </td>
                         <td>Low</td>
-                        <td>wont-fix</td>
+                        <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td>A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified as problematic. This vulnerability affects the function postprocess_termcap of the file tinfo/parse_entry.c. The manipulation leads to stack-based buffer overflow. The attack needs to be approached locally. Upgrading to version 6.5-20250329 is able to address this issue. It is recommended to upgrade the affected component.</td>
+                        <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/ncurses-base@6.2%2B20201114-2%2Bdeb11u2?arch=all&distro=debian-11&upstream=ncurses</td>
+                        <td>pkg:deb/debian/libudev1@247.3-7%2Bdeb11u8?arch=amd64&distro=debian-11&upstream=systemd</td>
                     </tr>
                     <tr>
-                        <td>ncurses-bin</td>
-                        <td>6.2+20201114-2+deb11u2</td>
+                        <td>zlib1g</td>
+                        <td>1:1.2.11.dfsg-2+deb11u2</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-6141">CVE-2025-6141</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified as problematic. This vulnerability affects the function postprocess_termcap of the file tinfo/parse_entry.c. The manipulation leads to stack-based buffer overflow. The attack needs to be approached locally. Upgrading to version 6.5-20250329 is able to address this issue. It is recommended to upgrade the affected component.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/ncurses-bin@6.2%2B20201114-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=ncurses</td>
-                    </tr>
-                    <tr>
-                        <td>gpgv</td>
-                        <td>2.2.27-2+deb11u2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-30258">CVE-2025-30258</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In GnuPG before 2.5.5, if a user chooses to import a certificate with certain crafted subkey data that lacks a valid backsig or that has incorrect usage flags, the user loses the ability to verify signatures made from certain other signing keys, aka a &#34;verification DoS.&#34;</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/gpgv@2.2.27-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=gnupg2</td>
-                    </tr>
-                    <tr>
-                        <td>perl-base</td>
-                        <td>5.32.1-4+deb11u4</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-40909">CVE-2025-40909</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27171">CVE-2026-27171</a>
                         </td>
                         <td>Medium</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>Perl threads have a working directory race condition where file operations may target unintended paths.  If a directory handle is open at thread creation, the process-wide current working directory is temporarily changed in order to clone that handle for the new thread, which is visible from any third (or more) thread already running.   This may lead to unintended operations such as loading code or accessing files from unexpected locations, which a local attacker may be able to exploit.  The bug was introduced in commit 11a11ecf4bea72b17d250cfb43c897be1341861e and released in Perl version 5.13.6</td>
+                        <td>zlib before 1.3.2 allows CPU consumption via crc32_combine64 and crc32_combine_gen64 because x2nmodp can do right shifts within a loop that has no termination condition.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/perl-base@5.32.1-4%2Bdeb11u4?arch=amd64&distro=debian-11&upstream=perl</td>
+                        <td>pkg:deb/debian/zlib1g@1%3A1.2.11.dfsg-2%2Bdeb11u2?arch=amd64&distro=debian-11&upstream=zlib</td>
+                    </tr>
+                    <tr>
+                        <td>gpgv</td>
+                        <td>2.2.27-2+deb11u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-68972">CVE-2025-68972</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In GnuPG through 2.4.8, if a signed message has \f at the end of a plaintext line, an adversary can construct a modified message that places additional text after the signed material, such that signature verification of the modified message succeeds (although an &#34;invalid armor&#34; message is printed during verification). This is related to use of \f as a marker to denote truncation of a long plaintext line.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/gpgv@2.2.27-2%2Bdeb11u3?arch=amd64&distro=debian-11&upstream=gnupg2</td>
                     </tr>
                 </tbody>
             </table>
