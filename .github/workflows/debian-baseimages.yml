@@ -9,7 +9,25 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      latest_version: ${{ steps.get_versions.outputs.latest_version }}
+      matrix: ${{ steps.get_versions.outputs.matrix }}
+    steps:
+      - name: 'Check out the repo'
+        uses: actions/checkout@v4
+      - name: 'Generate matrix and get latest version'
+        id: get_versions
+        run: |
+          MATRIX=$(jq -c '{include: .}' versions.env)
+          LATEST_VERSION=$(jq -r '.[0].version' versions.env)
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+          echo "latest_version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+          echo "The latest version is $LATEST_VERSION"
+
   check-and-build:
+    needs: prepare
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,16 +35,7 @@ jobs:
       security-events: write
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - os_version: "14"
-            os_name: "forky"
-          - os_version: "13"
-            os_name: "trixie"
-          - os_version: "12"
-            os_name: "bookworm"
-          - os_version: "11"
-            os_name: "bullseye"
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
 
     steps:
       - name: 'Check out the repo'
@@ -35,15 +44,39 @@ jobs:
       - name: 'Set up Docker Buildx'
         uses: docker/setup-buildx-action@v3
 
-      - name: 'Log in to Docker Hub'
+      - name: 'Log in to GitHub Container Registry'
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Convert repository owner to lowercase'
+        id: lowercase_owner
+        run: echo "owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
       - name: Get current date
         id: get_date
         run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: 'Generate Docker tags'
+        id: docker_tags
+        run: |
+          tags="ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian-${{ matrix.codename }}:latest
+          ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian-${{ matrix.codename }}:${{ steps.get_date.outputs.date }}
+          ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian:${{ matrix.version }}-latest
+          ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian:${{ matrix.version }}-${{ steps.get_date.outputs.date }}
+          ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian-${{ matrix.version }}:latest
+          ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian-${{ matrix.version }}:${{ steps.get_date.outputs.date }}"
+          if [ "${{ matrix.version }}" == "${{ needs.prepare.outputs.latest_version }}" ]; then
+            tags="$tags
+          ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian:latest"
+          fi
+          {
+            echo "tags<<EOF"
+            echo "$tags"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       # Hashes the InRelease file for each Debian version to detect upstream package
       # changes without building the image. A cache hit on the derived key means repos
@@ -51,60 +84,38 @@ jobs:
       - name: 'Fetch Debian repo metadata hash'
         id: fetch_repo_meta
         run: |
-          URL="https://deb.debian.org/debian/dists/${{ matrix.os_name }}/InRelease"
+          URL="https://deb.debian.org/debian/dists/${{ matrix.codename }}/InRelease"
           # Extract only SHA256 checksum lines — InRelease also has Date/Valid-Until
           # fields that change on every mirror sync regardless of package updates.
-          REPO_HASH=$(curl -sfL "$URL" | awk '/^SHA256:/{p=1;next} /^[A-Za-z]/{p=0} p' | sort | sha256sum | cut -d' ' -f1 || echo "fetch-failed-${{ matrix.os_name }}")
+          REPO_HASH=$(curl -sfL "$URL" | awk '/^SHA256:/{p=1;next} /^[A-Za-z]/{p=0} p' | sort | sha256sum | cut -d' ' -f1 || echo "fetch-failed-${{ matrix.codename }}")
           echo "repo_hash=$REPO_HASH" >> $GITHUB_OUTPUT
-          echo "Fetched ${{ matrix.os_name }} checksum hash: $REPO_HASH"
-          echo "$REPO_HASH" > repo-meta-${{ matrix.os_name }}.hash
+          echo "Fetched ${{ matrix.codename }} checksum hash: $REPO_HASH"
+          echo "$REPO_HASH" > repo-meta-${{ matrix.codename }}.hash
 
       - name: 'Check for repo metadata changes'
         id: cache-repo-meta
         uses: actions/cache@v4
         with:
-          path: repo-meta-${{ matrix.os_name }}.hash
-          key: debian-repo-meta-${{ matrix.os_name }}-${{ steps.fetch_repo_meta.outputs.repo_hash }}
+          path: repo-meta-${{ matrix.codename }}.hash
+          key: debian-repo-meta-${{ matrix.codename }}-${{ steps.fetch_repo_meta.outputs.repo_hash }}
 
       - name: 'Build Docker image'
         if: steps.cache-repo-meta.outputs.cache-hit != 'true'
+        id: build-image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile.debian
+          context: ./docker
+          file: ./docker/Dockerfile.debian
           push: false
           load: true
           build-args: |
-            DEBIAN_VERSION=${{ matrix.os_name }}
-          tags: |
-            anchorlayer/debian-${{ matrix.os_name }}:latest
-            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
-            anchorlayer/debian-${{ matrix.os_version }}:latest
-            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
-            anchorlayer/debian:${{ matrix.os_version }}-latest
-            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
-            anchorlayer/debian:${{ matrix.os_name }}-latest
-            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+            DEBIAN_VERSION=${{ matrix.codename }}
+          tags: ${{ steps.docker_tags.outputs.tags }}
+          cache-from: type=gha,scope=${{ github.workflow }}-${{ matrix.codename }}
 
-      - name: 'Push Docker image'
-        if: steps.cache-repo-meta.outputs.cache-hit != 'true'
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile.debian
-          push: true
-          load: true
-          build-args: |
-            DEBIAN_VERSION=${{ matrix.os_name }}
-          tags: |
-            anchorlayer/debian-${{ matrix.os_name }}:latest
-            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
-            anchorlayer/debian-${{ matrix.os_version }}:latest
-            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
-            anchorlayer/debian:${{ matrix.os_version }}-latest
-            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
-            anchorlayer/debian:${{ matrix.os_name }}-latest
-            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+      - name: 'Capitalize codename'
+        id: capitalize_codename
+        run: echo "codename=$(echo '${{ matrix.codename }}' | awk '{print toupper(substr($0,1,1))substr($0,2)}')" >> $GITHUB_OUTPUT
 
       - name: 'Install Grype and clone templates'
         if: steps.cache-repo-meta.outputs.cache-hit != 'true'
@@ -115,7 +126,8 @@ jobs:
       - name: 'Scan image with Grype and generate all reports'
         if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         run: |
-          IMAGE_TAG="anchorlayer/debian-${{ matrix.os_name }}:latest"
+          IMAGE_TAG="ghcr.io/${{ steps.lowercase_owner.outputs.owner }}/debian-${{ matrix.codename }}:latest"
+          CODENAME_CAPITALIZED="${{ steps.capitalize_codename.outputs.codename }}"
 
           # Human-readable summary for the logs (doesn't save a file)
           echo "--- Generating Grype Table Report (for logs) ---"
@@ -123,40 +135,95 @@ jobs:
 
           # JSON report (machine-readable, most detailed)
           echo "--- Generating Grype JSON Report ---"
-          grype --scope all-layers $IMAGE_TAG -o json > grype-report-${{ matrix.os_name }}.json
+          grype --scope all-layers $IMAGE_TAG -o json > "grype-report-$CODENAME_CAPITALIZED.json"
 
           # SARIF report for security dashboards (e.g., GitHub Security tab)
           echo "--- Generating Grype SARIF Report ---"
-          grype --scope all-layers $IMAGE_TAG -o sarif > grype-report-${{ matrix.os_name }}.sarif
+          grype --scope all-layers $IMAGE_TAG -o sarif > "grype-report-$CODENAME_CAPITALIZED.sarif"
 
           # CycloneDX XML report (SBOM format)
           echo "--- Generating Grype CycloneDX XML Report ---"
-          grype --scope all-layers $IMAGE_TAG -o cyclonedx > grype-report-${{ matrix.os_name }}.cyclonedx.xml
+          grype --scope all-layers $IMAGE_TAG -o cyclonedx > "grype-report-$CODENAME_CAPITALIZED.cyclonedx.xml"
 
           # CycloneDX JSON report (SBOM format)
           echo "--- Generating Grype CycloneDX JSON Report ---"
-          grype --scope all-layers $IMAGE_TAG -o cyclonedx-json > grype-report-${{ matrix.os_name }}.cyclonedx.json
+          grype --scope all-layers $IMAGE_TAG -o cyclonedx-json > "grype-report-$CODENAME_CAPITALIZED.cyclonedx.json"
 
           # Custom CSV template report
           echo "--- Generating Grype Custom CSV Report ---"
-          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/csv.tmpl > grype-report-${{ matrix.os_name }}.csv
+          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/csv.tmpl > "grype-report-$CODENAME_CAPITALIZED.csv"
 
           # Custom HTML template report
           echo "--- Generating Grype Custom HTML Report ---"
-          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > grype-report-${{ matrix.os_name }}.html
+          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > "grype-report-$CODENAME_CAPITALIZED.html"
 
       - name: 'Upload vulnerability reports'
         if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: vuln-reports-${{ matrix.os_name }}
+          name: vuln-reports-${{ steps.capitalize_codename.outputs.codename }}
           path: |
-            grype-report-${{ matrix.os_name }}.json
-            grype-report-${{ matrix.os_name }}.sarif
-            grype-report-${{ matrix.os_name }}.cyclonedx.xml
-            grype-report-${{ matrix.os_name }}.cyclonedx.json
-            grype-report-${{ matrix.os_name }}.csv
-            grype-report-${{ matrix.os_name }}.html
+            grype-report-${{ steps.capitalize_codename.outputs.codename }}.json
+            grype-report-${{ steps.capitalize_codename.outputs.codename }}.sarif
+            grype-report-${{ steps.capitalize_codename.outputs.codename }}.cyclonedx.xml
+            grype-report-${{ steps.capitalize_codename.outputs.codename }}.cyclonedx.json
+            grype-report-${{ steps.capitalize_codename.outputs.codename }}.csv
+            grype-report-${{ steps.capitalize_codename.outputs.codename }}.html
+
+      - name: 'Push Docker image'
+        if: steps.cache-repo-meta.outputs.cache-hit != 'true' && success()
+        uses: docker/build-push-action@v5
+        with:
+          context: ./docker
+          file: ./docker/Dockerfile.debian
+          push: true
+          build-args: |
+            DEBIAN_VERSION=${{ matrix.codename }}
+          tags: ${{ steps.docker_tags.outputs.tags }}
+          cache-from: type=gha,scope=${{ github.workflow }}-${{ matrix.codename }}
+          cache-to: type=gha,mode=max,scope=${{ github.workflow }}-${{ matrix.codename }}
+
+  make-packages-public:
+    name: Make Packages Public
+    runs-on: ubuntu-latest
+    needs: check-and-build
+    permissions:
+      packages: write
+    steps:
+      - name: 'Check out the repo'
+        uses: actions/checkout@v4
+
+      - name: 'Convert repository owner to lowercase'
+        id: lowercase_owner
+        run: echo "owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Get repository owner type
+        id: owner_type
+        run: |
+          OWNER_TYPE=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/users/${{ github.repository_owner }}" | jq -r .type)
+          echo "type=${OWNER_TYPE}" >> $GITHUB_OUTPUT
+
+      - name: Make packages public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LOWERCASE_OWNER="${{ steps.lowercase_owner.outputs.owner }}"
+          PACKAGE_NAMES="debian $(jq -r '.[] | "debian-" + .codename, "debian-" + .version' versions.env | tr '\n' ' ')"
+
+          if [ "${{ steps.owner_type.outputs.type }}" == "Organization" ]; then
+            API_BASE_URL="https://api.github.com/orgs/$LOWERCASE_OWNER/packages/container"
+          else
+            API_BASE_URL="https://api.github.com/users/$LOWERCASE_OWNER/packages/container"
+          fi
+
+          for PACKAGE_NAME in $PACKAGE_NAMES; do
+            echo "Making $PACKAGE_NAME public..."
+            curl -s -f -X PATCH \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "$API_BASE_URL/$PACKAGE_NAME" \
+              -d '{"visibility":"public"}' || echo "Could not make package $PACKAGE_NAME public. It may not exist or is already public."
+          done
 
   update-readme:
     needs: check-and-build
@@ -200,6 +267,12 @@ jobs:
         run: |
           for report_dir in vuln-reports-*; do
               OS_NAME=$(echo "$report_dir" | sed 's/vuln-reports-//')
+              OS_NAME_LOWER=$(echo "$OS_NAME" | tr '[:upper:]' '[:lower:]')
+              OS_VERSION=$(jq -r --arg OS_NAME "$OS_NAME_LOWER" '.[] | select(.codename == $OS_NAME) | .version' versions.env)
+              if [ -z "$OS_VERSION" ]; then
+                  echo "Could not find version for OS name $OS_NAME. Skipping."
+                  continue
+              fi
               report_path="$report_dir/grype-report-$OS_NAME.csv"
 
               if [ ! -f "$report_path" ]; then
@@ -215,20 +288,7 @@ jobs:
               REPORT_URL="https://htmlpreview.github.io/?https://github.com/${{ github.repository }}/blob/main/$report_dir/grype-report-$OS_NAME.html"
               VULN_BADGES_LINE="[![Critical Vulns](https://img.shields.io/badge/Critical-$CRITICAL-red.svg)]($REPORT_URL) [![High Vulns](https://img.shields.io/badge/High-$HIGH-orange.svg)]($REPORT_URL) [![Medium Vulns](https://img.shields.io/badge/Medium-$MEDIUM-yellow.svg)]($REPORT_URL) [![Low Vulns](https://img.shields.io/badge/Low-$LOW-blue.svg)]($REPORT_URL)"
 
-              case "$OS_NAME" in
-                  forky)
-                      sed -i "/### Debian 14 Forky/!b;n;c$VULN_BADGES_LINE" README.md
-                      ;;
-                  trixie)
-                      sed -i "/### Debian 13 Trixie/!b;n;c$VULN_BADGES_LINE" README.md
-                      ;;
-                  bookworm)
-                      sed -i "/### Debian 12 Bookworm/!b;n;c$VULN_BADGES_LINE" README.md
-                      ;;
-                  bullseye)
-                      sed -i "/### Debian 11 Bullseye/!b;n;c$VULN_BADGES_LINE" README.md
-                      ;;
-              esac
+              sed -i "/### Debian $OS_VERSION $OS_NAME/!b;n;c$VULN_BADGES_LINE" README.md
           done
 
       - name: 'Commit and push changes'
