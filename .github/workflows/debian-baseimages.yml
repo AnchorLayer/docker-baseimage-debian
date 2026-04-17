@@ -5,11 +5,12 @@ on:
     - cron: '00,31 * * * *'
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   check-and-build:
     runs-on: ubuntu-latest
-    outputs:
-      packages_changed: ${{ steps.check_package_changes.outputs.push }}
     permissions:
       contents: write
       packages: write
@@ -39,13 +40,34 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       - name: Get current date
         id: get_date
         run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
 
+      # Hashes the InRelease file for each Debian version to detect upstream package
+      # changes without building the image. A cache hit on the derived key means repos
+      # are unchanged and the entire build can be skipped.
+      - name: 'Fetch Debian repo metadata hash'
+        id: fetch_repo_meta
+        run: |
+          URL="https://deb.debian.org/debian/dists/${{ matrix.os_name }}/InRelease"
+          # Extract only SHA256 checksum lines — InRelease also has Date/Valid-Until
+          # fields that change on every mirror sync regardless of package updates.
+          REPO_HASH=$(curl -sfL "$URL" | awk '/^SHA256:/{p=1;next} /^[A-Za-z]/{p=0} p' | sort | sha256sum | cut -d' ' -f1 || echo "fetch-failed-${{ matrix.os_name }}")
+          echo "repo_hash=$REPO_HASH" >> $GITHUB_OUTPUT
+          echo "Fetched ${{ matrix.os_name }} checksum hash: $REPO_HASH"
+          echo "$REPO_HASH" > repo-meta-${{ matrix.os_name }}.hash
+
+      - name: 'Check for repo metadata changes'
+        id: cache-repo-meta
+        uses: actions/cache@v4
+        with:
+          path: repo-meta-${{ matrix.os_name }}.hash
+          key: debian-repo-meta-${{ matrix.os_name }}-${{ steps.fetch_repo_meta.outputs.repo_hash }}
+
       - name: 'Build Docker image'
-        id: build-image
+        if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -63,40 +85,9 @@ jobs:
             anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
             anchorlayer/debian:${{ matrix.os_name }}-latest
             anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
-            
-      - name: 'Generate package list'
-        id: generate_package_list
-        run: |
-          docker run --rm anchorlayer/debian-${{ matrix.os_name }}:latest dpkg-query -W -f='${Package} ${Version}\n' | sort > new-packages.txt
-          echo "path=new-packages.txt" >> $GITHUB_OUTPUT
-          
-      - name: 'Cache package list'
-        uses: actions/cache@v4
-        id: cache-packages
-        with:
-          path: packages-${{ matrix.os_name }}.txt
-          key: debian-packages-${{ matrix.os_name }}-${{ hashFiles(steps.generate_package_list.outputs.path) }}
-          
-      - name: 'Compare package lists'
-        id: check_package_changes
-        run: |
-          if [ -f "packages-${{ matrix.os_name }}.txt" ]; then
-            if cmp -s "new-packages.txt" "packages-${{ matrix.os_name }}.txt"; then
-              echo "✅ No package changes detected."
-              echo "push=false" >> $GITHUB_OUTPUT
-            else
-              echo "🚨 Package changes detected! Triggering push."
-              echo "push=true" >> $GITHUB_OUTPUT
-              cp new-packages.txt packages-${{ matrix.os_name }}.txt
-            fi
-          else
-            echo "🚨 No previous package list found. Triggering push."
-            echo "push=true" >> $GITHUB_OUTPUT
-            cp new-packages.txt packages-${{ matrix.os_name }}.txt
-          fi
 
-      - name: 'Push Docker image if changed'
-        if: ${{ success() && steps.check_package_changes.outputs.push == 'true' }}
+      - name: 'Push Docker image'
+        if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -116,16 +107,16 @@ jobs:
             anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
 
       - name: 'Install Grype and clone templates'
-        if: steps.check_package_changes.outputs.push == 'true'
+        if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         run: |
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           git clone --depth 1 https://github.com/anchore/grype.git
-          
+
       - name: 'Scan image with Grype and generate all reports'
-        if: steps.check_package_changes.outputs.push == 'true'
+        if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         run: |
           IMAGE_TAG="anchorlayer/debian-${{ matrix.os_name }}:latest"
-        
+
           # Human-readable summary for the logs (doesn't save a file)
           echo "--- Generating Grype Table Report (for logs) ---"
           grype --scope all-layers $IMAGE_TAG -o table
@@ -155,7 +146,7 @@ jobs:
           grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > grype-report-${{ matrix.os_name }}.html
 
       - name: 'Upload vulnerability reports'
-        if: steps.check_changes.outputs.changed == 'true'
+        if: steps.cache-repo-meta.outputs.cache-hit != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: vuln-reports-${{ matrix.os_name }}
@@ -166,10 +157,9 @@ jobs:
             grype-report-${{ matrix.os_name }}.cyclonedx.json
             grype-report-${{ matrix.os_name }}.csv
             grype-report-${{ matrix.os_name }}.html
-            
+
   update-readme:
     needs: check-and-build
-    if: needs.check-and-build.outputs.packages_changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -179,8 +169,34 @@ jobs:
 
       - name: 'Download vulnerability reports'
         uses: actions/download-artifact@v4
+        with:
+          path: ./reports-tmp
+        continue-on-error: true
+
+      - name: 'Check for downloaded reports'
+        id: check_reports
+        run: |
+          if [ -d "reports-tmp" ] && [ -n "$(ls -A reports-tmp)" ]; then
+            echo "reports_downloaded=true"
+            echo "reports_downloaded=true" >> $GITHUB_OUTPUT
+          else
+            echo "reports_downloaded=false"
+            echo "reports_downloaded=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 'Move reports into repo'
+        if: steps.check_reports.outputs.reports_downloaded == 'true'
+        run: |
+          for report_dir in reports-tmp/vuln-reports-*; do
+            OS_NAME=$(basename "$report_dir" | sed 's/vuln-reports-//')
+            TARGET_DIR="vuln-reports-$OS_NAME"
+            rm -rf "$TARGET_DIR"
+            mv "$report_dir" "$TARGET_DIR"
+          done
+          rm -rf reports-tmp
 
       - name: 'Update README with vuln badges'
+        if: steps.check_reports.outputs.reports_downloaded == 'true'
         run: |
           for report_dir in vuln-reports-*; do
               OS_NAME=$(echo "$report_dir" | sed 's/vuln-reports-//')
@@ -196,9 +212,9 @@ jobs:
               MEDIUM=$(grep -c "Medium" "$report_path" || true)
               LOW=$(grep -c "Low" "$report_path" || true)
 
-              VULN_BADGES_LINE="![Critical Vulns](https://img.shields.io/badge/Critical-$CRITICAL-red.svg) ![High Vulns](https://img.shields.io/badge/High-$HIGH-orange.svg) ![Medium Vulns](https://img.shields.io/badge/Medium-$MEDIUM-yellow.svg) ![Low Vulns](https://img.shields.io/badge/Low-$LOW-blue.svg)"
+              REPORT_URL="https://htmlpreview.github.io/?https://github.com/${{ github.repository }}/blob/main/$report_dir/grype-report-$OS_NAME.html"
+              VULN_BADGES_LINE="[![Critical Vulns](https://img.shields.io/badge/Critical-$CRITICAL-red.svg)]($REPORT_URL) [![High Vulns](https://img.shields.io/badge/High-$HIGH-orange.svg)]($REPORT_URL) [![Medium Vulns](https://img.shields.io/badge/Medium-$MEDIUM-yellow.svg)]($REPORT_URL) [![Low Vulns](https://img.shields.io/badge/Low-$LOW-blue.svg)]($REPORT_URL)"
 
-              # This sed command finds the heading and replaces the line immediately after it.
               case "$OS_NAME" in
                   forky)
                       sed -i "/### Debian 14 Forky/!b;n;c$VULN_BADGES_LINE" README.md
@@ -216,6 +232,8 @@ jobs:
           done
 
       - name: 'Commit and push changes'
+        if: steps.check_reports.outputs.reports_downloaded == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update vulnerability badges in README.md"
+          commit_message: "Update vulnerability badges and reports"
+          file_pattern: "README.md vuln-reports-*"
