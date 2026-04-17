@@ -1,0 +1,221 @@
+name: 'Check Debian Repos and Rebuild Base Images'
+
+on:
+  schedule:
+    - cron: '00,31 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    outputs:
+      packages_changed: ${{ steps.check_package_changes.outputs.push }}
+    permissions:
+      contents: write
+      packages: write
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os_version: "14"
+            os_name: "forky"
+          - os_version: "13"
+            os_name: "trixie"
+          - os_version: "12"
+            os_name: "bookworm"
+          - os_version: "11"
+            os_name: "bullseye"
+
+    steps:
+      - name: 'Check out the repo'
+        uses: actions/checkout@v4
+
+      - name: 'Set up Docker Buildx'
+        uses: docker/setup-buildx-action@v3
+
+      - name: 'Log in to Docker Hub'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Get current date
+        id: get_date
+        run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: 'Build Docker image'
+        id: build-image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.debian
+          push: false
+          load: true
+          build-args: |
+            DEBIAN_VERSION=${{ matrix.os_name }}
+          tags: |
+            anchorlayer/debian-${{ matrix.os_name }}:latest
+            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian-${{ matrix.os_version }}:latest
+            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_version }}-latest
+            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_name }}-latest
+            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+            
+      - name: 'Generate package list'
+        id: generate_package_list
+        run: |
+          docker run --rm anchorlayer/debian-${{ matrix.os_name }}:latest dpkg-query -W -f='${Package} ${Version}\n' | sort > new-packages.txt
+          echo "path=new-packages.txt" >> $GITHUB_OUTPUT
+          
+      - name: 'Cache package list'
+        uses: actions/cache@v4
+        id: cache-packages
+        with:
+          path: packages-${{ matrix.os_name }}.txt
+          key: debian-packages-${{ matrix.os_name }}-${{ hashFiles(steps.generate_package_list.outputs.path) }}
+          
+      - name: 'Compare package lists'
+        id: check_package_changes
+        run: |
+          if [ -f "packages-${{ matrix.os_name }}.txt" ]; then
+            if cmp -s "new-packages.txt" "packages-${{ matrix.os_name }}.txt"; then
+              echo "✅ No package changes detected."
+              echo "push=false" >> $GITHUB_OUTPUT
+            else
+              echo "🚨 Package changes detected! Triggering push."
+              echo "push=true" >> $GITHUB_OUTPUT
+              cp new-packages.txt packages-${{ matrix.os_name }}.txt
+            fi
+          else
+            echo "🚨 No previous package list found. Triggering push."
+            echo "push=true" >> $GITHUB_OUTPUT
+            cp new-packages.txt packages-${{ matrix.os_name }}.txt
+          fi
+
+      - name: 'Push Docker image if changed'
+        if: ${{ success() && steps.check_package_changes.outputs.push == 'true' }}
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.debian
+          push: true
+          load: true
+          build-args: |
+            DEBIAN_VERSION=${{ matrix.os_name }}
+          tags: |
+            anchorlayer/debian-${{ matrix.os_name }}:latest
+            anchorlayer/debian-${{ matrix.os_name }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian-${{ matrix.os_version }}:latest
+            anchorlayer/debian-${{ matrix.os_version }}:${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_version }}-latest
+            anchorlayer/debian:${{ matrix.os_version }}-${{ steps.get_date.outputs.date }}
+            anchorlayer/debian:${{ matrix.os_name }}-latest
+            anchorlayer/debian:${{ matrix.os_name }}-${{ steps.get_date.outputs.date }}
+
+      - name: 'Install Grype and clone templates'
+        if: steps.check_package_changes.outputs.push == 'true'
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+          git clone --depth 1 https://github.com/anchore/grype.git
+          
+      - name: 'Scan image with Grype and generate all reports'
+        if: steps.check_package_changes.outputs.push == 'true'
+        run: |
+          IMAGE_TAG="anchorlayer/debian-${{ matrix.os_name }}:latest"
+        
+          # Human-readable summary for the logs (doesn't save a file)
+          echo "--- Generating Grype Table Report (for logs) ---"
+          grype --scope all-layers $IMAGE_TAG -o table
+
+          # JSON report (machine-readable, most detailed)
+          echo "--- Generating Grype JSON Report ---"
+          grype --scope all-layers $IMAGE_TAG -o json > grype-report-${{ matrix.os_name }}.json
+
+          # SARIF report for security dashboards (e.g., GitHub Security tab)
+          echo "--- Generating Grype SARIF Report ---"
+          grype --scope all-layers $IMAGE_TAG -o sarif > grype-report-${{ matrix.os_name }}.sarif
+
+          # CycloneDX XML report (SBOM format)
+          echo "--- Generating Grype CycloneDX XML Report ---"
+          grype --scope all-layers $IMAGE_TAG -o cyclonedx > grype-report-${{ matrix.os_name }}.cyclonedx.xml
+
+          # CycloneDX JSON report (SBOM format)
+          echo "--- Generating Grype CycloneDX JSON Report ---"
+          grype --scope all-layers $IMAGE_TAG -o cyclonedx-json > grype-report-${{ matrix.os_name }}.cyclonedx.json
+
+          # Custom CSV template report
+          echo "--- Generating Grype Custom CSV Report ---"
+          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/csv.tmpl > grype-report-${{ matrix.os_name }}.csv
+
+          # Custom HTML template report
+          echo "--- Generating Grype Custom HTML Report ---"
+          grype --scope all-layers $IMAGE_TAG -o template -t grype/templates/html.tmpl > grype-report-${{ matrix.os_name }}.html
+
+      - name: 'Upload vulnerability reports'
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vuln-reports-${{ matrix.os_name }}
+          path: |
+            grype-report-${{ matrix.os_name }}.json
+            grype-report-${{ matrix.os_name }}.sarif
+            grype-report-${{ matrix.os_name }}.cyclonedx.xml
+            grype-report-${{ matrix.os_name }}.cyclonedx.json
+            grype-report-${{ matrix.os_name }}.csv
+            grype-report-${{ matrix.os_name }}.html
+            
+  update-readme:
+    needs: check-and-build
+    if: needs.check-and-build.outputs.packages_changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 'Check out the repo'
+        uses: actions/checkout@v4
+
+      - name: 'Download vulnerability reports'
+        uses: actions/download-artifact@v4
+
+      - name: 'Update README with vuln badges'
+        run: |
+          for report_dir in vuln-reports-*; do
+              OS_NAME=$(echo "$report_dir" | sed 's/vuln-reports-//')
+              report_path="$report_dir/grype-report-$OS_NAME.csv"
+
+              if [ ! -f "$report_path" ]; then
+                echo "Vulnerability report not found for $OS_NAME. Skipping."
+                continue
+              fi
+
+              CRITICAL=$(grep -c "Critical" "$report_path" || true)
+              HIGH=$(grep -c "High" "$report_path" || true)
+              MEDIUM=$(grep -c "Medium" "$report_path" || true)
+              LOW=$(grep -c "Low" "$report_path" || true)
+
+              VULN_BADGES_LINE="![Critical Vulns](https://img.shields.io/badge/Critical-$CRITICAL-red.svg) ![High Vulns](https://img.shields.io/badge/High-$HIGH-orange.svg) ![Medium Vulns](https://img.shields.io/badge/Medium-$MEDIUM-yellow.svg) ![Low Vulns](https://img.shields.io/badge/Low-$LOW-blue.svg)"
+
+              # This sed command finds the heading and replaces the line immediately after it.
+              case "$OS_NAME" in
+                  forky)
+                      sed -i "/### Debian 14 Forky/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+                  trixie)
+                      sed -i "/### Debian 13 Trixie/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+                  bookworm)
+                      sed -i "/### Debian 12 Bookworm/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+                  bullseye)
+                      sed -i "/### Debian 11 Bullseye/!b;n;c$VULN_BADGES_LINE" README.md
+                      ;;
+              esac
+          done
+
+      - name: 'Commit and push changes'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update vulnerability badges in README.md"
