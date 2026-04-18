@@ -778,6 +778,8 @@
     
     
     
+    
+    
 
 <body>
     <div class="main-container">
@@ -792,13 +794,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:7b5c4dfc60b2b62e8b877efeada5ebb96ac0c0bcc5037e9b6d76632cc5ed2824</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-04-18T03:23:01.443270207Z</span>
+                        <span id="dateElement">2026-04-18T09:28:56.154251969Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.111.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-04-17 06:58:16 +0000 UTC</dd>
+                    <dd>2026-04-18 06:43:28 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -813,7 +815,7 @@
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">13</div>
+                <div class="severity-count" id="highCount">15</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
@@ -1196,6 +1198,38 @@
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/util-linux@2.42-3?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libngtcp2-16</td>
+                        <td>1.21.0-1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40170">CVE-2026-40170</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libngtcp2-16@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
+                    </tr>
+                    <tr>
+                        <td>libngtcp2-crypto-ossl0</td>
+                        <td>1.21.0-1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40170">CVE-2026-40170</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libngtcp2-crypto-ossl0@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
                     </tr>
                     <tr>
                         <td>libssl3t64</td>

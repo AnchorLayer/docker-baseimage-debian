@@ -913,6 +913,48 @@
               }
             },
             {
+              "id": "CVE-2026-40170-libngtcp2-16",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-40170 high vulnerability for libngtcp2-16 package"
+              },
+              "fullDescription": {
+                "text": "ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client."
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability CVE-2026-40170\nSeverity: high\nPackage: libngtcp2-16\nVersion: 1.21.0-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-40170](https://security-tracker.debian.org/tracker/CVE-2026-40170)",
+                "markdown": "**Vulnerability CVE-2026-40170**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libngtcp2-16  | 1.21.0-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-40170](https://security-tracker.debian.org/tracker/CVE-2026-40170)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libngtcp2-16@1.21.0-1?arch=amd64\u0026distro=debian\u0026upstream=ngtcp2"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-40170-libngtcp2-crypto-ossl0",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-40170 high vulnerability for libngtcp2-crypto-ossl0 package"
+              },
+              "fullDescription": {
+                "text": "ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client."
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability CVE-2026-40170\nSeverity: high\nPackage: libngtcp2-crypto-ossl0\nVersion: 1.21.0-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-40170](https://security-tracker.debian.org/tracker/CVE-2026-40170)",
+                "markdown": "**Vulnerability CVE-2026-40170**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libngtcp2-crypto-ossl0  | 1.21.0-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-40170](https://security-tracker.debian.org/tracker/CVE-2026-40170)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libngtcp2-crypto-ossl0@1.21.0-1?arch=amd64\u0026distro=debian\u0026upstream=ngtcp2"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-28388-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1623,7 +1665,7 @@
                 "purls": [
                   "pkg:deb/debian/libsystemd0@260.1-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
                 ],
-                "security-severity": "2.9"
+                "security-severity": "3.3"
               }
             },
             {
@@ -1644,7 +1686,7 @@
                 "purls": [
                   "pkg:deb/debian/libudev1@260.1-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
                 ],
-                "security-severity": "2.9"
+                "security-severity": "3.3"
               }
             },
             {
@@ -3968,6 +4010,84 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2f2d408c2794aabd7e4c217f1703329e29685174532cd26aa337220bc23e879:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-40170-libngtcp2-16",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libngtcp2-16, version 1.21.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libngtcp2-16/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/usr/share/doc/libngtcp2-16/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libngtcp2-16:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/info/libngtcp2-16:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "22807ca16167a0e03bf75e0381c749122ced59dcbaf6fb66cb2c4775ed0eb81f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-40170-libngtcp2-crypto-ossl0",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libngtcp2-crypto-ossl0, version 1.21.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libngtcp2-crypto-ossl0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/usr/share/doc/libngtcp2-crypto-ossl0/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libngtcp2-crypto-ossl0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/info/libngtcp2-crypto-ossl0:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "62d5d95e2c0a7a52b15e895e4ffed4e98930357bf63c863b2096338bfba348b9:1"
           }
         },
         {
