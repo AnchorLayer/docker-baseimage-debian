@@ -1648,6 +1648,27 @@
               }
             },
             {
+              "id": "CVE-2017-14159-libldap2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2017-14159 low vulnerability for libldap2 package"
+              },
+              "fullDescription": {
+                "text": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability CVE-2017-14159\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)",
+                "markdown": "**Vulnerability CVE-2017-14159**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
+                ],
+                "security-severity": "4.7"
+              }
+            },
+            {
               "id": "CVE-2026-40228-libsystemd0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1687,27 +1708,6 @@
                   "pkg:deb/debian/libudev1@260.1-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
                 ],
                 "security-severity": "3.3"
-              }
-            },
-            {
-              "id": "CVE-2017-14159-libldap2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2017-14159 low vulnerability for libldap2 package"
-              },
-              "fullDescription": {
-                "text": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
-              },
-              "helpUri": "https://github.com/anchore/grype",
-              "help": {
-                "text": "Vulnerability CVE-2017-14159\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)",
-                "markdown": "**Vulnerability CVE-2017-14159**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
-                ],
-                "security-severity": "4.7"
               }
             },
             {
@@ -5510,6 +5510,45 @@
           }
         },
         {
+          "ruleId": "CVE-2017-14159-libldap2",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libldap2, version 2.6.10+dfsg-1+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libldap2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/usr/share/doc/libldap2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/info/libldap2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1b2ac867c03af493e4293218e196e81798f48878c41c56527e8015199ce0d5d7:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-40228-libsystemd0",
           "level": "note",
           "message": {
@@ -5585,45 +5624,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "b9a612c971ec818aa18a75ef2ea50b68cd06990fb2889a70edca9a521e25cfba:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2017-14159-libldap2",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libldap2, version 2.6.10+dfsg-1+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libldap2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/usr/share/doc/libldap2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/info/libldap2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1b2ac867c03af493e4293218e196e81798f48878c41c56527e8015199ce0d5d7:1"
           }
         },
         {
