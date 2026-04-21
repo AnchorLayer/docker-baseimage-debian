@@ -2066,6 +2066,27 @@
                 ],
                 "security-severity": "4.6"
               }
+            },
+            {
+              "id": "CVE-2026-5958-sed",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5958 low vulnerability for sed package"
+              },
+              "fullDescription": {
+                "text": "Version 4.9-2 is affected with no fixes reported yet."
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability CVE-2026-5958\nSeverity: low\nPackage: sed\nVersion: 4.9-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5958](https://security-tracker.debian.org/tracker/CVE-2026-5958)",
+                "markdown": "**Vulnerability CVE-2026-5958**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | sed  | 4.9-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5958](https://security-tracker.debian.org/tracker/CVE-2026-5958)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/sed@4.9-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "2.1"
+              }
             }
           ]
         }
@@ -6359,6 +6380,49 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "1b2ac867c03af493e4293218e196e81798f48878c41c56527e8015199ce0d5d7:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-5958-sed",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: sed, version 4.9-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a120bb1e5cfc24f30e00dcf803dc564bc6025eef45bcb34a903baf8523f6d2b0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/sed/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:76cc66fa2e3ce4fbd14d68d3689ec3aa73c21673a88e341ea096fb1183f6f34f:/usr/share/doc/sed/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/sed.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:76cc66fa2e3ce4fbd14d68d3689ec3aa73c21673a88e341ea096fb1183f6f34f:/var/lib/dpkg/info/sed.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/sed.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:76cc66fa2e3ce4fbd14d68d3689ec3aa73c21673a88e341ea096fb1183f6f34f:/var/lib/dpkg/info/sed.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "22f71492696fbb64c7a1a1183c81211c32eb65edaf381995fcb2e9a2be1526cf:1"
           }
         }
       ]
