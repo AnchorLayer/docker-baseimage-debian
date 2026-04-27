@@ -785,13 +785,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89db72ff0f6836cf22a6d1351396f32c38dd7569b139e2bd5fe0652db10dc248</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-04-27T04:11:04.104664911Z</span>
+                        <span id="dateElement">2026-04-27T09:41:10.3131068Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.111.1</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-04-26 06:57:35 +0000 UTC</dd>
+                    <dd>2026-04-27 07:14:20 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -871,42 +871,6 @@
                         <td>pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&upstream=shadow</td>
                     </tr>
                     <tr>
-                        <td>libngtcp2-16</td>
-                        <td>1.21.0-1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40170">CVE-2026-40170</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-1</li>
-                            </ul>
-                        </td>
-                        <td>ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libngtcp2-16@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
-                    </tr>
-                    <tr>
-                        <td>libngtcp2-crypto-ossl0</td>
-                        <td>1.21.0-1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40170">CVE-2026-40170</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-1</li>
-                            </ul>
-                        </td>
-                        <td>ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libngtcp2-crypto-ossl0@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
-                    </tr>
-                    <tr>
                         <td>libc-bin</td>
                         <td>2.42-14</td>
                         <td>deb</td>
@@ -953,6 +917,42 @@
                         <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libngtcp2-16</td>
+                        <td>1.21.0-1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40170">CVE-2026-40170</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>1.22.1-1</li>
+                            </ul>
+                        </td>
+                        <td>ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libngtcp2-16@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
+                    </tr>
+                    <tr>
+                        <td>libngtcp2-crypto-ossl0</td>
+                        <td>1.21.0-1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40170">CVE-2026-40170</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>1.22.1-1</li>
+                            </ul>
+                        </td>
+                        <td>ngtcp2 is a C implementation of the IETF QUIC protocol. In versions prior to 1.22.1, ngtcp2_qlog_parameters_set_transport_params() serializes peer transport parameters into a fixed 1024-byte stack buffer without bounds checking. When qlog is enabled, a remote peer can send sufficiently large transport parameters during the QUIC handshake to cause writes beyond the buffer boundary, resulting in a stack buffer overflow. This affects deployments that enable the qlog callback and process untrusted peer transport parameters. This issue has been fixed in version 1.22.1. If developers are unable to immediately upgrade, they can disable the qlog on client.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libngtcp2-crypto-ossl0@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
                     </tr>
                     <tr>
                         <td>bsdutils</td>
@@ -1087,16 +1087,14 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
                         </td>
                         <td>High</td>
-                        <td>fixed</td>
+                        <td>not-fixed</td>
                         <td>
-                            <ul>
-                                <li>2.42-15</li>
-                            </ul>
+                            N/A
                         </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
@@ -1105,16 +1103,14 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
                         </td>
                         <td>High</td>
-                        <td>fixed</td>
+                        <td>not-fixed</td>
                         <td>
-                            <ul>
-                                <li>2.42-15</li>
-                            </ul>
+                            N/A
                         </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
@@ -1123,16 +1119,14 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
                         </td>
                         <td>High</td>
-                        <td>fixed</td>
+                        <td>not-fixed</td>
                         <td>
-                            <ul>
-                                <li>2.42-15</li>
-                            </ul>
+                            N/A
                         </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
@@ -1141,14 +1135,16 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
                         </td>
                         <td>High</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>2.42-15</li>
+                            </ul>
                         </td>
-                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
@@ -1157,14 +1153,16 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
                         </td>
                         <td>High</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>2.42-15</li>
+                            </ul>
                         </td>
-                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
@@ -1173,14 +1171,16 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
                         </td>
                         <td>High</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>2.42-15</li>
+                            </ul>
                         </td>
-                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
