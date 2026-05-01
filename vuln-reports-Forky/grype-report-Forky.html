@@ -826,13 +826,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89db72ff0f6836cf22a6d1351396f32c38dd7569b139e2bd5fe0652db10dc248</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-01T15:35:38.413508456Z</span>
+                        <span id="dateElement">2026-05-01T21:29:52.176028133Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
-                    <dd>0.111.1</dd>
+                    <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-01 07:12:24 +0000 UTC</dd>
+                    <dd>2026-05-01 18:39:53 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -1124,6 +1124,60 @@
                         <td>pkg:deb/debian/libngtcp2-crypto-ossl0@1.21.0-1?arch=amd64&distro=debian&upstream=ngtcp2</td>
                     </tr>
                     <tr>
+                        <td>libc-bin</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>2.42-15</li>
+                            </ul>
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-gconv-modules-extra</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>2.42-15</li>
+                            </ul>
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>2.42-15</li>
+                            </ul>
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
                         <td>bsdutils</td>
                         <td>1:2.42-3</td>
                         <td>deb</td>
@@ -1300,58 +1354,22 @@
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libc-bin</td>
-                        <td>2.42-14</td>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
                         </td>
                         <td>High</td>
                         <td>fixed</td>
                         <td>
                             <ul>
-                                <li>2.42-15</li>
+                                <li>3.8.13-1</li>
                             </ul>
                         </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-gconv-modules-extra</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>2.42-15</li>
-                            </ul>
-                        </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>2.42-15</li>
-                            </ul>
-                        </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>libc-bin</td>
@@ -1448,6 +1466,24 @@
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3833">CVE-2026-3833</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>tar</td>
@@ -1464,6 +1500,24 @@
                         <td>A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3832">CVE-2026-3832</a>
+                        </td>
+                        <td>Low</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw was found in gnutls. A remote attacker could exploit this vulnerability by presenting a specially crafted Online Certificate Status Protocol (OCSP) response during a TLS handshake. Due to a logic error in how gnutls processes multi-record OCSP responses, a client with OCSP verification enabled may incorrectly accept a revoked server certificate, potentially leading to a compromise of trust.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>zlib1g</td>
@@ -1532,54 +1586,6 @@
                         <td>When sed is invoked with both -i (in-place edit) and --follow-symlinks, the function open_next_file() performs two separate, non-atomic filesystem operations on the same path:  1. resolves symlink to its target and stores the resolved path for determining when output is written, 2. opens the original symlink path (not the resolved one) to read the file.  Between these two calls there is a race window. If an attacker atomically replaces the symlink with a different target during that window, sed will: read content from the new (attacker-chosen) symlink target and write the processed result to the path recorded in step 1. This can lead to arbitrary file overwrite with attacker-controlled content in the context of the sed process.   This issue was fixed in version 4.10.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/sed@4.9-2?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3833">CVE-2026-3833</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3832">CVE-2026-3832</a>
-                        </td>
-                        <td>Low</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>curl</td>
@@ -1841,9 +1847,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-33846">CVE-2026-33846</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1857,9 +1865,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42009">CVE-2026-42009</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1873,9 +1883,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1889,9 +1901,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1905,9 +1919,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42012">CVE-2026-42012</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1921,9 +1937,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42013">CVE-2026-42013</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1937,9 +1955,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42014">CVE-2026-42014</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1953,9 +1973,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42015">CVE-2026-42015</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1969,9 +1991,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5260">CVE-2026-5260</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
@@ -1985,9 +2009,11 @@
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5419">CVE-2026-5419</a>
                         </td>
                         <td>Unknown</td>
-                        <td>not-fixed</td>
+                        <td>fixed</td>
                         <td>
-                            N/A
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
                         </td>
                         <td></td>
                         <td>[]</td>
