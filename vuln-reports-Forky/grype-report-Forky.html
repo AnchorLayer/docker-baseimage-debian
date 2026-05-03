@@ -812,6 +812,7 @@
     
     
     
+    
 
 <body>
     <div class="main-container">
@@ -826,13 +827,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89db72ff0f6836cf22a6d1351396f32c38dd7569b139e2bd5fe0652db10dc248</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-03T04:02:21.209423637Z</span>
+                        <span id="dateElement">2026-05-03T09:07:10.005159741Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-02 06:55:05 +0000 UTC</dd>
+                    <dd>2026-05-03 07:08:02 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -847,7 +848,7 @@
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">12</div>
+                <div class="severity-count" id="highCount">13</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
@@ -910,6 +911,54 @@
                         <td>shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&upstream=shadow</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-gconv-modules-extra</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>bsdutils</td>
@@ -1038,54 +1087,6 @@
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/util-linux@2.42-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libc-bin</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-gconv-modules-extra</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libgssapi-krb5-2</td>
@@ -1352,6 +1353,22 @@
                         <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libssh2-1t64</td>
+                        <td>1.11.1-2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64&distro=debian&upstream=libssh2</td>
                     </tr>
                     <tr>
                         <td>libgnutls30t64</td>
