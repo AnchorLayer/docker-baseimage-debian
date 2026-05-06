@@ -827,13 +827,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89db72ff0f6836cf22a6d1351396f32c38dd7569b139e2bd5fe0652db10dc248</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-06T05:00:25.480132147Z</span>
+                        <span id="dateElement">2026-05-06T10:26:23.037741896Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-05 07:09:03 +0000 UTC</dd>
+                    <dd>2026-05-06 07:12:55 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -844,11 +844,11 @@
         <div class="severity-info">
             <div class="severity-box" id="critical">
                 <div class="severity-title">Critical</div>
-                <div class="severity-count" id="criticalCount">3</div>
+                <div class="severity-count" id="criticalCount">4</div>
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">13</div>
+                <div class="severity-count" id="highCount">12</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
@@ -1041,6 +1041,24 @@
                         <td>pkg:deb/debian/libkrb5support0@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
                     </tr>
                     <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33846">CVE-2026-33846</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A heap buffer overflow vulnerability exists in the DTLS handshake fragment reassembly logic of GnuTLS. The issue arises in merge_handshake_packet() where incoming handshake fragments are matched and merged based solely on handshake type, without validating that the message_length field remains consistent across all fragments of the same logical message. An attacker can exploit this by sending crafted DTLS fragments with conflicting message_length values, causing the implementation to allocate a buffer based on a smaller initial fragment and subsequently write beyond its bounds using larger, inconsistent fragments. Because the merge operation does not enforce proper bounds checking against the allocated buffer size, this results in an out-of-bounds write on the heap. The vulnerability is remotely exploitable without authentication via the DTLS handshake path and can lead to application crashes or potential memory corruption.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
                         <td>libc-bin</td>
                         <td>2.42-14</td>
                         <td>deb</td>
@@ -1087,24 +1105,6 @@
                         <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33846">CVE-2026-33846</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>bsdutils</td>
@@ -1421,6 +1421,40 @@
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libssh2-1t64</td>
+                        <td>1.11.1-2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64&distro=debian&upstream=libssh2</td>
+                    </tr>
+                    <tr>
                         <td>libc-bin</td>
                         <td>2.42-14</td>
                         <td>deb</td>
@@ -1467,40 +1501,6 @@
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libssh2-1t64</td>
-                        <td>1.11.1-2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64&distro=debian&upstream=libssh2</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>libgnutls30t64</td>
