@@ -827,13 +827,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89db72ff0f6836cf22a6d1351396f32c38dd7569b139e2bd5fe0652db10dc248</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-07T05:03:38.243935792Z</span>
+                        <span id="dateElement">2026-05-07T10:43:04.536594707Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-06 07:12:55 +0000 UTC</dd>
+                    <dd>2026-05-07 07:17:40 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -1235,6 +1235,24 @@
                         <td>pkg:deb/debian/util-linux@2.42-3?arch=amd64&distro=debian</td>
                     </tr>
                     <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
                         <td>libngtcp2-16</td>
                         <td>1.21.0-1</td>
                         <td>deb</td>
@@ -1275,54 +1293,6 @@
                         <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-gconv-modules-extra</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-bin</td>
-                        <td>2.42-14</td>
-                        <td>deb</td>
-                        <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
                         </td>
                         <td>High</td>
@@ -1421,22 +1391,52 @@
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
+                        <td>libc-bin</td>
+                        <td>2.42-14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
                         </td>
-                        <td>Critical</td>
-                        <td>fixed</td>
+                        <td>High</td>
+                        <td>not-fixed</td>
                         <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
+                            N/A
                         </td>
-                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-gconv-modules-extra</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.42-14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libssh2-1t64</td>
