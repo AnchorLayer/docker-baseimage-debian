@@ -827,13 +827,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89db72ff0f6836cf22a6d1351396f32c38dd7569b139e2bd5fe0652db10dc248</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-08T04:01:31.415934734Z</span>
+                        <span id="dateElement">2026-05-08T16:01:59.566556318Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-07 07:17:40 +0000 UTC</dd>
+                    <dd>2026-05-08 06:53:55 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -848,11 +848,11 @@
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">12</div>
+                <div class="severity-count" id="highCount">15</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
-                <div class="severity-count" id="mediumCount">23</div>
+                <div class="severity-count" id="mediumCount">22</div>
             </div>
             <div class="severity-box" id="low">
                 <div class="severity-title">Low</div>
@@ -860,7 +860,7 @@
             </div>
             <div class="severity-box" id="unknown">
                 <div class="severity-title">Unknown</div>
-                <div class="severity-count" id="unknownCount">23</div>
+                <div class="severity-count" id="unknownCount">21</div>
             </div>
         </div>
         <div class="data-table">
@@ -911,6 +911,24 @@
                         <td>shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&upstream=shadow</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3833">CVE-2026-3833</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>libgssapi-krb5-2</td>
@@ -1253,6 +1271,22 @@
                         <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
+                        <td>libssh2-1t64</td>
+                        <td>1.11.1-2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64&distro=debian&upstream=libssh2</td>
+                    </tr>
+                    <tr>
                         <td>libngtcp2-16</td>
                         <td>1.21.0-1</td>
                         <td>deb</td>
@@ -1439,22 +1473,6 @@
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libssh2-1t64</td>
-                        <td>1.11.1-2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64&distro=debian&upstream=libssh2</td>
-                    </tr>
-                    <tr>
                         <td>libc-bin</td>
                         <td>2.42-14</td>
                         <td>deb</td>
@@ -1501,24 +1519,6 @@
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libc6@2.42-14?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3833">CVE-2026-3833</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>tar</td>
@@ -1621,6 +1621,42 @@
                         <td>When sed is invoked with both -i (in-place edit) and --follow-symlinks, the function open_next_file() performs two separate, non-atomic filesystem operations on the same path:  1. resolves symlink to its target and stores the resolved path for determining when output is written, 2. opens the original symlink path (not the resolved one) to read the file.  Between these two calls there is a race window. If an attacker atomically replaces the symlink with a different target during that window, sed will: read content from the new (attacker-chosen) symlink target and write the processed result to the path recorded in step 1. This can lead to arbitrary file overwrite with attacker-controlled content in the context of the sed process.   This issue was fixed in version 4.10.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/sed@4.9-2?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>curl</td>
@@ -1880,42 +1916,6 @@
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42009">CVE-2026-42009</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
                         </td>
                         <td>Unknown</td>
                         <td>fixed</td>

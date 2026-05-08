@@ -325,6 +325,27 @@
               }
             },
             {
+              "id": "CVE-2026-3833-libgnutls30t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-3833 high vulnerability for libgnutls30t64 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-3833",
+              "help": {
+                "text": "Vulnerability CVE-2026-3833\nSeverity: high\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-3833](https://security-tracker.debian.org/tracker/CVE-2026-3833)",
+                "markdown": "**Vulnerability CVE-2026-3833**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-3833](https://security-tracker.debian.org/tracker/CVE-2026-3833)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64\u0026distro=debian\u0026upstream=gnutls28"
+                ],
+                "security-severity": "7.4"
+              }
+            },
+            {
               "id": "CVE-2026-40355-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -829,6 +850,27 @@
               }
             },
             {
+              "id": "CVE-2026-7598-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-7598 medium vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-7598",
+              "help": {
+                "text": "Vulnerability CVE-2026-7598\nSeverity: medium\nPackage: libssh2-1t64\nVersion: 1.11.1-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-7598](https://security-tracker.debian.org/tracker/CVE-2026-7598)",
+                "markdown": "**Vulnerability CVE-2026-7598**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssh2-1t64  | 1.11.1-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-7598](https://security-tracker.debian.org/tracker/CVE-2026-7598)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "6.9"
+              }
+            },
+            {
               "id": "CVE-2019-9192-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1186,27 +1228,6 @@
               }
             },
             {
-              "id": "CVE-2026-7598-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-7598 medium vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-7598",
-              "help": {
-                "text": "Vulnerability CVE-2026-7598\nSeverity: medium\nPackage: libssh2-1t64\nVersion: 1.11.1-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-7598](https://security-tracker.debian.org/tracker/CVE-2026-7598)",
-                "markdown": "**Vulnerability CVE-2026-7598**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssh2-1t64  | 1.11.1-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-7598](https://security-tracker.debian.org/tracker/CVE-2026-7598)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "6.9"
-              }
-            },
-            {
               "id": "CVE-2026-6238-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1265,27 +1286,6 @@
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libc6@2.42-14?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "6.5"
-              }
-            },
-            {
-              "id": "CVE-2026-3833-libgnutls30t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-3833 medium vulnerability for libgnutls30t64 package"
-              },
-              "fullDescription": {
-                "text": "A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-3833",
-              "help": {
-                "text": "Vulnerability CVE-2026-3833\nSeverity: medium\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-3833](https://security-tracker.debian.org/tracker/CVE-2026-3833)",
-                "markdown": "**Vulnerability CVE-2026-3833**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-3833](https://security-tracker.debian.org/tracker/CVE-2026-3833)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64\u0026distro=debian\u0026upstream=gnutls28"
                 ],
                 "security-severity": "6.5"
               }
@@ -2278,6 +2278,48 @@
               }
             },
             {
+              "id": "CVE-2026-42010-libgnutls30t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42010 high vulnerability for libgnutls30t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 3.8.12-3 is affected with an available fix in versions 3.8.13-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42010",
+              "help": {
+                "text": "Vulnerability CVE-2026-42010\nSeverity: high\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42010](https://security-tracker.debian.org/tracker/CVE-2026-42010)",
+                "markdown": "**Vulnerability CVE-2026-42010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42010](https://security-tracker.debian.org/tracker/CVE-2026-42010)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64\u0026distro=debian\u0026upstream=gnutls28"
+                ],
+                "security-severity": "7.1"
+              }
+            },
+            {
+              "id": "CVE-2026-42011-libgnutls30t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42011 high vulnerability for libgnutls30t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 3.8.12-3 is affected with an available fix in versions 3.8.13-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42011",
+              "help": {
+                "text": "Vulnerability CVE-2026-42011\nSeverity: high\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42011](https://security-tracker.debian.org/tracker/CVE-2026-42011)",
+                "markdown": "**Vulnerability CVE-2026-42011**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42011](https://security-tracker.debian.org/tracker/CVE-2026-42011)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64\u0026distro=debian\u0026upstream=gnutls28"
+                ],
+                "security-severity": "7.4"
+              }
+            },
+            {
               "id": "CVE-2026-4873-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -2584,48 +2626,6 @@
               "help": {
                 "text": "Vulnerability CVE-2026-42009\nSeverity: low\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42009](https://security-tracker.debian.org/tracker/CVE-2026-42009)",
                 "markdown": "**Vulnerability CVE-2026-42009**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42009](https://security-tracker.debian.org/tracker/CVE-2026-42009)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64\u0026distro=debian\u0026upstream=gnutls28"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-42010-libgnutls30t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42010 low vulnerability for libgnutls30t64 package"
-              },
-              "fullDescription": {
-                "text": "Version 3.8.12-3 is affected with an available fix in versions 3.8.13-1"
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42010",
-              "help": {
-                "text": "Vulnerability CVE-2026-42010\nSeverity: low\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42010](https://security-tracker.debian.org/tracker/CVE-2026-42010)",
-                "markdown": "**Vulnerability CVE-2026-42010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42010](https://security-tracker.debian.org/tracker/CVE-2026-42010)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64\u0026distro=debian\u0026upstream=gnutls28"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-42011-libgnutls30t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42011 low vulnerability for libgnutls30t64 package"
-              },
-              "fullDescription": {
-                "text": "Version 3.8.12-3 is affected with an available fix in versions 3.8.13-1"
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42011",
-              "help": {
-                "text": "Vulnerability CVE-2026-42011\nSeverity: low\nPackage: libgnutls30t64\nVersion: 3.8.12-3\nFix Version: 3.8.13-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42011](https://security-tracker.debian.org/tracker/CVE-2026-42011)",
-                "markdown": "**Vulnerability CVE-2026-42011**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libgnutls30t64  | 3.8.12-3  | 3.8.13-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42011](https://security-tracker.debian.org/tracker/CVE-2026-42011)  |\n"
               },
               "properties": {
                 "purls": [
@@ -3447,6 +3447,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2f2d408c2794aabd7e4c217f1703329e29685174532cd26aa337220bc23e879:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-3833-libgnutls30t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libgnutls30t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libgnutls30t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2cd514e7c4a3db03613ecb796526d97f73d0cb60aeea05a866a4e0d296d5c95a:1"
           }
         },
         {
@@ -4494,6 +4533,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-7598-libssh2-1t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libssh2-1t64, version 1.11.1-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "a214330170575ce4ad6f5eeed64a10b9ad60e1bd6c741fccf46a89e84f10cca6:1"
+          }
+        },
+        {
           "ruleId": "CVE-2019-9192-libc-bin",
           "level": "note",
           "message": {
@@ -5257,45 +5335,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-7598-libssh2-1t64",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libssh2-1t64, version 1.11.1-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "a214330170575ce4ad6f5eeed64a10b9ad60e1bd6c741fccf46a89e84f10cca6:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-6238-libc-bin",
           "level": "warning",
           "message": {
@@ -5430,45 +5469,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2f2d408c2794aabd7e4c217f1703329e29685174532cd26aa337220bc23e879:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-3833-libgnutls30t64",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libgnutls30t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libgnutls30t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "2cd514e7c4a3db03613ecb796526d97f73d0cb60aeea05a866a4e0d296d5c95a:1"
           }
         },
         {
@@ -7497,6 +7497,84 @@
           }
         },
         {
+          "ruleId": "CVE-2026-42010-libgnutls30t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libgnutls30t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libgnutls30t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2cd514e7c4a3db03613ecb796526d97f73d0cb60aeea05a866a4e0d296d5c95a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42011-libgnutls30t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libgnutls30t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libgnutls30t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2cd514e7c4a3db03613ecb796526d97f73d0cb60aeea05a866a4e0d296d5c95a:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-4873-curl",
           "level": "note",
           "message": {
@@ -8072,84 +8150,6 @@
         },
         {
           "ruleId": "CVE-2026-42009-libgnutls30t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libgnutls30t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libgnutls30t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "2cd514e7c4a3db03613ecb796526d97f73d0cb60aeea05a866a4e0d296d5c95a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-42010-libgnutls30t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libgnutls30t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/usr/share/doc/libgnutls30t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2ce9ecada5ff30198039a5d4bfc1db9f0cd456eba950e62b74f7cc298482053a:/var/lib/dpkg/info/libgnutls30t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "2cd514e7c4a3db03613ecb796526d97f73d0cb60aeea05a866a4e0d296d5c95a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-42011-libgnutls30t64",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libgnutls30t64, version 3.8.12-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
