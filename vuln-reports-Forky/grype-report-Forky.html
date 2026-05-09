@@ -820,13 +820,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:1d42bf10336f4aa72bf791572f151a9788f3d77489fe09812373e601eb0445e0</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-09T04:06:25.961237998Z</span>
+                        <span id="dateElement">2026-05-09T08:47:47.609296788Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-08 06:53:55 +0000 UTC</dd>
+                    <dd>2026-05-09 07:01:20 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -904,6 +904,24 @@
                         <td>shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&upstream=shadow</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw was found in gnutls. Servers configured with RSA-PSK (Rivest–Shamir–Adleman – Pre-Shared Key) wrongfully matched usernames containing a NUL character with truncated usernames. A remote attacker could exploit this by sending a specially crafted username, leading to an authentication bypass. This vulnerability allows an attacker to gain unauthorized access by circumventing the authentication process.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>libgnutls30t64</td>
@@ -1444,6 +1462,24 @@
                         <td>3.8.12-3</td>
                         <td>deb</td>
                         <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>3.8.13-1</li>
+                            </ul>
+                        </td>
+                        <td>A flaw was found in gnutls. This vulnerability occurs because permitted name constraints were incorrectly ignored when previous Certificate Authorities (CAs) only had excluded name constraints. A remote attacker could exploit this to bypass critical name constraint checks during certificate validation. This bypass could lead to the acceptance of invalid certificates, potentially enabling spoofing or man-in-the-middle attacks against affected systems.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30t64</td>
+                        <td>3.8.12-3</td>
+                        <td>deb</td>
+                        <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3832">CVE-2026-3832</a>
                         </td>
                         <td>Low</td>
@@ -1488,42 +1524,6 @@
                         <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libudev1@260.1-1?arch=amd64&distro=debian&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>curl</td>
