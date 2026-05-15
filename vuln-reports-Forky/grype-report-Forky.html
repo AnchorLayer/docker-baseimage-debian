@@ -820,13 +820,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:1d42bf10336f4aa72bf791572f151a9788f3d77489fe09812373e601eb0445e0</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-15T05:36:29.953293786Z</span>
+                        <span id="dateElement">2026-05-15T09:22:16.7756554Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-14 07:20:27 +0000 UTC</dd>
+                    <dd>2026-05-15 07:26:20 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -1412,6 +1412,42 @@
                         <td>pkg:deb/debian/libc6@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
+                        <td>curl</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc2-1</li>
+                            </ul>
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection when asked to do an authenticated HTTP(S) request after a Negotiate-authenticated one, when both use the same host.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials.  An application that first uses Negotiate authentication to a server with `user1:password1` and then does another operation to the same server asking for any authentication method but for `user2:password2` (while the previous connection is still alive) - the second request gets confused and wrongly reuses the same connection and sends the new request over that connection thinking it uses a mix of user1&#39;s and user2&#39;s credentials when it is in fact still using the connection authenticated for user1...</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4t64</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc2-1</li>
+                            </ul>
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection when asked to do an authenticated HTTP(S) request after a Negotiate-authenticated one, when both use the same host.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials.  An application that first uses Negotiate authentication to a server with `user1:password1` and then does another operation to the same server asking for any authentication method but for `user2:password2` (while the previous connection is still alive) - the second request gets confused and wrongly reuses the same connection and sends the new request over that connection thinking it uses a mix of user1&#39;s and user2&#39;s credentials when it is in fact still using the connection authenticated for user1...</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
+                    </tr>
+                    <tr>
                         <td>libc-bin</td>
                         <td>2.42-15</td>
                         <td>deb</td>
@@ -1464,16 +1500,16 @@
                         <td>8.19.0-3</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
                         </td>
                         <td>Medium</td>
                         <td>fixed</td>
                         <td>
                             <ul>
-                                <li>8.20.0~rc2-1</li>
+                                <li>8.20.0-1</li>
                             </ul>
                         </td>
-                        <td></td>
+                        <td>Successfully using libcurl to do a transfer over a specific HTTP proxy (`proxyA`) with **Digest** authentication and then changing the proxy host to a second one (`proxyB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the `Proxy-Authorization:` header field meant for `proxyA`, to `proxyB`.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
                     </tr>
@@ -1482,16 +1518,88 @@
                         <td>8.19.0-3</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
                         </td>
                         <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0-1</li>
+                            </ul>
+                        </td>
+                        <td>Successfully using libcurl to do a transfer over a specific HTTP proxy (`proxyA`) with **Digest** authentication and then changing the proxy host to a second one (`proxyB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the `Proxy-Authorization:` header field meant for `proxyA`, to `proxyB`.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc3-1</li>
+                            </ul>
+                        </td>
+                        <td>curl might erroneously pass on credentials for a first proxy to a second proxy.  This can happen when the following conditions are true:  1. curl is setup to use specific different proxies for different URL schemes 2. the first proxy needs credentials 3. the second proxy uses no credentials 4. while using the first proxy (using say `http://`), curl is asked to follow    a redirect to a URL using another scheme (say `https://`), accessed using a    second, different, proxy</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4t64</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc3-1</li>
+                            </ul>
+                        </td>
+                        <td>curl might erroneously pass on credentials for a first proxy to a second proxy.  This can happen when the following conditions are true:  1. curl is setup to use specific different proxies for different URL schemes 2. the first proxy needs credentials 3. the second proxy uses no credentials 4. while using the first proxy (using say `http://`), curl is asked to follow    a redirect to a URL using another scheme (say `https://`), accessed using a    second, different, proxy</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
+                        </td>
+                        <td>High</td>
                         <td>fixed</td>
                         <td>
                             <ul>
                                 <li>8.20.0~rc2-1</li>
                             </ul>
                         </td>
-                        <td></td>
+                        <td>libcurl might in some circumstances reuse the wrong connection for SMB(S) transfers.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a network transfer operation that was requested by an application could wrongfully reuse an existing SMB connection to the same server that was using a different &#39;share&#39; than the new subsequent transfer should.  This could in unlucky situations lead to the download of the wrong file or the upload of a file to the wrong place. When this happens, the same credentials are used and the server name is the same.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4t64</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc2-1</li>
+                            </ul>
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection for SMB(S) transfers.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a network transfer operation that was requested by an application could wrongfully reuse an existing SMB connection to the same server that was using a different &#39;share&#39; than the new subsequent transfer should.  This could in unlucky situations lead to the download of the wrong file or the upload of a file to the wrong place. When this happens, the same credentials are used and the server name is the same.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
                     </tr>
@@ -1514,42 +1622,6 @@
                         <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
                         <td>tar</td>
                         <td>1.35+dfsg-4</td>
                         <td>deb</td>
@@ -1570,16 +1642,16 @@
                         <td>8.19.0-3</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
                         </td>
-                        <td>High</td>
+                        <td>Medium</td>
                         <td>fixed</td>
                         <td>
                             <ul>
-                                <li>8.20.0~rc2-1</li>
+                                <li>8.20.0~rc3-1</li>
                             </ul>
                         </td>
-                        <td></td>
+                        <td>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, libcurl could leak the password used for the first host to the followed-to host under certain circumstances.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
                     </tr>
@@ -1588,16 +1660,52 @@
                         <td>8.19.0-3</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc3-1</li>
+                            </ul>
+                        </td>
+                        <td>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, libcurl could leak the password used for the first host to the followed-to host under certain circumstances.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
                         </td>
                         <td>High</td>
                         <td>fixed</td>
                         <td>
                             <ul>
-                                <li>8.20.0~rc2-1</li>
+                                <li>8.20.0~rc3-1</li>
                             </ul>
                         </td>
-                        <td></td>
+                        <td>Using libcurl, when a custom `Host:` header is first set for an HTTP request and a second request is subsequently done using the same *easy handle* but without the custom `Host:` header set, the second request would use stale information and pass on cookies meant for the first host in the second request. Leak them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4t64</td>
+                        <td>8.19.0-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
+                        </td>
+                        <td>High</td>
+                        <td>fixed</td>
+                        <td>
+                            <ul>
+                                <li>8.20.0~rc3-1</li>
+                            </ul>
+                        </td>
+                        <td>Using libcurl, when a custom `Host:` header is first set for an HTTP request and a second request is subsequently done using the same *easy handle* but without the custom `Host:` header set, the second request would use stale information and pass on cookies meant for the first host in the second request. Leak them.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
                     </tr>
@@ -1624,78 +1732,6 @@
                         <td>8.19.0-3</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-4873">CVE-2026-4873</a>
                         </td>
                         <td>Medium</td>
@@ -1705,7 +1741,7 @@
                                 <li>8.20.0~rc2-1</li>
                             </ul>
                         </td>
-                        <td></td>
+                        <td>A vulnerability exists where a connection requiring TLS incorrectly reuses an existing unencrypted connection from the same connection pool. If an initial transfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request to that same host bypasses the TLS requirement and instead transmit data unencrypted.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
                     </tr>
@@ -1723,43 +1759,7 @@
                                 <li>8.20.0~rc2-1</li>
                             </ul>
                         </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
+                        <td>A vulnerability exists where a connection requiring TLS incorrectly reuses an existing unencrypted connection from the same connection pool. If an initial transfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request to that same host bypasses the TLS requirement and instead transmit data unencrypted.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
                     </tr>
