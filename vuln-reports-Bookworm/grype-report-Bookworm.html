@@ -843,6 +843,51 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 <body>
     <div class="main-container">
@@ -855,15 +900,15 @@
 
                     <dt>Type:</dt>
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
-                    <dd id="checksumValue">sha256:b5529f644b1dd8b0d5c619491311f72b21e6e1946efd9cd2de6d2fc96af6a64d</dd><dt>Date:</dt>
+                    <dd id="checksumValue">sha256:30af3841e90e7fc847c4cc7b7e2d24f00493c84a71c373412f137a3221b471f4</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-04-17T14:57:49.294349081Z</span>
+                        <span id="dateElement">2026-05-16T11:59:45.007012749Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
-                    <dd>0.111.0</dd>
+                    <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-04-17 06:58:16 +0000 UTC</dd>
+                    <dd>2026-05-16 07:04:18 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -874,23 +919,23 @@
         <div class="severity-info">
             <div class="severity-box" id="critical">
                 <div class="severity-title">Critical</div>
-                <div class="severity-count" id="criticalCount">0</div>
+                <div class="severity-count" id="criticalCount">4</div>
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">18</div>
+                <div class="severity-count" id="highCount">29</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
-                <div class="severity-count" id="mediumCount">46</div>
+                <div class="severity-count" id="mediumCount">75</div>
             </div>
             <div class="severity-box" id="low">
                 <div class="severity-title">Low</div>
-                <div class="severity-count" id="lowCount">13</div>
+                <div class="severity-count" id="lowCount">7</div>
             </div>
             <div class="severity-box" id="unknown">
                 <div class="severity-title">Unknown</div>
-                <div class="severity-count" id="unknownCount">0</div>
+                <div class="severity-count" id="unknownCount">7</div>
             </div>
         </div>
         <div class="data-table">
@@ -960,7 +1005,7 @@
                     </tr>
                     <tr>
                         <td>dpkg</td>
-                        <td>1.21.22</td>
+                        <td>1.21.23</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2025-6297">CVE-2025-6297</a>
@@ -972,71 +1017,39 @@
                         </td>
                         <td>It was discovered that dpkg-deb does not properly sanitize directory permissions when extracting a control member into a temporary directory, which is documented as being a safe operation even on untrusted data. This may result in leaving temporary files behind on cleanup. Given automated and repeated execution of dpkg-deb commands on adversarial .deb packages or with well compressible files, placed inside a directory with permissions not allowing removal by a non-root user, this can end up in a DoS scenario due to causing disk quota exhaustion or disk full conditions.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/dpkg@1.21.22?arch=amd64&distro=debian-12</td>
+                        <td>pkg:deb/debian/dpkg@1.21.23?arch=amd64&distro=debian-12</td>
                     </tr>
                     <tr>
-                        <td>curl</td>
-                        <td>7.88.1-10+deb12u14</td>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-10148">CVE-2025-10148</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
                         </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td>curl&#39;s websocket code did not update the 32 bit mask pattern for each new  outgoing frame as the specification says. Instead it used a fixed mask that persisted and was used throughout the entire connection.  A predictable mask pattern allows for a malicious server to induce traffic between the two communicating parties that could be interpreted by an involved proxy (configured or transparent) as genuine, real, HTTP traffic with content and thereby poison its cache. That cached poisoned content could then be served to all users of that proxy.</td>
+                        <td>A flaw was found in gnutls. Servers configured with RSA-PSK (Rivest–Shamir–Adleman – Pre-Shared Key) wrongfully matched usernames containing a NUL character with truncated usernames. A remote attacker could exploit this by sending a specially crafted username, leading to an authentication bypass. This vulnerability allows an attacker to gain unauthorized access by circumventing the authentication process.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
                     </tr>
                     <tr>
-                        <td>libcurl4</td>
-                        <td>7.88.1-10+deb12u14</td>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-10148">CVE-2025-10148</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>curl&#39;s websocket code did not update the 32 bit mask pattern for each new  outgoing frame as the specification says. Instead it used a fixed mask that persisted and was used throughout the entire connection.  A predictable mask pattern allows for a malicious server to induce traffic between the two communicating parties that could be interpreted by an involved proxy (configured or transparent) as genuine, real, HTTP traffic with content and thereby poison its cache. That cached poisoned content could then be served to all users of that proxy.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>libc-bin</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15281">CVE-2025-15281</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3833">CVE-2026-3833</a>
                         </td>
                         <td>High</td>
-                        <td>wont-fix</td>
+                        <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td>Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.</td>
+                        <td>A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15281">CVE-2025-15281</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>libtasn1-6</td>
@@ -1059,6 +1072,470 @@
                         <td>7.88.1-10+deb12u14</td>
                         <td>deb</td>
                         <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-10148">CVE-2025-10148</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl&#39;s websocket code did not update the 32 bit mask pattern for each new  outgoing frame as the specification says. Instead it used a fixed mask that persisted and was used throughout the entire connection.  A predictable mask pattern allows for a malicious server to induce traffic between the two communicating parties that could be interpreted by an involved proxy (configured or transparent) as genuine, real, HTTP traffic with content and thereby poison its cache. That cached poisoned content could then be served to all users of that proxy.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-10148">CVE-2025-10148</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl&#39;s websocket code did not update the 32 bit mask pattern for each new  outgoing frame as the specification says. Instead it used a fixed mask that persisted and was used throughout the entire connection.  A predictable mask pattern allows for a malicious server to induce traffic between the two communicating parties that could be interpreted by an involved proxy (configured or transparent) as genuine, real, HTTP traffic with content and thereby poison its cache. That cached poisoned content could then be served to all users of that proxy.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33846">CVE-2026-33846</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A heap buffer overflow vulnerability exists in the DTLS handshake fragment reassembly logic of GnuTLS. The issue arises in merge_handshake_packet() where incoming handshake fragments are matched and merged based solely on handshake type, without validating that the message_length field remains consistent across all fragments of the same logical message. An attacker can exploit this by sending crafted DTLS fragments with conflicting message_length values, causing the implementation to allocate a buffer based on a smaller initial fragment and subsequently write beyond its bounds using larger, inconsistent fragments. Because the merge operation does not enforce proper bounds checking against the allocated buffer size, this results in an out-of-bounds write on the heap. The vulnerability is remotely exploitable without authentication via the DTLS handshake path and can lead to application crashes or potential memory corruption.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgssapi-krb5-2</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libk5crypto3</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libkrb5-3</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libkrb5support0</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libgssapi-krb5-2</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libk5crypto3</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libkrb5-3</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libkrb5support0</td>
+                        <td>1.20.1-2+deb12u4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u4?arch=amd64&distro=debian-12&upstream=krb5</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15281">CVE-2025-15281</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15281">CVE-2025-15281</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4437">CVE-2026-4437</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C Library version 2.34 to version 2.43 could, with a crafted response from the configured DNS server, result in a violation of the DNS specification that causes the application to treat a non-answer section of the DNS response as a valid answer.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4437">CVE-2026-4437</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C Library version 2.34 to version 2.43 could, with a crafted response from the configured DNS server, result in a violation of the DNS specification that causes the application to treat a non-answer section of the DNS response as a valid answer.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>bsdutils</td>
+                        <td>1:2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/bsdutils@1%3A2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux%402.38.1-5%2Bdeb12u3</td>
+                    </tr>
+                    <tr>
+                        <td>libblkid1</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libblkid1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libmount1</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libmount1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libsmartcols1</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsmartcols1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libuuid1</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libuuid1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>mount</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/mount@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>util-linux</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/util-linux@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>util-linux-extra</td>
+                        <td>2.38.1-5+deb12u3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/util-linux-extra@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libssh2-1</td>
+                        <td>1.10.0-3+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libssh2-1@1.10.0-3%2Bb1?arch=amd64&distro=debian-12&upstream=libssh2%401.10.0-3</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-1965">CVE-2026-1965</a>
                         </td>
                         <td>Medium</td>
@@ -1136,259 +1613,99 @@
                     </tr>
                     <tr>
                         <td>libc-bin</td>
-                        <td>2.36-9+deb12u13</td>
+                        <td>2.36-9+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
                         </td>
                         <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Successfully using libcurl to do a transfer over a specific HTTP proxy (`proxyA`) with **Digest** authentication and then changing the proxy host to a second one (`proxyB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the `Proxy-Authorization:` header field meant for `proxyA`, to `proxyB`.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Successfully using libcurl to do a transfer over a specific HTTP proxy (`proxyA`) with **Digest** authentication and then changing the proxy host to a second one (`proxyB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the `Proxy-Authorization:` header field meant for `proxyA`, to `proxyB`.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>libc-bin</td>
-                        <td>2.36-9+deb12u13</td>
+                        <td>2.36-9+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4437">CVE-2026-4437</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
                         </td>
                         <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C Library version 2.34 to version 2.43 could, with a crafted response from the configured DNS server, result in a violation of the DNS specification that causes the application to treat a non-answer section of the DNS response as a valid answer.</td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc6</td>
-                        <td>2.36-9+deb12u13</td>
+                        <td>2.36-9+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4046">CVE-2026-4046</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
                         </td>
                         <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>The iconv() function in the GNU C Library versions 2.43 and earlier may crash due to an assertion failure when converting inputs from the IBM1390 or IBM1399 character sets, which may be used to remotely crash an application.    This vulnerability can be trivially mitigated by removing the IBM1390 and IBM1399 character sets from systems that do not need them.</td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4437">CVE-2026-4437</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C Library version 2.34 to version 2.43 could, with a crafted response from the configured DNS server, result in a violation of the DNS specification that causes the application to treat a non-answer section of the DNS response as a valid answer.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>bsdutils</td>
-                        <td>1:2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/bsdutils@1%3A2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux%402.38.1-5%2Bdeb12u3</td>
-                    </tr>
-                    <tr>
-                        <td>libblkid1</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libblkid1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
-                    </tr>
-                    <tr>
-                        <td>libmount1</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libmount1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
-                    </tr>
-                    <tr>
-                        <td>libsmartcols1</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libsmartcols1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
-                    </tr>
-                    <tr>
-                        <td>libuuid1</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libuuid1@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
-                    </tr>
-                    <tr>
-                        <td>mount</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/mount@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
-                    </tr>
-                    <tr>
-                        <td>util-linux</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/util-linux@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12</td>
-                    </tr>
-                    <tr>
-                        <td>util-linux-extra</td>
-                        <td>2.38.1-5+deb12u3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/util-linux-extra@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
-                    </tr>
-                    <tr>
-                        <td>libtinfo6</td>
-                        <td>6.4-4</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-50495">CVE-2023-50495</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libtinfo6@6.4-4?arch=amd64&distro=debian-12&upstream=ncurses</td>
-                    </tr>
-                    <tr>
-                        <td>ncurses-base</td>
-                        <td>6.4-4</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-50495">CVE-2023-50495</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/ncurses-base@6.4-4?arch=all&distro=debian-12&upstream=ncurses</td>
-                    </tr>
-                    <tr>
-                        <td>ncurses-bin</td>
-                        <td>6.4-4</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-50495">CVE-2023-50495</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/ncurses-bin@6.4-4?arch=amd64&distro=debian-12&upstream=ncurses</td>
-                    </tr>
-                    <tr>
-                        <td>liblzma5</td>
-                        <td>5.4.1-1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-34743">CVE-2026-34743</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>XZ Utils provide a general-purpose data-compression library plus command-line tools. Prior to version 5.8.3, if lzma_index_decoder() was used to decode an Index that contained no Records, the resulting lzma_index was left in a state where where a subsequent lzma_index_append() would allocate too little memory, and a buffer overflow would occur. This issue has been patched in version 5.8.3.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/liblzma5@5.4.1-1?arch=amd64&distro=debian-12&upstream=xz-utils</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>curl</td>
@@ -1423,6 +1740,182 @@
                         <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
                     </tr>
                     <tr>
+                        <td>liblzma5</td>
+                        <td>5.4.1-1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-34743">CVE-2026-34743</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>XZ Utils provide a general-purpose data-compression library plus command-line tools. Prior to version 5.8.3, if lzma_index_decoder() was used to decode an Index that contained no Records, the resulting lzma_index was left in a state where where a subsequent lzma_index_append() would allocate too little memory, and a buffer overflow would occur. This issue has been patched in version 5.8.3.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/liblzma5@5.4.1-1?arch=amd64&distro=debian-12&upstream=xz-utils</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection when asked to do an authenticated HTTP(S) request after a Negotiate-authenticated one, when both use the same host.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials.  An application that first uses Negotiate authentication to a server with `user1:password1` and then does another operation to the same server asking for any authentication method but for `user2:password2` (while the previous connection is still alive) - the second request gets confused and wrongly reuses the same connection and sends the new request over that connection thinking it uses a mix of user1&#39;s and user2&#39;s credentials when it is in fact still using the connection authenticated for user1...</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection when asked to do an authenticated HTTP(S) request after a Negotiate-authenticated one, when both use the same host.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials.  An application that first uses Negotiate authentication to a server with `user1:password1` and then does another operation to the same server asking for any authentication method but for `user2:password2` (while the previous connection is still alive) - the second request gets confused and wrongly reuses the same connection and sends the new request over that connection thinking it uses a mix of user1&#39;s and user2&#39;s credentials when it is in fact still using the connection authenticated for user1...</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libtinfo6</td>
+                        <td>6.4-4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-50495">CVE-2023-50495</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libtinfo6@6.4-4?arch=amd64&distro=debian-12&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>ncurses-base</td>
+                        <td>6.4-4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-50495">CVE-2023-50495</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/ncurses-base@6.4-4?arch=all&distro=debian-12&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>ncurses-bin</td>
+                        <td>6.4-4</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2023-50495">CVE-2023-50495</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/ncurses-bin@6.4-4?arch=amd64&distro=debian-12&upstream=ncurses</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6238">CVE-2026-6238</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6238">CVE-2026-6238</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libsystemd0</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40225">CVE-2026-40225</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In udev in systemd before 260, local root execution can occur via malicious hardware devices and unsanitized kernel output.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libudev1</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40225">CVE-2026-40225</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In udev in systemd before 260, local root execution can occur via malicious hardware devices and unsanitized kernel output.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>gpgv</td>
+                        <td>2.2.40-1.1+deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-30258">CVE-2025-30258</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In GnuPG before 2.5.5, if a user chooses to import a certificate with certain crafted subkey data that lacks a valid backsig or that has incorrect usage flags, the user loses the ability to verify signatures made from certain other signing keys, aka a &#34;verification DoS.&#34;</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/gpgv@2.2.40-1.1%2Bdeb12u2?arch=amd64&distro=debian-12&upstream=gnupg2</td>
+                    </tr>
+                    <tr>
                         <td>coreutils</td>
                         <td>9.1-1</td>
                         <td>deb</td>
@@ -1437,6 +1930,102 @@
                         <td>chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal&#39;s input buffer.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/coreutils@9.1-1?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4438">CVE-2026-4438</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C library version 2.34 to version 2.43 could result in an invalid DNS hostname being returned to the caller in violation of the DNS specification.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4438">CVE-2026-4438</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C library version 2.34 to version 2.43 could result in an invalid DNS hostname being returned to the caller in violation of the DNS specification.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl might erroneously pass on credentials for a first proxy to a second proxy.  This can happen when the following conditions are true:  1. curl is setup to use specific different proxies for different URL schemes 2. the first proxy needs credentials 3. the second proxy uses no credentials 4. while using the first proxy (using say `http://`), curl is asked to follow    a redirect to a URL using another scheme (say `https://`), accessed using a    second, different, proxy</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl might erroneously pass on credentials for a first proxy to a second proxy.  This can happen when the following conditions are true:  1. curl is setup to use specific different proxies for different URL schemes 2. the first proxy needs credentials 3. the second proxy uses no credentials 4. while using the first proxy (using say `http://`), curl is asked to follow    a redirect to a URL using another scheme (say `https://`), accessed using a    second, different, proxy</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection for SMB(S) transfers.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a network transfer operation that was requested by an application could wrongfully reuse an existing SMB connection to the same server that was using a different &#39;share&#39; than the new subsequent transfer should.  This could in unlucky situations lead to the download of the wrong file or the upload of a file to the wrong place. When this happens, the same credentials are used and the server name is the same.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>libcurl might in some circumstances reuse the wrong connection for SMB(S) transfers.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a network transfer operation that was requested by an application could wrongfully reuse an existing SMB connection to the same server that was using a different &#39;share&#39; than the new subsequent transfer should.  This could in unlucky situations lead to the download of the wrong file or the upload of a file to the wrong place. When this happens, the same credentials are used and the server name is the same.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>libpam-modules</td>
@@ -1503,8 +2092,104 @@
                         <td>pkg:deb/debian/libpam0g@1.5.2-6%2Bdeb12u2?arch=amd64&distro=debian-12&upstream=pam</td>
                     </tr>
                     <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in gnutls. This vulnerability occurs because permitted name constraints were incorrectly ignored when previous Certificate Authorities (CAs) only had excluded name constraints. A remote attacker could exploit this to bypass critical name constraint checks during certificate validation. This bypass could lead to the acceptance of invalid certificates, potentially enabling spoofing or man-in-the-middle attacks against affected systems.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-14524">CVE-2025-14524</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a cross-protocol redirect to a second URL that uses an IMAP, LDAP, POP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new target host.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-14524">CVE-2025-14524</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a cross-protocol redirect to a second URL that uses an IMAP, LDAP, POP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new target host.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>tar</td>
+                        <td>1.34+dfsg-1.2+deb12u1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5704">CVE-2026-5704</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0915">CVE-2026-0915</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0915">CVE-2026-0915</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
+                    </tr>
+                    <tr>
                         <td>dpkg</td>
-                        <td>1.21.22</td>
+                        <td>1.21.23</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-2219">CVE-2026-2219</a>
@@ -1516,39 +2201,231 @@
                         </td>
                         <td>It was discovered that dpkg-deb (a component of dpkg, the Debian package management system) does not properly validate the end of the data stream when uncompressing a zstd-compressed .deb archive, which may result in denial of service (infinite loop spinning the CPU).</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/dpkg@1.21.22?arch=amd64&distro=debian-12</td>
+                        <td>pkg:deb/debian/dpkg@1.21.23?arch=amd64&distro=debian-12</td>
                     </tr>
                     <tr>
-                        <td>libc-bin</td>
-                        <td>2.36-9+deb12u13</td>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4438">CVE-2026-4438</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
                         </td>
                         <td>Medium</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C library version 2.34 to version 2.43 could result in an invalid DNS hostname being returned to the caller in violation of the DNS specification.</td>
+                        <td>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, libcurl could leak the password used for the first host to the followed-to host under certain circumstances.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
                     </tr>
                     <tr>
-                        <td>libc6</td>
-                        <td>2.36-9+deb12u13</td>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4438">CVE-2026-4438</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
                         </td>
                         <td>Medium</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>Calling gethostbyaddr or gethostbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend in the GNU C library version 2.34 to version 2.43 could result in an invalid DNS hostname being returned to the caller in violation of the DNS specification.</td>
+                        <td>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, libcurl could leak the password used for the first host to the followed-to host under certain circumstances.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Using libcurl, when a custom `Host:` header is first set for an HTTP request and a second request is subsequently done using the same *easy handle* but without the custom `Host:` header set, the second request would use stale information and pass on cookies meant for the first host in the second request. Leak them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
+                        </td>
+                        <td>High</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Using libcurl, when a custom `Host:` header is first set for an HTTP request and a second request is subsequently done using the same *easy handle* but without the custom `Host:` header set, the second request would use stale information and pass on cookies meant for the first host in the second request. Leak them.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3784">CVE-2026-3784</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a server, even if the new request uses different credentials for the HTTP proxy. The proper behavior is to create or use a separate connection.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3784">CVE-2026-3784</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a server, even if the new request uses different credentials for the HTTP proxy. The proper behavior is to create or use a separate connection.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3832">CVE-2026-3832</a>
+                        </td>
+                        <td>Low</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in gnutls. A remote attacker could exploit this vulnerability by presenting a specially crafted Online Certificate Status Protocol (OCSP) response during a TLS handshake. Due to a logic error in how gnutls processes multi-record OCSP responses, a client with OCSP verification enabled may incorrectly accept a revoked server certificate, potentially leading to a compromise of trust.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3783">CVE-2026-3783</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a redirect to a second URL, curl could leak that token to the second hostname under some circumstances.  If the hostname that the first request is redirected to has information in the used .netrc file, with either of the `machine` or `default` keywords, curl would pass on the bearer token set for the first host also to the second one.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3783">CVE-2026-3783</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a redirect to a second URL, curl could leak that token to the second hostname under some circumstances.  If the hostname that the first request is redirected to has information in the used .netrc file, with either of the `machine` or `default` keywords, curl would pass on the bearer token set for the first host also to the second one.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>curl</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4873">CVE-2026-4873</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability exists where a connection requiring TLS incorrectly reuses an existing unencrypted connection from the same connection pool. If an initial transfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request to that same host bypasses the TLS requirement and instead transmit data unencrypted.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libcurl4</td>
+                        <td>7.88.1-10+deb12u14</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4873">CVE-2026-4873</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A vulnerability exists where a connection requiring TLS incorrectly reuses an existing unencrypted connection from the same connection pool. If an initial transfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request to that same host bypasses the TLS requirement and instead transmit data unencrypted.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
+                    </tr>
+                    <tr>
+                        <td>libsystemd0</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-29111">CVE-2026-29111</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>systemd, a system and service manager, (as PID 1) hits an assert and freezes execution when an unprivileged IPC API call is made with spurious data. On version v249 and older the effect is not an assert, but stack overwriting, with the attacker controlled content. From version v250 and newer this is not possible as the safety check causes an assert instead. This IPC call was added in v239, so versions older than that are not affected. Versions 260-rc1, 259.2, 258.5, and 257.11 contain patches. No known workarounds are available.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libudev1</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-29111">CVE-2026-29111</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>systemd, a system and service manager, (as PID 1) hits an assert and freezes execution when an unprivileged IPC API call is made with spurious data. On version v249 and older the effect is not an assert, but stack overwriting, with the attacker controlled content. From version v250 and newer this is not possible as the safety check causes an assert instead. This IPC call was added in v239, so versions older than that are not affected. Versions 260-rc1, 259.2, 258.5, and 257.11 contain patches. No known workarounds are available.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libgcrypt20</td>
+                        <td>1.10.1-3</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-41989">CVE-2026-41989</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Libgcrypt before 1.12.2 sometimes allows a heap-based buffer overflow and denial of service via crafted ECDH ciphertext to gcry_pk_decrypt.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgcrypt20@1.10.1-3?arch=amd64&distro=debian-12</td>
                     </tr>
                     <tr>
                         <td>libtinfo6</td>
@@ -1597,294 +2474,6 @@
                         <td>The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/ncurses-bin@6.4-4?arch=amd64&distro=debian-12&upstream=ncurses</td>
-                    </tr>
-                    <tr>
-                        <td>libc-bin</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0915">CVE-2026-0915</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0915">CVE-2026-0915</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library&#39;s DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libsystemd0</td>
-                        <td>252.39-1~deb12u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40225">CVE-2026-40225</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In udev in systemd before 260, local root execution can occur via malicious hardware devices and unsanitized kernel output.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>libudev1</td>
-                        <td>252.39-1~deb12u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40225">CVE-2026-40225</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In udev in systemd before 260, local root execution can occur via malicious hardware devices and unsanitized kernel output.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.88.1-10+deb12u14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-14524">CVE-2025-14524</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a cross-protocol redirect to a second URL that uses an IMAP, LDAP, POP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new target host.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.88.1-10+deb12u14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-14524">CVE-2025-14524</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a cross-protocol redirect to a second URL that uses an IMAP, LDAP, POP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new target host.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>libsystemd0</td>
-                        <td>252.39-1~deb12u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4105">CVE-2026-4105</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in systemd. The systemd-machined service contains an Improper Access Control vulnerability due to insufficient validation of the class parameter in the RegisterMachine D-Bus (Desktop Bus) method. A local unprivileged user can exploit this by attempting to register a machine with a specific class value, which may leave behind a usable, attacker-controlled machine object. This allows the attacker to invoke methods on the privileged object, leading to the execution of arbitrary commands with root privileges on the host system.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>libudev1</td>
-                        <td>252.39-1~deb12u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4105">CVE-2026-4105</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in systemd. The systemd-machined service contains an Improper Access Control vulnerability due to insufficient validation of the class parameter in the RegisterMachine D-Bus (Desktop Bus) method. A local unprivileged user can exploit this by attempting to register a machine with a specific class value, which may leave behind a usable, attacker-controlled machine object. This allows the attacker to invoke methods on the privileged object, leading to the execution of arbitrary commands with root privileges on the host system.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>libnghttp2-14</td>
-                        <td>1.52.0-1+deb12u2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-27135">CVE-2026-27135</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>nghttp2 is an implementation of the Hypertext Transfer Protocol version 2 in C. Prior to version 1.68.1, the nghttp2 library stops reading the incoming data when user facing public API `nghttp2_session_terminate_session` or `nghttp2_session_terminate_session2` is called by the application. They might be called internally by the library when it detects the situation that is subject to connection error. Due to the missing internal state validation, the library keeps reading the rest of the data after one of those APIs is called. Then receiving a malformed frame that causes FRAME_SIZE_ERROR causes assertion failure. nghttp2 v1.68.1 adds missing state validation to avoid assertion failure. No known workarounds are available.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libnghttp2-14@1.52.0-1%2Bdeb12u2?arch=amd64&distro=debian-12&upstream=nghttp2</td>
-                    </tr>
-                    <tr>
-                        <td>tar</td>
-                        <td>1.34+dfsg-1.2+deb12u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5704">CVE-2026-5704</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64&distro=debian-12</td>
-                    </tr>
-                    <tr>
-                        <td>gpgv</td>
-                        <td>2.2.40-1.1+deb12u2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-30258">CVE-2025-30258</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In GnuPG before 2.5.5, if a user chooses to import a certificate with certain crafted subkey data that lacks a valid backsig or that has incorrect usage flags, the user loses the ability to verify signatures made from certain other signing keys, aka a &#34;verification DoS.&#34;</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/gpgv@2.2.40-1.1%2Bdeb12u2?arch=amd64&distro=debian-12&upstream=gnupg2</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.88.1-10+deb12u14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3784">CVE-2026-3784</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a server, even if the new request uses different credentials for the HTTP proxy. The proper behavior is to create or use a separate connection.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.88.1-10+deb12u14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3784">CVE-2026-3784</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a server, even if the new request uses different credentials for the HTTP proxy. The proper behavior is to create or use a separate connection.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>7.88.1-10+deb12u14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3783">CVE-2026-3783</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a redirect to a second URL, curl could leak that token to the second hostname under some circumstances.  If the hostname that the first request is redirected to has information in the used .netrc file, with either of the `machine` or `default` keywords, curl would pass on the bearer token set for the first host also to the second one.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4</td>
-                        <td>7.88.1-10+deb12u14</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3783">CVE-2026-3783</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer performs a redirect to a second URL, curl could leak that token to the second hostname under some circumstances.  If the hostname that the first request is redirected to has information in the used .netrc file, with either of the `machine` or `default` keywords, curl would pass on the bearer token set for the first host also to the second one.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>libc-bin</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0861">CVE-2026-0861</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.  Note that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1&lt;&lt;62+ 1, 1&lt;&lt;63] and exactly 1&lt;&lt;63 for posix_memalign and aligned_alloc.  Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.36-9+deb12u13</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0861">CVE-2026-0861</a>
-                        </td>
-                        <td>High</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.  Note that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1&lt;&lt;62+ 1, 1&lt;&lt;63] and exactly 1&lt;&lt;63 for posix_memalign and aligned_alloc.  Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64&distro=debian-12&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libcap2</td>
-                        <td>1:2.66-4+deb12u2+b2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4878">CVE-2026-4878</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>A flaw was found in libcap. A local unprivileged user can exploit a Time-of-check-to-time-of-use (TOCTOU) race condition in the `cap_set_file()` function. This allows an attacker with write access to a parent directory to redirect file capability updates to an attacker-controlled file. By doing so, capabilities can be injected into or stripped from unintended executables, leading to privilege escalation.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcap2@1%3A2.66-4%2Bdeb12u2%2Bb2?arch=amd64&distro=debian-12&upstream=libcap2%401%3A2.66-4%2Bdeb12u2</td>
                     </tr>
                     <tr>
                         <td>bsdutils</td>
@@ -2015,72 +2604,56 @@
                         <td>pkg:deb/debian/util-linux-extra@2.38.1-5%2Bdeb12u3?arch=amd64&distro=debian-12&upstream=util-linux</td>
                     </tr>
                     <tr>
-                        <td>libsystemd0</td>
-                        <td>252.39-1~deb12u1</td>
+                        <td>libc-bin</td>
+                        <td>2.36-9+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-29111">CVE-2026-29111</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0861">CVE-2026-0861</a>
                         </td>
-                        <td>Medium</td>
+                        <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>systemd, a system and service manager, (as PID 1) hits an assert and freezes execution when an unprivileged IPC API call is made with spurious data. On version v249 and older the effect is not an assert, but stack overwriting, with the attacker controlled content. From version v250 and newer this is not possible as the safety check causes an assert instead. This IPC call was added in v239, so versions older than that are not affected. Versions 260-rc1, 259.2, 258.5, and 257.11 contain patches. No known workarounds are available.</td>
+                        <td>Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.  Note that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1&lt;&lt;62+ 1, 1&lt;&lt;63] and exactly 1&lt;&lt;63 for posix_memalign and aligned_alloc.  Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
+                        <td>pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libudev1</td>
-                        <td>252.39-1~deb12u1</td>
+                        <td>libc6</td>
+                        <td>2.36-9+deb12u14</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-29111">CVE-2026-29111</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-0861">CVE-2026-0861</a>
                         </td>
-                        <td>Medium</td>
+                        <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>systemd, a system and service manager, (as PID 1) hits an assert and freezes execution when an unprivileged IPC API call is made with spurious data. On version v249 and older the effect is not an assert, but stack overwriting, with the attacker controlled content. From version v250 and newer this is not possible as the safety check causes an assert instead. This IPC call was added in v239, so versions older than that are not affected. Versions 260-rc1, 259.2, 258.5, and 257.11 contain patches. No known workarounds are available.</td>
+                        <td>Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.  Note that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1&lt;&lt;62+ 1, 1&lt;&lt;63] and exactly 1&lt;&lt;63 for posix_memalign and aligned_alloc.  Typically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
+                        <td>pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64&distro=debian-12&upstream=glibc</td>
                     </tr>
                     <tr>
-                        <td>libsystemd0</td>
-                        <td>252.39-1~deb12u1</td>
+                        <td>libcap2</td>
+                        <td>1:2.66-4+deb12u3+b1</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40228">CVE-2026-40228</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4878">CVE-2026-4878</a>
                         </td>
-                        <td>Low</td>
+                        <td>High</td>
                         <td>wont-fix</td>
                         <td>
                             N/A
                         </td>
-                        <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
+                        <td>A flaw was found in libcap. A local unprivileged user can exploit a Time-of-check-to-time-of-use (TOCTOU) race condition in the `cap_set_file()` function. This allows an attacker with write access to a parent directory to redirect file capability updates to an attacker-controlled file. By doing so, capabilities can be injected into or stripped from unintended executables, leading to privilege escalation.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>libudev1</td>
-                        <td>252.39-1~deb12u1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40228">CVE-2026-40228</a>
-                        </td>
-                        <td>Low</td>
-                        <td>wont-fix</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
+                        <td>pkg:deb/debian/libcap2@1%3A2.66-4%2Bdeb12u3%2Bb1?arch=amd64&distro=debian-12&upstream=libcap2%401%3A2.66-4%2Bdeb12u3</td>
                     </tr>
                     <tr>
                         <td>libsystemd0</td>
-                        <td>252.39-1~deb12u1</td>
+                        <td>252.39-1~deb12u2</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-40226">CVE-2026-40226</a>
@@ -2092,11 +2665,11 @@
                         </td>
                         <td>In nspawn in systemd 233 through 259 before 260, an escape-to-host action can occur via a crafted optional config file.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
+                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
                     </tr>
                     <tr>
                         <td>libudev1</td>
-                        <td>252.39-1~deb12u1</td>
+                        <td>252.39-1~deb12u2</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-40226">CVE-2026-40226</a>
@@ -2108,7 +2681,71 @@
                         </td>
                         <td>In nspawn in systemd 233 through 259 before 260, an escape-to-host action can occur via a crafted optional config file.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u1?arch=amd64&distro=debian-12&upstream=systemd</td>
+                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libsystemd0</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4105">CVE-2026-4105</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in systemd. The systemd-machined service contains an Improper Access Control vulnerability due to insufficient validation of the class parameter in the RegisterMachine D-Bus (Desktop Bus) method. A local unprivileged user can exploit this by attempting to register a machine with a specific class value, which may leave behind a usable, attacker-controlled machine object. This allows the attacker to invoke methods on the privileged object, leading to the execution of arbitrary commands with root privileges on the host system.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libudev1</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4105">CVE-2026-4105</a>
+                        </td>
+                        <td>Medium</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>A flaw was found in systemd. The systemd-machined service contains an Improper Access Control vulnerability due to insufficient validation of the class parameter in the RegisterMachine D-Bus (Desktop Bus) method. A local unprivileged user can exploit this by attempting to register a machine with a specific class value, which may leave behind a usable, attacker-controlled machine object. This allows the attacker to invoke methods on the privileged object, leading to the execution of arbitrary commands with root privileges on the host system.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libsystemd0</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40228">CVE-2026-40228</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
+                    </tr>
+                    <tr>
+                        <td>libudev1</td>
+                        <td>252.39-1~deb12u2</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40228">CVE-2026-40228</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64&distro=debian-12&upstream=systemd</td>
                     </tr>
                     <tr>
                         <td>zlib1g</td>
@@ -2141,6 +2778,134 @@
                         <td>In GnuPG through 2.4.8, if a signed message has \f at the end of a plaintext line, an adversary can construct a modified message that places additional text after the signed material, such that signature verification of the modified message succeeds (although an &#34;invalid armor&#34; message is printed during verification). This is related to use of \f as a marker to denote truncation of a long plaintext line.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/gpgv@2.2.40-1.1%2Bdeb12u2?arch=amd64&distro=debian-12&upstream=gnupg2</td>
+                    </tr>
+                    <tr>
+                        <td>sed</td>
+                        <td>4.9-1+deb12u1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5958">CVE-2026-5958</a>
+                        </td>
+                        <td>Low</td>
+                        <td>wont-fix</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>When sed is invoked with both -i (in-place edit) and --follow-symlinks, the function open_next_file() performs two separate, non-atomic filesystem operations on the same path:  1. resolves symlink to its target and stores the resolved path for determining when output is written, 2. opens the original symlink path (not the resolved one) to read the file.  Between these two calls there is a race window. If an attacker atomically replaces the symlink with a different target during that window, sed will: read content from the new (attacker-chosen) symlink target and write the processed result to the path recorded in step 1. This can lead to arbitrary file overwrite with attacker-controlled content in the context of the sed process.   This issue was fixed in version 4.10.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/sed@4.9-1%2Bdeb12u1?arch=amd64&distro=debian-12</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42009">CVE-2026-42009</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42012">CVE-2026-42012</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42013">CVE-2026-42013</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42014">CVE-2026-42014</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42015">CVE-2026-42015</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5260">CVE-2026-5260</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
+                    </tr>
+                    <tr>
+                        <td>libgnutls30</td>
+                        <td>3.7.9-2+deb12u6</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5419">CVE-2026-5419</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u6?arch=amd64&distro=debian-12&upstream=gnutls28</td>
                     </tr>
                 </tbody>
             </table>
