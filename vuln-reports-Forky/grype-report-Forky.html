@@ -777,35 +777,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 <body>
     <div class="main-container">
@@ -818,9 +789,9 @@
 
                     <dt>Type:</dt>
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
-                    <dd id="checksumValue">sha256:1d42bf10336f4aa72bf791572f151a9788f3d77489fe09812373e601eb0445e0</dd><dt>Date:</dt>
+                    <dd id="checksumValue">sha256:89427730ec6f5add5daa0abf345100b79234ce21dbe4a12e21b74f9cbdc72ec3</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-19T10:26:33.891842348Z</span>
+                        <span id="dateElement">2026-05-20T04:50:19.865555081Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
@@ -837,23 +808,23 @@
         <div class="severity-info">
             <div class="severity-box" id="critical">
                 <div class="severity-title">Critical</div>
-                <div class="severity-count" id="criticalCount">5</div>
+                <div class="severity-count" id="criticalCount">3</div>
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">14</div>
+                <div class="severity-count" id="highCount">6</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
-                <div class="severity-count" id="mediumCount">31</div>
+                <div class="severity-count" id="mediumCount">20</div>
             </div>
             <div class="severity-box" id="low">
                 <div class="severity-title">Low</div>
-                <div class="severity-count" id="lowCount">5</div>
+                <div class="severity-count" id="lowCount">4</div>
             </div>
             <div class="severity-box" id="unknown">
                 <div class="severity-title">Unknown</div>
-                <div class="severity-count" id="unknownCount">6</div>
+                <div class="severity-count" id="unknownCount">0</div>
             </div>
         </div>
         <div class="data-table">
@@ -904,60 +875,6 @@
                         <td>shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&upstream=shadow</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42010">CVE-2026-42010</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw was found in gnutls. Servers configured with RSA-PSK (Rivest–Shamir–Adleman – Pre-Shared Key) wrongfully matched usernames containing a NUL character with truncated usernames. A remote attacker could exploit this by sending a specially crafted username, leading to an authentication bypass. This vulnerability allows an attacker to gain unauthorized access by circumventing the authentication process.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3833">CVE-2026-3833</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33846">CVE-2026-33846</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A heap buffer overflow vulnerability exists in the DTLS handshake fragment reassembly logic of GnuTLS. The issue arises in merge_handshake_packet() where incoming handshake fragments are matched and merged based solely on handshake type, without validating that the message_length field remains consistent across all fragments of the same logical message. An attacker can exploit this by sending crafted DTLS fragments with conflicting message_length values, causing the implementation to allocate a buffer based on a smaller initial fragment and subsequently write beyond its bounds using larger, inconsistent fragments. Because the merge operation does not enforce proper bounds checking against the allocated buffer size, this results in an out-of-bounds write on the heap. The vulnerability is remotely exploitable without authentication via the DTLS handshake path and can lead to application crashes or potential memory corruption.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                     <tr>
                         <td>libgssapi-krb5-2</td>
@@ -1105,7 +1022,7 @@
                     </tr>
                     <tr>
                         <td>libc-bin</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
@@ -1117,11 +1034,11 @@
                         </td>
                         <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc-gconv-modules-extra</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
@@ -1133,11 +1050,11 @@
                         </td>
                         <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc6</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5450">CVE-2026-5450</a>
@@ -1149,7 +1066,7 @@
                         </td>
                         <td>Calling the scanf family of functions with a %mc (malloc&#39;d character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>bsdutils</td>
@@ -1280,44 +1197,8 @@
                         <td>pkg:deb/debian/util-linux@2.42-5?arch=amd64&distro=debian</td>
                     </tr>
                     <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-33845">CVE-2026-33845</a>
-                        </td>
-                        <td>Critical</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libssh2-1t64</td>
-                        <td>1.11.1-2</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7598">CVE-2026-7598</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.11.1-3</li>
-                            </ul>
-                        </td>
-                        <td>A security vulnerability has been detected in libssh2 up to 1.11.1. The impacted element is the function userauth_password of the file src/userauth.c. Such manipulation of the argument username_len/password_len leads to integer overflow. The attack may be launched remotely. The name of the patch is 256d04b60d80bf1190e96b0ad1e91b2174d744b1. A patch should be applied to remediate this issue.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libssh2-1t64@1.11.1-2?arch=amd64&distro=debian&upstream=libssh2</td>
-                    </tr>
-                    <tr>
                         <td>libc-bin</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
@@ -1329,11 +1210,11 @@
                         </td>
                         <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc-gconv-modules-extra</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
@@ -1345,11 +1226,11 @@
                         </td>
                         <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc6</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
@@ -1361,47 +1242,11 @@
                         </td>
                         <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0-1</li>
-                            </ul>
-                        </td>
-                        <td>Successfully using libcurl to do a transfer over a specific HTTP proxy (`proxyA`) with **Digest** authentication and then changing the proxy host to a second one (`proxyB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the `Proxy-Authorization:` header field meant for `proxyA`, to `proxyB`.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-7168">CVE-2026-7168</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0-1</li>
-                            </ul>
-                        </td>
-                        <td>Successfully using libcurl to do a transfer over a specific HTTP proxy (`proxyA`) with **Digest** authentication and then changing the proxy host to a second one (`proxyB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the `Proxy-Authorization:` header field meant for `proxyA`, to `proxyB`.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
+                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc-bin</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
@@ -1413,11 +1258,11 @@
                         </td>
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc-gconv-modules-extra</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
@@ -1429,11 +1274,11 @@
                         </td>
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc6</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
@@ -1445,47 +1290,11 @@
                         </td>
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc2-1</li>
-                            </ul>
-                        </td>
-                        <td>libcurl might in some circumstances reuse the wrong connection when asked to do an authenticated HTTP(S) request after a Negotiate-authenticated one, when both use the same host.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials.  An application that first uses Negotiate authentication to a server with `user1:password1` and then does another operation to the same server asking for any authentication method but for `user2:password2` (while the previous connection is still alive) - the second request gets confused and wrongly reuses the same connection and sends the new request over that connection thinking it uses a mix of user1&#39;s and user2&#39;s credentials when it is in fact still using the connection authenticated for user1...</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5545">CVE-2026-5545</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc2-1</li>
-                            </ul>
-                        </td>
-                        <td>libcurl might in some circumstances reuse the wrong connection when asked to do an authenticated HTTP(S) request after a Negotiate-authenticated one, when both use the same host.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a request that was issued by an application could wrongfully reuse an existing connection to the same server that was authenticated using different credentials.  An application that first uses Negotiate authentication to a server with `user1:password1` and then does another operation to the same server asking for any authentication method but for `user2:password2` (while the previous connection is still alive) - the second request gets confused and wrongly reuses the same connection and sends the new request over that connection thinking it uses a mix of user1&#39;s and user2&#39;s credentials when it is in fact still using the connection authenticated for user1...</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
+                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc-bin</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-6238">CVE-2026-6238</a>
@@ -1497,11 +1306,11 @@
                         </td>
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc-gconv-modules-extra</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-6238">CVE-2026-6238</a>
@@ -1513,11 +1322,11 @@
                         </td>
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>libc6</td>
-                        <td>2.42-15</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-6238">CVE-2026-6238</a>
@@ -1529,97 +1338,7 @@
                         </td>
                         <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-15?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td>curl might erroneously pass on credentials for a first proxy to a second proxy.  This can happen when the following conditions are true:  1. curl is setup to use specific different proxies for different URL schemes 2. the first proxy needs credentials 3. the second proxy uses no credentials 4. while using the first proxy (using say `http://`), curl is asked to follow    a redirect to a URL using another scheme (say `https://`), accessed using a    second, different, proxy</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6253">CVE-2026-6253</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td>curl might erroneously pass on credentials for a first proxy to a second proxy.  This can happen when the following conditions are true:  1. curl is setup to use specific different proxies for different URL schemes 2. the first proxy needs credentials 3. the second proxy uses no credentials 4. while using the first proxy (using say `http://`), curl is asked to follow    a redirect to a URL using another scheme (say `https://`), accessed using a    second, different, proxy</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc2-1</li>
-                            </ul>
-                        </td>
-                        <td>libcurl might in some circumstances reuse the wrong connection for SMB(S) transfers.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a network transfer operation that was requested by an application could wrongfully reuse an existing SMB connection to the same server that was using a different &#39;share&#39; than the new subsequent transfer should.  This could in unlucky situations lead to the download of the wrong file or the upload of a file to the wrong place. When this happens, the same credentials are used and the server name is the same.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5773">CVE-2026-5773</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc2-1</li>
-                            </ul>
-                        </td>
-                        <td>libcurl might in some circumstances reuse the wrong connection for SMB(S) transfers.  libcurl features a pool of recent connections so that subsequent requests can reuse an existing connection to avoid overhead.  When reusing a connection a range of criteria must be met. Due to a logical error in the code, a network transfer operation that was requested by an application could wrongfully reuse an existing SMB connection to the same server that was using a different &#39;share&#39; than the new subsequent transfer should.  This could in unlucky situations lead to the download of the wrong file or the upload of a file to the wrong place. When this happens, the same credentials are used and the server name is the same.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42011">CVE-2026-42011</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw was found in gnutls. This vulnerability occurs because permitted name constraints were incorrectly ignored when previous Certificate Authorities (CAs) only had excluded name constraints. A remote attacker could exploit this to bypass critical name constraint checks during certificate validation. This bypass could lead to the acceptance of invalid certificates, potentially enabling spoofing or man-in-the-middle attacks against affected systems.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
+                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>tar</td>
@@ -1636,132 +1355,6 @@
                         <td>A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, libcurl could leak the password used for the first host to the followed-to host under certain circumstances.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6429">CVE-2026-6429</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, libcurl could leak the password used for the first host to the followed-to host under certain circumstances.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td>Using libcurl, when a custom `Host:` header is first set for an HTTP request and a second request is subsequently done using the same *easy handle* but without the custom `Host:` header set, the second request would use stale information and pass on cookies meant for the first host in the second request. Leak them.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-6276">CVE-2026-6276</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc3-1</li>
-                            </ul>
-                        </td>
-                        <td>Using libcurl, when a custom `Host:` header is first set for an HTTP request and a second request is subsequently done using the same *easy handle* but without the custom `Host:` header set, the second request would use stale information and pass on cookies meant for the first host in the second request. Leak them.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-3832">CVE-2026-3832</a>
-                        </td>
-                        <td>Low</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td>A flaw was found in gnutls. A remote attacker could exploit this vulnerability by presenting a specially crafted Online Certificate Status Protocol (OCSP) response during a TLS handshake. Due to a logic error in how gnutls processes multi-record OCSP responses, a client with OCSP verification enabled may incorrectly accept a revoked server certificate, potentially leading to a compromise of trust.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>curl</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4873">CVE-2026-4873</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc2-1</li>
-                            </ul>
-                        </td>
-                        <td>A vulnerability exists where a connection requiring TLS incorrectly reuses an existing unencrypted connection from the same connection pool. If an initial transfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request to that same host bypasses the TLS requirement and instead transmit data unencrypted.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/curl@8.19.0-3?arch=amd64&distro=debian</td>
-                    </tr>
-                    <tr>
-                        <td>libcurl4t64</td>
-                        <td>8.19.0-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-4873">CVE-2026-4873</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>8.20.0~rc2-1</li>
-                            </ul>
-                        </td>
-                        <td>A vulnerability exists where a connection requiring TLS incorrectly reuses an existing unencrypted connection from the same connection pool. If an initial transfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request to that same host bypasses the TLS requirement and instead transmit data unencrypted.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libcurl4t64@8.19.0-3?arch=amd64&distro=debian&upstream=curl</td>
                     </tr>
                     <tr>
                         <td>libsystemd0</td>
@@ -1794,132 +1387,6 @@
                         <td>In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a &#34;logger -p emerg&#34; command is executed, if ForwardToWall=yes is set.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/libudev1@260.1-1?arch=amd64&distro=debian&upstream=systemd</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42009">CVE-2026-42009</a>
-                        </td>
-                        <td>High</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42012">CVE-2026-42012</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42013">CVE-2026-42013</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42014">CVE-2026-42014</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42015">CVE-2026-42015</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5260">CVE-2026-5260</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
-                    </tr>
-                    <tr>
-                        <td>libgnutls30t64</td>
-                        <td>3.8.12-3</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5419">CVE-2026-5419</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>3.8.13-1</li>
-                            </ul>
-                        </td>
-                        <td></td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgnutls30t64@3.8.12-3?arch=amd64&distro=debian&upstream=gnutls28</td>
                     </tr>
                 </tbody>
             </table>
