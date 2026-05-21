@@ -1438,6 +1438,27 @@
               }
             },
             {
+              "id": "CVE-2025-5278-coreutils",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2025-5278 low vulnerability for coreutils package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2025-5278",
+              "help": {
+                "text": "Vulnerability CVE-2025-5278\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2025-5278](https://security-tracker.debian.org/tracker/CVE-2025-5278)",
+                "markdown": "**Vulnerability CVE-2025-5278**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2025-5278](https://security-tracker.debian.org/tracker/CVE-2025-5278)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "4.4"
+              }
+            },
+            {
               "id": "CVE-2023-31438-libsystemd0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1477,27 +1498,6 @@
                   "pkg:deb/debian/libudev1@260.1-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
                 ],
                 "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2025-5278-coreutils",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2025-5278 low vulnerability for coreutils package"
-              },
-              "fullDescription": {
-                "text": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2025-5278",
-              "help": {
-                "text": "Vulnerability CVE-2025-5278\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2025-5278](https://security-tracker.debian.org/tracker/CVE-2025-5278)",
-                "markdown": "**Vulnerability CVE-2025-5278**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2025-5278](https://security-tracker.debian.org/tracker/CVE-2025-5278)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "4.4"
               }
             },
             {
@@ -5061,6 +5061,49 @@
           }
         },
         {
+          "ruleId": "CVE-2025-5278-coreutils",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/coreutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/coreutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/coreutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/coreutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
+          }
+        },
+        {
           "ruleId": "CVE-2023-31438-libsystemd0",
           "level": "note",
           "message": {
@@ -5136,49 +5179,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "b9a612c971ec818aa18a75ef2ea50b68cd06990fb2889a70edca9a521e25cfba:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2025-5278-coreutils",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/coreutils/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/coreutils/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/coreutils.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/coreutils.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
           }
         },
         {
