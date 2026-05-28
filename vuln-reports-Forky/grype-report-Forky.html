@@ -781,6 +781,10 @@
     
     
     
+    
+    
+    
+    
 
 <body>
     <div class="main-container">
@@ -795,13 +799,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89427730ec6f5add5daa0abf345100b79234ce21dbe4a12e21b74f9cbdc72ec3</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-28T04:54:07.033196932Z</span>
+                        <span id="dateElement">2026-05-28T12:38:48.409690302Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-27 07:49:45 +0000 UTC</dd>
+                    <dd>2026-05-28 07:43:55 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -812,11 +816,11 @@
         <div class="severity-info">
             <div class="severity-box" id="critical">
                 <div class="severity-title">Critical</div>
-                <div class="severity-count" id="criticalCount">3</div>
+                <div class="severity-count" id="criticalCount">5</div>
             </div>
             <div class="severity-box" id="high">
                 <div class="severity-title">High</div>
-                <div class="severity-count" id="highCount">6</div>
+                <div class="severity-count" id="highCount">9</div>
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
@@ -828,7 +832,7 @@
             </div>
             <div class="severity-box" id="unknown">
                 <div class="severity-title">Unknown</div>
-                <div class="severity-count" id="unknownCount">4</div>
+                <div class="severity-count" id="unknownCount">3</div>
             </div>
         </div>
         <div class="data-table">
@@ -1297,6 +1301,54 @@
                         <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-48962">CVE-2026-48962</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42496">CVE-2026-42496</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header&#39;s linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-8376">CVE-2026-8376</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Perl versions through 5.43.10 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.  Perl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.  A caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
                         <td>tar</td>
                         <td>1.35+dfsg-4</td>
                         <td>deb</td>
@@ -1317,46 +1369,46 @@
                         <td>5.40.1-7+b1</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42496">CVE-2026-42496</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header&#39;s linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
-                    </tr>
-                    <tr>
-                        <td>perl-base</td>
-                        <td>5.40.1-7+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-8376">CVE-2026-8376</a>
-                        </td>
-                        <td>Unknown</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Perl versions through 5.43.10 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.  Perl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.  A caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
-                    </tr>
-                    <tr>
-                        <td>perl-base</td>
-                        <td>5.40.1-7+b1</td>
-                        <td>deb</td>
-                        <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-42497">CVE-2026-42497</a>
                         </td>
-                        <td>Unknown</td>
+                        <td>High</td>
                         <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
                         <td>Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header&#39;s linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file&#39;s inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header&#39;s mode, owner, and timestamps to the shared inode during extraction alone.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-9538">CVE-2026-9538</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry&#39;s payload with $handle-&gt;read($$data, $block), where $block is derived from the entry&#39;s 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2025-15649">CVE-2025-15649</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
                         <td>[]</td>
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
@@ -1413,14 +1465,30 @@
                         <td>5.40.1-7+b1</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-9538">CVE-2026-9538</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-48959">CVE-2026-48959</a>
                         </td>
                         <td>Unknown</td>
                         <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td>Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry&#39;s payload with $handle-&gt;read($$data, $block), where $block is derived from the entry&#39;s 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.</td>
+                        <td></td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-48961">CVE-2026-48961</a>
+                        </td>
+                        <td>Unknown</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td></td>
                         <td>[]</td>
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
