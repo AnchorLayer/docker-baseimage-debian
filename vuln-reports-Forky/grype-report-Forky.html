@@ -799,13 +799,13 @@
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
                     <dd id="checksumValue">sha256:89427730ec6f5add5daa0abf345100b79234ce21dbe4a12e21b74f9cbdc72ec3</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-05-29T04:24:52.006755519Z</span>
+                        <span id="dateElement">2026-05-29T11:51:32.921556263Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
                     <dd>0.112.0</dd>
                     <dt>DB Built:</dt>
-                    <dd>2026-05-28 07:43:55 +0000 UTC</dd>
+                    <dd>2026-05-29 07:42:04 +0000 UTC</dd>
                 </dl>
             </div>
             <div class="heading-right">
@@ -1077,6 +1077,22 @@
                         <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-48962">CVE-2026-48962</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.  _parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.  Arbitrary Perl in the output glob executes at the calling process&#39;s privilege.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
                         <td>bsdutils</td>
                         <td>1:2.42-5</td>
                         <td>deb</td>
@@ -1205,116 +1221,68 @@
                         <td>pkg:deb/debian/util-linux@2.42-5?arch=amd64&distro=debian</td>
                     </tr>
                     <tr>
-                        <td>libc-bin</td>
-                        <td>2.42-16</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-gconv-modules-extra</td>
-                        <td>2.42-16</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.42-16</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-bin</td>
-                        <td>2.42-16</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc-gconv-modules-extra</td>
-                        <td>2.42-16</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
-                        <td>libc6</td>
-                        <td>2.42-16</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
-                    </tr>
-                    <tr>
                         <td>perl-base</td>
                         <td>5.40.1-7+b1</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-48962">CVE-2026-48962</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-8376">CVE-2026-8376</a>
+                        </td>
+                        <td>Critical</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Perl versions through 5.43.10 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.  Perl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.  A caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>libc-bin</td>
+                        <td>2.42-16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
                         </td>
                         <td>High</td>
                         <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td></td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-gconv-modules-extra</td>
+                        <td>2.42-16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.42-16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5928">CVE-2026-5928</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-&gt;_IO_read_ptr) instead of the actual wide-stream read pointer (fp-&gt;_wide_data-&gt;_IO_read_ptr). The program crash may happen in cases where fp-&gt;_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
                     </tr>
                     <tr>
                         <td>perl-base</td>
@@ -1333,18 +1301,82 @@
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
                     <tr>
-                        <td>perl-base</td>
-                        <td>5.40.1-7+b1</td>
+                        <td>libc-bin</td>
+                        <td>2.42-16</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-8376">CVE-2026-8376</a>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
                         </td>
-                        <td>Critical</td>
+                        <td>High</td>
                         <td>not-fixed</td>
                         <td>
                             N/A
                         </td>
-                        <td>Perl versions through 5.43.10 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.  Perl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.  A caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.</td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc-gconv-modules-extra</td>
+                        <td>2.42-16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>libc6</td>
+                        <td>2.42-16</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-5435">CVE-2026-5435</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&upstream=glibc</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-9538">CVE-2026-9538</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry&#39;s payload with $handle-&gt;read($$data, $block), where $block is derived from the entry&#39;s 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.</td>
+                        <td>[]</td>
+                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
+                    </tr>
+                    <tr>
+                        <td>perl-base</td>
+                        <td>5.40.1-7+b1</td>
+                        <td>deb</td>
+                        <td>
+                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42497">CVE-2026-42497</a>
+                        </td>
+                        <td>High</td>
+                        <td>not-fixed</td>
+                        <td>
+                            N/A
+                        </td>
+                        <td>Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header&#39;s linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file&#39;s inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header&#39;s mode, owner, and timestamps to the shared inode during extraction alone.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
@@ -1369,38 +1401,6 @@
                         <td>5.40.1-7+b1</td>
                         <td>deb</td>
                         <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-42497">CVE-2026-42497</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header&#39;s linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file&#39;s inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header&#39;s mode, owner, and timestamps to the shared inode during extraction alone.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
-                    </tr>
-                    <tr>
-                        <td>perl-base</td>
-                        <td>5.40.1-7+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-9538">CVE-2026-9538</a>
-                        </td>
-                        <td>High</td>
-                        <td>not-fixed</td>
-                        <td>
-                            N/A
-                        </td>
-                        <td>Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry&#39;s payload with $handle-&gt;read($$data, $block), where $block is derived from the entry&#39;s 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
-                    </tr>
-                    <tr>
-                        <td>perl-base</td>
-                        <td>5.40.1-7+b1</td>
-                        <td>deb</td>
-                        <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2025-15649">CVE-2025-15649</a>
                         </td>
                         <td>Unknown</td>
@@ -1408,7 +1408,7 @@
                         <td>
                             N/A
                         </td>
-                        <td></td>
+                        <td>IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught exception when parsing zip header with malformed DOS date.  _dosToUnixTime() decodes the local-file-header last-modification date field and calls Time::Local::timelocal() without an eval guard. A header whose date field decodes to an out-of-range month, day, or hour causes timelocal() to die.  The exception propagates out of IO::Uncompress::Unzip-&gt;new($file) where callers expect undef plus $UnzipError.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
@@ -1472,7 +1472,7 @@
                         <td>
                             N/A
                         </td>
-                        <td></td>
+                        <td>IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion via per-byte read loop in fastForward.  fastForward() compares length $offset (the digit count of the offset, 1 to 19) against the chunk size $c instead of $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.  Extracting a named entry from an attacker supplied zip via IO::Uncompress::Unzip-&gt;new($zip, Name =&gt; $target) drives a per-byte read loop scaling with the entry&#39;s compressed size, up to the non-Zip64 4 GiB cap.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
@@ -1488,7 +1488,7 @@
                         <td>
                             N/A
                         </td>
-                        <td></td>
+                        <td>IO::Compress versions from 2.207 before 2.220 for Perl ship a zipdetails CLI tool that crashes with undefined subroutine on Info-ZIP Unix Extra Field with 8-byte UID or GID.  When decode_ux() in bin/zipdetails handles an Info-ZIP Unix Extra Field (tag 0x7875) with UID Size or GID Size set to 8, causing zipdetails to decode an 8-byte UID or GID value, it dispatches through decodeLitteEndian(), which calls a misnamed helper unpackValueQ. The actual function defined in the same file is unpackValue_Q (with underscore); the call raises &#39;Undefined subroutine &amp;main::unpackValueQ&#39; and the script exits with status 255.  Library callers of IO::Compress and IO::Uncompress are not affected; the defect is in the bundled CLI tool.</td>
                         <td>[]</td>
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
