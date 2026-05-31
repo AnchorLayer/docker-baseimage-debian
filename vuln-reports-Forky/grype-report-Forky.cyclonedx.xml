@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom xmlns="http://cyclonedx.org/schema/bom/1.6" serialNumber="urn:uuid:ac4c158f-50cf-4266-81b1-e736529d15f4" version="1">
+<bom xmlns="http://cyclonedx.org/schema/bom/1.6" serialNumber="urn:uuid:b6898b7a-0adc-4291-b4ba-41844c3138b1" version="1">
   <metadata>
-    <timestamp>2026-05-31T05:07:55Z</timestamp>
+    <timestamp>2026-05-31T10:34:35Z</timestamp>
     <tools>
       <components>
         <component type="application">
@@ -31060,7 +31060,7 @@
     </dependency>
   </dependencies>
   <vulnerabilities>
-    <vulnerability bom-ref="urn:uuid:485b7994-a7dc-4854-be38-9ed6280f43ea">
+    <vulnerability bom-ref="urn:uuid:6a674217-7950-40c2-b441-1fd392070831">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31098,7 +31098,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cd261774-fa2b-4941-b32e-675893007165">
+    <vulnerability bom-ref="urn:uuid:69ab2715-0242-402e-9acb-f8c49133c031">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31136,7 +31136,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:583e9367-6c7c-4fe0-9368-71e395b59a5c">
+    <vulnerability bom-ref="urn:uuid:51de9bda-f728-49cb-996c-4a62682cb3ec">
       <id>CVE-2017-17740</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31172,7 +31172,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1ab3e715-3841-4e9e-a5d1-6b3ffd578d7b">
+    <vulnerability bom-ref="urn:uuid:d8b50ec8-5a16-4962-83a4-9137ecf401bb">
       <id>CVE-2005-2541</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31208,7 +31208,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:83f52b24-7917-4aa8-9ce5-86842d29d24e">
+    <vulnerability bom-ref="urn:uuid:2ed5c037-95d2-42e1-ba4a-04c7646bfa6b">
       <id>CVE-2015-3276</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31244,7 +31244,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:828c46e8-202b-4601-a673-246fae40f2c7">
+    <vulnerability bom-ref="urn:uuid:04de997f-1981-4fa7-881a-3c9d3372404f">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31280,7 +31280,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:869b10e5-b1e2-4a74-9038-5dd89f8d7c9b">
+    <vulnerability bom-ref="urn:uuid:9eb96b14-4acd-47dd-8e92-38aa4322c066">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31316,7 +31316,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:613aebfe-c9f0-455d-96b6-029c6d0dedef">
+    <vulnerability bom-ref="urn:uuid:2b3b7903-1b3e-4865-8c3c-4df1c49473fc">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31352,7 +31352,151 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b2548725-593c-4cb1-8548-a95f05e38204">
+    <vulnerability bom-ref="urn:uuid:161263e2-eb18-4f6f-ac42-0ed03fd1addd">
+      <id>CVE-2018-5709</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2018-5709</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.0164</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libgssapi-krb5-2@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=50b1ba90f2051b20&amp;upstream=krb5%401.22.1-2</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:5db4ee8d-323c-4022-8a1c-a23a7d907735">
+      <id>CVE-2018-5709</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2018-5709</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.0164</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libk5crypto3@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=c959470bfb6c2914&amp;upstream=krb5%401.22.1-2</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:ae684280-9b28-4b6d-ae27-1ab553c9e781">
+      <id>CVE-2018-5709</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2018-5709</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.0164</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libkrb5-3@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=3c7997934f0c6302&amp;upstream=krb5%401.22.1-2</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:08dd6803-acf8-4614-98fb-7794f5a1c3e9">
+      <id>CVE-2018-5709</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2018-5709</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.0164</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libkrb5support0@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=7d5739c915a88edc&amp;upstream=krb5%401.22.1-2</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:19801a3d-e429-4c64-936f-6c0a485c291c">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31388,7 +31532,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7803555d-aaaa-46e2-8a87-3bd3655b3796">
+    <vulnerability bom-ref="urn:uuid:3877b870-b5ca-4682-b55c-73d80d725ed7">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31424,151 +31568,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:89f2dcce-b191-4020-9d1a-8989f872abd3">
-      <id>CVE-2018-5709</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2018-5709</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.01381</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libgssapi-krb5-2@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=50b1ba90f2051b20&amp;upstream=krb5%401.22.1-2</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cfb87155-e0c5-4466-8227-bac429407123">
-      <id>CVE-2018-5709</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2018-5709</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.01381</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libk5crypto3@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=c959470bfb6c2914&amp;upstream=krb5%401.22.1-2</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a231cb74-00a0-4bfc-a52e-830299632119">
-      <id>CVE-2018-5709</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2018-5709</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.01381</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libkrb5-3@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=3c7997934f0c6302&amp;upstream=krb5%401.22.1-2</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:04b9fa45-a55f-4b73-957d-bb44466deae4">
-      <id>CVE-2018-5709</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2018-5709</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2018-5709</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.01381</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable &#34;dbentry-&gt;n_key_data&#34; in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a &#34;u4&#34; variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libkrb5support0@1.22.1-2%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=7d5739c915a88edc&amp;upstream=krb5%401.22.1-2</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:160ba88b-bef6-4ff0-94de-3a94592b8d3b">
+    <vulnerability bom-ref="urn:uuid:49956bc9-7078-4451-8ae1-16c1f92cf0a1">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31604,7 +31604,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7e762436-f82b-4f77-ac08-2153b5267dd6">
+    <vulnerability bom-ref="urn:uuid:1f2d3319-06ce-475a-a6b1-28eda1c6880c">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31640,7 +31640,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9c03e61f-673d-4673-9f0c-4b7e6c6435cf">
+    <vulnerability bom-ref="urn:uuid:45d3eb0b-29b9-42db-9650-0fa30352fc57">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31676,7 +31676,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:508e0f83-4e34-451b-b061-f7a487796f76">
+    <vulnerability bom-ref="urn:uuid:b495cce2-f046-4a50-b575-ed0cd7f7f59b">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31712,7 +31712,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:13a1b648-36b1-4b66-bbe9-0f0e104226c9">
+    <vulnerability bom-ref="urn:uuid:d0f98ece-7204-4502-ad3b-06faa0174b4f">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31748,7 +31748,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d15b54c6-8c84-4a2f-9c6a-66f104ab4e21">
+    <vulnerability bom-ref="urn:uuid:72df39bb-e0cf-40d8-9ce1-7b05e0ef9414">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31784,7 +31784,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e4b366fd-df83-4385-a648-33122e2fc65b">
+    <vulnerability bom-ref="urn:uuid:97849d23-64e6-4ba4-9fc7-f3c81bb5c3b4">
       <id>CVE-2026-40355</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31811,7 +31811,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -31822,7 +31822,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4fa32c88-4017-4763-9573-fc35037c120e">
+    <vulnerability bom-ref="urn:uuid:926b7339-f227-4b90-8e3b-8993fa8a8dcc">
       <id>CVE-2026-40355</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31849,7 +31849,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -31860,7 +31860,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:de3ff3e2-350a-46ca-b797-34316f62adea">
+    <vulnerability bom-ref="urn:uuid:72f7d4ce-b78d-465b-9be2-e88dbbc9b5f6">
       <id>CVE-2026-40355</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31887,7 +31887,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -31898,7 +31898,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a6e1c0ec-01b4-4871-bc08-20a94e4fe02a">
+    <vulnerability bom-ref="urn:uuid:dc23fe3f-e0b0-44ff-9a29-63e00aa1b47e">
       <id>CVE-2026-40355</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31925,7 +31925,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -31936,7 +31936,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:561ab4db-a0f4-4019-bef6-acc99cda7ab2">
+    <vulnerability bom-ref="urn:uuid:4478a4bc-265a-42d7-9ccd-193facada103">
       <id>CVE-2026-40356</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31963,7 +31963,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -31974,7 +31974,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:bc33dabc-e1e0-4e28-a508-e6e2157c2f35">
+    <vulnerability bom-ref="urn:uuid:16e3b52a-78fa-426a-9f90-0ca502d13645">
       <id>CVE-2026-40356</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32001,7 +32001,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -32012,7 +32012,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:92d7a7e2-c48e-4f6b-9d76-602964d45fb8">
+    <vulnerability bom-ref="urn:uuid:fd75cbac-d1ef-456b-b9be-e6ff5f72d871">
       <id>CVE-2026-40356</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32039,7 +32039,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -32050,7 +32050,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9d2b6ae0-3938-4fcc-9bd6-8f998d89badd">
+    <vulnerability bom-ref="urn:uuid:5955801f-5d31-46f2-93cd-ff9caf82ed12">
       <id>CVE-2026-40356</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32077,7 +32077,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00099</score>
+          <score>0.00108</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -32088,7 +32088,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fc296c9a-28c8-41e1-84ae-948576892884">
+    <vulnerability bom-ref="urn:uuid:61487214-4a05-4226-9265-e0f0b6f78760">
       <id>CVE-2026-5450</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32126,7 +32126,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:276015fa-5012-4292-a045-5c5a1d0e67dd">
+    <vulnerability bom-ref="urn:uuid:69e42617-0ce1-4519-82d5-1ffe64e9e8da">
       <id>CVE-2026-5450</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32164,7 +32164,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cd122d0e-0eed-40e2-b821-eda4d936f1e6">
+    <vulnerability bom-ref="urn:uuid:73571bec-2be5-493c-a097-add9744326f9">
       <id>CVE-2026-5450</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32202,7 +32202,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3a4ca6d6-40bc-4db0-beef-517ec211f45c">
+    <vulnerability bom-ref="urn:uuid:09b9b56f-aad1-4945-b257-2ac33a6a4876">
       <id>CVE-2026-48962</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32240,7 +32240,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5d9130be-9c8e-46af-ac27-0b1c7a82af7b">
+    <vulnerability bom-ref="urn:uuid:21b1264a-4e8b-4ca6-82d8-5fc6cd57f0cc">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32278,7 +32278,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f93cbd22-a5be-41b3-929c-a452b33dbc1e">
+    <vulnerability bom-ref="urn:uuid:dc13934b-e017-454f-aa36-cdca30f49a11">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32316,7 +32316,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e2c72373-d781-4b72-b480-7e89e0e1ddb0">
+    <vulnerability bom-ref="urn:uuid:7824fcfc-69c5-4de9-bf0e-a173e773cd5a">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32354,7 +32354,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5ef45e89-fceb-4a6f-920b-b67aded50df0">
+    <vulnerability bom-ref="urn:uuid:67d6e15e-9238-4ad1-bd35-7d4ab0b58f68">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32392,7 +32392,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:96c8e377-b523-44b2-999d-a064543a54db">
+    <vulnerability bom-ref="urn:uuid:bab76e41-efe9-498e-9268-0c3c0ec10098">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32430,7 +32430,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0b14a9ae-e676-4974-8627-b0bbde59bfe5">
+    <vulnerability bom-ref="urn:uuid:04ab5622-765a-4334-b156-0f9942fdf158">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32468,7 +32468,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b1952a83-6619-4b60-81f7-991b13048035">
+    <vulnerability bom-ref="urn:uuid:8d5c29b5-b14a-4433-95f2-db0c7908038d">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32506,7 +32506,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:91500ac8-aac9-4479-8b02-d3761a8fcf87">
+    <vulnerability bom-ref="urn:uuid:8bb4ed25-ebdb-418c-b219-4196e2f8d41d">
       <id>CVE-2026-3184</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32544,7 +32544,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:971a1892-0d17-4ed5-aa82-e004f83e1fd2">
+    <vulnerability bom-ref="urn:uuid:fcb1d9f5-3d7a-479b-95ac-fddead491d6b">
       <id>CVE-2026-8376</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32582,7 +32582,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2720fb93-6e8d-466c-b801-8b37a859e370">
+    <vulnerability bom-ref="urn:uuid:6d855e88-3c60-4fc1-acdf-e43ee965c405">
       <id>CVE-2026-5928</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32620,7 +32620,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:325561ed-65ac-47c2-b22a-b39aad830d94">
+    <vulnerability bom-ref="urn:uuid:4e3a7636-e2a0-4fd8-b0ba-99727fb7a7c0">
       <id>CVE-2026-5928</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32658,7 +32658,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9c7ffa1d-cdae-44db-9725-f92ddec27de0">
+    <vulnerability bom-ref="urn:uuid:91a7bd33-6efc-473d-bd0e-ac778b23507d">
       <id>CVE-2026-5928</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32696,7 +32696,121 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a318a1bf-208d-424b-b050-39757d7a043a">
+    <vulnerability bom-ref="urn:uuid:00050cb7-5acd-426d-87b4-68629605525e">
+      <id>CVE-2026-5435</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-5435</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.3</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00049</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&amp;distro=debian&amp;package-id=76071b77225ac4ad&amp;upstream=glibc</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:5e331f49-6368-40bb-ad40-1fe2815d0360">
+      <id>CVE-2026-5435</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-5435</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.3</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00049</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&amp;distro=debian&amp;package-id=00c49538cde1b2e7&amp;upstream=glibc</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:98cc6c44-f600-48af-b7ab-655c37aa591b">
+      <id>CVE-2026-5435</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-5435</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.3</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00049</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc6@2.42-16?arch=amd64&amp;distro=debian&amp;package-id=f2ccb46c99b36459&amp;upstream=glibc</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:12fe4671-78a4-469c-8df0-a63be4ccdd9f">
       <id>CVE-2026-42496</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32734,18 +32848,56 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:72df8d12-1cbc-4dfb-996d-f8a09fc29001">
-      <id>CVE-2026-5435</id>
+    <vulnerability bom-ref="urn:uuid:822b342c-09b7-445d-a182-e6e998755a21">
+      <id>CVE-2026-48959</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-48959</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-5435</id>
+          <id>CVE-2026-48959</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-48959</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00038</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion via per-byte read loop in fastForward.  fastForward() compares length $offset (the digit count of the offset, 1 to 19) against the chunk size $c instead of $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.  Extracting a named entry from an attacker supplied zip via IO::Uncompress::Unzip-&gt;new($zip, Name =&gt; $target) drives a per-byte read loop scaling with the entry&#39;s compressed size, up to the non-Zip64 4 GiB cap.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=a5d95bb1e70b9682&amp;upstream=perl%405.40.1-7</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:b6aa4b4a-6e19-4eac-bdfc-0efbf16b4925">
+      <id>CVE-2026-48961</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-48961</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-48961</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-48961</url>
           </source>
         </reference>
       </references>
@@ -32761,94 +32913,18 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00045</score>
+          <score>0.00037</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</description>
+      <description>IO::Compress versions from 2.207 before 2.220 for Perl ship a zipdetails CLI tool that crashes with undefined subroutine on Info-ZIP Unix Extra Field with 8-byte UID or GID.  When decode_ux() in bin/zipdetails handles an Info-ZIP Unix Extra Field (tag 0x7875) with UID Size or GID Size set to 8, causing zipdetails to decode an 8-byte UID or GID value, it dispatches through decodeLitteEndian(), which calls a misnamed helper unpackValueQ. The actual function defined in the same file is unpackValue_Q (with underscore); the call raises &#39;Undefined subroutine &amp;main::unpackValueQ&#39; and the script exits with status 255.  Library callers of IO::Compress and IO::Uncompress are not affected; the defect is in the bundled CLI tool.</description>
       <affects>
         <target>
-          <ref>pkg:deb/debian/libc-bin@2.42-16?arch=amd64&amp;distro=debian&amp;package-id=76071b77225ac4ad&amp;upstream=glibc</ref>
+          <ref>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=a5d95bb1e70b9682&amp;upstream=perl%405.40.1-7</ref>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:874a7584-f3cf-4786-880c-c70e0641fcdc">
-      <id>CVE-2026-5435</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-5435</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.3</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00045</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&amp;distro=debian&amp;package-id=00c49538cde1b2e7&amp;upstream=glibc</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:08d65337-7632-4820-a627-c539f83dd4a3">
-      <id>CVE-2026-5435</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-5435</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-5435</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.3</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00045</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc6@2.42-16?arch=amd64&amp;distro=debian&amp;package-id=f2ccb46c99b36459&amp;upstream=glibc</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ae623f6f-5f04-4672-a6e0-74f89757ed7c">
+    <vulnerability bom-ref="urn:uuid:158e7f2a-ef0e-4b26-93f6-3e151b063ccb">
       <id>CVE-2026-42497</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32886,7 +32962,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:bc3d31c0-9c04-4091-adbf-7ae15a27259e">
+    <vulnerability bom-ref="urn:uuid:27c73fe3-b6d8-4687-b43b-77adab949676">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32922,7 +32998,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0fb4b8d5-6e1e-49ed-a044-424e0e5212f8">
+    <vulnerability bom-ref="urn:uuid:9d25f3a2-4bfd-42ad-9e24-72db5b423ad3">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32958,7 +33034,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ba6e1450-790e-43df-8257-55b0f3ebdce7">
+    <vulnerability bom-ref="urn:uuid:3bc86b41-81e5-4774-8fc5-18e7a9b07707">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32994,7 +33070,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:43674a11-5038-4b53-9782-40128651dd95">
+    <vulnerability bom-ref="urn:uuid:257a785f-a5bc-4ae4-8571-0fcc20c1528a">
       <id>CVE-2026-9538</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33032,7 +33108,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:eb353bfe-65f8-40ce-97b9-edf8c0d9d000">
+    <vulnerability bom-ref="urn:uuid:6c8018ec-a428-4aab-b53d-86de6ccd511b">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33068,7 +33144,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7e7abca6-450d-40c0-bf11-31ab94e5537c">
+    <vulnerability bom-ref="urn:uuid:8ab85cac-f2b3-4d6a-a0e5-3fa64ef76570">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33104,7 +33180,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c5cbf87d-a792-4496-ab20-6bdd29028142">
+    <vulnerability bom-ref="urn:uuid:cc4d959b-7ef7-4f10-8cad-0e7a98c4f475">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33140,7 +33216,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d3aa9f95-febd-452f-85c8-1bf35c4659e4">
+    <vulnerability bom-ref="urn:uuid:880feb0d-85f1-4784-a5d7-0676bd12997a">
       <id>CVE-2026-5704</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33178,7 +33254,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:61e0921b-9aeb-4566-9db6-a08008012afb">
+    <vulnerability bom-ref="urn:uuid:7066fa3c-c7da-43b1-b13e-43e4708f306d">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33214,7 +33290,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0f367cb3-4235-4c14-9d15-acbe01578452">
+    <vulnerability bom-ref="urn:uuid:25f2a4f2-7230-4c6f-9942-eeaaea40683f">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33250,7 +33326,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:300c7682-c163-4795-a372-3b7adeb3b0de">
+    <vulnerability bom-ref="urn:uuid:b37a47be-7471-424c-a176-e98a4c185a54">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33286,83 +33362,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e0565ba0-f625-4767-9f3c-ba3ae39d7cff">
-      <id>CVE-2026-48959</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-48959</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-48959</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-48959</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00017</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion via per-byte read loop in fastForward.  fastForward() compares length $offset (the digit count of the offset, 1 to 19) against the chunk size $c instead of $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.  Extracting a named entry from an attacker supplied zip via IO::Uncompress::Unzip-&gt;new($zip, Name =&gt; $target) drives a per-byte read loop scaling with the entry&#39;s compressed size, up to the non-Zip64 4 GiB cap.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=a5d95bb1e70b9682&amp;upstream=perl%405.40.1-7</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e8f316ee-011b-44da-ba32-ed9424998bde">
-      <id>CVE-2026-48961</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-48961</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-48961</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-48961</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.3</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00017</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>IO::Compress versions from 2.207 before 2.220 for Perl ship a zipdetails CLI tool that crashes with undefined subroutine on Info-ZIP Unix Extra Field with 8-byte UID or GID.  When decode_ux() in bin/zipdetails handles an Info-ZIP Unix Extra Field (tag 0x7875) with UID Size or GID Size set to 8, causing zipdetails to decode an 8-byte UID or GID value, it dispatches through decodeLitteEndian(), which calls a misnamed helper unpackValueQ. The actual function defined in the same file is unpackValue_Q (with underscore); the call raises &#39;Undefined subroutine &amp;main::unpackValueQ&#39; and the script exits with status 255.  Library callers of IO::Compress and IO::Uncompress are not affected; the defect is in the bundled CLI tool.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=a5d95bb1e70b9682&amp;upstream=perl%405.40.1-7</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f7286af5-056b-41b7-8cf6-78b496dc2849">
+    <vulnerability bom-ref="urn:uuid:ed5ced12-83fa-4af1-99fc-93accdfe8d9e">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33398,7 +33398,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ebc85b71-b917-4984-8a1a-b4d8b5477c61">
+    <vulnerability bom-ref="urn:uuid:90f21415-8fc5-4641-a90d-7cb467013bf5">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33434,7 +33434,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:19f682ed-003f-4a64-bf10-b8c39778b970">
+    <vulnerability bom-ref="urn:uuid:c023462a-8e39-4043-9404-629eaea88528">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33470,7 +33470,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:875633f6-e160-4cd4-a6a8-0e36b8aba8bb">
+    <vulnerability bom-ref="urn:uuid:7f9d489f-43ec-41ee-b636-ad7a9b9bde36">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33506,7 +33506,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1e95c403-b8d5-4708-a8c9-f6ca2543c453">
+    <vulnerability bom-ref="urn:uuid:cbcec434-0e87-4677-bb09-14be6ee88b8e">
       <id>CVE-2020-15719</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33542,45 +33542,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8c05e982-1790-4ed1-95fe-1c257bfe2f12">
-      <id>CVE-2025-15649</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2025-15649</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2025-15649</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2025-15649</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>5.5</score>
-          <severity>medium</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.0002</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught exception when parsing zip header with malformed DOS date.  _dosToUnixTime() decodes the local-file-header last-modification date field and calls Time::Local::timelocal() without an eval guard. A header whose date field decodes to an out-of-range month, day, or hour causes timelocal() to die.  The exception propagates out of IO::Uncompress::Unzip-&gt;new($file) where callers expect undef plus $UnzipError.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=a5d95bb1e70b9682&amp;upstream=perl%405.40.1-7</ref>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0f01ceda-0e6f-4289-b74e-775c5e1fc2db">
+    <vulnerability bom-ref="urn:uuid:06eee5fc-25b4-4c87-976f-30c58f5ea5ea">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33616,7 +33578,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2c92cd56-a74d-4353-9684-cb0411222d8e">
+    <vulnerability bom-ref="urn:uuid:c29b25a2-3f17-4e2f-bf96-e0f9f85ab9bc">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33652,7 +33614,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2b57d563-2647-444c-b83d-e5e1e3453652">
+    <vulnerability bom-ref="urn:uuid:89090015-334d-43b3-b9eb-a5b7d9ab5f05">
       <id>CVE-2011-4116</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33688,7 +33650,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a66a934a-180a-4e9b-a48d-cd8cd55b0304">
+    <vulnerability bom-ref="urn:uuid:df6dfc69-f3a4-4606-9f60-932272d1156d">
       <id>CVE-2026-6238</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33715,7 +33677,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00015</score>
+          <score>0.00016</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -33726,7 +33688,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d9fc4570-957e-4119-84b1-c79d08422342">
+    <vulnerability bom-ref="urn:uuid:5715185d-8329-45e1-a584-385baffae24d">
       <id>CVE-2026-6238</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33753,7 +33715,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00015</score>
+          <score>0.00016</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -33764,7 +33726,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d8352d26-3985-408e-8956-4e3b2ee6a690">
+    <vulnerability bom-ref="urn:uuid:8a191219-25e1-4291-8b09-582edcb3cc58">
       <id>CVE-2026-6238</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33791,7 +33753,7 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00015</score>
+          <score>0.00016</score>
           <method>other</method>
         </rating>
       </ratings>
@@ -33802,7 +33764,45 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b7078229-d918-44e4-9340-5e9629dff50f">
+    <vulnerability bom-ref="urn:uuid:904f422c-4140-480c-846f-1922e1a5dfaf">
+      <id>CVE-2026-42250</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-42250</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-42250</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-42250</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>5.1</score>
+          <severity>medium</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00016</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing a specially crafted file, the application performs an out‑of‑bounds write to a global buffer, resulting in memory corruption and a crash (denial of service).  This issue was fixed in bzip2 patch 35d122a3df8b0cc4082a4d89fdc6ee99f375fe67</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64&amp;distro=debian&amp;package-id=da9cd667d901a272&amp;upstream=bzip2%401.0.8-6</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:265c465c-9774-4b6a-8108-ba5f8727d653">
       <id>CVE-2017-14159</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33838,7 +33838,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4ab180f6-5021-4e99-a89b-65811a429a04">
+    <vulnerability bom-ref="urn:uuid:6c1a4946-f2f0-4bd6-9fae-530f2dc1030c">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33874,7 +33874,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e33dc11a-08d6-4ecc-90ae-88bed7110031">
+    <vulnerability bom-ref="urn:uuid:4da77d3c-47ad-4098-83b3-f1f980ff7b72">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33910,7 +33910,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7e8d635a-a09c-48e9-9f95-b9052287ee36">
+    <vulnerability bom-ref="urn:uuid:a8d3f5df-c065-4dca-ab9c-2b9c5b636c6b">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33946,7 +33946,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b65b54bd-df9a-4e2a-85d9-568e4899a64b">
+    <vulnerability bom-ref="urn:uuid:a299eb11-bcec-4cb7-95a3-fb66a39a078c">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33982,7 +33982,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:978c4c4e-ddb1-4436-b4d9-d40694c969e6">
+    <vulnerability bom-ref="urn:uuid:3c522f77-18cb-4ad7-995b-56d1e3481541">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34018,7 +34018,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4e88afb5-d9a5-4c3e-b839-c9673c19abe9">
+    <vulnerability bom-ref="urn:uuid:d008853b-506e-4336-b2a5-2407b6695672">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34054,7 +34054,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cf693811-300e-4a80-aacc-1f0e89d49a8e">
+    <vulnerability bom-ref="urn:uuid:cec8a1bf-5176-4c9c-9505-d338d47d0f6d">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34090,7 +34090,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fc0fb6cf-6a64-4fa6-8a59-48f2ebe4bea2">
+    <vulnerability bom-ref="urn:uuid:57872c75-314a-4933-9d33-55e5897e0fb2">
       <id>CVE-2025-5278</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34126,7 +34126,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7d8dc643-0d81-453c-9ea3-b20bd48bfcf7">
+    <vulnerability bom-ref="urn:uuid:8522bbb6-96dd-4413-b0b6-30410ad31644">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34162,7 +34162,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5bcc28ec-2db1-4598-b7cc-0321fa3f4b6c">
+    <vulnerability bom-ref="urn:uuid:6b6fe56d-8b8a-45ed-8865-f7edd15520b5">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34198,7 +34198,45 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fe97e93e-013a-412d-99e7-372b4127c424">
+    <vulnerability bom-ref="urn:uuid:8b8b43cc-7b1d-4e60-bbeb-1b3005962f96">
+      <id>CVE-2025-15649</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2025-15649</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2025-15649</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2025-15649</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>5.5</score>
+          <severity>medium</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00012</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught exception when parsing zip header with malformed DOS date.  _dosToUnixTime() decodes the local-file-header last-modification date field and calls Time::Local::timelocal() without an eval guard. A header whose date field decodes to an out-of-range month, day, or hour causes timelocal() to die.  The exception propagates out of IO::Uncompress::Unzip-&gt;new($file) where callers expect undef plus $UnzipError.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&amp;distro=debian&amp;package-id=a5d95bb1e70b9682&amp;upstream=perl%405.40.1-7</ref>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:ca9474ff-71e4-41a1-9f74-e7d5779f6c21">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34234,7 +34272,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:79f0fadf-bcdd-4cc6-9807-8bc7123657a3">
+    <vulnerability bom-ref="urn:uuid:5301460f-b25e-4b9b-a14d-72e03c9ea7a3">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34270,7 +34308,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5b64cda4-8c2f-4c99-acea-e3b9e662cef1">
+    <vulnerability bom-ref="urn:uuid:009a39bd-5782-49f3-8d9e-106f74b31565">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34306,7 +34344,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9c26eb39-5d93-45ba-85a5-f348d1534750">
+    <vulnerability bom-ref="urn:uuid:cdcb1268-19b7-44a8-9344-7060a1f217cd">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34342,7 +34380,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:250f30f9-f395-4d17-9781-f9d0faca8756">
+    <vulnerability bom-ref="urn:uuid:bd8dc06b-0b6d-4f4f-983c-7740ec09fc7d">
       <id>CVE-2017-18018</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34378,7 +34416,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5c87e103-3dc6-46ce-b210-a1700cd81647">
+    <vulnerability bom-ref="urn:uuid:4184f849-b3cf-4441-a0dc-8e71d3dcce09">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34414,7 +34452,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f2d76ddd-96e7-4f6f-b7b0-a8eef8ba871b">
+    <vulnerability bom-ref="urn:uuid:a0e580fe-5c82-4056-beac-9afa4fcc64a2">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34450,7 +34488,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a853746d-b9ec-4164-9d9a-205bcbaf9c03">
+    <vulnerability bom-ref="urn:uuid:5af4ec6b-9d56-49d1-b698-3a3f56f19423">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34488,7 +34526,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a3772ec2-4aa3-4909-b2fa-1d33cf2e5478">
+    <vulnerability bom-ref="urn:uuid:4c10544b-25ad-43b8-95e4-fb636394982b">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34526,7 +34564,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a7b8299c-b1c5-40d6-8adf-8cb7f5c10f3e">
+    <vulnerability bom-ref="urn:uuid:5e948818-10f2-4da5-a69b-0d8b16aa5202">
       <id>CVE-2026-22185</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34562,7 +34600,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7d5e6fed-c5cb-447c-97d0-072114b20a56">
+    <vulnerability bom-ref="urn:uuid:33c3bf5b-ed79-441f-a7ba-02d74e126ca2">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34598,7 +34636,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:60ddb081-ee45-484c-82fa-168e592ce590">
+    <vulnerability bom-ref="urn:uuid:77121e5d-cacc-4a01-a91b-a4077c373102">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34634,7 +34672,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6ac1ea72-8e22-4f5a-a5c2-8638b233e335">
+    <vulnerability bom-ref="urn:uuid:5d24c715-c5e7-4ca4-a6f2-8f5ffb29bdcf">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34670,7 +34708,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:497f63f9-752d-42ec-99c6-cc3540d6cbe4">
+    <vulnerability bom-ref="urn:uuid:8906d141-5912-4e26-b243-27209587f03d">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34706,7 +34744,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:07c67dc8-4e08-4492-ac53-e67096077071">
+    <vulnerability bom-ref="urn:uuid:60953952-e16d-48bd-a036-4fa77129d06b">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34742,7 +34780,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2390fb13-2f38-45b0-b82a-8f49a016d02b">
+    <vulnerability bom-ref="urn:uuid:2b0223bf-a1a7-4be1-bf67-ed3f683df2f9">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34778,7 +34816,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1a6673f3-7d54-4cd2-af04-bc5b9dfd78d2">
+    <vulnerability bom-ref="urn:uuid:02fd032c-4ba6-44aa-813b-c0e9f8bac404">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34814,7 +34852,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ffd66f01-96c5-4dc5-b2ed-2b1480c5d4f2">
+    <vulnerability bom-ref="urn:uuid:daa77436-c749-42d2-86ab-51d7896a78ca">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
