@@ -304,6 +304,69 @@
               }
             },
             {
+              "id": "CVE-2026-5450-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5450 critical vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+              "help": {
+                "text": "Vulnerability CVE-2026-5450\nSeverity: critical\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)",
+                "markdown": "**Vulnerability CVE-2026-5450**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libc-bin  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2026-5450-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5450 critical vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+              "help": {
+                "text": "Vulnerability CVE-2026-5450\nSeverity: critical\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)",
+                "markdown": "**Vulnerability CVE-2026-5450**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libc-gconv-modules-extra  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2026-5450-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5450 critical vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+              "help": {
+                "text": "Vulnerability CVE-2026-5450\nSeverity: critical\nPackage: libc6\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)",
+                "markdown": "**Vulnerability CVE-2026-5450**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libc6  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
               "id": "CVE-2018-20796-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -598,66 +661,66 @@
               }
             },
             {
-              "id": "CVE-2026-5450-libc-bin",
+              "id": "CVE-2026-5928-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-5450 critical vulnerability for libc-bin package"
+                "text": "CVE-2026-5928 high vulnerability for libc-bin package"
               },
               "fullDescription": {
-                "text": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow."
+                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
               "help": {
-                "text": "Vulnerability CVE-2026-5450\nSeverity: critical\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)",
-                "markdown": "**Vulnerability CVE-2026-5450**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libc-bin  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)  |\n"
+                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
+                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-bin  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
-                "security-severity": "9.8"
+                "security-severity": "7.5"
               }
             },
             {
-              "id": "CVE-2026-5450-libc-gconv-modules-extra",
+              "id": "CVE-2026-5928-libc-gconv-modules-extra",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-5450 critical vulnerability for libc-gconv-modules-extra package"
+                "text": "CVE-2026-5928 high vulnerability for libc-gconv-modules-extra package"
               },
               "fullDescription": {
-                "text": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow."
+                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
               "help": {
-                "text": "Vulnerability CVE-2026-5450\nSeverity: critical\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)",
-                "markdown": "**Vulnerability CVE-2026-5450**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libc-gconv-modules-extra  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)  |\n"
+                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
+                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-gconv-modules-extra  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
-                "security-severity": "9.8"
+                "security-severity": "7.5"
               }
             },
             {
-              "id": "CVE-2026-5450-libc6",
+              "id": "CVE-2026-5928-libc6",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-5450 critical vulnerability for libc6 package"
+                "text": "CVE-2026-5928 high vulnerability for libc6 package"
               },
               "fullDescription": {
-                "text": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow."
+                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
               "help": {
-                "text": "Vulnerability CVE-2026-5450\nSeverity: critical\nPackage: libc6\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)",
-                "markdown": "**Vulnerability CVE-2026-5450**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libc6  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5450](https://security-tracker.debian.org/tracker/CVE-2026-5450)  |\n"
+                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc6\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
+                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc6  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
-                "security-severity": "9.8"
+                "security-severity": "7.5"
               }
             },
             {
@@ -679,6 +742,27 @@
                   "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
                 ],
                 "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2026-42496-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42496 critical vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
+              "help": {
+                "text": "Vulnerability CVE-2026-42496\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)",
+                "markdown": "**Vulnerability CVE-2026-42496**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
+                ],
+                "security-severity": "9.1"
               }
             },
             {
@@ -871,69 +955,6 @@
               }
             },
             {
-              "id": "CVE-2026-5928-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-5928 high vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
-              "help": {
-                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
-                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-bin  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-5928-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-5928 high vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
-              "help": {
-                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
-                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-gconv-modules-extra  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-5928-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-5928 high vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
-              "help": {
-                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc6\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
-                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc6  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
               "id": "CVE-2026-5435-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -997,24 +1018,24 @@
               }
             },
             {
-              "id": "CVE-2026-42496-perl-base",
+              "id": "CVE-2026-42497-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-42496 critical vulnerability for perl-base package"
+                "text": "CVE-2026-42497 high vulnerability for perl-base package"
               },
               "fullDescription": {
-                "text": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path."
+                "text": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42497",
               "help": {
-                "text": "Vulnerability CVE-2026-42496\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)",
-                "markdown": "**Vulnerability CVE-2026-42496**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)  |\n"
+                "text": "Vulnerability CVE-2026-42497\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)",
+                "markdown": "**Vulnerability CVE-2026-42497**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
                 ],
-                "security-severity": "9.1"
+                "security-severity": "7.5"
               }
             },
             {
@@ -1030,6 +1051,27 @@
               "help": {
                 "text": "Vulnerability CVE-2026-48959\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48959](https://security-tracker.debian.org/tracker/CVE-2026-48959)",
                 "markdown": "**Vulnerability CVE-2026-48959**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48959](https://security-tracker.debian.org/tracker/CVE-2026-48959)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-9538-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-9538 high vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+              "help": {
+                "text": "Vulnerability CVE-2026-9538\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)",
+                "markdown": "**Vulnerability CVE-2026-9538**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)  |\n"
               },
               "properties": {
                 "purls": [
@@ -1057,27 +1099,6 @@
                   "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
                 ],
                 "security-severity": "7.3"
-              }
-            },
-            {
-              "id": "CVE-2026-42497-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42497 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42497",
-              "help": {
-                "text": "Vulnerability CVE-2026-42497\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)",
-                "markdown": "**Vulnerability CVE-2026-42497**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
-                ],
-                "security-severity": "7.5"
               }
             },
             {
@@ -1141,27 +1162,6 @@
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-9538-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9538 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
-              "help": {
-                "text": "Vulnerability CVE-2026-9538\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)",
-                "markdown": "**Vulnerability CVE-2026-9538**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
-                ],
-                "security-severity": "7.5"
               }
             },
             {
@@ -2844,6 +2844,143 @@
           }
         },
         {
+          "ruleId": "CVE-2026-5450-libc-bin",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: libc-bin, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7fdc0421a0129e3a449009a0ce25b628e097c450508732c809126c26feded48c:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-5450-libc-gconv-modules-extra",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: libc-gconv-modules-extra, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7c44aa0d4a9176eb02773d6969c32881f4332d178a18fee77446628870d0beb8:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-5450-libc6",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: libc6, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
+          }
+        },
+        {
           "ruleId": "CVE-2018-20796-libc-bin",
           "level": "note",
           "message": {
@@ -3430,10 +3567,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-5450-libc-bin",
+          "ruleId": "CVE-2026-5928-libc-bin",
           "level": "error",
           "message": {
-            "text": "A critical vulnerability in deb package: libc-bin, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: libc-bin, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3485,10 +3622,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-5450-libc-gconv-modules-extra",
+          "ruleId": "CVE-2026-5928-libc-gconv-modules-extra",
           "level": "error",
           "message": {
-            "text": "A critical vulnerability in deb package: libc-gconv-modules-extra, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: libc-gconv-modules-extra, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3524,10 +3661,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-5450-libc6",
+          "ruleId": "CVE-2026-5928-libc6",
           "level": "error",
           "message": {
-            "text": "A critical vulnerability in deb package: libc6, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: libc6, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3568,6 +3705,49 @@
         },
         {
           "ruleId": "CVE-2026-8376-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42496-perl-base",
           "level": "error",
           "message": {
             "text": "A critical vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -4033,143 +4213,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-5928-libc-bin",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libc-bin, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "7fdc0421a0129e3a449009a0ce25b628e097c450508732c809126c26feded48c:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-5928-libc-gconv-modules-extra",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libc-gconv-modules-extra, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "7c44aa0d4a9176eb02773d6969c32881f4332d178a18fee77446628870d0beb8:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-5928-libc6",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libc6, version 2.42-16 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-5435-libc-bin",
           "level": "error",
           "message": {
@@ -4307,10 +4350,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-42496-perl-base",
+          "ruleId": "CVE-2026-42497-perl-base",
           "level": "error",
           "message": {
-            "text": "A critical vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -4393,7 +4436,7 @@
           }
         },
         {
-          "ruleId": "CVE-2026-48961-perl-base",
+          "ruleId": "CVE-2026-9538-perl-base",
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -4436,7 +4479,7 @@
           }
         },
         {
-          "ruleId": "CVE-2026-42497-perl-base",
+          "ruleId": "CVE-2026-48961-perl-base",
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -4613,49 +4656,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9538-perl-base",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
           }
         },
         {
