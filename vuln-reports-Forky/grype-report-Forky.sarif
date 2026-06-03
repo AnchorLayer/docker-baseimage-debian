@@ -493,6 +493,27 @@
               }
             },
             {
+              "id": "CVE-2026-48962-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-48962 high vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.  _parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.  Arbitrary Perl in the output glob executes at the calling process's privilege."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-48962",
+              "help": {
+                "text": "Vulnerability CVE-2026-48962\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48962](https://security-tracker.debian.org/tracker/CVE-2026-48962)",
+                "markdown": "**Vulnerability CVE-2026-48962**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48962](https://security-tracker.debian.org/tracker/CVE-2026-48962)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
+                ],
+                "security-severity": "7.3"
+              }
+            },
+            {
               "id": "CVE-2026-40355-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -766,27 +787,6 @@
               }
             },
             {
-              "id": "CVE-2026-48962-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-48962 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.  _parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.  Arbitrary Perl in the output glob executes at the calling process's privilege."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-48962",
-              "help": {
-                "text": "Vulnerability CVE-2026-48962\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48962](https://security-tracker.debian.org/tracker/CVE-2026-48962)",
-                "markdown": "**Vulnerability CVE-2026-48962**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48962](https://security-tracker.debian.org/tracker/CVE-2026-48962)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
-                ],
-                "security-severity": "7.3"
-              }
-            },
-            {
               "id": "CVE-2026-3184-bsdutils",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -955,6 +955,27 @@
               }
             },
             {
+              "id": "CVE-2026-48959-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-48959 high vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion via per-byte read loop in fastForward.  fastForward() compares length $offset (the digit count of the offset, 1 to 19) against the chunk size $c instead of $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.  Extracting a named entry from an attacker supplied zip via IO::Uncompress::Unzip-\u003enew($zip, Name =\u003e $target) drives a per-byte read loop scaling with the entry's compressed size, up to the non-Zip64 4 GiB cap."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-48959",
+              "help": {
+                "text": "Vulnerability CVE-2026-48959\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48959](https://security-tracker.debian.org/tracker/CVE-2026-48959)",
+                "markdown": "**Vulnerability CVE-2026-48959**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48959](https://security-tracker.debian.org/tracker/CVE-2026-48959)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-5435-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1039,24 +1060,24 @@
               }
             },
             {
-              "id": "CVE-2026-48959-perl-base",
+              "id": "CVE-2026-48961-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-48959 high vulnerability for perl-base package"
+                "text": "CVE-2026-48961 high vulnerability for perl-base package"
               },
               "fullDescription": {
-                "text": "IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion via per-byte read loop in fastForward.  fastForward() compares length $offset (the digit count of the offset, 1 to 19) against the chunk size $c instead of $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.  Extracting a named entry from an attacker supplied zip via IO::Uncompress::Unzip-\u003enew($zip, Name =\u003e $target) drives a per-byte read loop scaling with the entry's compressed size, up to the non-Zip64 4 GiB cap."
+                "text": "IO::Compress versions from 2.207 before 2.220 for Perl ship a zipdetails CLI tool that crashes with undefined subroutine on Info-ZIP Unix Extra Field with 8-byte UID or GID.  When decode_ux() in bin/zipdetails handles an Info-ZIP Unix Extra Field (tag 0x7875) with UID Size or GID Size set to 8, causing zipdetails to decode an 8-byte UID or GID value, it dispatches through decodeLitteEndian(), which calls a misnamed helper unpackValueQ. The actual function defined in the same file is unpackValue_Q (with underscore); the call raises 'Undefined subroutine \u0026main::unpackValueQ' and the script exits with status 255.  Library callers of IO::Compress and IO::Uncompress are not affected; the defect is in the bundled CLI tool."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-48959",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-48961",
               "help": {
-                "text": "Vulnerability CVE-2026-48959\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48959](https://security-tracker.debian.org/tracker/CVE-2026-48959)",
-                "markdown": "**Vulnerability CVE-2026-48959**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48959](https://security-tracker.debian.org/tracker/CVE-2026-48959)  |\n"
+                "text": "Vulnerability CVE-2026-48961\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48961](https://security-tracker.debian.org/tracker/CVE-2026-48961)",
+                "markdown": "**Vulnerability CVE-2026-48961**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48961](https://security-tracker.debian.org/tracker/CVE-2026-48961)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
                 ],
-                "security-severity": "7.5"
+                "security-severity": "7.3"
               }
             },
             {
@@ -1078,27 +1099,6 @@
                   "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
                 ],
                 "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-48961-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-48961 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "IO::Compress versions from 2.207 before 2.220 for Perl ship a zipdetails CLI tool that crashes with undefined subroutine on Info-ZIP Unix Extra Field with 8-byte UID or GID.  When decode_ux() in bin/zipdetails handles an Info-ZIP Unix Extra Field (tag 0x7875) with UID Size or GID Size set to 8, causing zipdetails to decode an 8-byte UID or GID value, it dispatches through decodeLitteEndian(), which calls a misnamed helper unpackValueQ. The actual function defined in the same file is unpackValue_Q (with underscore); the call raises 'Undefined subroutine \u0026main::unpackValueQ' and the script exits with status 255.  Library callers of IO::Compress and IO::Uncompress are not affected; the defect is in the bundled CLI tool."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-48961",
-              "help": {
-                "text": "Vulnerability CVE-2026-48961\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-7+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-48961](https://security-tracker.debian.org/tracker/CVE-2026-48961)",
-                "markdown": "**Vulnerability CVE-2026-48961**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-7+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-48961](https://security-tracker.debian.org/tracker/CVE-2026-48961)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
-                ],
-                "security-severity": "7.3"
               }
             },
             {
@@ -3255,6 +3255,49 @@
           }
         },
         {
+          "ruleId": "CVE-2026-48962-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-40355-libgssapi-krb5-2",
           "level": "warning",
           "message": {
@@ -3790,49 +3833,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-48962-perl-base",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-3184-bsdutils",
           "level": "warning",
           "message": {
@@ -4213,6 +4213,49 @@
           }
         },
         {
+          "ruleId": "CVE-2026-48959-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-5435-libc-bin",
           "level": "error",
           "message": {
@@ -4393,7 +4436,7 @@
           }
         },
         {
-          "ruleId": "CVE-2026-48959-perl-base",
+          "ruleId": "CVE-2026-48961-perl-base",
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -4437,49 +4480,6 @@
         },
         {
           "ruleId": "CVE-2026-9538-perl-base",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8752316b05c1ccb8108c76a59d21b2f96916cd89698be2fe279de96a1e5648a9:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-48961-perl-base",
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: perl-base, version 5.40.1-7+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
