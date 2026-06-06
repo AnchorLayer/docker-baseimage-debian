@@ -1455,7 +1455,7 @@
                 "purls": [
                   "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=bzip2%401.0.8-6"
                 ],
-                "security-severity": "5.1"
+                "security-severity": "4.8"
               }
             },
             {
@@ -2026,27 +2026,6 @@
               }
             },
             {
-              "id": "CVE-2026-22185-libldap2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-22185 low vulnerability for libldap2 package"
-              },
-              "fullDescription": {
-                "text": "OpenLDAP Lightning Memory-Mapped Database (LMDB) versions up to and including 0.9.14, prior to commit 8e1fda8, contain a heap buffer underflow in the readline() function of mdb_load. When processing malformed input containing an embedded NUL byte, an unsigned offset calculation can underflow and cause an out-of-bounds read of one byte before the allocated heap buffer. This can cause mdb_load to crash, leading to a limited denial-of-service condition."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-22185",
-              "help": {
-                "text": "Vulnerability CVE-2026-22185\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)",
-                "markdown": "**Vulnerability CVE-2026-22185**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
-                ],
-                "security-severity": "4.6"
-              }
-            },
-            {
               "id": "CVE-2022-0563-bsdutils",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2212,6 +2191,27 @@
                   "pkg:deb/debian/util-linux@2.42-5?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "5.5"
+              }
+            },
+            {
+              "id": "CVE-2026-22185-libldap2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-22185 low vulnerability for libldap2 package"
+              },
+              "fullDescription": {
+                "text": "OpenLDAP Lightning Memory-Mapped Database (LMDB) versions up to and including 0.9.14, prior to commit 8e1fda8, contain a heap buffer underflow in the readline() function of mdb_load. When processing malformed input containing an embedded NUL byte, an unsigned offset calculation can underflow and cause an out-of-bounds read of one byte before the allocated heap buffer. This can cause mdb_load to crash, leading to a limited denial-of-service condition."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-22185",
+              "help": {
+                "text": "Vulnerability CVE-2026-22185\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)",
+                "markdown": "**Vulnerability CVE-2026-22185**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
+                ],
+                "security-severity": "4.6"
               }
             }
           ]
@@ -6427,45 +6427,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-22185-libldap2",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libldap2, version 2.6.10+dfsg-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libldap2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/usr/share/doc/libldap2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/info/libldap2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "36a8cc302a688fff355bfeb29f79275813e48b45757ec378cc620eb9b9afd8c8:1"
-          }
-        },
-        {
           "ruleId": "CVE-2022-0563-bsdutils",
           "level": "note",
           "message": {
@@ -6843,6 +6804,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "b7b9782ebc1f9dac700b783a2f07fe1c0808b190be964279ea73b396318c5913:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-22185-libldap2",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libldap2, version 2.6.10+dfsg-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libldap2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/usr/share/doc/libldap2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:7baa99f8f4571d695790937da89c37f80d5227cb66d34774625acfeb31baefc4:/var/lib/dpkg/info/libldap2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "36a8cc302a688fff355bfeb29f79275813e48b45757ec378cc620eb9b9afd8c8:1"
           }
         }
       ]
