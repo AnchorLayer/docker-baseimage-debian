@@ -813,14 +813,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
 
 <body>
     <div class="main-container">
@@ -833,11 +825,11 @@
 
                     <dt>Type:</dt>
                     <dd id="typeValue">image</dd><dt>Checksum:</dt>
-                    <dd id="checksumValue">sha256:89427730ec6f5add5daa0abf345100b79234ce21dbe4a12e21b74f9cbdc72ec3</dd><dt>Grype Version:</dt>
+                    <dd id="checksumValue">sha256:e0619a1be821122da9ebf086b4fc9b2f5b9e927276c1b7aed8a7912a86459c35</dd><dt>Grype Version:</dt>
                     <dd>grype 0.114.0</dd><dt>Vulnerability DB:</dt>
                     <dd>{"status":{"schemaVersion":"v6.1.7","from":"https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.7_2026-06-10T00:57:05Z_1781078141.tar.zst?checksum=sha256%3A8e86820083b7bfca39123663ae64ef83fa5d69e9c5047f04248b2980d1432ed5","built":"2026-06-10T07:55:41Z","path":"/home/runner/.cache/grype/db/6/vulnerability.db","valid":true},"providers":{"alma":{"captured":"2026-06-10T00:57:07Z","input":"xxh64:6960575e6e51891d"},"alpine":{"captured":"2026-06-10T00:57:05Z","input":"xxh64:dc4d7e4641187862"},"amazon":{"captured":"2026-06-10T00:57:06Z","input":"xxh64:7ba002974637a6a1"},"arch":{"captured":"2026-06-10T00:57:29Z","input":"xxh64:f22c392036a5185d"},"bitnami":{"captured":"2026-06-10T00:57:12Z","input":"xxh64:3e9abd7428f4d5c8"},"chainguard":{"captured":"2026-06-10T00:57:16Z","input":"xxh64:5c3394eee466adc9"},"chainguard-libraries":{"captured":"2026-06-10T00:57:12Z","input":"xxh64:694bd5c31116957a"},"debian":{"captured":"2026-06-10T00:57:24Z","input":"xxh64:fed62e6d24c15678"},"echo":{"captured":"2026-06-10T00:57:52Z","input":"xxh64:14b6039724f8ad15"},"eol":{"captured":"2026-06-10T00:57:08Z","input":"xxh64:05d742d406638495"},"epss":{"captured":"2026-06-10T00:57:34Z","input":"xxh64:23fda00e69893ce7"},"fedora":{"captured":"2026-06-10T00:57:16Z","input":"xxh64:7f401ca85edd43d2"},"github":{"captured":"2026-06-10T00:57:11Z","input":"xxh64:b73bc9138b9dda06"},"govulndb":{"captured":"2026-06-10T00:57:15Z","input":"xxh64:636f57a251e7b1ef"},"hummingbird":{"captured":"2026-06-10T00:57:18Z","input":"xxh64:53978c1b7e14bf09"},"kev":{"captured":"2026-06-10T00:57:43Z","input":"xxh64:193b71ecd019446a"},"mariner":{"captured":"2026-06-10T00:57:05Z","input":"xxh64:10688c1b508aac18"},"minimos":{"captured":"2026-06-10T00:57:12Z","input":"xxh64:63ab30821f14ccdd"},"nvd":{"captured":"2026-06-10T00:57:54Z","input":"xxh64:0a1d19fea5821f73"},"oracle":{"captured":"2026-06-10T00:57:08Z","input":"xxh64:cc03c4ed2997dce0"},"photon":{"captured":"2026-06-10T00:57:12Z","input":"xxh64:992a39460338379e"},"rhel":{"captured":"2026-06-10T00:58:18Z","input":"xxh64:6d49db469185ecb0"},"secureos":{"captured":"2026-06-10T00:57:27Z","input":"xxh64:f1c9e1712d81d1b0"},"sles":{"captured":"2026-06-10T00:57:39Z","input":"xxh64:e1b07b7fdbab3e64"},"ubuntu":{"captured":"2026-06-10T02:53:36Z","input":"xxh64:007813173b443957"},"wolfi":{"captured":"2026-06-10T00:57:30Z","input":"xxh64:3ae0e4c2bfe7ff77"}}}</dd><dt>Date:</dt>
                     <dd>
-                        <span id="dateElement">2026-06-10T21:10:56.48195558Z</span>
+                        <span id="dateElement">2026-06-11T07:17:56.112436188Z</span>
                         <span id="prettyDateElement" style="display: none;"></span>
                     </dd>
                     <dt>Grype Version:</dt>
@@ -862,7 +854,7 @@
             </div>
             <div class="severity-box" id="medium">
                 <div class="severity-title">Medium</div>
-                <div class="severity-count" id="mediumCount">31</div>
+                <div class="severity-count" id="mediumCount">23</div>
             </div>
             <div class="severity-box" id="low">
                 <div class="severity-title">Low</div>
@@ -989,150 +981,6 @@
                         <td>pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64&distro=debian&upstream=perl%405.40.1-7</td>
                     </tr>
                     <tr>
-                        <td>libgssapi-krb5-2</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgssapi-krb5-2@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libk5crypto3</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libk5crypto3@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libkrb5-3</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libkrb5-3@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libkrb5support0</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40355">CVE-2026-40355</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is a NULL pointer dereference if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, causing the process to terminate in parse_nego_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libkrb5support0@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libgssapi-krb5-2</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libgssapi-krb5-2@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libk5crypto3</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libk5crypto3@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libkrb5-3</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libkrb5-3@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
-                        <td>libkrb5support0</td>
-                        <td>1.22.1-2+b1</td>
-                        <td>deb</td>
-                        <td>
-                            <a href="https://security-tracker.debian.org/tracker/CVE-2026-40356">CVE-2026-40356</a>
-                        </td>
-                        <td>Medium</td>
-                        <td>fixed</td>
-                        <td>
-                            <ul>
-                                <li>1.22.1-2.1</li>
-                            </ul>
-                        </td>
-                        <td>In MIT Kerberos 5 (aka krb5) before 1.22.3, there is an integer underflow and resultant out-of-bounds read if an application calls gss_accept_sec_context() on a system with a NegoEx mechanism registered in /etc/gss/mech. An unauthenticated remote attacker can trigger this, possibly causing the process to terminate in parse_message.</td>
-                        <td>[]</td>
-                        <td>pkg:deb/debian/libkrb5support0@1.22.1-2%2Bb1?arch=amd64&distro=debian&upstream=krb5%401.22.1-2</td>
-                    </tr>
-                    <tr>
                         <td>libc-bin</td>
                         <td>2.42-16</td>
                         <td>deb</td>
@@ -1216,7 +1064,7 @@
                     </tr>
                     <tr>
                         <td>bsdutils</td>
-                        <td>1:2.42-5</td>
+                        <td>1:2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1228,11 +1076,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/bsdutils@1%3A2.42-5?arch=amd64&distro=debian&upstream=util-linux%402.42-5</td>
+                        <td>pkg:deb/debian/bsdutils@1%3A2.42.1-3?arch=amd64&distro=debian&upstream=util-linux%402.42.1-3</td>
                     </tr>
                     <tr>
                         <td>libblkid1</td>
-                        <td>2.42-5</td>
+                        <td>2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1244,11 +1092,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libblkid1@2.42-5?arch=amd64&distro=debian&upstream=util-linux</td>
+                        <td>pkg:deb/debian/libblkid1@2.42.1-3?arch=amd64&distro=debian&upstream=util-linux</td>
                     </tr>
                     <tr>
                         <td>libmount1</td>
-                        <td>2.42-5</td>
+                        <td>2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1260,11 +1108,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libmount1@2.42-5?arch=amd64&distro=debian&upstream=util-linux</td>
+                        <td>pkg:deb/debian/libmount1@2.42.1-3?arch=amd64&distro=debian&upstream=util-linux</td>
                     </tr>
                     <tr>
                         <td>libsmartcols1</td>
-                        <td>2.42-5</td>
+                        <td>2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1276,11 +1124,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libsmartcols1@2.42-5?arch=amd64&distro=debian&upstream=util-linux</td>
+                        <td>pkg:deb/debian/libsmartcols1@2.42.1-3?arch=amd64&distro=debian&upstream=util-linux</td>
                     </tr>
                     <tr>
                         <td>libuuid1</td>
-                        <td>2.42-5</td>
+                        <td>2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1292,11 +1140,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/libuuid1@2.42-5?arch=amd64&distro=debian&upstream=util-linux</td>
+                        <td>pkg:deb/debian/libuuid1@2.42.1-3?arch=amd64&distro=debian&upstream=util-linux</td>
                     </tr>
                     <tr>
                         <td>login</td>
-                        <td>1:4.16.0-2+really2.42-5</td>
+                        <td>1:4.16.0-2+really2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1308,11 +1156,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42-5?arch=amd64&distro=debian&upstream=util-linux%402.42-5</td>
+                        <td>pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.1-3?arch=amd64&distro=debian&upstream=util-linux%402.42.1-3</td>
                     </tr>
                     <tr>
                         <td>mount</td>
-                        <td>2.42-5</td>
+                        <td>2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1324,11 +1172,11 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/mount@2.42-5?arch=amd64&distro=debian&upstream=util-linux</td>
+                        <td>pkg:deb/debian/mount@2.42.1-3?arch=amd64&distro=debian&upstream=util-linux</td>
                     </tr>
                     <tr>
                         <td>util-linux</td>
-                        <td>2.42-5</td>
+                        <td>2.42.1-3</td>
                         <td>deb</td>
                         <td>
                             <a href="https://security-tracker.debian.org/tracker/CVE-2026-3184">CVE-2026-3184</a>
@@ -1340,7 +1188,7 @@
                         </td>
                         <td>A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.</td>
                         <td>[]</td>
-                        <td>pkg:deb/debian/util-linux@2.42-5?arch=amd64&distro=debian</td>
+                        <td>pkg:deb/debian/util-linux@2.42.1-3?arch=amd64&distro=debian</td>
                     </tr>
                     <tr>
                         <td>perl-base</td>
