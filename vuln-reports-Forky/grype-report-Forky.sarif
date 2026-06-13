@@ -178,48 +178,6 @@
               }
             },
             {
-              "id": "CVE-2026-45447-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-45447 high vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45447",
-              "help": {
-                "text": "Vulnerability CVE-2026-45447\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)",
-                "markdown": "**Vulnerability CVE-2026-45447**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "8.8"
-              }
-            },
-            {
-              "id": "CVE-2026-45447-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-45447 high vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45447",
-              "help": {
-                "text": "Vulnerability CVE-2026-45447\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)",
-                "markdown": "**Vulnerability CVE-2026-45447**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "8.8"
-              }
-            },
-            {
               "id": "CVE-2018-5709-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -301,6 +259,48 @@
                   "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
                 ],
                 "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-45447-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-45447 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45447",
+              "help": {
+                "text": "Vulnerability CVE-2026-45447\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)",
+                "markdown": "**Vulnerability CVE-2026-45447**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "8.8"
+              }
+            },
+            {
+              "id": "CVE-2026-45447-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-45447 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45447",
+              "help": {
+                "text": "Vulnerability CVE-2026-45447\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)",
+                "markdown": "**Vulnerability CVE-2026-45447**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45447](https://security-tracker.debian.org/tracker/CVE-2026-45447)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "8.8"
               }
             },
             {
@@ -1438,6 +1438,90 @@
               }
             },
             {
+              "id": "CVE-2026-11850-libgssapi-krb5-2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 medium vulnerability for libgssapi-krb5-2 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libgssapi-krb5-2\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libgssapi-krb5-2  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgssapi-krb5-2@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "CVE-2026-11850-libk5crypto3",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 medium vulnerability for libk5crypto3 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libk5crypto3\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libk5crypto3  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libk5crypto3@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "CVE-2026-11850-libkrb5-3",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 medium vulnerability for libkrb5-3 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libkrb5-3\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libkrb5-3  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libkrb5-3@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "CVE-2026-11850-libkrb5support0",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 medium vulnerability for libkrb5support0 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libkrb5support0\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libkrb5support0  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
               "id": "CVE-2026-5704-tar",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -1522,48 +1606,6 @@
               }
             },
             {
-              "id": "CVE-2026-45445-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-45445 high vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: When an application drives an AES-OCB context through the public EVP_Cipher() one-shot interface, the application-supplied initialisation vector (IV) is silently discarded.  Impact summary: Every message encrypted under the same key uses the same effective nonce regardless of the IV supplied by the caller, resulting in (key, nonce) reuse and loss of confidentiality.  If the same code path is used to compute the authentication tag, the tag depends only on the (key, IV) pair and not on the plaintext or ciphertext, allowing universal forgery of arbitrary ciphertext from a single captured message.  OpenSSL provides two ways to drive a cipher: the documented streaming interface (EVP_CipherUpdate / EVP_CipherFinal_ex) and a lower-level one-shot, EVP_Cipher(), whose documentation explicitly recommends against use by applications in favour of EVP_CipherUpdate() and EVP_CipherFinal_ex().  The OCB provider's streaming handler flushes the application-supplied IV into the OCB context before processing data; the one-shot handler did not.  Every call to EVP_Cipher() on an AES-OCB context therefore ran with the all-zero key-derived offset state left by cipher initialisation, regardless of the caller's IV.  If EVP_EncryptFinal_ex() is subsequently used to obtain the authentication tag, the deferred IV setup runs at that point and clears the running checksum that should have been accumulated over the plaintext.  The resulting tag is a function of (key, IV) only and verifies against any ciphertext produced under the same (key, IV) pair.  The OpenSSL SSL/TLS implementation is not affected: AES-OCB is not a TLS cipher suite, and libssl does not call EVP_Cipher() in any case. Applications that drive AES-OCB through the documented streaming AEAD API (EVP_CipherUpdate / EVP_CipherFinal_ex) are not affected.  Only applications that combine the AES-OCB cipher with the EVP_Cipher() one-shot API are vulnerable.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as AES-OCB is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45445",
-              "help": {
-                "text": "Vulnerability CVE-2026-45445\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)",
-                "markdown": "**Vulnerability CVE-2026-45445**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-45445-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-45445 high vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: When an application drives an AES-OCB context through the public EVP_Cipher() one-shot interface, the application-supplied initialisation vector (IV) is silently discarded.  Impact summary: Every message encrypted under the same key uses the same effective nonce regardless of the IV supplied by the caller, resulting in (key, nonce) reuse and loss of confidentiality.  If the same code path is used to compute the authentication tag, the tag depends only on the (key, IV) pair and not on the plaintext or ciphertext, allowing universal forgery of arbitrary ciphertext from a single captured message.  OpenSSL provides two ways to drive a cipher: the documented streaming interface (EVP_CipherUpdate / EVP_CipherFinal_ex) and a lower-level one-shot, EVP_Cipher(), whose documentation explicitly recommends against use by applications in favour of EVP_CipherUpdate() and EVP_CipherFinal_ex().  The OCB provider's streaming handler flushes the application-supplied IV into the OCB context before processing data; the one-shot handler did not.  Every call to EVP_Cipher() on an AES-OCB context therefore ran with the all-zero key-derived offset state left by cipher initialisation, regardless of the caller's IV.  If EVP_EncryptFinal_ex() is subsequently used to obtain the authentication tag, the deferred IV setup runs at that point and clears the running checksum that should have been accumulated over the plaintext.  The resulting tag is a function of (key, IV) only and verifies against any ciphertext produced under the same (key, IV) pair.  The OpenSSL SSL/TLS implementation is not affected: AES-OCB is not a TLS cipher suite, and libssl does not call EVP_Cipher() in any case. Applications that drive AES-OCB through the documented streaming AEAD API (EVP_CipherUpdate / EVP_CipherFinal_ex) are not affected.  Only applications that combine the AES-OCB cipher with the EVP_Cipher() one-shot API are vulnerable.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as AES-OCB is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45445",
-              "help": {
-                "text": "Vulnerability CVE-2026-45445\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)",
-                "markdown": "**Vulnerability CVE-2026-45445**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
               "id": "CVE-2019-1010023-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1624,6 +1666,48 @@
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "8.8"
+              }
+            },
+            {
+              "id": "CVE-2026-45445-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-45445 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: When an application drives an AES-OCB context through the public EVP_Cipher() one-shot interface, the application-supplied initialisation vector (IV) is silently discarded.  Impact summary: Every message encrypted under the same key uses the same effective nonce regardless of the IV supplied by the caller, resulting in (key, nonce) reuse and loss of confidentiality.  If the same code path is used to compute the authentication tag, the tag depends only on the (key, IV) pair and not on the plaintext or ciphertext, allowing universal forgery of arbitrary ciphertext from a single captured message.  OpenSSL provides two ways to drive a cipher: the documented streaming interface (EVP_CipherUpdate / EVP_CipherFinal_ex) and a lower-level one-shot, EVP_Cipher(), whose documentation explicitly recommends against use by applications in favour of EVP_CipherUpdate() and EVP_CipherFinal_ex().  The OCB provider's streaming handler flushes the application-supplied IV into the OCB context before processing data; the one-shot handler did not.  Every call to EVP_Cipher() on an AES-OCB context therefore ran with the all-zero key-derived offset state left by cipher initialisation, regardless of the caller's IV.  If EVP_EncryptFinal_ex() is subsequently used to obtain the authentication tag, the deferred IV setup runs at that point and clears the running checksum that should have been accumulated over the plaintext.  The resulting tag is a function of (key, IV) only and verifies against any ciphertext produced under the same (key, IV) pair.  The OpenSSL SSL/TLS implementation is not affected: AES-OCB is not a TLS cipher suite, and libssl does not call EVP_Cipher() in any case. Applications that drive AES-OCB through the documented streaming AEAD API (EVP_CipherUpdate / EVP_CipherFinal_ex) are not affected.  Only applications that combine the AES-OCB cipher with the EVP_Cipher() one-shot API are vulnerable.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as AES-OCB is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45445",
+              "help": {
+                "text": "Vulnerability CVE-2026-45445\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)",
+                "markdown": "**Vulnerability CVE-2026-45445**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-45445-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-45445 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: When an application drives an AES-OCB context through the public EVP_Cipher() one-shot interface, the application-supplied initialisation vector (IV) is silently discarded.  Impact summary: Every message encrypted under the same key uses the same effective nonce regardless of the IV supplied by the caller, resulting in (key, nonce) reuse and loss of confidentiality.  If the same code path is used to compute the authentication tag, the tag depends only on the (key, IV) pair and not on the plaintext or ciphertext, allowing universal forgery of arbitrary ciphertext from a single captured message.  OpenSSL provides two ways to drive a cipher: the documented streaming interface (EVP_CipherUpdate / EVP_CipherFinal_ex) and a lower-level one-shot, EVP_Cipher(), whose documentation explicitly recommends against use by applications in favour of EVP_CipherUpdate() and EVP_CipherFinal_ex().  The OCB provider's streaming handler flushes the application-supplied IV into the OCB context before processing data; the one-shot handler did not.  Every call to EVP_Cipher() on an AES-OCB context therefore ran with the all-zero key-derived offset state left by cipher initialisation, regardless of the caller's IV.  If EVP_EncryptFinal_ex() is subsequently used to obtain the authentication tag, the deferred IV setup runs at that point and clears the running checksum that should have been accumulated over the plaintext.  The resulting tag is a function of (key, IV) only and verifies against any ciphertext produced under the same (key, IV) pair.  The OpenSSL SSL/TLS implementation is not affected: AES-OCB is not a TLS cipher suite, and libssl does not call EVP_Cipher() in any case. Applications that drive AES-OCB through the documented streaming AEAD API (EVP_CipherUpdate / EVP_CipherFinal_ex) are not affected.  Only applications that combine the AES-OCB cipher with the EVP_Cipher() one-shot API are vulnerable.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as AES-OCB is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-45445",
+              "help": {
+                "text": "Vulnerability CVE-2026-45445\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)",
+                "markdown": "**Vulnerability CVE-2026-45445**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-45445](https://security-tracker.debian.org/tracker/CVE-2026-45445)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
               }
             },
             {
@@ -2215,90 +2299,6 @@
               }
             },
             {
-              "id": "CVE-2026-42769-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42769 medium vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42769",
-              "help": {
-                "text": "Vulnerability CVE-2026-42769\nSeverity: medium\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)",
-                "markdown": "**Vulnerability CVE-2026-42769**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-42769-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42769 medium vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42769",
-              "help": {
-                "text": "Vulnerability CVE-2026-42769\nSeverity: medium\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)",
-                "markdown": "**Vulnerability CVE-2026-42769**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-34181-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-34181 high vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-34181",
-              "help": {
-                "text": "Vulnerability CVE-2026-34181\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)",
-                "markdown": "**Vulnerability CVE-2026-34181**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.4"
-              }
-            },
-            {
-              "id": "CVE-2026-34181-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-34181 high vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-34181",
-              "help": {
-                "text": "Vulnerability CVE-2026-34181\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)",
-                "markdown": "**Vulnerability CVE-2026-34181**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.4"
-              }
-            },
-            {
               "id": "CVE-2024-26461-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2383,6 +2383,48 @@
               }
             },
             {
+              "id": "CVE-2026-42769-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42769 medium vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42769",
+              "help": {
+                "text": "Vulnerability CVE-2026-42769\nSeverity: medium\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)",
+                "markdown": "**Vulnerability CVE-2026-42769**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-42769-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42769 medium vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42769",
+              "help": {
+                "text": "Vulnerability CVE-2026-42769\nSeverity: medium\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)",
+                "markdown": "**Vulnerability CVE-2026-42769**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42769](https://security-tracker.debian.org/tracker/CVE-2026-42769)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
               "id": "CVE-2026-42768-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2425,6 +2467,69 @@
               }
             },
             {
+              "id": "CVE-2026-34181-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-34181 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-34181",
+              "help": {
+                "text": "Vulnerability CVE-2026-34181\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)",
+                "markdown": "**Vulnerability CVE-2026-34181**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.4"
+              }
+            },
+            {
+              "id": "CVE-2026-34181-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-34181 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-34181",
+              "help": {
+                "text": "Vulnerability CVE-2026-34181\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)",
+                "markdown": "**Vulnerability CVE-2026-34181**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-34181](https://security-tracker.debian.org/tracker/CVE-2026-34181)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.4"
+              }
+            },
+            {
+              "id": "CVE-2017-18018-coreutils",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2017-18018 low vulnerability for coreutils package"
+              },
+              "fullDescription": {
+                "text": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-18018",
+              "help": {
+                "text": "Vulnerability CVE-2017-18018\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)",
+                "markdown": "**Vulnerability CVE-2017-18018**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.1"
+              }
+            },
+            {
               "id": "CVE-2026-42770-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2464,27 +2569,6 @@
                   "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
                 ],
                 "security-severity": "3.7"
-              }
-            },
-            {
-              "id": "CVE-2017-18018-coreutils",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2017-18018 low vulnerability for coreutils package"
-              },
-              "fullDescription": {
-                "text": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-18018",
-              "help": {
-                "text": "Vulnerability CVE-2017-18018\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)",
-                "markdown": "**Vulnerability CVE-2017-18018**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "7.1"
               }
             },
             {
@@ -3145,88 +3229,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-45447-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-45447-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
-          }
-        },
-        {
           "ruleId": "CVE-2018-5709-libgssapi-krb5-2",
           "level": "note",
           "message": {
@@ -3380,6 +3382,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "ce170da78f33c124760b22f5ded2c23e60bcd45fab19538404a465090ca32583:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-45447-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-45447-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
           }
         },
         {
@@ -5777,6 +5861,162 @@
           }
         },
         {
+          "ruleId": "CVE-2026-11850-libgssapi-krb5-2",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libgssapi-krb5-2, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libgssapi-krb5-2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libgssapi-krb5-2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgssapi-krb5-2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libgssapi-krb5-2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "314de2750768dd892c78cde411a31a35fbf90a03d0481ebdda78f6275d088b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libk5crypto3",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libk5crypto3, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libk5crypto3/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libk5crypto3/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libk5crypto3:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libk5crypto3:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c90780e555c4ef27747ec53d0358a82249d5d796bb42e914304fe6c396a2cb4d:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libkrb5-3",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libkrb5-3, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libkrb5-3/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libkrb5-3/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libkrb5-3:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libkrb5-3:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "278ffae8a7900e4f595adcb17130cc7065aaf85b6611086c1f2e4ffda4dff79f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libkrb5support0",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libkrb5support0, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libkrb5support0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libkrb5support0/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libkrb5support0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libkrb5support0:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ce170da78f33c124760b22f5ded2c23e60bcd45fab19538404a465090ca32583:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-5704-tar",
           "level": "warning",
           "message": {
@@ -5965,88 +6205,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-45445-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-45445-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
-          }
-        },
-        {
           "ruleId": "CVE-2019-1010023-libc-bin",
           "level": "note",
           "message": {
@@ -6181,6 +6339,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-45445-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-45445-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
           }
         },
         {
@@ -7372,170 +7612,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-42769-libssl3t64",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-42769-openssl-provider-legacy",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-34181-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-34181-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
-          }
-        },
-        {
           "ruleId": "CVE-2024-26461-libgssapi-krb5-2",
           "level": "note",
           "message": {
@@ -7692,6 +7768,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-42769-libssl3t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42769-openssl-provider-legacy",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-42768-libssl3t64",
           "level": "note",
           "message": {
@@ -7774,10 +7932,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-42770-libssl3t64",
-          "level": "note",
+          "ruleId": "CVE-2026-34181-libssl3t64",
+          "level": "error",
           "message": {
-            "text": "A low vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -7813,10 +7971,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-42770-openssl-provider-legacy",
-          "level": "note",
+          "ruleId": "CVE-2026-34181-openssl-provider-legacy",
+          "level": "error",
           "message": {
-            "text": "A low vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -7896,6 +8054,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42770-libssl3t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42770-openssl-provider-legacy",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
           }
         },
         {

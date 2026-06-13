@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:986e0ce8-714c-4f0e-baef-8ee37d813c52",
+  "serialNumber": "urn:uuid:17725073-03f3-4c09-b809-64ae66db40b4",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-06-13T05:08:35Z",
+    "timestamp": "2026-06-13T08:40:04Z",
     "tools": {
       "components": [
         {
@@ -59070,7 +59070,7 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:937a127c-11eb-443a-9f6c-a78c575631e8",
+      "bom-ref": "urn:uuid:e5ce94be-99ba-47fe-a627-ecffc03cb830",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59109,7 +59109,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4738bfcc-4d02-4cde-a447-03c13a39e98b",
+      "bom-ref": "urn:uuid:75163b56-4ecd-4b32-bbe4-658d0796607f",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59148,7 +59148,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5b0e6e56-b67f-42b5-8add-339e6010b1cc",
+      "bom-ref": "urn:uuid:5feaa32d-1e41-4f89-a007-3d9c9c574065",
       "id": "CVE-2017-17740",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59185,7 +59185,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e0250b55-61ae-4451-a6be-8f2073dc7f49",
+      "bom-ref": "urn:uuid:f2f56e25-1ce1-471b-aafd-e7b9fd5dd855",
       "id": "CVE-2005-2541",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59222,7 +59222,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:701bd470-5fbd-4c11-9797-c2f8f8ebc3dc",
+      "bom-ref": "urn:uuid:2d975797-e421-4372-b6d8-0a719414de50",
       "id": "CVE-2015-3276",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59259,7 +59259,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e65d7e37-4e7f-475e-9e06-c8657e918426",
+      "bom-ref": "urn:uuid:541b71f6-bac6-47f8-9ce4-c9283d64caa9",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59296,7 +59296,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bc0cfcfe-3700-4fda-89df-d9cdfb11e361",
+      "bom-ref": "urn:uuid:948971a2-a334-4433-b4d9-7c5f7b515368",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59333,7 +59333,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a6d7ffb5-c446-4f4f-9dc6-01d191591cfe",
+      "bom-ref": "urn:uuid:2827f330-3f6c-4e99-bdfa-32a97dfec786",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59370,85 +59370,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:df067d56-70c4-4781-bc75-47feb76e97af",
-      "id": "CVE-2026-45447",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-45447",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 8.8,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00108,
-          "method": "other"
-        }
-      ],
-      "description": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:262074e9-2814-4d42-ba9c-36873ee7aa98",
-      "id": "CVE-2026-45447",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-45447",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 8.8,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00108,
-          "method": "other"
-        }
-      ],
-      "description": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:c1c47fe7-703b-427f-b5b1-dd38b405d770",
+      "bom-ref": "urn:uuid:204b095f-7981-41ec-8319-8ecd57ee8e98",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59485,7 +59407,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5de15a19-7084-4136-bc3f-e21c74114c4e",
+      "bom-ref": "urn:uuid:f0a0fa23-b28c-4ccf-b9bb-b2a88fba4a7a",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59522,7 +59444,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9d0ed29a-2ffd-4a65-923c-87e730a5e6ce",
+      "bom-ref": "urn:uuid:c7e7b1b9-446c-4b2d-ac19-bf13f5ce040c",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59559,7 +59481,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:549db9a7-7f8e-45bb-b6d1-4402c9bf1c79",
+      "bom-ref": "urn:uuid:dfa36dbb-d280-4bdf-a3a1-b7284cfaacef",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59596,7 +59518,85 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:77af6deb-f226-40f3-ad54-0dbd52b08364",
+      "bom-ref": "urn:uuid:f3fe9049-804d-431c-a5a8-75c0f4aac6d6",
+      "id": "CVE-2026-45447",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-45447",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00092,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:762a0df8-adde-49d8-867f-f3de0b1a0453",
+      "id": "CVE-2026-45447",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-45447",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-45447"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00092,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could trigger a use-after-free during PKCS#7 signature verification.  Impact summary: A use-after-free may result in process crashes, heap corruption, or potentially remote code execution.  When processing a PKCS#7 or S/MIME signed message, if the SignedData digestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may incorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent use of the BIO by the calling application results in a use-after-free condition.  In the common case this occurs when the application later calls BIO_free() on the BIO originally passed to PKCS7_verify(). Depending on allocator behavior and application-specific BIO usage patterns, this may result in a crash or other memory corruption. In some application contexts this may potentially be exploitable for remote code execution.  Applications that process PKCS#7 or S/MIME signed messages using OpenSSL PKCS#7 APIs may be affected. Applications using the CMS APIs for this processing are not affected.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:b63e4f32-bf56-4e2a-bf21-e60282385cbd",
       "id": "CVE-2026-9076",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59635,7 +59635,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c560b006-ef6e-4c66-8595-8d54070c9eee",
+      "bom-ref": "urn:uuid:098f9df3-e11a-4269-8f48-a2a638be173c",
       "id": "CVE-2026-9076",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59674,7 +59674,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:33776101-431b-4f4b-be2a-2a773ab6b56a",
+      "bom-ref": "urn:uuid:4d2cb1be-cead-4fbc-bb53-0c99b8ff3475",
       "id": "CVE-2026-5450",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59713,7 +59713,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b0055407-2973-4953-b5ed-e305da2fb225",
+      "bom-ref": "urn:uuid:cf933e80-f573-49da-aa3d-aef2a56c7151",
       "id": "CVE-2026-5450",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59752,7 +59752,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:077c8283-0445-447f-90b7-2c46f0d47334",
+      "bom-ref": "urn:uuid:7b5fa4b1-a938-403d-80c2-aebaf20a1ca4",
       "id": "CVE-2026-5450",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59791,7 +59791,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8d5138fa-887a-472f-b026-a1a4ae34f41d",
+      "bom-ref": "urn:uuid:d3b9dbd9-e037-4e00-8cc7-a67e69a3fa7e",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59828,7 +59828,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:53ba3778-f733-4ce4-916f-2fa07f51e67e",
+      "bom-ref": "urn:uuid:5fd44c4d-8d80-49cd-af12-3adc5c6d1575",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59865,7 +59865,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1e62b575-185a-4fd0-82e6-a8109eea35a8",
+      "bom-ref": "urn:uuid:3ab731c2-4770-4d5c-8daf-8a9339a2db0f",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59902,7 +59902,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:668055d6-1aa3-4947-9cd3-53b8c47618a0",
+      "bom-ref": "urn:uuid:c552d019-5a76-46ab-ab0e-cc7f43dca078",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59939,7 +59939,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:38079c63-1aaf-4d0d-9e8a-5ff91445c982",
+      "bom-ref": "urn:uuid:70ccfb14-ac92-479d-986f-11bb8ab68bf3",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59976,7 +59976,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ecfe3908-37ab-408d-be8c-1864731434d1",
+      "bom-ref": "urn:uuid:5564e2f7-c29d-4601-9516-823494eb5d30",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60013,7 +60013,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d491e1b0-a0cf-45f3-ba47-d0c4505c1e42",
+      "bom-ref": "urn:uuid:335d78b8-113f-4039-9007-40b6aa97d03e",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60050,7 +60050,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f3c70559-7aa9-41a3-8c5d-dd8f31e6cbf8",
+      "bom-ref": "urn:uuid:513c715e-8277-4042-86db-c5ff3620532b",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60087,7 +60087,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0fd12293-d753-4b5a-93b9-c8558e561755",
+      "bom-ref": "urn:uuid:9bf46ea0-a126-4c01-a07e-0418f489b93d",
       "id": "CVE-2026-48962",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60126,7 +60126,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1731df36-1b78-4d80-8371-ade936040d37",
+      "bom-ref": "urn:uuid:386f934d-c625-4e17-bfe7-ac99f7b120b5",
       "id": "CVE-2026-7383",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60165,7 +60165,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:725cbfb4-12f2-477d-ab0b-b73d3ddf7d5d",
+      "bom-ref": "urn:uuid:b0f221f0-971a-406b-a53f-e2c694739e46",
       "id": "CVE-2026-7383",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60204,7 +60204,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c468ef18-fb18-4eb8-ac75-6ed8edc924e0",
+      "bom-ref": "urn:uuid:fc448b8c-7a10-47a1-b75e-463ab72317f8",
       "id": "CVE-2026-5928",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60243,7 +60243,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:dd18ac73-66e2-4aa2-b576-9c3e84acafc9",
+      "bom-ref": "urn:uuid:87a8e1e1-7d57-4f0b-8a48-16dab1cb2be9",
       "id": "CVE-2026-5928",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60282,7 +60282,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:be544afd-6621-4bbd-a2a3-0a24649148a9",
+      "bom-ref": "urn:uuid:315f164d-64b4-4433-a563-384c931281e9",
       "id": "CVE-2026-5928",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60321,7 +60321,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:371a0ecf-c3e4-47f7-b9a7-af72d5dacaff",
+      "bom-ref": "urn:uuid:df0eea12-387f-4bc2-bff1-41151e116f8b",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60360,7 +60360,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:22020617-be5b-4fe3-8419-69371f59f7b9",
+      "bom-ref": "urn:uuid:33d10cd8-6ee3-4045-9a94-14f9a8cdbfeb",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60399,7 +60399,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:86bd031f-def3-4c11-aeed-ad54871cddd9",
+      "bom-ref": "urn:uuid:9f333823-f7be-47b5-a46f-bc321f7295ec",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60438,7 +60438,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6ddcaac2-0cab-4d8b-b93e-dc6eab905110",
+      "bom-ref": "urn:uuid:27931b78-a58d-4694-a494-c15a3bf1b777",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60477,7 +60477,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7963da62-7501-4c88-9257-c9d2d9734559",
+      "bom-ref": "urn:uuid:6d284fcb-f044-4925-851a-23effe654fab",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60516,7 +60516,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2d516475-6342-417e-a666-30c603b9ac1d",
+      "bom-ref": "urn:uuid:dca06fae-7655-43cb-8f51-85cf3bbc1df0",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60555,7 +60555,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:51bb143c-f30c-40a8-b40b-97e7c15e7298",
+      "bom-ref": "urn:uuid:adb77d64-1eab-4db9-b3c1-19115f8f58a7",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60594,7 +60594,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0aaaa108-9396-4982-9039-d5c8a134e28d",
+      "bom-ref": "urn:uuid:3a3b28f7-4844-4842-9770-cf8b610b1c57",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60633,7 +60633,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:fb8a1e85-e388-4564-8d60-cf8538e8f17a",
+      "bom-ref": "urn:uuid:acf63806-d554-41fc-af6a-7f2618e23817",
       "id": "CVE-2026-42496",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60672,7 +60672,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:51f3b55d-8f74-458f-94c3-dac9bc720ec3",
+      "bom-ref": "urn:uuid:68e89886-aad6-4349-aec6-26bff1b39c7b",
       "id": "CVE-2026-8376",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60711,7 +60711,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d683be67-5a28-42a6-a31c-bf7e8830239a",
+      "bom-ref": "urn:uuid:26381097-9c8a-4177-a28e-a3ff48b72d79",
       "id": "CVE-2026-34180",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60750,7 +60750,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a373f9b9-8d34-4794-89a7-a75850d48a95",
+      "bom-ref": "urn:uuid:f30009bd-9605-46bd-a99b-304d12101226",
       "id": "CVE-2026-34180",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60789,7 +60789,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bc89f7c1-3fb9-4407-aa19-46297ac7469a",
+      "bom-ref": "urn:uuid:c32c0bcc-927c-4acd-a006-091eaacebce3",
       "id": "CVE-2026-48959",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60828,7 +60828,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:51a5da43-4d78-4417-8e78-6dd62fdde425",
+      "bom-ref": "urn:uuid:09207091-bb23-4e9d-894e-26fa5a067b55",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60867,7 +60867,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:cdde9ddb-041e-4f65-8374-1c4af390e591",
+      "bom-ref": "urn:uuid:f8abc729-7447-48a1-b57c-902ba65e3fb7",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60906,7 +60906,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1e562b62-4f76-40f7-9003-5f45e6fb102d",
+      "bom-ref": "urn:uuid:84198a0a-2cc1-4030-9435-4c88256456b4",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60945,7 +60945,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:07a6220a-5c14-4f2b-b250-20f2e0f232bd",
+      "bom-ref": "urn:uuid:74a6e68d-1bc0-4267-a817-fb8cc44858a5",
       "id": "CVE-2026-42497",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60984,7 +60984,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2eae0815-0b72-42e2-abed-cb70b1affa1e",
+      "bom-ref": "urn:uuid:babe1a58-e11d-4ca8-b56b-7c37997ecb58",
       "id": "CVE-2026-42766",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61023,7 +61023,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7badb163-7571-49bf-9d44-c45cce50a9f4",
+      "bom-ref": "urn:uuid:5359d6d1-e81e-4a5d-b465-4a9feb2010a8",
       "id": "CVE-2026-42766",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61062,7 +61062,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:eb906046-5d5a-4e33-b868-1833a2151325",
+      "bom-ref": "urn:uuid:b245a38c-8696-4d57-8282-44a6656c4e8d",
       "id": "CVE-2026-48961",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61101,7 +61101,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2e7b4be4-1afc-4bd1-9d4e-2761fd29248a",
+      "bom-ref": "urn:uuid:82ec8a59-96de-49c1-b16d-1f8eb0031b9f",
       "id": "CVE-2026-35188",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61140,7 +61140,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3b9afb54-297f-4684-90a7-5cbb4c6b7e3a",
+      "bom-ref": "urn:uuid:09a1c8bf-d77d-44f9-bcc7-8e31234a9ac8",
       "id": "CVE-2026-35188",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61179,7 +61179,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:13c5172d-d908-4c0f-807a-b409888b6165",
+      "bom-ref": "urn:uuid:beced327-9edc-4dc3-a1cd-ea19585b4082",
       "id": "CVE-2026-42767",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61218,7 +61218,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a6658acc-9b1c-4f8a-8b93-a3f531d7053e",
+      "bom-ref": "urn:uuid:b3451a9f-528e-468e-ac66-b7906ed1db16",
       "id": "CVE-2026-42767",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61257,7 +61257,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5df5299f-25f3-46d5-9b2d-0714196d10a6",
+      "bom-ref": "urn:uuid:d316e186-bbfe-44de-80ed-9963bb3b5c73",
       "id": "CVE-2026-42764",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61296,7 +61296,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0a27de87-fd99-4173-94f4-b704421a61a9",
+      "bom-ref": "urn:uuid:26f9f4e8-f7ba-479d-88e8-ec9bb01f267b",
       "id": "CVE-2026-42764",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61335,7 +61335,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0e391124-99e9-40b7-9a5c-4040098289b1",
+      "bom-ref": "urn:uuid:ee5575d2-eb59-465d-963e-ed6fef713c6b",
       "id": "CVE-2026-34183",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61374,7 +61374,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c5db5b49-2462-4658-a09d-e1e07fd9854f",
+      "bom-ref": "urn:uuid:679ba914-86b1-44a7-a649-617a58eb3367",
       "id": "CVE-2026-34183",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61413,7 +61413,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:dbff042f-d046-4e45-afe6-8a418de3896a",
+      "bom-ref": "urn:uuid:b0da6172-1061-4b29-b0a1-036165f4f20d",
       "id": "CVE-2026-9538",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61452,7 +61452,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:90ba47f9-3b37-4c70-946f-6d10280f3d86",
+      "bom-ref": "urn:uuid:9c95df1b-a898-4549-b802-0b98714610d5",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61489,7 +61489,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:22c565ab-f886-48d1-9975-fc72965a5696",
+      "bom-ref": "urn:uuid:4618059b-bae9-4ef9-8117-7fd8452ff7cd",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61526,7 +61526,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e3f7b942-bc66-4d50-8594-f805cb228052",
+      "bom-ref": "urn:uuid:02f04f24-1b85-4ef0-9942-b58d9620ab5a",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61563,7 +61563,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:91e3aedf-b5a8-4b5a-af03-3b38cbc84329",
+      "bom-ref": "urn:uuid:99f755ab-76de-4af7-953f-c701c037eb24",
       "id": "CVE-2026-42765",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61602,7 +61602,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7e12e9e7-d086-4902-adad-e730d178a4e2",
+      "bom-ref": "urn:uuid:09872369-c84c-4172-948d-142fbd92bd64",
       "id": "CVE-2026-42765",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61641,7 +61641,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b385e895-5586-468a-bca1-c7891a7e6b8d",
+      "bom-ref": "urn:uuid:245aa796-3ad5-4211-a366-128263daecfb",
       "id": "CVE-2026-7010",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61668,7 +61668,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00038,
+          "score": 0.00041,
           "method": "other"
         }
       ],
@@ -61680,7 +61680,163 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3e3827d5-f1f2-49c1-a084-278782a2b9bd",
+      "bom-ref": "urn:uuid:906275e1-502c-46f3-bcdb-8784cccac8a5",
+      "id": "CVE-2026-11850",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-11850",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00035,
+          "method": "other"
+        }
+      ],
+      "description": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len < 2, triggering the underflow when the KDC or kadmind reads principal data.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-2.1?arch=amd64&distro=debian&package-id=bfd80bc39a8a2e53&upstream=krb5"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:b1a29925-7689-45c6-8396-bf50ff8c6898",
+      "id": "CVE-2026-11850",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-11850",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00035,
+          "method": "other"
+        }
+      ],
+      "description": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len < 2, triggering the underflow when the KDC or kadmind reads principal data.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-2.1?arch=amd64&distro=debian&package-id=98fd60866bed12a3&upstream=krb5"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:34971fee-6275-4909-b95f-10a83cf4fa3a",
+      "id": "CVE-2026-11850",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-11850",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00035,
+          "method": "other"
+        }
+      ],
+      "description": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len < 2, triggering the underflow when the KDC or kadmind reads principal data.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-2.1?arch=amd64&distro=debian&package-id=a63c59c3c1885ae7&upstream=krb5"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:2527ce67-66f3-4253-b28f-815c3f04452b",
+      "id": "CVE-2026-11850",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-11850",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-11850"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00035,
+          "method": "other"
+        }
+      ],
+      "description": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len < 2, triggering the underflow when the KDC or kadmind reads principal data.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64&distro=debian&package-id=be70e676596406f1&upstream=krb5"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:fedda09a-61a0-4b29-ac39-1c79e92c71cd",
       "id": "CVE-2026-5704",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61719,7 +61875,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5cb8fde8-d63e-44a1-8757-85f4b4604755",
+      "bom-ref": "urn:uuid:688e68c6-bd99-462a-be33-8c7e88dd0d35",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61756,7 +61912,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:36437fb7-0978-4f0e-a97f-241ab6f7cdf8",
+      "bom-ref": "urn:uuid:3934f094-bab7-4b54-a939-27a92edb8e47",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61793,7 +61949,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e47d8a0b-1f7e-4aa8-9cb9-36a3cb88d234",
+      "bom-ref": "urn:uuid:b0c51434-ef12-42f5-8b18-1e9640894894",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61830,7 +61986,118 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:eceae09a-f397-45ae-ba68-75f768244c50",
+      "bom-ref": "urn:uuid:1bf71524-d1d8-44e5-8846-1ed41d8d20ad",
+      "id": "CVE-2019-1010023",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010023",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00293,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&package-id=76071b77225ac4ad&upstream=glibc"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:24266a4c-70ca-4281-9ec0-6f528fe31f27",
+      "id": "CVE-2019-1010023",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010023",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00293,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&package-id=00c49538cde1b2e7&upstream=glibc"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:f471b9c6-4240-4936-8cdc-d215cdca71a3",
+      "id": "CVE-2019-1010023",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010023",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00293,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&package-id=f2ccb46c99b36459&upstream=glibc"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:5b1b624f-73a0-4a00-a80e-28ebf1bec22e",
       "id": "CVE-2026-45445",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61857,7 +62124,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0002,
+          "score": 0.00017,
           "method": "other"
         }
       ],
@@ -61869,7 +62136,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:db367845-50fc-4565-8ca9-b97a4fae2df5",
+      "bom-ref": "urn:uuid:43ed6aba-217b-4d3f-a3ef-13e47d933070",
       "id": "CVE-2026-45445",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61896,7 +62163,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0002,
+          "score": 0.00017,
           "method": "other"
         }
       ],
@@ -61908,118 +62175,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:81159c39-b784-42b6-83c4-ee54155ec8c1",
-      "id": "CVE-2019-1010023",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010023",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00293,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.42-16?arch=amd64&distro=debian&package-id=76071b77225ac4ad&upstream=glibc"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:f20342c7-8ed4-4fa0-9e93-c7690fdeff76",
-      "id": "CVE-2019-1010023",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010023",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00293,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64&distro=debian&package-id=00c49538cde1b2e7&upstream=glibc"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:752a1b8d-c9e5-4850-a33a-8a63290ec2de",
-      "id": "CVE-2019-1010023",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010023",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00293,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.42-16?arch=amd64&distro=debian&package-id=f2ccb46c99b36459&upstream=glibc"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:b38170f5-b111-40d5-b78b-e3df220d41b0",
+      "bom-ref": "urn:uuid:a38b9a2c-d9cd-4c40-90e7-469d18df20e2",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62056,7 +62212,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:dabeac34-097b-4e4c-b9cb-082d66857f33",
+      "bom-ref": "urn:uuid:bd7934d1-1bd5-4112-99b3-4cc85fe299f7",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62093,7 +62249,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:777df1d4-62ea-4c22-a768-7e6dc32d8ad7",
+      "bom-ref": "urn:uuid:5da642b0-06a8-4eb0-988a-1a01507f8d8a",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62130,7 +62286,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9b556cad-7f1c-4371-b51c-ed30d4ff7ef5",
+      "bom-ref": "urn:uuid:78d0fece-e658-4432-bf3b-7dfbd9aa8647",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62167,7 +62323,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a45ba9da-ff56-4317-83c1-2c4d1ae04fda",
+      "bom-ref": "urn:uuid:95ffb104-c2b0-471a-bfe5-56881a1f8a69",
       "id": "CVE-2020-15719",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62204,7 +62360,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:98a32d57-9378-470f-b647-b3334bc792fd",
+      "bom-ref": "urn:uuid:7bfcd5d7-96fc-4580-9e7c-387ae6767619",
       "id": "CVE-2026-42250",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62243,7 +62399,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3285911c-cf5f-4526-9929-afbeceaace34",
+      "bom-ref": "urn:uuid:3a680a4c-3be7-480e-9cc1-048647a9c4e0",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62280,7 +62436,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9a8bd98a-b6e6-4784-8028-5f7deb9948b0",
+      "bom-ref": "urn:uuid:e0b17d35-32d3-41fb-ad5d-3818e637555a",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62317,7 +62473,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3a70c353-6042-4a8a-b20c-f87d00787a38",
+      "bom-ref": "urn:uuid:d13da684-bdb5-4583-8218-62886868c0fe",
       "id": "CVE-2011-4116",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62354,7 +62510,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:31146a66-5b65-4567-8419-7d0bd4212959",
+      "bom-ref": "urn:uuid:9323b0ef-354f-4db8-8774-5c61c072409b",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62393,7 +62549,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d95d470d-4428-4cd7-95d9-c45c3d290015",
+      "bom-ref": "urn:uuid:655b321f-3899-49f0-9f2e-9a5b581b1d1f",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62432,7 +62588,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7489c360-ce9d-4bd5-9c5d-c1db2c074cb5",
+      "bom-ref": "urn:uuid:8565e844-ad66-4874-9c2d-8ae5131ff5fd",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62471,7 +62627,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3ba18149-b8f1-4837-97ce-703bf8e2df9c",
+      "bom-ref": "urn:uuid:1ac95e18-1b49-48c7-a111-509c24a835cd",
       "id": "CVE-2017-14159",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62508,7 +62664,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:32e4d45b-0fbc-41c1-8cfb-0b3ad4a1c3e8",
+      "bom-ref": "urn:uuid:d27c3f2f-9da2-4425-9834-b4e62c5e175c",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62545,7 +62701,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:88b65c4d-9f82-487b-a0bb-4084508f7e8b",
+      "bom-ref": "urn:uuid:0a07de7a-52a5-4c12-ad4e-4301a3fda8f6",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62582,7 +62738,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:32b8893c-2adf-4bea-96e3-2d462ffa334b",
+      "bom-ref": "urn:uuid:aeeb7784-3240-43fc-a447-fc5357afa35a",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62619,7 +62775,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2cdd0397-5015-40c8-931c-29e0b375894e",
+      "bom-ref": "urn:uuid:72aad855-a9d2-4bbb-84ac-e869954b7745",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62656,7 +62812,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0ff9fc99-217d-4d9e-95bb-90bd1b3fd5e1",
+      "bom-ref": "urn:uuid:e35e52cd-11fa-41e6-b09c-d56ee290f38c",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62693,7 +62849,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a1d28993-d977-4e2e-9515-327f4d5a33e2",
+      "bom-ref": "urn:uuid:3145f46e-f4a8-468e-bf6f-3bb9477e3f8d",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62730,7 +62886,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5083d430-6acc-4643-83b2-a517a51eea27",
+      "bom-ref": "urn:uuid:47169b18-f7fb-4154-add6-1e55edc856ad",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62767,7 +62923,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7c746a6c-7938-40e7-8e91-f00e6b7405bf",
+      "bom-ref": "urn:uuid:526b0fec-34ac-46b0-9673-36b06d5216a5",
       "id": "CVE-2025-5278",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62804,7 +62960,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b6fdc192-5d4d-40c4-a1de-03772be06125",
+      "bom-ref": "urn:uuid:9038ef8b-25dc-4909-805b-da65ed21e589",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62841,7 +62997,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a85cd443-e0ba-42fd-9e96-9b109797664e",
+      "bom-ref": "urn:uuid:9531db99-ab2a-4cc4-b49f-08169a24a93e",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62878,7 +63034,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a376eb09-b9d4-483c-9492-e8ee6e84a415",
+      "bom-ref": "urn:uuid:4b8109c9-2811-46ce-a730-814f23cdf72b",
       "id": "CVE-2025-15649",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62917,7 +63073,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:28d2c658-445f-4dce-83a3-9b333b7a8705",
+      "bom-ref": "urn:uuid:a28b8e7e-5c43-4fc0-b4fd-4a1aac20aee8",
       "id": "CVE-2026-45446",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62944,7 +63100,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00013,
+          "score": 0.00012,
           "method": "other"
         }
       ],
@@ -62956,7 +63112,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c152cd0c-d5b6-4448-a1d1-ad49130fa582",
+      "bom-ref": "urn:uuid:26f31722-fb54-4b8d-843e-31d7704466d9",
       "id": "CVE-2026-45446",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62983,7 +63139,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00013,
+          "score": 0.00012,
           "method": "other"
         }
       ],
@@ -62995,7 +63151,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2d324499-e117-49e6-a593-712387c9c997",
+      "bom-ref": "urn:uuid:9e599be9-392b-46ef-882b-8badfb2e8d41",
       "id": "CVE-2026-34182",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63022,7 +63178,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00006,
+          "score": 0.00005,
           "method": "other"
         }
       ],
@@ -63034,7 +63190,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:11f6f72f-4440-4bf0-90dc-d9606d8841b9",
+      "bom-ref": "urn:uuid:324770fd-1309-4869-815d-94c8e1e21c91",
       "id": "CVE-2026-34182",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63061,7 +63217,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00006,
+          "score": 0.00005,
           "method": "other"
         }
       ],
@@ -63073,163 +63229,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:49d228f1-adab-4e71-b781-0e488c63df89",
-      "id": "CVE-2026-42769",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-42769",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.3,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00009,
-          "method": "other"
-        }
-      ],
-      "description": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:2a8d9279-96c6-46cc-a9fd-6ee39ef12dbc",
-      "id": "CVE-2026-42769",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-42769",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.3,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00009,
-          "method": "other"
-        }
-      ],
-      "description": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:5802b218-8656-48a9-bf94-674f3db67ff2",
-      "id": "CVE-2026-34181",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-34181",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.4,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00006,
-          "method": "other"
-        }
-      ],
-      "description": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:3f6e5f0c-4f14-457a-9042-4638d6805e18",
-      "id": "CVE-2026-34181",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-34181",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.4,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00006,
-          "method": "other"
-        }
-      ],
-      "description": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:3faed6d1-41d9-4cc9-a496-fc1a2ef292af",
+      "bom-ref": "urn:uuid:d7a89224-14e4-4ffe-a06c-109a76b57208",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63266,7 +63266,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6b334084-875b-475e-8038-bf401abdef0a",
+      "bom-ref": "urn:uuid:4de3e68a-b530-4032-aae2-97c628fd3d51",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63303,7 +63303,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6f3cd12e-f441-4f46-aa9c-32f7ad0355ba",
+      "bom-ref": "urn:uuid:be5e2ed7-b504-4a8e-a258-0e124d85cd83",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63340,7 +63340,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0137d409-18fc-4a8e-af9f-07fe7ec2f3d3",
+      "bom-ref": "urn:uuid:fcb67a66-2ad5-4403-80e7-dae8ab79c267",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63377,7 +63377,85 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:44dbedad-436b-49ba-b7f4-dbbee506175e",
+      "bom-ref": "urn:uuid:2c026581-3f66-4305-afeb-5018b7b9e578",
+      "id": "CVE-2026-42769",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-42769",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00007,
+          "method": "other"
+        }
+      ],
+      "description": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:373c0754-0a63-4237-960c-88060d921cfc",
+      "id": "CVE-2026-42769",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-42769",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42769"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00007,
+          "method": "other"
+        }
+      ],
+      "description": "Issue Summary: An error in the callback used to verify the certificate provided in a Root CA key update Certificate Management Protocol (CMP) message response rendered the certificate validation ineffectual, which could lead to escalation of credentials from the Registration Authority (RA) level to the root Certification Authority (root CA) level.  Impact Summary: The Registration Autority could replace the root CA certificate for the CMP clients with an arbitrary root CA certificate.  One of the parts of the Certificate Management Protocol (CMP), specified in RFC 9810, is Root Certification Authority (root CA) key Rollover, which is sent by the server in a message with type 'id-it-rootCaKeyUpdate'. As part of these messages, 'newWithOld' certificate, the new root CA certificate signed with the old root CA key, is provided, and verifying its signature is crucial for transferring the trust from the old CA key to the new one.  The 'id-it-rootCaKeyUpdate' messages are expected to be processed with OSSL_CMP_get1_rootCaKeyUpdate(), that is expected to verify the 'newWithOld' certificate.  A typo in the certificate chain building code led to adding an incorrect certificate ('newWithOld' instead of 'oldRoot') to the certificate chain, rendering the certificate verification process ineffectual (only the issuer name and the algorithm OIDs were verified by other parts of the verification code).  An attacker who already has credentials that satisfy the CMP message protection checks can generate a new key pair and use a crafted self-signed certificate in its 'id-it-rootCaKeyUpdate' CMP messages which affected CMP clients would accept as a new trust anchor.  Significant preconditions for the attack (having valid RA-level credentials) are the reason the issue was assigned Low severity.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:cfafc3f1-0e0a-401e-99e8-3d3879ee0554",
       "id": "CVE-2026-42768",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63404,7 +63482,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00012,
+          "score": 0.00009,
           "method": "other"
         }
       ],
@@ -63416,7 +63494,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ac7882ec-b8b9-4aa7-ab5d-a6c04b9d0e35",
+      "bom-ref": "urn:uuid:77adcd69-4a23-48a6-a77d-794991521582",
       "id": "CVE-2026-42768",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63443,7 +63521,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00012,
+          "score": 0.00009,
           "method": "other"
         }
       ],
@@ -63455,38 +63533,38 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a96b1876-2723-4299-85cd-803452234e82",
-      "id": "CVE-2026-42770",
+      "bom-ref": "urn:uuid:f10426ca-0a27-4b6f-80bf-88446e037ec6",
+      "id": "CVE-2026-34181",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
       },
       "references": [
         {
-          "id": "CVE-2026-42770",
+          "id": "CVE-2026-34181",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
           }
         }
       ],
       "ratings": [
         {
-          "score": 3.7,
-          "severity": "low",
+          "score": 7.4,
+          "severity": "high",
           "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0001,
+          "score": 0.00004,
           "method": "other"
         }
       ],
-      "description": "Issue summary: When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the peer key is not properly checked for the subgroup membership.  Impact summary: A malicious peer which presents an X9.42 key carrying the victim's p and g parameters, a forged q = r (a small prime factor of the cofactor (p−1)/q_local), and a public value Y of order r can recover the victim's private key after a small number of key exchange attempts.  When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the subgroup membership check Y^q ≡ 1 (mod p) is performed using the peer's own q parameter, not the local key's q. The peer's domain parameters are then matched against the domain parameters of the private key, but the value of q is not compared.  A malicious peer who presents an X9.42 key carrying the victim's p, g, a forged q = r (a small prime factor of the cofactor), and a public value Y of order r passes all checks. The shared secret then takes only r distinct values, leaking priv mod r. Repeating for each small-prime factor of the cofactor and combining via CRT recovers the full private key (Lim–Lee / small-subgroup-confinement attack).  The realistic attack surface is narrow: principally CMP deployments with long-lived RA/CA DHX keys and bespoke enterprise or government applications using X9.42 DHX static keys with interactive protocols and therefore this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are affected by this issue.",
+      "description": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
       "affects": [
         {
           "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
@@ -63494,38 +63572,38 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:86b82cba-70b4-4917-9857-8356785054f7",
-      "id": "CVE-2026-42770",
+      "bom-ref": "urn:uuid:32d0f2d6-b8d1-40f0-924a-f26a0256d0ba",
+      "id": "CVE-2026-34181",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
       },
       "references": [
         {
-          "id": "CVE-2026-42770",
+          "id": "CVE-2026-34181",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-34181"
           }
         }
       ],
       "ratings": [
         {
-          "score": 3.7,
-          "severity": "low",
+          "score": 7.4,
+          "severity": "high",
           "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0001,
+          "score": 0.00004,
           "method": "other"
         }
       ],
-      "description": "Issue summary: When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the peer key is not properly checked for the subgroup membership.  Impact summary: A malicious peer which presents an X9.42 key carrying the victim's p and g parameters, a forged q = r (a small prime factor of the cofactor (p−1)/q_local), and a public value Y of order r can recover the victim's private key after a small number of key exchange attempts.  When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the subgroup membership check Y^q ≡ 1 (mod p) is performed using the peer's own q parameter, not the local key's q. The peer's domain parameters are then matched against the domain parameters of the private key, but the value of q is not compared.  A malicious peer who presents an X9.42 key carrying the victim's p, g, a forged q = r (a small prime factor of the cofactor), and a public value Y of order r passes all checks. The shared secret then takes only r distinct values, leaking priv mod r. Repeating for each small-prime factor of the cofactor and combining via CRT recovers the full private key (Lim–Lee / small-subgroup-confinement attack).  The realistic attack surface is narrow: principally CMP deployments with long-lived RA/CA DHX keys and bespoke enterprise or government applications using X9.42 DHX static keys with interactive protocols and therefore this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are affected by this issue.",
+      "description": "Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery.  Impact Summary: An attacker impersonating a user can cause a service reading PKCS#12 files to accept forged certificates and private keys with a 1 in 256 probability.  If a service accepting PKCS#12 files is using passwords for authenticating the received files, the attacker can create unencrypted PKCS#12 files that use PBMAC1 authentication that specifies an HMAC key of only one byte, allowing them to craft a file that will be accepted with a 1 in 256 probability. That would then cause the service to accept a certificate and private key controlled by the attacker.  The FIPS modules are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary.",
       "affects": [
         {
           "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
@@ -63533,7 +63611,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d92fdcae-4a2b-482c-ad8b-a4273beb1697",
+      "bom-ref": "urn:uuid:9e2c5857-e095-4af4-a329-39087f35c6c2",
       "id": "CVE-2017-18018",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63570,7 +63648,85 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c34cb144-64aa-493d-ac2e-4d09e85bf446",
+      "bom-ref": "urn:uuid:76cd581e-0249-4567-8dfb-9fd27340c421",
+      "id": "CVE-2026-42770",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-42770",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 3.7,
+          "severity": "low",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00008,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the peer key is not properly checked for the subgroup membership.  Impact summary: A malicious peer which presents an X9.42 key carrying the victim's p and g parameters, a forged q = r (a small prime factor of the cofactor (p−1)/q_local), and a public value Y of order r can recover the victim's private key after a small number of key exchange attempts.  When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the subgroup membership check Y^q ≡ 1 (mod p) is performed using the peer's own q parameter, not the local key's q. The peer's domain parameters are then matched against the domain parameters of the private key, but the value of q is not compared.  A malicious peer who presents an X9.42 key carrying the victim's p, g, a forged q = r (a small prime factor of the cofactor), and a public value Y of order r passes all checks. The shared secret then takes only r distinct values, leaking priv mod r. Repeating for each small-prime factor of the cofactor and combining via CRT recovers the full private key (Lim–Lee / small-subgroup-confinement attack).  The realistic attack surface is narrow: principally CMP deployments with long-lived RA/CA DHX keys and bespoke enterprise or government applications using X9.42 DHX static keys with interactive protocols and therefore this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are affected by this issue.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64&distro=debian&package-id=3891371477be8c1a&upstream=openssl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:58cfe914-d7ff-4cd8-a9a2-0cff75ad54ad",
+      "id": "CVE-2026-42770",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-42770",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42770"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 3.7,
+          "severity": "low",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00008,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the peer key is not properly checked for the subgroup membership.  Impact summary: A malicious peer which presents an X9.42 key carrying the victim's p and g parameters, a forged q = r (a small prime factor of the cofactor (p−1)/q_local), and a public value Y of order r can recover the victim's private key after a small number of key exchange attempts.  When EVP_PKEY_derive_set_peer() is called with a DHX (X9.42) peer key, the subgroup membership check Y^q ≡ 1 (mod p) is performed using the peer's own q parameter, not the local key's q. The peer's domain parameters are then matched against the domain parameters of the private key, but the value of q is not compared.  A malicious peer who presents an X9.42 key carrying the victim's p, g, a forged q = r (a small prime factor of the cofactor), and a public value Y of order r passes all checks. The shared secret then takes only r distinct values, leaking priv mod r. Repeating for each small-prime factor of the cofactor and combining via CRT recovers the full private key (Lim–Lee / small-subgroup-confinement attack).  The realistic attack surface is narrow: principally CMP deployments with long-lived RA/CA DHX keys and bespoke enterprise or government applications using X9.42 DHX static keys with interactive protocols and therefore this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are affected by this issue.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64&distro=debian&package-id=fe63234f8e5b9b82&upstream=openssl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:36b49bb8-3967-4a6b-b93c-74c086244ea3",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63607,7 +63763,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1cb1505c-6edf-4191-b615-5cf2ebab58b1",
+      "bom-ref": "urn:uuid:e51ee6e6-1b49-42b6-9bc6-c6ab07c5daed",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63644,7 +63800,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8778a388-f57d-4481-ac6a-899505648863",
+      "bom-ref": "urn:uuid:e7c17c27-f9ce-44d6-9933-1e1f32ef7f9e",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63683,7 +63839,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:36b281b5-1bf3-4b34-a722-4071c09af6de",
+      "bom-ref": "urn:uuid:fbf6a285-84c4-48a3-b344-38c383d36d2b",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63722,7 +63878,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5ec3c063-5618-4f7c-a8b2-535a5b952f8d",
+      "bom-ref": "urn:uuid:c9047b16-ec7c-47c0-a863-3b69d47c15d3",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63759,7 +63915,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c4c37141-7d1e-408b-8d84-ab4ef4bd53ed",
+      "bom-ref": "urn:uuid:f0b44744-6037-4ec9-9770-595af542c547",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63796,7 +63952,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2bacb3c6-c8b8-450a-99c0-56946c0b5c16",
+      "bom-ref": "urn:uuid:79be6fb8-e1e0-4c94-837f-072d22fdac02",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63833,7 +63989,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:50d5206e-6197-45c5-be93-880d15220e6d",
+      "bom-ref": "urn:uuid:67a7dfb5-9c76-45e8-a0cd-208a656ff96c",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63870,7 +64026,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ab6b7def-9cca-4d22-afd7-041aa576f5d9",
+      "bom-ref": "urn:uuid:99b4a0bf-90f7-4109-b198-b036b7de5387",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63907,7 +64063,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c19c0529-9c51-4833-ab63-4333225ea216",
+      "bom-ref": "urn:uuid:a1af8abd-ec8d-4818-9567-fcae588807c3",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63944,7 +64100,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:045153a0-0bb6-4fc1-b745-79ad34840833",
+      "bom-ref": "urn:uuid:a383454f-1ca5-45ae-a77c-3fb59d8e85fa",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63981,7 +64137,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:515db53c-fa58-4cc1-b0de-fc1c30b05287",
+      "bom-ref": "urn:uuid:9158c0dc-e84e-4a70-8335-22f23ebfd978",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -64018,7 +64174,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c310e6bb-ef3f-45e9-a8ed-cfc555ac9304",
+      "bom-ref": "urn:uuid:115a50b1-481d-4dda-83ac-a9937c0be043",
       "id": "CVE-2026-22185",
       "source": {
         "name": "debian-distro-debian-unstable",
