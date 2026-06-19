@@ -52,6 +52,27 @@
               }
             },
             {
+              "id": "CVE-2026-55200-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-55200 critical vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit 7acf3df contains an out-of-bounds write vulnerability in ssh2_transport_read() that fails to enforce upper bounds on packet_length field. Remote attackers can send crafted SSH packets with excessively large packet_length values to corrupt heap memory and achieve remote code execution."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55200",
+              "help": {
+                "text": "Vulnerability CVE-2026-55200\nSeverity: critical\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)",
+                "markdown": "**Vulnerability CVE-2026-55200**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libssh2-1t64  | 1.11.1-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "9.2"
+              }
+            },
+            {
               "id": "CVE-2026-42764-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -451,6 +472,27 @@
               }
             },
             {
+              "id": "CVE-2026-55199-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-55199 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit 1762685, contains a pre-authentication denial of service vulnerability in the SSH_MSG_EXT_INFO handler in src/packet.c that allows a malicious SSH server to cause a client CPU exhaustion loop by sending a crafted extension count value. A malicious server can set nr_extensions to 0xFFFFFFFF during key exchange, causing the client to spin in a tight CPU loop for over 60 seconds because return values from _libssh2_get_string() are unchecked and the session timeout does not apply to CPU-bound loops."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55199",
+              "help": {
+                "text": "Vulnerability CVE-2026-55199\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55199](https://security-tracker.debian.org/tracker/CVE-2026-55199)",
+                "markdown": "**Vulnerability CVE-2026-55199**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55199](https://security-tracker.debian.org/tracker/CVE-2026-55199)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "8.2"
+              }
+            },
+            {
               "id": "CVE-2026-48959-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -535,6 +577,48 @@
               }
             },
             {
+              "id": "CVE-2026-7383-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-7383 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A signed integer overflow when sizing the destination buffer for Unicode output in ASN1_mbstring_ncopy() can lead to a heap buffer overflow.  Impact summary: A heap buffer overflow may lead to a crash or possibly attacker controlled code execution or other undefined behaviour.  In ASN1_mbstring_copy() and ASN1_mbstring_ncopy() the destination size for Unicode output is computed in a signed int: by left shift of the input character count for BMPSTRING (UTF-16) and UNIVERSALSTRING (UTF-32), and by summing per-character byte counts for UTF8STRING. The calculation overflows when the input reaches around 2^30 characters. In the worst case (UNIVERSALSTRING at 2^30 characters) the size wraps to zero, OPENSSL_malloc(1) is called, and the subsequent character copy writes several gigabytes past the one-byte allocation.  X.509 certificate processing routes through ASN1_STRING_set_by_NID(), whose DIRSTRING_TYPE mask excludes UNIVERSALSTRING and whose per-NID size limits cap the input length; no network protocol or certificate-handling path in OpenSSL exercises the overflow. Triggering the bug requires an application that calls ASN1_mbstring_copy() or ASN1_mbstring_ncopy() directly, or registers a custom string type via ASN1_STRING_TABLE_add(), with attacker-controlled input on the order of half a gigabyte or more. For these reasons this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-7383",
+              "help": {
+                "text": "Vulnerability CVE-2026-7383\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: 3.6.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)",
+                "markdown": "**Vulnerability CVE-2026-7383**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  | 3.6.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "8.1"
+              }
+            },
+            {
+              "id": "CVE-2026-7383-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-7383 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A signed integer overflow when sizing the destination buffer for Unicode output in ASN1_mbstring_ncopy() can lead to a heap buffer overflow.  Impact summary: A heap buffer overflow may lead to a crash or possibly attacker controlled code execution or other undefined behaviour.  In ASN1_mbstring_copy() and ASN1_mbstring_ncopy() the destination size for Unicode output is computed in a signed int: by left shift of the input character count for BMPSTRING (UTF-16) and UNIVERSALSTRING (UTF-32), and by summing per-character byte counts for UTF8STRING. The calculation overflows when the input reaches around 2^30 characters. In the worst case (UNIVERSALSTRING at 2^30 characters) the size wraps to zero, OPENSSL_malloc(1) is called, and the subsequent character copy writes several gigabytes past the one-byte allocation.  X.509 certificate processing routes through ASN1_STRING_set_by_NID(), whose DIRSTRING_TYPE mask excludes UNIVERSALSTRING and whose per-NID size limits cap the input length; no network protocol or certificate-handling path in OpenSSL exercises the overflow. Triggering the bug requires an application that calls ASN1_mbstring_copy() or ASN1_mbstring_ncopy() directly, or registers a custom string type via ASN1_STRING_TABLE_add(), with attacker-controlled input on the order of half a gigabyte or more. For these reasons this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-7383",
+              "help": {
+                "text": "Vulnerability CVE-2026-7383\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: 3.6.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)",
+                "markdown": "**Vulnerability CVE-2026-7383**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  | 3.6.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "8.1"
+              }
+            },
+            {
               "id": "CVE-2015-3276-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -616,48 +700,6 @@
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-7383-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-7383 high vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A signed integer overflow when sizing the destination buffer for Unicode output in ASN1_mbstring_ncopy() can lead to a heap buffer overflow.  Impact summary: A heap buffer overflow may lead to a crash or possibly attacker controlled code execution or other undefined behaviour.  In ASN1_mbstring_copy() and ASN1_mbstring_ncopy() the destination size for Unicode output is computed in a signed int: by left shift of the input character count for BMPSTRING (UTF-16) and UNIVERSALSTRING (UTF-32), and by summing per-character byte counts for UTF8STRING. The calculation overflows when the input reaches around 2^30 characters. In the worst case (UNIVERSALSTRING at 2^30 characters) the size wraps to zero, OPENSSL_malloc(1) is called, and the subsequent character copy writes several gigabytes past the one-byte allocation.  X.509 certificate processing routes through ASN1_STRING_set_by_NID(), whose DIRSTRING_TYPE mask excludes UNIVERSALSTRING and whose per-NID size limits cap the input length; no network protocol or certificate-handling path in OpenSSL exercises the overflow. Triggering the bug requires an application that calls ASN1_mbstring_copy() or ASN1_mbstring_ncopy() directly, or registers a custom string type via ASN1_STRING_TABLE_add(), with attacker-controlled input on the order of half a gigabyte or more. For these reasons this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-7383",
-              "help": {
-                "text": "Vulnerability CVE-2026-7383\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.2-1\nFix Version: 3.6.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)",
-                "markdown": "**Vulnerability CVE-2026-7383**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.2-1  | 3.6.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "8.1"
-              }
-            },
-            {
-              "id": "CVE-2026-7383-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-7383 high vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A signed integer overflow when sizing the destination buffer for Unicode output in ASN1_mbstring_ncopy() can lead to a heap buffer overflow.  Impact summary: A heap buffer overflow may lead to a crash or possibly attacker controlled code execution or other undefined behaviour.  In ASN1_mbstring_copy() and ASN1_mbstring_ncopy() the destination size for Unicode output is computed in a signed int: by left shift of the input character count for BMPSTRING (UTF-16) and UNIVERSALSTRING (UTF-32), and by summing per-character byte counts for UTF8STRING. The calculation overflows when the input reaches around 2^30 characters. In the worst case (UNIVERSALSTRING at 2^30 characters) the size wraps to zero, OPENSSL_malloc(1) is called, and the subsequent character copy writes several gigabytes past the one-byte allocation.  X.509 certificate processing routes through ASN1_STRING_set_by_NID(), whose DIRSTRING_TYPE mask excludes UNIVERSALSTRING and whose per-NID size limits cap the input length; no network protocol or certificate-handling path in OpenSSL exercises the overflow. Triggering the bug requires an application that calls ASN1_mbstring_copy() or ASN1_mbstring_ncopy() directly, or registers a custom string type via ASN1_STRING_TABLE_add(), with attacker-controlled input on the order of half a gigabyte or more. For these reasons this issue was assigned Low severity.  The FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue, as the affected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-7383",
-              "help": {
-                "text": "Vulnerability CVE-2026-7383\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.2-1\nFix Version: 3.6.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)",
-                "markdown": "**Vulnerability CVE-2026-7383**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.2-1  | 3.6.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-7383](https://security-tracker.debian.org/tracker/CVE-2026-7383)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "8.1"
               }
             },
             {
@@ -976,27 +1018,6 @@
               }
             },
             {
-              "id": "CVE-2005-2541-tar",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2005-2541 low vulnerability for tar package"
-              },
-              "fullDescription": {
-                "text": "Tar 1.15.1 does not properly warn the user when extracting setuid or setgid files, which may allow local users or remote attackers to gain privileges."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2005-2541",
-              "help": {
-                "text": "Vulnerability CVE-2005-2541\nSeverity: low\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2005-2541](https://security-tracker.debian.org/tracker/CVE-2005-2541)",
-                "markdown": "**Vulnerability CVE-2005-2541**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2005-2541](https://security-tracker.debian.org/tracker/CVE-2005-2541)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "10.0"
-              }
-            },
-            {
               "id": "CVE-2026-34182-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1036,6 +1057,27 @@
                   "pkg:deb/debian/openssl-provider-legacy@3.6.2-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
                 ],
                 "security-severity": "9.1"
+              }
+            },
+            {
+              "id": "CVE-2005-2541-tar",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2005-2541 low vulnerability for tar package"
+              },
+              "fullDescription": {
+                "text": "Tar 1.15.1 does not properly warn the user when extracting setuid or setgid files, which may allow local users or remote attackers to gain privileges."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2005-2541",
+              "help": {
+                "text": "Vulnerability CVE-2005-2541\nSeverity: low\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2005-2541](https://security-tracker.debian.org/tracker/CVE-2005-2541)",
+                "markdown": "**Vulnerability CVE-2005-2541**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2005-2541](https://security-tracker.debian.org/tracker/CVE-2005-2541)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "10.0"
               }
             },
             {
@@ -1687,90 +1729,6 @@
                   "pkg:deb/debian/perl-base@5.40.1-7%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=perl%405.40.1-7"
                 ],
                 "security-severity": "6.5"
-              }
-            },
-            {
-              "id": "CVE-2026-11850-libgssapi-krb5-2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-11850 medium vulnerability for libgssapi-krb5-2 package"
-              },
-              "fullDescription": {
-                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
-              "help": {
-                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libgssapi-krb5-2\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
-                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libgssapi-krb5-2  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libgssapi-krb5-2@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
-                ],
-                "security-severity": "5.0"
-              }
-            },
-            {
-              "id": "CVE-2026-11850-libk5crypto3",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-11850 medium vulnerability for libk5crypto3 package"
-              },
-              "fullDescription": {
-                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
-              "help": {
-                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libk5crypto3\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
-                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libk5crypto3  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libk5crypto3@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
-                ],
-                "security-severity": "5.0"
-              }
-            },
-            {
-              "id": "CVE-2026-11850-libkrb5-3",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-11850 medium vulnerability for libkrb5-3 package"
-              },
-              "fullDescription": {
-                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
-              "help": {
-                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libkrb5-3\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
-                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libkrb5-3  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libkrb5-3@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
-                ],
-                "security-severity": "5.0"
-              }
-            },
-            {
-              "id": "CVE-2026-11850-libkrb5support0",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-11850 medium vulnerability for libkrb5support0 package"
-              },
-              "fullDescription": {
-                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
-              "help": {
-                "text": "Vulnerability CVE-2026-11850\nSeverity: medium\nPackage: libkrb5support0\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
-                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libkrb5support0  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
-                ],
-                "security-severity": "5.0"
               }
             },
             {
@@ -2908,6 +2866,90 @@
               }
             },
             {
+              "id": "CVE-2026-11850-libgssapi-krb5-2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 low vulnerability for libgssapi-krb5-2 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: low\nPackage: libgssapi-krb5-2\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libgssapi-krb5-2  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgssapi-krb5-2@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "CVE-2026-11850-libk5crypto3",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 low vulnerability for libk5crypto3 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: low\nPackage: libk5crypto3\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libk5crypto3  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libk5crypto3@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "CVE-2026-11850-libkrb5-3",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 low vulnerability for libkrb5-3 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: low\nPackage: libkrb5-3\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libkrb5-3  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libkrb5-3@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "CVE-2026-11850-libkrb5support0",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-11850 low vulnerability for libkrb5support0 package"
+              },
+              "fullDescription": {
+                "text": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read. The attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-11850",
+              "help": {
+                "text": "Vulnerability CVE-2026-11850\nSeverity: low\nPackage: libkrb5support0\nVersion: 1.22.1-2.1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)",
+                "markdown": "**Vulnerability CVE-2026-11850**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libkrb5support0  | 1.22.1-2.1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-11850](https://security-tracker.debian.org/tracker/CVE-2026-11850)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
               "id": "CVE-2025-5278-coreutils",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -3705,6 +3747,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-55200-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
           }
         },
         {
@@ -4509,6 +4590,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-55199-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-48959-perl-base",
           "level": "error",
           "message": {
@@ -4689,6 +4809,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-7383-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-7383-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
+          }
+        },
+        {
           "ruleId": "CVE-2015-3276-libldap2",
           "level": "note",
           "message": {
@@ -4862,88 +5064,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-7383-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "37a97e820acbf3c2b7c3bfcb7acc3c905818198a6a25601b94b0911960662772:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-7383-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
           }
         },
         {
@@ -5628,57 +5748,6 @@
           }
         },
         {
-          "ruleId": "CVE-2005-2541-tar",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: tar, version 1.35+dfsg-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/tar/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/tar/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.prerm"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-34182-libssl3t64",
           "level": "error",
           "message": {
@@ -5758,6 +5827,57 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "c20ff957f0485b557ee0fb95b5e902a4108745afc971cdbc5bfc518b2afe1bb6:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2005-2541-tar",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: tar, version 1.35+dfsg-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/tar/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/usr/share/doc/tar/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:63599d59be8511b5c7ce7ed1875a24d2d079588c3802cc65ffd54e5d1c3663b2:/var/lib/dpkg/info/tar.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
           }
         },
         {
@@ -7183,162 +7303,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "1ff1bb19d53e21639a136b0b73b6e12e4a0d89c6407c17b45db5342486b2ca15:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-11850-libgssapi-krb5-2",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libgssapi-krb5-2, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libgssapi-krb5-2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libgssapi-krb5-2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libgssapi-krb5-2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libgssapi-krb5-2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "314de2750768dd892c78cde411a31a35fbf90a03d0481ebdda78f6275d088b9f:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-11850-libk5crypto3",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libk5crypto3, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libk5crypto3/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libk5crypto3/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libk5crypto3:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libk5crypto3:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "c90780e555c4ef27747ec53d0358a82249d5d796bb42e914304fe6c396a2cb4d:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-11850-libkrb5-3",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libkrb5-3, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libkrb5-3/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libkrb5-3/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libkrb5-3:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libkrb5-3:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "278ffae8a7900e4f595adcb17130cc7065aaf85b6611086c1f2e4ffda4dff79f:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-11850-libkrb5support0",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libkrb5support0, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libkrb5support0/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libkrb5support0/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libkrb5support0:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libkrb5support0:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "ce170da78f33c124760b22f5ded2c23e60bcd45fab19538404a465090ca32583:1"
           }
         },
         {
@@ -9649,6 +9613,162 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "b9a612c971ec818aa18a75ef2ea50b68cd06990fb2889a70edca9a521e25cfba:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libgssapi-krb5-2",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libgssapi-krb5-2, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libgssapi-krb5-2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libgssapi-krb5-2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgssapi-krb5-2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libgssapi-krb5-2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "314de2750768dd892c78cde411a31a35fbf90a03d0481ebdda78f6275d088b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libk5crypto3",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libk5crypto3, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libk5crypto3/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libk5crypto3/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libk5crypto3:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libk5crypto3:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c90780e555c4ef27747ec53d0358a82249d5d796bb42e914304fe6c396a2cb4d:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libkrb5-3",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libkrb5-3, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libkrb5-3/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libkrb5-3/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libkrb5-3:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libkrb5-3:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "278ffae8a7900e4f595adcb17130cc7065aaf85b6611086c1f2e4ffda4dff79f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-11850-libkrb5support0",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libkrb5support0, version 1.22.1-2.1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libkrb5support0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/usr/share/doc/libkrb5support0/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libkrb5support0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3c27d175a9263781f57b28d83b3ef43844fd753832408c7d34133dae25ef49d:/var/lib/dpkg/info/libkrb5support0:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ce170da78f33c124760b22f5ded2c23e60bcd45fab19538404a465090ca32583:1"
           }
         },
         {
