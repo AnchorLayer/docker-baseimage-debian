@@ -2995,21 +2995,21 @@
               "id": "CVE-2025-15661-libssh2-1t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2025-15661 medium vulnerability for libssh2-1t64 package"
+                "text": "CVE-2025-15661 high vulnerability for libssh2-1t64 package"
               },
               "fullDescription": {
                 "text": "libssh2 through 1.11.1, fixed in commit 2dae302, contains an out-of-bounds heap read vulnerability in the sftp_symlink() function in src/sftp.c that allows a malicious SSH server or man-in-the-middle attacker to disclose heap memory contents or cause a crash by sending a crafted SSH_FXP_NAME response. Attackers can supply a link_len value larger than the actual packet data in SSH_FXP_NAME responses for SFTP READLINK and REALPATH operations, triggering a heap buffer over-read of up to target_len minus one bytes due to the missing validation of available packet buffer size before the memcpy operation."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2025-15661",
               "help": {
-                "text": "Vulnerability CVE-2025-15661\nSeverity: medium\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)",
-                "markdown": "**Vulnerability CVE-2025-15661**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssh2-1t64  | 1.11.1-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)  |\n"
+                "text": "Vulnerability CVE-2025-15661\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)",
+                "markdown": "**Vulnerability CVE-2025-15661**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
                 ],
-                "security-severity": "6.5"
+                "security-severity": "8.3"
               }
             },
             {
@@ -9876,9 +9876,9 @@
         },
         {
           "ruleId": "CVE-2025-15661-libssh2-1t64",
-          "level": "warning",
+          "level": "error",
           "message": {
-            "text": "A medium vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
