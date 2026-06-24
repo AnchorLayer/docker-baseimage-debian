@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:021bb256-303f-4efb-be95-00d4ead21ab6",
+  "serialNumber": "urn:uuid:bcb221dc-8738-42f4-914f-3d478649d049",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-06-24T04:49:47Z",
+    "timestamp": "2026-06-24T11:25:55Z",
     "tools": {
       "components": [
         {
@@ -59010,7 +59010,7 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:30289d63-db36-4119-bb60-26d136faa655",
+      "bom-ref": "urn:uuid:0a69be1c-50eb-445f-84e1-b60b79943c3b",
       "id": "CVE-2026-55200",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59037,7 +59037,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00552,
+          "score": 0.00545,
           "method": "other"
         }
       ],
@@ -59049,7 +59049,46 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0caf29be-e260-4513-b294-81ca99395c24",
+      "bom-ref": "urn:uuid:2d777c41-5e1b-4c3b-bd7d-6c6214d4c111",
+      "id": "CVE-2026-42496",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42496"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-42496",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42496"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 9.1,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00481,
+          "method": "other"
+        }
+      ],
+      "description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64&distro=debian&package-id=a2c677a5c06098ec&upstream=perl"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:cccb3815-5143-4f17-88b8-39905bc6140a",
       "id": "CVE-2026-5450",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59088,7 +59127,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9175680e-e454-4ed0-9bfe-43a818760848",
+      "bom-ref": "urn:uuid:cd7c3e12-37d6-4b7e-b76a-1a33a0ff0a36",
       "id": "CVE-2026-5450",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59127,7 +59166,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d164af38-0687-4575-bb0f-f675fc171c1e",
+      "bom-ref": "urn:uuid:4f8bcda3-bf83-499c-a107-8a05a136b4b0",
       "id": "CVE-2026-5450",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59166,46 +59205,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e728e0ea-d841-45a3-aa20-4099781c6273",
-      "id": "CVE-2026-42496",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42496"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-42496",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42496"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 9.1,
-          "severity": "critical",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00467,
-          "method": "other"
-        }
-      ],
-      "description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64&distro=debian&package-id=a2c677a5c06098ec&upstream=perl"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:a4764a21-ff7e-4fbb-87c6-0f5fad915f37",
+      "bom-ref": "urn:uuid:3249ef0a-d605-478b-9556-47443e6312bf",
       "id": "CVE-2026-12087",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59232,7 +59232,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00394,
+          "score": 0.00389,
           "method": "other"
         }
       ],
@@ -59244,7 +59244,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2d68505b-15c1-4ca0-857f-d402a3e17f87",
+      "bom-ref": "urn:uuid:8436d17e-891e-406a-ad20-4a46fa491c76",
       "id": "CVE-2017-17740",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59281,7 +59281,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2d976ecd-e913-477e-a821-3e7ae9dbaa12",
+      "bom-ref": "urn:uuid:8c49b7f1-ed44-4785-9c7b-5d3886d9adfa",
       "id": "CVE-2026-9538",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59308,7 +59308,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00442,
+          "score": 0.00437,
           "method": "other"
         }
       ],
@@ -59320,7 +59320,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3aa07a86-c661-4fc5-a615-659fa8a95e21",
+      "bom-ref": "urn:uuid:1a09d51f-3904-43f6-80d5-4438f5de855b",
       "id": "CVE-2026-42497",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59347,7 +59347,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00405,
+          "score": 0.00417,
           "method": "other"
         }
       ],
@@ -59359,7 +59359,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:46f624de-6eda-46c4-8c1d-dca491353d96",
+      "bom-ref": "urn:uuid:82388263-fcf4-4e5e-b7ea-f0482fc1ade3",
       "id": "CVE-2026-55199",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59386,7 +59386,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00376,
+          "score": 0.00371,
           "method": "other"
         }
       ],
@@ -59398,7 +59398,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:22352f25-71f5-448b-818c-30dfeb9a927c",
+      "bom-ref": "urn:uuid:5f7eda9c-9f45-43d8-a899-1efd7acc2d7f",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59435,7 +59435,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0b22983a-e52c-483c-a95c-e50d9434a2b3",
+      "bom-ref": "urn:uuid:65e54a1d-95d8-43e9-abd3-f22ffdda2748",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59472,7 +59472,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0cf38cec-2294-4825-a3ea-2409ca922eb2",
+      "bom-ref": "urn:uuid:85b3a623-e89d-4ea7-b47b-da7237e10a23",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59509,7 +59509,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e4526098-eaa9-4ad2-a0ed-5cc4f48dd273",
+      "bom-ref": "urn:uuid:4011a664-2f0f-465a-bd9c-5b18622ada2a",
       "id": "CVE-2015-3276",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59546,7 +59546,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0afca9b9-5e61-4fc9-bd45-aeb77924ec0c",
+      "bom-ref": "urn:uuid:9846158b-281f-42e6-83d3-e46372cb13e6",
       "id": "CVE-2026-5928",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59585,7 +59585,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:290254d2-7513-4539-9b73-335aa24212f9",
+      "bom-ref": "urn:uuid:93dfdaca-1590-4f31-a5a8-714593d1278e",
       "id": "CVE-2026-5928",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59624,7 +59624,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f567f573-3dc0-493a-99f3-12c147573002",
+      "bom-ref": "urn:uuid:43736ab1-e7b2-4a73-9ee8-b94d8dc0940d",
       "id": "CVE-2026-5928",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59663,7 +59663,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3aa703bc-6198-429b-82aa-6000b5f2c421",
+      "bom-ref": "urn:uuid:000ff555-09db-4c18-9d8c-81bd520052e1",
       "id": "CVE-2026-5704",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59702,7 +59702,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5a2dfd46-8a56-4fdd-82cd-1b2659ca0aff",
+      "bom-ref": "urn:uuid:88bb12da-7424-46c0-9615-1d5efca8891e",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59741,7 +59741,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:fc630f63-0bad-420e-a33a-76463e133c0f",
+      "bom-ref": "urn:uuid:87c3ccf8-c121-4300-b2e3-e387cc3c27e2",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59780,7 +59780,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:753d81d8-6d1f-441f-b01e-f24c369a4587",
+      "bom-ref": "urn:uuid:cb7a77a4-3f62-4404-a69a-bcb90ddb560c",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59819,7 +59819,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f8b91870-3f3f-49bb-886a-a338e6b32ae8",
+      "bom-ref": "urn:uuid:b672da22-9b8d-49ae-ba3b-e33946bf6d1e",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59858,7 +59858,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7be91abf-61ca-41dd-9b7c-dbc5d8e3bb53",
+      "bom-ref": "urn:uuid:71ef4939-e3ae-4869-b0fe-9d03bfb63a97",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59897,7 +59897,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:937e1e7c-94d5-4672-95d7-ab53a741cc26",
+      "bom-ref": "urn:uuid:8f2293c7-5367-4fac-8aeb-d4bd9f689b34",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59936,7 +59936,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4e8ce8da-f8db-4632-b7b6-38b91a261935",
+      "bom-ref": "urn:uuid:f26aa7d0-a6d5-4e9b-a7a9-6e420c46618e",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59975,7 +59975,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9fe05657-8b84-4fb8-a7f7-648938e5e69e",
+      "bom-ref": "urn:uuid:b28113e6-4fd5-406c-b1d8-8ef7285d99d6",
       "id": "CVE-2026-3184",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60014,7 +60014,46 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:958c2802-6b43-420c-b2ee-4646d8e36bd7",
+      "bom-ref": "urn:uuid:6bac1b04-8689-4fec-afcd-c58c86671752",
+      "id": "CVE-2025-15661",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2025-15661"
+      },
+      "references": [
+        {
+          "id": "CVE-2025-15661",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2025-15661"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 8.3,
+          "severity": "high",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00267,
+          "method": "other"
+        }
+      ],
+      "description": "libssh2 through 1.11.1, fixed in commit 2dae302, contains an out-of-bounds heap read vulnerability in the sftp_symlink() function in src/sftp.c that allows a malicious SSH server or man-in-the-middle attacker to disclose heap memory contents or cause a crash by sending a crafted SSH_FXP_NAME response. Attackers can supply a link_len value larger than the actual packet data in SSH_FXP_NAME responses for SFTP READLINK and REALPATH operations, triggering a heap buffer over-read of up to target_len minus one bytes due to the missing validation of available packet buffer size before the memcpy operation.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64&distro=debian&package-id=1f7fabde5664a20a&upstream=libssh2"
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:e755d8b1-b0da-41c7-a6a6-b9d7494d2f1d",
       "id": "CVE-2005-2541",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60051,7 +60090,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3150ef0a-55c5-4599-8cce-1f41e3fb628c",
+      "bom-ref": "urn:uuid:fb8b4700-e595-43f2-9b5c-a24525a9aa14",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60078,7 +60117,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00321,
           "method": "other"
         }
       ],
@@ -60090,7 +60129,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:511d93c8-4c01-4512-9cff-603b72ff3f84",
+      "bom-ref": "urn:uuid:a1dfc4c8-a480-4c61-92b1-e25f480e33b4",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60117,7 +60156,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00321,
           "method": "other"
         }
       ],
@@ -60129,7 +60168,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:073669cd-f526-4c4f-bfd3-18387e519ddb",
+      "bom-ref": "urn:uuid:3a22c70e-4485-4f15-90ba-1365e2383158",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60156,7 +60195,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00321,
           "method": "other"
         }
       ],
@@ -60168,7 +60207,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6f6cfa3e-302e-469c-9fbe-cf5345fbfdfe",
+      "bom-ref": "urn:uuid:67607833-8f8f-4654-a223-d06139f232b5",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60195,7 +60234,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00321,
           "method": "other"
         }
       ],
@@ -60207,7 +60246,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0cd9ea8b-e03f-4abd-b99b-b7906fddb90b",
+      "bom-ref": "urn:uuid:26415d3b-cdf3-4d7a-a6bb-0d2da4a440dc",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60246,7 +60285,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e17e0fd6-7c3a-455d-8ae6-f17e1fbde6ea",
+      "bom-ref": "urn:uuid:b9a777f6-d2c6-4a88-abd5-f2d9e8c8fae0",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60285,7 +60324,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6f90274d-1bac-437c-aa31-97790e799e4e",
+      "bom-ref": "urn:uuid:8bd2bd85-4dec-4b42-a4ad-38a71a1ea9a3",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60324,7 +60363,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:43855df6-48da-4337-96c5-fa3c35b253cd",
+      "bom-ref": "urn:uuid:82719caa-7ece-4345-afa3-d70541f85bd5",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60361,7 +60400,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b5cef9e8-78ac-41ac-ad59-8b0290df00fd",
+      "bom-ref": "urn:uuid:f2e21e0c-ccb7-4ea1-83fb-943a92d93d23",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60398,7 +60437,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0a98621b-b488-46f1-937c-410caca879b3",
+      "bom-ref": "urn:uuid:d488475a-1ec3-4ac0-8c7a-dd9b4bad6e3f",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60435,7 +60474,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:80dc8f7c-52df-4f33-8ee8-1723b4df812f",
+      "bom-ref": "urn:uuid:9b44c647-f6e1-4243-8ec9-b009017cdd67",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60472,7 +60511,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3cf4deae-ea2c-4c15-8b7e-688047e7bf11",
+      "bom-ref": "urn:uuid:d8a122fc-6944-45d9-a77d-583de4f01be1",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60509,7 +60548,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:499ee95b-faf9-40f7-a920-1c8e5ba83acf",
+      "bom-ref": "urn:uuid:ff817adc-8d37-4436-bfa8-ef79121aca50",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60546,7 +60585,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:27364e16-130d-4ab1-8313-350096349dba",
+      "bom-ref": "urn:uuid:da23106a-8ac4-4de1-ba83-6279feabdbec",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60583,7 +60622,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b8990415-e86b-4d21-8b51-44eaaff638a0",
+      "bom-ref": "urn:uuid:9875b535-e15c-40ef-8f03-b10ed60fb1ef",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60620,7 +60659,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0115ab51-ea02-4eaa-aeb5-a7145a08f0b3",
+      "bom-ref": "urn:uuid:13bdc2d6-d141-48dd-ac8c-cbe7e5b389ea",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60657,7 +60696,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:be123505-de36-4b2f-9b2a-686afd8beb31",
+      "bom-ref": "urn:uuid:cb2286e9-23d0-4e4c-998f-c4860eeffb29",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60696,7 +60735,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f7aa7aa1-6d6b-4818-afdc-d5a94b9e9873",
+      "bom-ref": "urn:uuid:612b4bc7-d7c6-47a0-acf3-a81408f9a93d",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60735,7 +60774,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8265c24d-a731-4673-91fc-1f20b1703d3d",
+      "bom-ref": "urn:uuid:7f9b718e-e770-47ab-90ff-f7a330fe9dba",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60774,7 +60813,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bc0e8cbe-b248-4a65-aa27-6c66443334ea",
+      "bom-ref": "urn:uuid:a3b70c44-085d-4eb8-b336-b36a905828a8",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60813,7 +60852,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:63327032-3a2e-4313-96b4-ec63b67f52cb",
+      "bom-ref": "urn:uuid:c6924117-4a64-445b-a5e7-8f0afc55ef9e",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60852,7 +60891,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c132235e-a5fe-4193-822a-f425489ba160",
+      "bom-ref": "urn:uuid:2722ae35-14ec-41aa-8c88-3f84441c6c9a",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60889,7 +60928,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f3c3185d-460b-4915-8188-0bf21012a169",
+      "bom-ref": "urn:uuid:44a21dcd-0d8a-4ec1-aefa-0cb5f4ceb3a1",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60926,7 +60965,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:90028c44-eb62-4258-847f-432e4d897f36",
+      "bom-ref": "urn:uuid:1a8eefe2-6717-464b-b2d4-d0aa6bc5f174",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60963,7 +61002,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:722a43da-222e-4a50-b0c4-c4566ed24272",
+      "bom-ref": "urn:uuid:b476ef84-5c54-4a94-b910-5fd549bfa5d8",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61000,7 +61039,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a56ee797-e254-4efb-be3a-b4bfba25c92c",
+      "bom-ref": "urn:uuid:9841f487-dcfe-4eee-b426-e9fbab76a537",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61037,7 +61076,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b8ff3dd3-b15c-43aa-b615-852a5c2cd7eb",
+      "bom-ref": "urn:uuid:9fdac817-6a2e-4678-889f-55b63e46f9e4",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61074,7 +61113,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ac55c385-e2aa-4178-8671-0f9f29ea6835",
+      "bom-ref": "urn:uuid:700531c6-9afd-4633-a281-0dfacf3e9725",
       "id": "CVE-2020-15719",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61111,7 +61150,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4e21a9c9-dc77-4504-a885-fbe1d0ab3177",
+      "bom-ref": "urn:uuid:e097b733-a5ea-4695-ad9b-06b261b9aef5",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61148,7 +61187,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:87364c28-31ef-44c3-917f-cec02268cc88",
+      "bom-ref": "urn:uuid:c6c06d59-2f5d-4d38-963d-1f04e7e2e2c8",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61185,7 +61224,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:651aaead-c7d3-4df4-b826-20815d5b95e3",
+      "bom-ref": "urn:uuid:15565e13-2ccc-4965-bacc-f7fd6553ce48",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61222,7 +61261,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:026ab4e3-3db6-42e3-852d-f06ba1fade0e",
+      "bom-ref": "urn:uuid:cd79c848-2946-475f-b86a-c48503604ae1",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61259,7 +61298,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f2a0232f-7934-49e7-881d-06f8042526db",
+      "bom-ref": "urn:uuid:cc16c44b-3cdc-4f7c-8bbb-0ba1abfb5ffe",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61296,7 +61335,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:612468e0-fe21-4c22-a9f9-0b130901f3c0",
+      "bom-ref": "urn:uuid:e33308b4-7909-4919-8d66-a6352a9a8e07",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61333,7 +61372,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e7057c84-503f-4d1e-b027-4a6fdc92bd04",
+      "bom-ref": "urn:uuid:9753f5fd-0a3b-46fe-ade2-020d4dff2e81",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61370,7 +61409,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3d2284f7-debd-4be2-b8f5-99ed2212a139",
+      "bom-ref": "urn:uuid:9f549eef-faea-4f05-ab5f-8e807bad4516",
       "id": "CVE-2026-42250",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61397,7 +61436,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00128,
+          "score": 0.00126,
           "method": "other"
         }
       ],
@@ -61409,7 +61448,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:dae5a12c-392e-4d17-a4c8-ec15752aba85",
+      "bom-ref": "urn:uuid:a300a8f5-9992-4d59-bcb8-dacfb1f4daad",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61446,7 +61485,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5e212e4a-2d7e-41e2-884c-837ebcbb018e",
+      "bom-ref": "urn:uuid:1fee51ed-3c41-4ed4-8ec0-ca8f9b1b2b55",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61483,7 +61522,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:19d31335-edd8-48b4-8071-70e0449c3c19",
+      "bom-ref": "urn:uuid:deacea02-f724-465b-9229-67a2c8c642d3",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61520,7 +61559,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:22972713-9885-4197-9944-6076e24bd801",
+      "bom-ref": "urn:uuid:e3e51603-6e1f-4354-b0ae-fe04a211a3e3",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61557,7 +61596,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0ef3a76f-5721-4d54-bd45-8eec5906fc5c",
+      "bom-ref": "urn:uuid:9b43814e-8420-42b9-974e-bbbd6bb57c93",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61594,7 +61633,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e99371d0-d0c2-41fa-91a1-4d56bf12dcce",
+      "bom-ref": "urn:uuid:532bebda-1814-415a-8722-f78c345f953e",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61631,7 +61670,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3314d295-271a-4c48-9cae-2ea8599a4f3d",
+      "bom-ref": "urn:uuid:523c454f-b87a-40c1-98ed-aeaa92c704be",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61670,7 +61709,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5266f23a-1b19-4858-b25d-e3897440e735",
+      "bom-ref": "urn:uuid:662bedd9-7906-4388-bcec-5cc0cb10e578",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61709,7 +61748,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:75ae9d99-98f0-49e2-bfe0-d9f718180a6f",
+      "bom-ref": "urn:uuid:650b36c0-54ae-4eda-b5a6-d25118d803d0",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61746,7 +61785,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:87dc1f15-3a5b-4dbc-86e1-5fc20b44337e",
+      "bom-ref": "urn:uuid:46b29db0-e4d6-4675-b7f8-f68e63badd35",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61783,7 +61822,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:eb769efc-ee90-45e2-bfdc-2fcc4d28e5a1",
+      "bom-ref": "urn:uuid:7a3bb7e6-61c2-4dc0-8a2c-0c644dacccd2",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61820,7 +61859,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b8ebc8d1-c6e4-491b-a408-e1e77807dd67",
+      "bom-ref": "urn:uuid:da4e2c0a-e714-4ee0-a03c-cdf01e354a3a",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61857,7 +61896,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:58ba7f33-e2e3-4163-921f-5ded4d0605ca",
+      "bom-ref": "urn:uuid:abba7f77-0782-44db-92a8-a628633fb236",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61894,7 +61933,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4e0a37f3-9366-42ee-9ebd-394a96c0a652",
+      "bom-ref": "urn:uuid:4273578c-3534-432c-bf0b-34c0d034bb40",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61931,7 +61970,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7fb849b3-24e6-47d0-883c-d7ea0d14c621",
+      "bom-ref": "urn:uuid:7f2532b1-219b-469c-86e7-d1d954242d4b",
       "id": "CVE-2011-4116",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61968,7 +62007,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3ecf70a6-5609-4766-8b05-010607cf3287",
+      "bom-ref": "urn:uuid:5f6e5bf6-5f71-4c11-be1c-14414c21a38b",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62005,7 +62044,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d0ef0971-a3f4-48cd-bee4-a99bfa2d9bd1",
+      "bom-ref": "urn:uuid:38bfad3a-a2e1-403c-b215-dc98bee591ac",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62042,7 +62081,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ff1c5dae-bc97-49f7-b5ab-588d64d31ae0",
+      "bom-ref": "urn:uuid:ca81669a-985b-464c-a1cf-f37964d10d5b",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62079,7 +62118,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c87d2ca7-06a9-4cd2-9c71-009a7f42f69c",
+      "bom-ref": "urn:uuid:511e110e-2431-4f96-9e99-59e9e8771800",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62116,7 +62155,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d13ecb47-6f71-4a2a-bbe9-0e91fe105fe6",
+      "bom-ref": "urn:uuid:463a723e-ef40-46e2-8a4a-b2e25b9f199f",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62153,7 +62192,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f318f71d-ceb8-402f-b0cb-78af6acf1e07",
+      "bom-ref": "urn:uuid:d32218b9-3dc1-45d3-bb20-799401143015",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62190,7 +62229,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e437942f-0b25-4fb1-85a8-b5110a1d7afb",
+      "bom-ref": "urn:uuid:3a4d74c5-7f87-41d0-af64-b35f7feeee5e",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62227,7 +62266,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1848ccc2-3f5d-469d-a6cd-5514b7a3ff77",
+      "bom-ref": "urn:uuid:2f615658-3825-469e-b19a-e37eeb70b514",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62264,7 +62303,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:47790a3b-78ee-4c12-8246-514f6fceaf07",
+      "bom-ref": "urn:uuid:59db3bc8-b591-4bca-8b16-a11873c6d78c",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62301,7 +62340,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:660b8e3b-05e7-4421-844c-0536eb5643a8",
+      "bom-ref": "urn:uuid:1d5ce5ed-0d4a-40a0-8d59-72fa3563b8d0",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62338,7 +62377,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:928e08c7-abe1-4f99-8404-c77331d396ee",
+      "bom-ref": "urn:uuid:f888e979-eefd-4c94-a4ba-0c802f87bc6a",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62375,7 +62414,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:63d79099-8163-49c2-9ae0-618a0ef1d262",
+      "bom-ref": "urn:uuid:b2d42364-f533-4caf-9b89-6dd41a17c156",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62412,7 +62451,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ac7fff6a-4ef4-465e-8843-ebe6aa8ba22b",
+      "bom-ref": "urn:uuid:26958027-bf00-4d06-96dd-be561aa781d7",
       "id": "CVE-2017-14159",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62449,7 +62488,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8d203b85-65a3-49c3-ba02-3e98e7d9a9ad",
+      "bom-ref": "urn:uuid:a97fc34a-d200-49ae-b9d7-604385b1c1b9",
       "id": "CVE-2017-18018",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62486,7 +62525,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:615dafdd-c4e9-4846-a08d-1ee243cea301",
+      "bom-ref": "urn:uuid:2a411148-5fd4-4df9-a87e-db6cecae94d7",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62523,7 +62562,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:42f504c6-be5a-40a4-9de4-bc05aed764dc",
+      "bom-ref": "urn:uuid:2eca3e21-9898-4687-b2fd-6fab8b53b9f9",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62560,7 +62599,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ca69f5d1-7918-4990-a0fe-420d3452d7c1",
+      "bom-ref": "urn:uuid:70146d5f-333c-40f4-b55c-a1ee399dd5f3",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62597,7 +62636,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:430986b7-1b88-4c0c-816e-54e144060c69",
+      "bom-ref": "urn:uuid:6497d2e1-7246-4c7c-9ff9-2e697ee08f42",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62634,7 +62673,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d031747c-5fe6-446c-8eed-efdd82e222f9",
+      "bom-ref": "urn:uuid:e27901e7-78e9-4cdd-b677-2ad37dce5917",
       "id": "CVE-2026-11850",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62671,7 +62710,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1361cc62-4b30-4194-ba3e-05d54f85d192",
+      "bom-ref": "urn:uuid:c011e10b-bb08-4e01-a7aa-3ca6a9e5d85f",
       "id": "CVE-2026-11850",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62708,7 +62747,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0ea0eca9-7126-46ab-a1c3-bc4c42250b86",
+      "bom-ref": "urn:uuid:4b1c905d-3cee-4fd1-9268-02d8b8c671d7",
       "id": "CVE-2026-11850",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62745,7 +62784,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:13e12981-0619-40c2-aa65-d3396b572124",
+      "bom-ref": "urn:uuid:fbc8320f-5740-48fb-bcf7-fa41c08bf069",
       "id": "CVE-2026-11850",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62782,7 +62821,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4c303a09-3a82-468a-a411-4c601f79c3d9",
+      "bom-ref": "urn:uuid:44d69c64-79db-4f46-8b8b-2b4bc484f10d",
       "id": "CVE-2025-5278",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62819,7 +62858,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:39f990a6-bf88-4aa6-9d36-840c48bd2c41",
+      "bom-ref": "urn:uuid:1f538056-acc8-4d00-84ab-1f5cfed53f4e",
       "id": "CVE-2026-22185",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62856,38 +62895,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b11c3358-aa8e-4d1b-bc2f-628a8e18be6c",
-      "id": "CVE-2025-15661",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2025-15661"
-      },
-      "references": [
-        {
-          "id": "CVE-2025-15661",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2025-15661"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 8.3,
-          "severity": "high",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
-        }
-      ],
-      "description": "libssh2 through 1.11.1, fixed in commit 2dae302, contains an out-of-bounds heap read vulnerability in the sftp_symlink() function in src/sftp.c that allows a malicious SSH server or man-in-the-middle attacker to disclose heap memory contents or cause a crash by sending a crafted SSH_FXP_NAME response. Attackers can supply a link_len value larger than the actual packet data in SSH_FXP_NAME responses for SFTP READLINK and REALPATH operations, triggering a heap buffer over-read of up to target_len minus one bytes due to the missing validation of available packet buffer size before the memcpy operation.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64&distro=debian&package-id=1f7fabde5664a20a&upstream=libssh2"
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:100fae38-3877-4ee0-93df-cea8cc426784",
+      "bom-ref": "urn:uuid:f5697451-7680-4c33-8ae1-47fcd33e4ef6",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62915,7 +62923,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:91afff55-e428-4e39-af8f-8512f532849d",
+      "bom-ref": "urn:uuid:038fabf6-97de-42df-959a-5f03bf761132",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62943,7 +62951,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7edaf542-088c-4e67-9bb2-0fa6103cfd8b",
+      "bom-ref": "urn:uuid:3a836c67-5931-443f-a029-8c3c7b61506c",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62971,7 +62979,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1711da6e-53e5-4231-b100-5527a23f1370",
+      "bom-ref": "urn:uuid:363155cb-60d1-4168-95af-bc5384ed5a7c",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62999,7 +63007,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d37c35d1-a3d2-45f8-adf8-085573adecb0",
+      "bom-ref": "urn:uuid:ca5841de-2355-49fe-9163-40811f730ee9",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63027,7 +63035,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2baf2a58-404d-4fe4-b80b-776369fa080f",
+      "bom-ref": "urn:uuid:2089afe3-3fb8-4b98-afbf-4db8a545ebf9",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63055,7 +63063,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:abf748d7-97e1-4c46-b052-9f07dc323c7f",
+      "bom-ref": "urn:uuid:7d820de5-18a6-4ca8-9bdc-0b87ff412128",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63083,7 +63091,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a7085fca-332d-4c6c-9c64-17bf631f2820",
+      "bom-ref": "urn:uuid:ee147348-77c2-4dec-9122-edb2df8e1d8b",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63111,7 +63119,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:49931340-482e-467e-b8f4-a71d9d023f06",
+      "bom-ref": "urn:uuid:160ff9c3-59bf-404b-87f2-137893cd5245",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63139,7 +63147,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3f2114ce-6445-44ba-b883-6d5f5579a5d2",
+      "bom-ref": "urn:uuid:eaecb547-19cf-4978-b1d5-52dd440438ed",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63167,7 +63175,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c38426b7-1044-4dd0-bdd8-ff720b7212c7",
+      "bom-ref": "urn:uuid:f87e6003-f626-4a28-a208-0a158b58dd98",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63195,7 +63203,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:abc0cc0b-20ec-45f3-a605-17aadeb79956",
+      "bom-ref": "urn:uuid:5fddb391-3fe2-403f-ad51-e2c34a5334bc",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63223,7 +63231,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:053c33d8-5dda-4a67-a960-bd4a866bc1f9",
+      "bom-ref": "urn:uuid:ddfd284d-a3ef-4428-ae70-84cbf5833c6f",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63251,7 +63259,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5734f2f0-bc7e-4c77-8f8f-ad7ec7e525b8",
+      "bom-ref": "urn:uuid:459bebaf-aec4-498e-ac4f-bfaeb99b1a2a",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63279,7 +63287,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bbb8c50c-9bf3-4207-a03f-0f9035ba13ca",
+      "bom-ref": "urn:uuid:748995ec-36c3-49af-b6f6-dfe36d01ae79",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63307,7 +63315,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:cdf5f9e7-6bd2-4927-adee-c5845ed4be85",
+      "bom-ref": "urn:uuid:4abb88ca-62f5-419a-b0c6-ac88258c7c8c",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63335,7 +63343,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:90ebdf4e-dc44-4c8e-b3c2-3f3ceedaea31",
+      "bom-ref": "urn:uuid:4a4a26af-a900-43f9-af07-053443b58249",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63363,7 +63371,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:518c0e38-6065-41ff-a163-34d2f408779a",
+      "bom-ref": "urn:uuid:056936cf-275b-4a6e-a12b-8f1f7e80121a",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63391,7 +63399,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:81599af8-9bb8-4e4e-b008-304b7662370f",
+      "bom-ref": "urn:uuid:3ca549a0-0725-41a9-b076-37e0738014fc",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63419,7 +63427,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f571180f-d933-4c38-8f72-5cb7a2e17bfb",
+      "bom-ref": "urn:uuid:f248e60d-5b37-4c06-9159-efda1c6adc42",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63447,7 +63455,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:46db7a67-22fd-453e-99e9-fe627ff9d835",
+      "bom-ref": "urn:uuid:393d2974-d6af-4b63-8991-12862b439434",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63475,7 +63483,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ca422ee3-2384-45df-9c72-ac5db5d07a11",
+      "bom-ref": "urn:uuid:8d4e4033-1c7c-4d14-b7c7-0ad350873287",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63503,7 +63511,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7acc7ff4-0a57-4223-af9e-c3eb1df6ed62",
+      "bom-ref": "urn:uuid:e563af8e-4d8c-4e74-a530-5a3edabe7180",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63531,7 +63539,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8e56210c-0a30-4e86-ad75-70a53b2678b9",
+      "bom-ref": "urn:uuid:796feb17-1558-4e66-988f-858b60ae6bb8",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63559,7 +63567,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a796a14d-b6c6-4eff-a4de-5f1c654c77d0",
+      "bom-ref": "urn:uuid:03484d49-60b2-42d4-a1b6-5dcd179dc9df",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63587,7 +63595,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ce9049b3-590f-47fc-bf46-91c819ec63cc",
+      "bom-ref": "urn:uuid:f621f91c-3ed8-4ea5-8134-520a8cc67556",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63615,7 +63623,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:db6d88e0-613f-42c7-b783-e119c12245a1",
+      "bom-ref": "urn:uuid:4aa677c3-2dfb-40e7-809e-feb5a48f2959",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63643,7 +63651,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e2add2bd-f5e5-474b-81a5-7058893bdd0d",
+      "bom-ref": "urn:uuid:2d7b5560-dd4f-4d95-a083-76c60f412725",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63671,7 +63679,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:941cd5f6-de39-4ace-af02-6ef1c9d008dd",
+      "bom-ref": "urn:uuid:9e85c51b-4c83-4624-a73a-373df0ac9d05",
       "id": "CVE-2026-53612",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63699,7 +63707,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e92e57d3-9e74-488d-a8d5-2a93ac387ce9",
+      "bom-ref": "urn:uuid:25dffd56-1866-4850-a987-eb4320c5eca3",
       "id": "CVE-2026-53613",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63727,7 +63735,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:24640859-7448-4edc-97ec-b30358d2da43",
+      "bom-ref": "urn:uuid:dbe0830f-b9a2-4e57-aa7e-6d6f6f81d0f2",
       "id": "CVE-2026-53614",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63755,7 +63763,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:49ae7ce5-8c16-4796-80f4-b059ae7c2631",
+      "bom-ref": "urn:uuid:77bbeb7c-8868-4a1d-a3e6-e4c3f0e85e96",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
