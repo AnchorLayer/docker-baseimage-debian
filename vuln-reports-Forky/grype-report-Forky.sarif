@@ -27,7 +27,7 @@
                 "purls": [
                   "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
                 ],
-                "security-severity": "9.2"
+                "security-severity": "9.8"
               }
             },
             {
@@ -216,7 +216,7 @@
                 "purls": [
                   "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
                 ],
-                "security-severity": "8.2"
+                "security-severity": "7.5"
               }
             },
             {
@@ -556,27 +556,6 @@
               }
             },
             {
-              "id": "CVE-2025-15661-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2025-15661 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit 2dae302, contains an out-of-bounds heap read vulnerability in the sftp_symlink() function in src/sftp.c that allows a malicious SSH server or man-in-the-middle attacker to disclose heap memory contents or cause a crash by sending a crafted SSH_FXP_NAME response. Attackers can supply a link_len value larger than the actual packet data in SSH_FXP_NAME responses for SFTP READLINK and REALPATH operations, triggering a heap buffer over-read of up to target_len minus one bytes due to the missing validation of available packet buffer size before the memcpy operation."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2025-15661",
-              "help": {
-                "text": "Vulnerability CVE-2025-15661\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)",
-                "markdown": "**Vulnerability CVE-2025-15661**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "8.3"
-              }
-            },
-            {
               "id": "CVE-2005-2541-tar",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -868,6 +847,27 @@
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2025-15661-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2025-15661 medium vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit 2dae302, contains an out-of-bounds heap read vulnerability in the sftp_symlink() function in src/sftp.c that allows a malicious SSH server or man-in-the-middle attacker to disclose heap memory contents or cause a crash by sending a crafted SSH_FXP_NAME response. Attackers can supply a link_len value larger than the actual packet data in SSH_FXP_NAME responses for SFTP READLINK and REALPATH operations, triggering a heap buffer over-read of up to target_len minus one bytes due to the missing validation of available packet buffer size before the memcpy operation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2025-15661",
+              "help": {
+                "text": "Vulnerability CVE-2025-15661\nSeverity: medium\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)",
+                "markdown": "**Vulnerability CVE-2025-15661**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2025-15661](https://security-tracker.debian.org/tracker/CVE-2025-15661)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "6.5"
               }
             },
             {
@@ -4775,45 +4775,6 @@
           }
         },
         {
-          "ruleId": "CVE-2025-15661-libssh2-1t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
-          }
-        },
-        {
           "ruleId": "CVE-2005-2541-tar",
           "level": "note",
           "message": {
@@ -5473,6 +5434,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2025-15661-libssh2-1t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
           }
         },
         {
