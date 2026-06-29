@@ -388,6 +388,27 @@
               }
             },
             {
+              "id": "CVE-2026-58050-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-58050 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1 reads an attacker-controlled 32-bit attribute count from a publickey-subsystem response and uses it in the allocation num_attrs * sizeof(libssh2_publickey_attribute) without bounds checking, so on 32-bit platforms the multiplication overflows to an undersized buffer. A malicious SSH server can then drive the attribute-parsing loop to write past the allocation, causing a heap buffer overflow in a connecting libssh2 client."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-58050",
+              "help": {
+                "text": "Vulnerability CVE-2026-58050\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58050](https://security-tracker.debian.org/tracker/CVE-2026-58050)",
+                "markdown": "**Vulnerability CVE-2026-58050**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58050](https://security-tracker.debian.org/tracker/CVE-2026-58050)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
               "id": "CVE-2026-3184-bsdutils",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -850,6 +871,27 @@
               }
             },
             {
+              "id": "CVE-2026-58051-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-58051 medium vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1 grows its publickey list with SSH2_REALLOC but does not zero-initialize new entries before parsing populates them, so a parse failure reaching the cleanup path leaves libssh2_publickey_list_free operating on an uninitialized entry. A malicious SSH server offering the publickey subsystem can use a malformed response to make cleanup free an uninitialized, attacker-influenceable attrs pointer in a connecting libssh2 client."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-58051",
+              "help": {
+                "text": "Vulnerability CVE-2026-58051\nSeverity: medium\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58051](https://security-tracker.debian.org/tracker/CVE-2026-58051)",
+                "markdown": "**Vulnerability CVE-2026-58051**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssh2-1t64  | 1.11.1-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58051](https://security-tracker.debian.org/tracker/CVE-2026-58051)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "6.5"
+              }
+            },
+            {
               "id": "CVE-2025-15661-libssh2-1t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1246,6 +1288,27 @@
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-58055-libnghttp2-14",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-58055 medium vulnerability for libnghttp2-14 package"
+              },
+              "fullDescription": {
+                "text": "nghttp2's nghttpx proxy through 1.69.0 forwards an HTTP/1.1 Upgrade request that also carries a Content-Length header and body onto reusable keep-alive backend connections, re-adding the Upgrade and Connection headers while passing Content-Length verbatim. A backend that resolves the resulting ambiguous message in the attacker's favor enables HTTP request/response smuggling and cross-client response-queue poisoning."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-58055",
+              "help": {
+                "text": "Vulnerability CVE-2026-58055\nSeverity: medium\nPackage: libnghttp2-14\nVersion: 1.69.0-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58055](https://security-tracker.debian.org/tracker/CVE-2026-58055)",
+                "markdown": "**Vulnerability CVE-2026-58055**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libnghttp2-14  | 1.69.0-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58055](https://security-tracker.debian.org/tracker/CVE-2026-58055)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libnghttp2-14@1.69.0-1?arch=amd64\u0026distro=debian\u0026upstream=nghttp2"
+                ],
+                "security-severity": "5.4"
               }
             },
             {
@@ -4395,6 +4458,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-58050-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-3184-bsdutils",
           "level": "warning",
           "message": {
@@ -5437,6 +5539,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-58051-libssh2-1t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
+          }
+        },
+        {
           "ruleId": "CVE-2025-15661-libssh2-1t64",
           "level": "warning",
           "message": {
@@ -6311,6 +6452,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-58055-libnghttp2-14",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libnghttp2-14, version 1.69.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libnghttp2-14/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libnghttp2-14/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libnghttp2-14:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libnghttp2-14:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33712880919e33fb242c301c244318678a32d40c3020b3a49ac1d1aff4c8a024:1"
           }
         },
         {
