@@ -13,42 +13,21 @@
               "id": "CVE-2026-55200-libssh2-1t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-55200 critical vulnerability for libssh2-1t64 package"
+                "text": "CVE-2026-55200 high vulnerability for libssh2-1t64 package"
               },
               "fullDescription": {
                 "text": "libssh2 through 1.11.1, fixed in commit 7acf3df contains an out-of-bounds write vulnerability in ssh2_transport_read() that fails to enforce upper bounds on packet_length field. Remote attackers can send crafted SSH packets with excessively large packet_length values to corrupt heap memory and achieve remote code execution."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55200",
               "help": {
-                "text": "Vulnerability CVE-2026-55200\nSeverity: critical\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)",
-                "markdown": "**Vulnerability CVE-2026-55200**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)  |\n"
+                "text": "Vulnerability CVE-2026-55200\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)",
+                "markdown": "**Vulnerability CVE-2026-55200**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
                 ],
-                "security-severity": "9.8"
-              }
-            },
-            {
-              "id": "CVE-2026-42496-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42496 critical vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
-              "help": {
-                "text": "Vulnerability CVE-2026-42496\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)",
-                "markdown": "**Vulnerability CVE-2026-42496**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "9.1"
+                "security-severity": "8.3"
               }
             },
             {
@@ -112,6 +91,27 @@
                   "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2026-42496-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42496 critical vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
+              "help": {
+                "text": "Vulnerability CVE-2026-42496\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)",
+                "markdown": "**Vulnerability CVE-2026-42496**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                ],
+                "security-severity": "9.1"
               }
             },
             {
@@ -384,7 +384,7 @@
                 "purls": [
                   "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
                 ],
-                "security-severity": "8.3"
+                "security-severity": "7.5"
               }
             },
             {
@@ -1312,6 +1312,48 @@
               }
             },
             {
+              "id": "CVE-2026-54369-libacl1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54369 high vulnerability for libacl1 package"
+              },
+              "fullDescription": {
+                "text": "acl before version 2.4.0 contains a symlink traversal vulnerability in the libacl pathname-based functions acl_get_file(), acl_set_file(), acl_extended_file(), and acl_delete_def_file() that allows local attackers to escalate privileges by replacing any pathname component with a symbolic link. Attackers who control any component of a pathname processed by a privileged caller can redirect ACL read or write operations to arbitrary files or directories, enabling unauthorized manipulation of access control lists and local privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
+              "help": {
+                "text": "Vulnerability CVE-2026-54369\nSeverity: high\nPackage: libacl1\nVersion: 2.3.2-3\nFix Version: 2.4.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54369](https://security-tracker.debian.org/tracker/CVE-2026-54369)",
+                "markdown": "**Vulnerability CVE-2026-54369**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libacl1  | 2.3.2-3  | 2.4.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54369](https://security-tracker.debian.org/tracker/CVE-2026-54369)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libacl1@2.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=acl"
+                ],
+                "security-severity": "7.1"
+              }
+            },
+            {
+              "id": "CVE-2026-54371-libattr1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54371 high vulnerability for libattr1 package"
+              },
+              "fullDescription": {
+                "text": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54371",
+              "help": {
+                "text": "Vulnerability CVE-2026-54371\nSeverity: high\nPackage: libattr1\nVersion: 1:2.5.2-4\nFix Version: 1:2.6.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54371](https://security-tracker.debian.org/tracker/CVE-2026-54371)",
+                "markdown": "**Vulnerability CVE-2026-54371**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libattr1  | 1:2.5.2-4  | 1:2.6.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54371](https://security-tracker.debian.org/tracker/CVE-2026-54371)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libattr1@1%3A2.5.2-4?arch=amd64\u0026distro=debian\u0026upstream=attr"
+                ],
+                "security-severity": "7.1"
+              }
+            },
+            {
               "id": "CVE-2018-5709-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1393,6 +1435,27 @@
                   "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
                 ],
                 "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-41992-gzip",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-41992 medium vulnerability for gzip package"
+              },
+              "fullDescription": {
+                "text": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation. By decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.  This issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
+              "help": {
+                "text": "Vulnerability CVE-2026-41992\nSeverity: medium\nPackage: gzip\nVersion: 1.13-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)",
+                "markdown": "**Vulnerability CVE-2026-41992**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | gzip  | 1.13-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "6.9"
               }
             },
             {
@@ -1561,6 +1624,27 @@
                   "pkg:deb/debian/util-linux@2.42.1-3?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "6.8"
+              }
+            },
+            {
+              "id": "CVE-2026-54370-libacl1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54370 high vulnerability for libacl1 package"
+              },
+              "fullDescription": {
+                "text": "acl before version 2.4.0 contains a time-of-check to time-of-use (TOCTOU) race condition vulnerability that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link between an lstat() check and subsequent symlink-following operations such as stat(), chown(), chmod(), acl_get_file(), and acl_set_file(). Attackers who control a pathname component can redirect file access control list operations to arbitrary files when getfacl, setfacl, or chacl is invoked by a privileged process over an attacker-controlled path, resulting in local privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54370",
+              "help": {
+                "text": "Vulnerability CVE-2026-54370\nSeverity: high\nPackage: libacl1\nVersion: 2.3.2-3\nFix Version: 2.4.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54370](https://security-tracker.debian.org/tracker/CVE-2026-54370)",
+                "markdown": "**Vulnerability CVE-2026-54370**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libacl1  | 2.3.2-3  | 2.4.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54370](https://security-tracker.debian.org/tracker/CVE-2026-54370)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libacl1@2.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=acl"
+                ],
+                "security-severity": "7.2"
               }
             },
             {
@@ -1876,6 +1960,27 @@
                   "pkg:deb/debian/libkrb5support0@1.22.1-2.1?arch=amd64\u0026distro=debian\u0026upstream=krb5"
                 ],
                 "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-41991-gzip",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-41991 low vulnerability for gzip package"
+              },
+              "fullDescription": {
+                "text": "GNU gzip contains a vulnerability in the gzexe utility related to insecure temporary file handling. When the mktemp utility is not available in the user’s PATH, gzexe falls back to constructing a temporary file path based solely on the process ID (PID). This predictable filename is created without exclusive access or existence checks. A local attacker can pre‑create the predicted temporary file path as a symbolic link pointing to an arbitrary file writable by the victim. When gzexe runs, it follows the symlink and overwrites the target file, resulting in a time‑of‑check to time‑of‑use (TOCTOU) condition that allows arbitrary file overwrite.  This issue has been fixed in the commit 4e6f8b24ab823146ab8776f0b7fe486ab34d4269"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-41991",
+              "help": {
+                "text": "Vulnerability CVE-2026-41991\nSeverity: low\nPackage: gzip\nVersion: 1.13-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-41991](https://security-tracker.debian.org/tracker/CVE-2026-41991)",
+                "markdown": "**Vulnerability CVE-2026-41991**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | gzip  | 1.13-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-41991](https://security-tracker.debian.org/tracker/CVE-2026-41991)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "2.0"
               }
             },
             {
@@ -2401,111 +2506,6 @@
                   "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
                 ],
                 "security-severity": "4.6"
-              }
-            },
-            {
-              "id": "CVE-2026-54369-libacl1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54369 high vulnerability for libacl1 package"
-              },
-              "fullDescription": {
-                "text": "acl before version 2.4.0 contains a symlink traversal vulnerability in the libacl pathname-based functions acl_get_file(), acl_set_file(), acl_extended_file(), and acl_delete_def_file() that allows local attackers to escalate privileges by replacing any pathname component with a symbolic link. Attackers who control any component of a pathname processed by a privileged caller can redirect ACL read or write operations to arbitrary files or directories, enabling unauthorized manipulation of access control lists and local privilege escalation."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
-              "help": {
-                "text": "Vulnerability CVE-2026-54369\nSeverity: high\nPackage: libacl1\nVersion: 2.3.2-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54369](https://security-tracker.debian.org/tracker/CVE-2026-54369)",
-                "markdown": "**Vulnerability CVE-2026-54369**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libacl1  | 2.3.2-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54369](https://security-tracker.debian.org/tracker/CVE-2026-54369)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libacl1@2.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=acl"
-                ],
-                "security-severity": "8.4"
-              }
-            },
-            {
-              "id": "CVE-2026-54370-libacl1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54370 high vulnerability for libacl1 package"
-              },
-              "fullDescription": {
-                "text": "acl before version 2.4.0 contains a time-of-check to time-of-use (TOCTOU) race condition vulnerability that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link between an lstat() check and subsequent symlink-following operations such as stat(), chown(), chmod(), acl_get_file(), and acl_set_file(). Attackers who control a pathname component can redirect file access control list operations to arbitrary files when getfacl, setfacl, or chacl is invoked by a privileged process over an attacker-controlled path, resulting in local privilege escalation."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54370",
-              "help": {
-                "text": "Vulnerability CVE-2026-54370\nSeverity: high\nPackage: libacl1\nVersion: 2.3.2-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54370](https://security-tracker.debian.org/tracker/CVE-2026-54370)",
-                "markdown": "**Vulnerability CVE-2026-54370**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libacl1  | 2.3.2-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54370](https://security-tracker.debian.org/tracker/CVE-2026-54370)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libacl1@2.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=acl"
-                ],
-                "security-severity": "7.2"
-              }
-            },
-            {
-              "id": "CVE-2026-54371-libattr1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54371 high vulnerability for libattr1 package"
-              },
-              "fullDescription": {
-                "text": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54371",
-              "help": {
-                "text": "Vulnerability CVE-2026-54371\nSeverity: high\nPackage: libattr1\nVersion: 1:2.5.2-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54371](https://security-tracker.debian.org/tracker/CVE-2026-54371)",
-                "markdown": "**Vulnerability CVE-2026-54371**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libattr1  | 1:2.5.2-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54371](https://security-tracker.debian.org/tracker/CVE-2026-54371)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libattr1@1%3A2.5.2-4?arch=amd64\u0026distro=debian\u0026upstream=attr"
-                ],
-                "security-severity": "7.1"
-              }
-            },
-            {
-              "id": "CVE-2026-41992-gzip",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-41992 medium vulnerability for gzip package"
-              },
-              "fullDescription": {
-                "text": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681"
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
-              "help": {
-                "text": "Vulnerability CVE-2026-41992\nSeverity: medium\nPackage: gzip\nVersion: 1.13-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)",
-                "markdown": "**Vulnerability CVE-2026-41992**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | gzip  | 1.13-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "6.9"
-              }
-            },
-            {
-              "id": "CVE-2026-41991-gzip",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-41991 low vulnerability for gzip package"
-              },
-              "fullDescription": {
-                "text": "GNU gzip contains a vulnerability in the gzexe utility related to insecure temporary file handling. When the mktemp utility is not available in the user’s PATH, gzexe falls back to constructing a temporary file path based solely on the process ID (PID). This predictable filename is created without exclusive access or existence checks.\nA local attacker can pre‑create the predicted temporary file path as a symbolic link pointing to an arbitrary file writable by the victim. When gzexe runs, it follows the symlink and overwrites the target file, resulting in a time‑of‑check to time‑of‑use (TOCTOU) condition that allows arbitrary file overwrite.\n\nThis issue has been fixed in the commit 4e6f8b24ab823146ab8776f0b7fe486ab34d4269"
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-41991",
-              "help": {
-                "text": "Vulnerability CVE-2026-41991\nSeverity: low\nPackage: gzip\nVersion: 1.13-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-41991](https://security-tracker.debian.org/tracker/CVE-2026-41991)",
-                "markdown": "**Vulnerability CVE-2026-41991**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | gzip  | 1.13-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-41991](https://security-tracker.debian.org/tracker/CVE-2026-41991)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "2.0"
               }
             },
             {
@@ -3944,7 +3944,7 @@
           "ruleId": "CVE-2026-55200-libssh2-1t64",
           "level": "error",
           "message": {
-            "text": "A critical vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3977,49 +3977,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-42496-perl-base",
-          "level": "error",
-          "message": {
-            "text": "A critical vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
           }
         },
         {
@@ -4157,6 +4114,49 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42496-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
           }
         },
         {
@@ -6767,6 +6767,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-54369-libacl1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libacl1, version 2.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libacl1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/libacl1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libacl1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libacl1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2023ca58eeb2eda9164c8799ec15aa8836078b30fe968a57b6c0e94ea4320c8b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54371-libattr1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libattr1, version 1:2.5.2-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libattr1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/libattr1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libattr1:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libattr1:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libattr1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libattr1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "57d400e845e6c5278f587c6f6f379cc55eeaca5d6cb307842598ef7934d2f191:1"
+          }
+        },
+        {
           "ruleId": "CVE-2018-5709-libgssapi-krb5-2",
           "level": "note",
           "message": {
@@ -6920,6 +7002,57 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "ce170da78f33c124760b22f5ded2c23e60bcd45fab19538404a465090ca32583:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-41992-gzip",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: gzip, version 1.13-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gzip/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/gzip/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.preinst"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "a6e39b3fbdad3611e6757fb16d943fbd798848c985ca9a2e10162a1d7aad49a0:1"
           }
         },
         {
@@ -7300,6 +7433,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "53322af0d8266b6466c0f9905c1252d7e0754fa63494e12d54fe563a95414306:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54370-libacl1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libacl1, version 2.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libacl1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/libacl1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libacl1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libacl1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2023ca58eeb2eda9164c8799ec15aa8836078b30fe968a57b6c0e94ea4320c8b:1"
           }
         },
         {
@@ -7953,6 +8125,57 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "ce170da78f33c124760b22f5ded2c23e60bcd45fab19538404a465090ca32583:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-41991-gzip",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: gzip, version 1.13-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gzip/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/gzip/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gzip.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.preinst"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "a6e39b3fbdad3611e6757fb16d943fbd798848c985ca9a2e10162a1d7aad49a0:1"
           }
         },
         {
@@ -9008,229 +9231,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "36a8cc302a688fff355bfeb29f79275813e48b45757ec378cc620eb9b9afd8c8:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54369-libacl1",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libacl1, version 2.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libacl1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/libacl1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libacl1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libacl1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "2023ca58eeb2eda9164c8799ec15aa8836078b30fe968a57b6c0e94ea4320c8b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54370-libacl1",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libacl1, version 2.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libacl1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/libacl1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libacl1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libacl1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "2023ca58eeb2eda9164c8799ec15aa8836078b30fe968a57b6c0e94ea4320c8b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54371-libattr1",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libattr1, version 1:2.5.2-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libattr1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/libattr1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libattr1:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libattr1:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libattr1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/libattr1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "57d400e845e6c5278f587c6f6f379cc55eeaca5d6cb307842598ef7934d2f191:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-41992-gzip",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: gzip, version 1.13-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/gzip/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/gzip/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.preinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.preinst"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "a6e39b3fbdad3611e6757fb16d943fbd798848c985ca9a2e10162a1d7aad49a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-41991-gzip",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: gzip, version 1.13-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/gzip/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/usr/share/doc/gzip/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gzip.preinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a6bb41010c472e0413e0b0a40d5070b548e0bb2197d51f72571d9423359a8436:/var/lib/dpkg/info/gzip.preinst"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "a6e39b3fbdad3611e6757fb16d943fbd798848c985ca9a2e10162a1d7aad49a0:1"
           }
         },
         {
