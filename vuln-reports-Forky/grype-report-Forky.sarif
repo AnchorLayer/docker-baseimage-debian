@@ -178,27 +178,6 @@
               }
             },
             {
-              "id": "CVE-2026-55200-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-55200 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit 7acf3df contains an out-of-bounds write vulnerability in ssh2_transport_read() that fails to enforce upper bounds on packet_length field. Remote attackers can send crafted SSH packets with excessively large packet_length values to corrupt heap memory and achieve remote code execution."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55200",
-              "help": {
-                "text": "Vulnerability CVE-2026-55200\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)",
-                "markdown": "**Vulnerability CVE-2026-55200**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "8.3"
-              }
-            },
-            {
               "id": "CVE-2026-11352-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -367,6 +346,27 @@
               }
             },
             {
+              "id": "CVE-2026-55200-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-55200 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit 7acf3df contains an out-of-bounds write vulnerability in ssh2_transport_read() that fails to enforce upper bounds on packet_length field. Remote attackers can send crafted SSH packets with excessively large packet_length values to corrupt heap memory and achieve remote code execution."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55200",
+              "help": {
+                "text": "Vulnerability CVE-2026-55200\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)",
+                "markdown": "**Vulnerability CVE-2026-55200**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55200](https://security-tracker.debian.org/tracker/CVE-2026-55200)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "8.3"
+              }
+            },
+            {
               "id": "CVE-2026-11564-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -451,6 +451,90 @@
               }
             },
             {
+              "id": "CVE-2026-9546-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-9546 high vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "A vulnerability in libcurl caused the HTTP `Referer:` header to persist even when explicitly cleared. While the documentation states that passing NULL to `CURLOPT_REFERER` suppresses the header, the option failed to clear the internal state. As a result the previous referrer string was erroneously reused and sent in subsequent requests, potentially leaking sensitive information to unintended servers."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9546",
+              "help": {
+                "text": "Vulnerability CVE-2026-9546\nSeverity: high\nPackage: curl\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)",
+                "markdown": "**Vulnerability CVE-2026-9546**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | curl  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.20.0-5?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-9546-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-9546 high vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "A vulnerability in libcurl caused the HTTP `Referer:` header to persist even when explicitly cleared. While the documentation states that passing NULL to `CURLOPT_REFERER` suppresses the header, the option failed to clear the internal state. As a result the previous referrer string was erroneously reused and sent in subsequent requests, potentially leaking sensitive information to unintended servers."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9546",
+              "help": {
+                "text": "Vulnerability CVE-2026-9546\nSeverity: high\nPackage: libcurl4t64\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)",
+                "markdown": "**Vulnerability CVE-2026-9546**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libcurl4t64  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-12064-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-12064 high vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "When a user invokes curl using a schemeless URL combined with `--proto-default` sftp (or scp), a disconnect occurs between the tool layer and libcurl. The tool layer incorrectly infers the URL scheme, which erroneously bypasses the initialization of critical SSH security options like CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256 and CURLOPT_SSH_KNOWNHOSTS. Conversely, the libcurl runtime successfully honors CURLOPT_DEFAULT_PROTOCOL and establishes the connection via SFTP/SCP as specified. Because the tool layer skipped the security configuration, these SSH host verification options are silently omitted, causing curl to connect to an unverified SSH remote host without throwing an error."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-12064",
+              "help": {
+                "text": "Vulnerability CVE-2026-12064\nSeverity: high\nPackage: curl\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)",
+                "markdown": "**Vulnerability CVE-2026-12064**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | curl  | 8.20.0-5  | 8.21.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.20.0-5?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-12064-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-12064 high vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "When a user invokes curl using a schemeless URL combined with `--proto-default` sftp (or scp), a disconnect occurs between the tool layer and libcurl. The tool layer incorrectly infers the URL scheme, which erroneously bypasses the initialization of critical SSH security options like CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256 and CURLOPT_SSH_KNOWNHOSTS. Conversely, the libcurl runtime successfully honors CURLOPT_DEFAULT_PROTOCOL and establishes the connection via SFTP/SCP as specified. Because the tool layer skipped the security configuration, these SSH host verification options are silently omitted, causing curl to connect to an unverified SSH remote host without throwing an error."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-12064",
+              "help": {
+                "text": "Vulnerability CVE-2026-12064\nSeverity: high\nPackage: libcurl4t64\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)",
+                "markdown": "**Vulnerability CVE-2026-12064**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libcurl4t64  | 8.20.0-5  | 8.21.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-5450-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -514,174 +598,6 @@
               }
             },
             {
-              "id": "CVE-2026-42496-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42496 critical vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
-              "help": {
-                "text": "Vulnerability CVE-2026-42496\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)",
-                "markdown": "**Vulnerability CVE-2026-42496**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "9.1"
-              }
-            },
-            {
-              "id": "CVE-2026-9546-curl",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9546 high vulnerability for curl package"
-              },
-              "fullDescription": {
-                "text": "A vulnerability in libcurl caused the HTTP `Referer:` header to persist even when explicitly cleared. While the documentation states that passing NULL to `CURLOPT_REFERER` suppresses the header, the option failed to clear the internal state. As a result the previous referrer string was erroneously reused and sent in subsequent requests, potentially leaking sensitive information to unintended servers."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9546",
-              "help": {
-                "text": "Vulnerability CVE-2026-9546\nSeverity: high\nPackage: curl\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)",
-                "markdown": "**Vulnerability CVE-2026-9546**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | curl  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/curl@8.20.0-5?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-9546-libcurl4t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9546 high vulnerability for libcurl4t64 package"
-              },
-              "fullDescription": {
-                "text": "A vulnerability in libcurl caused the HTTP `Referer:` header to persist even when explicitly cleared. While the documentation states that passing NULL to `CURLOPT_REFERER` suppresses the header, the option failed to clear the internal state. As a result the previous referrer string was erroneously reused and sent in subsequent requests, potentially leaking sensitive information to unintended servers."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9546",
-              "help": {
-                "text": "Vulnerability CVE-2026-9546\nSeverity: high\nPackage: libcurl4t64\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)",
-                "markdown": "**Vulnerability CVE-2026-9546**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libcurl4t64  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9546](https://security-tracker.debian.org/tracker/CVE-2026-9546)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-12087-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-12087 critical vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Socket versions before 2.041 for Perl have an out-of-bounds heap read.  In Socket.xs, pack_ip_mreq_source() checks the length of its source argument before the argument is read, so the check tests the byte length carried over from the preceding multiaddr argument instead. Both addresses occupy a 4-byte field, so a valid multiaddr lets a source of any length pass the check, and the source is then copied into the 4-byte imr_sourceaddr field with a fixed-size copy. A source shorter than 4 bytes is not rejected, and the copy reads up to 3 bytes past the end of its buffer.  Calling pack_ip_mreq_source() with a source value shorter than 4 bytes copies adjacent heap memory into the returned packed structure."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-12087",
-              "help": {
-                "text": "Vulnerability CVE-2026-12087\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-12087](https://security-tracker.debian.org/tracker/CVE-2026-12087)",
-                "markdown": "**Vulnerability CVE-2026-12087**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-12087](https://security-tracker.debian.org/tracker/CVE-2026-12087)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "9.1"
-              }
-            },
-            {
-              "id": "CVE-2017-17740-libldap2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2017-17740 low vulnerability for libldap2 package"
-              },
-              "fullDescription": {
-                "text": "contrib/slapd-modules/nops/nops.c in OpenLDAP through 2.4.45, when both the nops module and the memberof overlay are enabled, attempts to free a buffer that was allocated on the stack, which allows remote attackers to cause a denial of service (slapd crash) via a member MODDN operation."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-17740",
-              "help": {
-                "text": "Vulnerability CVE-2017-17740\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-17740](https://security-tracker.debian.org/tracker/CVE-2017-17740)",
-                "markdown": "**Vulnerability CVE-2017-17740**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-17740](https://security-tracker.debian.org/tracker/CVE-2017-17740)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-12064-curl",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-12064 high vulnerability for curl package"
-              },
-              "fullDescription": {
-                "text": "When a user invokes curl using a schemeless URL combined with `--proto-default` sftp (or scp), a disconnect occurs between the tool layer and libcurl. The tool layer incorrectly infers the URL scheme, which erroneously bypasses the initialization of critical SSH security options like CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256 and CURLOPT_SSH_KNOWNHOSTS. Conversely, the libcurl runtime successfully honors CURLOPT_DEFAULT_PROTOCOL and establishes the connection via SFTP/SCP as specified. Because the tool layer skipped the security configuration, these SSH host verification options are silently omitted, causing curl to connect to an unverified SSH remote host without throwing an error."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-12064",
-              "help": {
-                "text": "Vulnerability CVE-2026-12064\nSeverity: high\nPackage: curl\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)",
-                "markdown": "**Vulnerability CVE-2026-12064**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | curl  | 8.20.0-5  | 8.21.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/curl@8.20.0-5?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-12064-libcurl4t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-12064 high vulnerability for libcurl4t64 package"
-              },
-              "fullDescription": {
-                "text": "When a user invokes curl using a schemeless URL combined with `--proto-default` sftp (or scp), a disconnect occurs between the tool layer and libcurl. The tool layer incorrectly infers the URL scheme, which erroneously bypasses the initialization of critical SSH security options like CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256 and CURLOPT_SSH_KNOWNHOSTS. Conversely, the libcurl runtime successfully honors CURLOPT_DEFAULT_PROTOCOL and establishes the connection via SFTP/SCP as specified. Because the tool layer skipped the security configuration, these SSH host verification options are silently omitted, causing curl to connect to an unverified SSH remote host without throwing an error."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-12064",
-              "help": {
-                "text": "Vulnerability CVE-2026-12064\nSeverity: high\nPackage: libcurl4t64\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)",
-                "markdown": "**Vulnerability CVE-2026-12064**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libcurl4t64  | 8.20.0-5  | 8.21.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-12064](https://security-tracker.debian.org/tracker/CVE-2026-12064)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-9538-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9538 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
-              "help": {
-                "text": "Vulnerability CVE-2026-9538\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)",
-                "markdown": "**Vulnerability CVE-2026-9538**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
               "id": "CVE-2026-8286-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -724,87 +640,24 @@
               }
             },
             {
-              "id": "CVE-2026-42497-perl-base",
+              "id": "CVE-2026-42496-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-42497 high vulnerability for perl-base package"
+                "text": "CVE-2026-42496 critical vulnerability for perl-base package"
               },
               "fullDescription": {
-                "text": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone."
+                "text": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42497",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
               "help": {
-                "text": "Vulnerability CVE-2026-42497\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)",
-                "markdown": "**Vulnerability CVE-2026-42497**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)  |\n"
+                "text": "Vulnerability CVE-2026-42496\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)",
+                "markdown": "**Vulnerability CVE-2026-42496**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42496](https://security-tracker.debian.org/tracker/CVE-2026-42496)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
                 ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-55199-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-55199 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit 1762685, contains a pre-authentication denial of service vulnerability in the SSH_MSG_EXT_INFO handler in src/packet.c that allows a malicious SSH server to cause a client CPU exhaustion loop by sending a crafted extension count value. A malicious server can set nr_extensions to 0xFFFFFFFF during key exchange, causing the client to spin in a tight CPU loop for over 60 seconds because return values from _libssh2_get_string() are unchecked and the session timeout does not apply to CPU-bound loops."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55199",
-              "help": {
-                "text": "Vulnerability CVE-2026-55199\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55199](https://security-tracker.debian.org/tracker/CVE-2026-55199)",
-                "markdown": "**Vulnerability CVE-2026-55199**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55199](https://security-tracker.debian.org/tracker/CVE-2026-55199)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-9080-curl",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9080 high vulnerability for curl package"
-              },
-              "fullDescription": {
-                "text": "Calling `curl_easy_pause()` within the event-based `CURLMOPT_SOCKETFUNCTION` callback triggers a use-after-free vulnerability, where libcurl attempts to store a flag using a dangling struct pointer immediately after that pointer's memory has been freed."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9080",
-              "help": {
-                "text": "Vulnerability CVE-2026-9080\nSeverity: high\nPackage: curl\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)",
-                "markdown": "**Vulnerability CVE-2026-9080**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | curl  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/curl@8.20.0-5?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "7.3"
-              }
-            },
-            {
-              "id": "CVE-2026-9080-libcurl4t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9080 high vulnerability for libcurl4t64 package"
-              },
-              "fullDescription": {
-                "text": "Calling `curl_easy_pause()` within the event-based `CURLMOPT_SOCKETFUNCTION` callback triggers a use-after-free vulnerability, where libcurl attempts to store a flag using a dangling struct pointer immediately after that pointer's memory has been freed."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9080",
-              "help": {
-                "text": "Vulnerability CVE-2026-9080\nSeverity: high\nPackage: libcurl4t64\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)",
-                "markdown": "**Vulnerability CVE-2026-9080**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libcurl4t64  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
-                ],
-                "security-severity": "7.3"
+                "security-severity": "9.1"
               }
             },
             {
@@ -850,81 +703,81 @@
               }
             },
             {
-              "id": "CVE-2018-20796-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
+              "id": "CVE-2026-9080-curl",
+              "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
-                "text": "CVE-2018-20796 low vulnerability for libc-bin package"
+                "text": "CVE-2026-9080 high vulnerability for curl package"
               },
               "fullDescription": {
-                "text": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
+                "text": "Calling `curl_easy_pause()` within the event-based `CURLMOPT_SOCKETFUNCTION` callback triggers a use-after-free vulnerability, where libcurl attempts to store a flag using a dangling struct pointer immediately after that pointer's memory has been freed."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9080",
               "help": {
-                "text": "Vulnerability CVE-2018-20796\nSeverity: low\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)",
-                "markdown": "**Vulnerability CVE-2018-20796**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)  |\n"
+                "text": "Vulnerability CVE-2026-9080\nSeverity: high\nPackage: curl\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)",
+                "markdown": "**Vulnerability CVE-2026-9080**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | curl  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/curl@8.20.0-5?arch=amd64\u0026distro=debian"
                 ],
-                "security-severity": "7.5"
+                "security-severity": "7.3"
               }
             },
             {
-              "id": "CVE-2018-20796-libc-gconv-modules-extra",
+              "id": "CVE-2026-9080-libcurl4t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2018-20796 low vulnerability for libc-gconv-modules-extra package"
+                "text": "CVE-2026-9080 high vulnerability for libcurl4t64 package"
               },
               "fullDescription": {
-                "text": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
+                "text": "Calling `curl_easy_pause()` within the event-based `CURLMOPT_SOCKETFUNCTION` callback triggers a use-after-free vulnerability, where libcurl attempts to store a flag using a dangling struct pointer immediately after that pointer's memory has been freed."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9080",
               "help": {
-                "text": "Vulnerability CVE-2018-20796\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)",
-                "markdown": "**Vulnerability CVE-2018-20796**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)  |\n"
+                "text": "Vulnerability CVE-2026-9080\nSeverity: high\nPackage: libcurl4t64\nVersion: 8.20.0-5\nFix Version: 8.21.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)",
+                "markdown": "**Vulnerability CVE-2026-9080**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libcurl4t64  | 8.20.0-5  | 8.21.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9080](https://security-tracker.debian.org/tracker/CVE-2026-9080)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
                 ],
-                "security-severity": "7.5"
+                "security-severity": "7.3"
               }
             },
             {
-              "id": "CVE-2018-20796-libc6",
+              "id": "CVE-2026-12087-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2018-20796 low vulnerability for libc6 package"
+                "text": "CVE-2026-12087 critical vulnerability for perl-base package"
               },
               "fullDescription": {
-                "text": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
+                "text": "Socket versions before 2.041 for Perl have an out-of-bounds heap read.  In Socket.xs, pack_ip_mreq_source() checks the length of its source argument before the argument is read, so the check tests the byte length carried over from the preceding multiaddr argument instead. Both addresses occupy a 4-byte field, so a valid multiaddr lets a source of any length pass the check, and the source is then copied into the 4-byte imr_sourceaddr field with a fixed-size copy. A source shorter than 4 bytes is not rejected, and the copy reads up to 3 bytes past the end of its buffer.  Calling pack_ip_mreq_source() with a source value shorter than 4 bytes copies adjacent heap memory into the returned packed structure."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-12087",
               "help": {
-                "text": "Vulnerability CVE-2018-20796\nSeverity: low\nPackage: libc6\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)",
-                "markdown": "**Vulnerability CVE-2018-20796**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)  |\n"
+                "text": "Vulnerability CVE-2026-12087\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-12087](https://security-tracker.debian.org/tracker/CVE-2026-12087)",
+                "markdown": "**Vulnerability CVE-2026-12087**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-12087](https://security-tracker.debian.org/tracker/CVE-2026-12087)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
                 ],
-                "security-severity": "7.5"
+                "security-severity": "9.1"
               }
             },
             {
-              "id": "CVE-2015-3276-libldap2",
+              "id": "CVE-2017-17740-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2015-3276 low vulnerability for libldap2 package"
+                "text": "CVE-2017-17740 low vulnerability for libldap2 package"
               },
               "fullDescription": {
-                "text": "The nss_parse_ciphers function in libraries/libldap/tls_m.c in OpenLDAP does not properly parse OpenSSL-style multi-keyword mode cipher strings, which might cause a weaker than intended cipher to be used and allow remote attackers to have unspecified impact via unknown vectors."
+                "text": "contrib/slapd-modules/nops/nops.c in OpenLDAP through 2.4.45, when both the nops module and the memberof overlay are enabled, attempts to free a buffer that was allocated on the stack, which allows remote attackers to cause a denial of service (slapd crash) via a member MODDN operation."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2015-3276",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-17740",
               "help": {
-                "text": "Vulnerability CVE-2015-3276\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)",
-                "markdown": "**Vulnerability CVE-2015-3276**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)  |\n"
+                "text": "Vulnerability CVE-2017-17740\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-17740](https://security-tracker.debian.org/tracker/CVE-2017-17740)",
+                "markdown": "**Vulnerability CVE-2017-17740**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-17740](https://security-tracker.debian.org/tracker/CVE-2017-17740)  |\n"
               },
               "properties": {
                 "purls": [
@@ -934,64 +787,43 @@
               }
             },
             {
-              "id": "CVE-2026-5928-libc-bin",
+              "id": "CVE-2026-9538-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-5928 high vulnerability for libc-bin package"
+                "text": "CVE-2026-9538 high vulnerability for perl-base package"
               },
               "fullDescription": {
-                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
+                "text": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
               "help": {
-                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: 2.42-17\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
-                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-bin  | 2.42-16  | 2.42-17  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
+                "text": "Vulnerability CVE-2026-9538\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)",
+                "markdown": "**Vulnerability CVE-2026-9538**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
                 ],
                 "security-severity": "7.5"
               }
             },
             {
-              "id": "CVE-2026-5928-libc-gconv-modules-extra",
+              "id": "CVE-2026-42497-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-5928 high vulnerability for libc-gconv-modules-extra package"
+                "text": "CVE-2026-42497 high vulnerability for perl-base package"
               },
               "fullDescription": {
-                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
+                "text": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42497",
               "help": {
-                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: 2.42-17\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
-                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-gconv-modules-extra  | 2.42-16  | 2.42-17  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
+                "text": "Vulnerability CVE-2026-42497\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)",
+                "markdown": "**Vulnerability CVE-2026-42497**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42497](https://security-tracker.debian.org/tracker/CVE-2026-42497)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-5928-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-5928 high vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
-              "help": {
-                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc6\nVersion: 2.42-16\nFix Version: 2.42-17\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
-                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc6  | 2.42-16  | 2.42-17  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
                 ],
                 "security-severity": "7.5"
               }
@@ -1081,43 +913,85 @@
               }
             },
             {
-              "id": "CVE-2026-5704-tar",
-              "name": "DpkgMatcherExactDirectMatch",
+              "id": "CVE-2026-55199-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-5704 medium vulnerability for tar package"
+                "text": "CVE-2026-55199 high vulnerability for libssh2-1t64 package"
               },
               "fullDescription": {
-                "text": "A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection."
+                "text": "libssh2 through 1.11.1, fixed in commit 1762685, contains a pre-authentication denial of service vulnerability in the SSH_MSG_EXT_INFO handler in src/packet.c that allows a malicious SSH server to cause a client CPU exhaustion loop by sending a crafted extension count value. A malicious server can set nr_extensions to 0xFFFFFFFF during key exchange, causing the client to spin in a tight CPU loop for over 60 seconds because return values from _libssh2_get_string() are unchecked and the session timeout does not apply to CPU-bound loops."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5704",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-55199",
               "help": {
-                "text": "Vulnerability CVE-2026-5704\nSeverity: medium\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5704](https://security-tracker.debian.org/tracker/CVE-2026-5704)",
-                "markdown": "**Vulnerability CVE-2026-5704**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5704](https://security-tracker.debian.org/tracker/CVE-2026-5704)  |\n"
+                "text": "Vulnerability CVE-2026-55199\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-3\nFix Version: 1.11.1-4\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-55199](https://security-tracker.debian.org/tracker/CVE-2026-55199)",
+                "markdown": "**Vulnerability CVE-2026-55199**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-3  | 1.11.1-4  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-55199](https://security-tracker.debian.org/tracker/CVE-2026-55199)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-3?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
                 ],
-                "security-severity": "5.5"
+                "security-severity": "7.5"
               }
             },
             {
-              "id": "CVE-2026-41992-gzip",
-              "name": "DpkgMatcherExactDirectMatch",
+              "id": "CVE-2018-20796-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-41992 high vulnerability for gzip package"
+                "text": "CVE-2018-20796 low vulnerability for libc-bin package"
               },
               "fullDescription": {
-                "text": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation. By decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.  This issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681"
+                "text": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
               "help": {
-                "text": "Vulnerability CVE-2026-41992\nSeverity: high\nPackage: gzip\nVersion: 1.13-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)",
-                "markdown": "**Vulnerability CVE-2026-41992**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | gzip  | 1.13-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)  |\n"
+                "text": "Vulnerability CVE-2018-20796\nSeverity: low\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)",
+                "markdown": "**Vulnerability CVE-2018-20796**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian"
+                  "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2018-20796-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2018-20796 low vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+              "help": {
+                "text": "Vulnerability CVE-2018-20796\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)",
+                "markdown": "**Vulnerability CVE-2018-20796**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2018-20796-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2018-20796 low vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+              "help": {
+                "text": "Vulnerability CVE-2018-20796\nSeverity: low\nPackage: libc6\nVersion: 2.42-16\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)",
+                "markdown": "**Vulnerability CVE-2018-20796**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.42-16  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2018-20796](https://security-tracker.debian.org/tracker/CVE-2018-20796)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "7.5"
               }
@@ -1160,6 +1034,132 @@
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2015-3276-libldap2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2015-3276 low vulnerability for libldap2 package"
+              },
+              "fullDescription": {
+                "text": "The nss_parse_ciphers function in libraries/libldap/tls_m.c in OpenLDAP does not properly parse OpenSSL-style multi-keyword mode cipher strings, which might cause a weaker than intended cipher to be used and allow remote attackers to have unspecified impact via unknown vectors."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2015-3276",
+              "help": {
+                "text": "Vulnerability CVE-2015-3276\nSeverity: low\nPackage: libldap2\nVersion: 2.6.10+dfsg-1+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)",
+                "markdown": "**Vulnerability CVE-2015-3276**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.10+dfsg-1+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-5928-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5928 high vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+              "help": {
+                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-bin\nVersion: 2.42-16\nFix Version: 2.42-17\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
+                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-bin  | 2.42-16  | 2.42-17  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-5928-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5928 high vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+              "help": {
+                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc-gconv-modules-extra\nVersion: 2.42-16\nFix Version: 2.42-17\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
+                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc-gconv-modules-extra  | 2.42-16  | 2.42-17  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-5928-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5928 high vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.  A bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+              "help": {
+                "text": "Vulnerability CVE-2026-5928\nSeverity: high\nPackage: libc6\nVersion: 2.42-16\nFix Version: 2.42-17\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)",
+                "markdown": "**Vulnerability CVE-2026-5928**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libc6  | 2.42-16  | 2.42-17  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5928](https://security-tracker.debian.org/tracker/CVE-2026-5928)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.42-16?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-5704-tar",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-5704 medium vulnerability for tar package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-5704",
+              "help": {
+                "text": "Vulnerability CVE-2026-5704\nSeverity: medium\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-5704](https://security-tracker.debian.org/tracker/CVE-2026-5704)",
+                "markdown": "**Vulnerability CVE-2026-5704**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-5704](https://security-tracker.debian.org/tracker/CVE-2026-5704)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "5.5"
+              }
+            },
+            {
+              "id": "CVE-2026-41992-gzip",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-41992 high vulnerability for gzip package"
+              },
+              "fullDescription": {
+                "text": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation. By decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.  This issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
+              "help": {
+                "text": "Vulnerability CVE-2026-41992\nSeverity: high\nPackage: gzip\nVersion: 1.13-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)",
+                "markdown": "**Vulnerability CVE-2026-41992**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | gzip  | 1.13-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-41992](https://security-tracker.debian.org/tracker/CVE-2026-41992)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "7.5"
               }
@@ -4080,45 +4080,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-55200-libssh2-1t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-11352-curl",
           "level": "error",
           "message": {
@@ -4447,6 +4408,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-55200-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-11564-curl",
           "level": "error",
           "message": {
@@ -4576,6 +4576,170 @@
           "level": "error",
           "message": {
             "text": "A critical vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-9546-curl",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-9546-libcurl4t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-12064-curl",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-12064-libcurl4t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -4748,6 +4912,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-8286-curl",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8286-libcurl4t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-42496-perl-base",
           "level": "error",
           "message": {
@@ -4791,7 +5037,7 @@
           }
         },
         {
-          "ruleId": "CVE-2026-9546-curl",
+          "ruleId": "CVE-2026-9547-curl",
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -4834,7 +5080,89 @@
           }
         },
         {
-          "ruleId": "CVE-2026-9546-libcurl4t64",
+          "ruleId": "CVE-2026-9547-libcurl4t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-9080-curl",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-9080-libcurl4t64",
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -4955,88 +5283,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-12064-curl",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-12064-libcurl4t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-9538-perl-base",
           "level": "error",
           "message": {
@@ -5077,88 +5323,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8286-curl",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8286-libcurl4t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
           }
         },
         {
@@ -5205,6 +5369,170 @@
           }
         },
         {
+          "ruleId": "CVE-2026-8458-curl",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8458-libcurl4t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-9545-curl",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-9545-libcurl4t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-55199-libssh2-1t64",
           "level": "error",
           "message": {
@@ -5241,170 +5569,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "dd5c93be514aff07a88736cbc4e91a1fa6e77bf60babd63eee0cf1e92fdcb234:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9080-curl",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9080-libcurl4t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9547-curl",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9547-libcurl4t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
           }
         },
         {
@@ -5542,6 +5706,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d7e9d609932e6ac9aad58341bd699b70f14f59e666a2e33bec29cd8be823848b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8932-curl",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8932-libcurl4t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
           }
         },
         {
@@ -5721,170 +5967,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-8458-curl",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8458-libcurl4t64",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9545-curl",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9545-libcurl4t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-5704-tar",
           "level": "warning",
           "message": {
@@ -5984,88 +6066,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "a6e39b3fbdad3611e6757fb16d943fbd798848c985ca9a2e10162a1d7aad49a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8932-curl",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: curl, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0ba9d4bacaa8686546d54102975ac5f106d0fed6ae0cc152d7f55ac670ce7a6a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8932-libcurl4t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libcurl4t64, version 8.20.0-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:186de13622c70f4a8dcfdae81081db6119bbcfed3cbc3f1ad109579cfa9fcbf0:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
           }
         },
         {
