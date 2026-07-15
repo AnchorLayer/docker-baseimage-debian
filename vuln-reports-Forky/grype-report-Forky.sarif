@@ -1081,6 +1081,27 @@
               }
             },
             {
+              "id": "CVE-2026-13221-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-13221 critical vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.  When such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.  A pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-13221",
+              "help": {
+                "text": "Vulnerability CVE-2026-13221\nSeverity: critical\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-13221](https://security-tracker.debian.org/tracker/CVE-2026-13221)",
+                "markdown": "**Vulnerability CVE-2026-13221**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-13221](https://security-tracker.debian.org/tracker/CVE-2026-13221)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                ],
+                "security-severity": "9.1"
+              }
+            },
+            {
               "id": "CVE-2026-6238-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2714,69 +2735,6 @@
               "properties": {
                 "purls": [
                   "pkg:deb/debian/mount@2.42.2-1?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-13221-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-13221 low vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-13221",
-              "help": {
-                "text": "Vulnerability CVE-2026-13221\nSeverity: low\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-13221](https://security-tracker.debian.org/tracker/CVE-2026-13221)",
-                "markdown": "**Vulnerability CVE-2026-13221**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-13221](https://security-tracker.debian.org/tracker/CVE-2026-13221)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-57432-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-57432 low vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Perl versions through 5.43.10 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-57432",
-              "help": {
-                "text": "Vulnerability CVE-2026-57432\nSeverity: low\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-57432](https://security-tracker.debian.org/tracker/CVE-2026-57432)",
-                "markdown": "**Vulnerability CVE-2026-57432**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-57432](https://security-tracker.debian.org/tracker/CVE-2026-57432)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-57433-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-57433 low vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-57433",
-              "help": {
-                "text": "Vulnerability CVE-2026-57433\nSeverity: low\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-57433](https://security-tracker.debian.org/tracker/CVE-2026-57433)",
-                "markdown": "**Vulnerability CVE-2026-57433**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-57433](https://security-tracker.debian.org/tracker/CVE-2026-57433)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
                 ],
                 "security-severity": "0.0"
               }
@@ -4945,6 +4903,49 @@
           "level": "error",
           "message": {
             "text": "A high vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-13221-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -8431,135 +8432,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "bd79e85f68b96aa3b986807856acc5ed1699196652a92cf308887ed44e2c1c5d:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-13221-perl-base",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-57432-perl-base",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-57433-perl-base",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
           }
         },
         {
