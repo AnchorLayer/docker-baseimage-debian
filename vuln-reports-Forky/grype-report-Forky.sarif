@@ -703,6 +703,27 @@
               }
             },
             {
+              "id": "CVE-2026-66033-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-66033 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit a2ed82d, contains a pre-authentication integer underflow vulnerability in the ssh2_cipher_crypt() function in src/openssl.c that allows a malicious SSH server to crash any connecting client by negotiating AES-GCM ciphers during handshake. Attackers can exploit the underflow in the expression computing blocksize minus aadlen minus authentication tag length to trigger an out-of-bounds read and a memcpy call with a near-SIZE_MAX length argument, causing immediate process crash before any authentication occurs."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66033",
+              "help": {
+                "text": "Vulnerability CVE-2026-66033\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66033](https://security-tracker.debian.org/tracker/CVE-2026-66033)",
+                "markdown": "**Vulnerability CVE-2026-66033**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66033](https://security-tracker.debian.org/tracker/CVE-2026-66033)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2015-3276-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -787,6 +808,27 @@
               }
             },
             {
+              "id": "CVE-2026-66035-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-66035 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit 42e33d8, contains a pre-authentication heap buffer overflow vulnerability that allows a malicious SSH server to corrupt heap metadata in any connecting client by sending a packet with a packet_length smaller than the cipher's block size during Encrypt-then-MAC cipher negotiation. In the fullpacket() function in src/transport.c, the ETM path allocates a buffer of packet_length bytes but copies blocksize minus one bytes via memcpy, causing an overflow that on 32-bit glibc writes attacker-controlled bytes into an adjacent chunk's SIZE field, enabling tcache bin confusion, overlapping live objects, and function pointer overwrite during the session handshake before authentication."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66035",
+              "help": {
+                "text": "Vulnerability CVE-2026-66035\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66035](https://security-tracker.debian.org/tracker/CVE-2026-66035)",
+                "markdown": "**Vulnerability CVE-2026-66035**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66035](https://security-tracker.debian.org/tracker/CVE-2026-66035)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "7.7"
+              }
+            },
+            {
               "id": "CVE-2026-8286-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -826,6 +868,27 @@
                   "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
                 ],
                 "security-severity": "8.1"
+              }
+            },
+            {
+              "id": "CVE-2026-66032-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-66032 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit 5e47761, contains a double-free vulnerability in the sftp_open() function in src/sftp.c that allows a malicious SSH server to corrupt the heap of any authenticated client opening an SFTP session. When a server responds to SSH_FXP_OPEN with SSH_FXP_STATUS containing FX_OK, the response data buffer is freed, and if a subsequent sftp_packet_require() call returns a specific error such as LIBSSH2_ERROR_CHANNEL_PACKET_EXCEEDED, the same pointer is freed a second time, enabling tcache dup conditions on glibc systems that allow overlapping allocations and function pointer overwrites."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66032",
+              "help": {
+                "text": "Vulnerability CVE-2026-66032\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66032](https://security-tracker.debian.org/tracker/CVE-2026-66032)",
+                "markdown": "**Vulnerability CVE-2026-66032**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66032](https://security-tracker.debian.org/tracker/CVE-2026-66032)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "8.7"
               }
             },
             {
@@ -1099,6 +1162,27 @@
                   "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "5.5"
+              }
+            },
+            {
+              "id": "CVE-2026-66034-libssh2-1t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-66034 high vulnerability for libssh2-1t64 package"
+              },
+              "fullDescription": {
+                "text": "libssh2 through 1.11.1, fixed in commit a13bb6c, contains a missing bounds check vulnerability that allows a malicious SSH server to trigger an arbitrary-length heap out-of-bounds read and a free of an uninitialized pointer via the publickey subsystem. In libssh2_publickey_list_fetch(), the version 1 response parser reads a server-controlled comment_len value and advances the parse pointer without verifying sufficient bytes remain in the buffer, causing the out-of-bounds read to leak heap pointers from adjacent allocations defeating ASLR, followed by heap allocator state corruption when the error cleanup path frees an uninitialized pointer from a non-zeroed realloc() region."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66034",
+              "help": {
+                "text": "Vulnerability CVE-2026-66034\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66034](https://security-tracker.debian.org/tracker/CVE-2026-66034)",
+                "markdown": "**Vulnerability CVE-2026-66034**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66034](https://security-tracker.debian.org/tracker/CVE-2026-66034)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
+                ],
+                "security-severity": "7.7"
               }
             },
             {
@@ -1780,7 +1864,7 @@
                 "text": "CVE-2026-56391 medium vulnerability for coreutils package"
               },
               "fullDescription": {
-                "text": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value. \nThis incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.\n\nWhen running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.\n\n\nThis issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371."
+                "text": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value.  This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.  When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.   This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-56391",
               "help": {
@@ -2137,7 +2221,7 @@
                 "text": "CVE-2026-56392 low vulnerability for coreutils package"
               },
               "fullDescription": {
-                "text": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer.\nWhen processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.\n\nWhen running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.\n\n\n\n\n\n\n\n\n\n\nThis issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d"
+                "text": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer. When processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.  When running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.           This issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d"
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-56392",
               "help": {
@@ -2653,90 +2737,6 @@
                   "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.10%2Bdfsg-1"
                 ],
                 "security-severity": "4.6"
-              }
-            },
-            {
-              "id": "CVE-2026-66032-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-66032 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit 5e47761, contains a double-free vulnerability in the sftp_open() function in src/sftp.c that allows a malicious SSH server to corrupt the heap of any authenticated client opening an SFTP session. When a server responds to SSH_FXP_OPEN with SSH_FXP_STATUS containing FX_OK, the response data buffer is freed, and if a subsequent sftp_packet_require() call returns a specific error such as LIBSSH2_ERROR_CHANNEL_PACKET_EXCEEDED, the same pointer is freed a second time, enabling tcache dup conditions on glibc systems that allow overlapping allocations and function pointer overwrites."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66032",
-              "help": {
-                "text": "Vulnerability CVE-2026-66032\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66032](https://security-tracker.debian.org/tracker/CVE-2026-66032)",
-                "markdown": "**Vulnerability CVE-2026-66032**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66032](https://security-tracker.debian.org/tracker/CVE-2026-66032)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "8.7"
-              }
-            },
-            {
-              "id": "CVE-2026-66033-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-66033 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit a2ed82d, contains a pre-authentication integer underflow vulnerability in the ssh2_cipher_crypt() function in src/openssl.c that allows a malicious SSH server to crash any connecting client by negotiating AES-GCM ciphers during handshake. Attackers can exploit the underflow in the expression computing blocksize minus aadlen minus authentication tag length to trigger an out-of-bounds read and a memcpy call with a near-SIZE_MAX length argument, causing immediate process crash before any authentication occurs."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66033",
-              "help": {
-                "text": "Vulnerability CVE-2026-66033\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66033](https://security-tracker.debian.org/tracker/CVE-2026-66033)",
-                "markdown": "**Vulnerability CVE-2026-66033**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66033](https://security-tracker.debian.org/tracker/CVE-2026-66033)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-66034-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-66034 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit a13bb6c, contains a missing bounds check vulnerability that allows a malicious SSH server to trigger an arbitrary-length heap out-of-bounds read and a free of an uninitialized pointer via the publickey subsystem. In libssh2_publickey_list_fetch(), the version 1 response parser reads a server-controlled comment_len value and advances the parse pointer without verifying sufficient bytes remain in the buffer, causing the out-of-bounds read to leak heap pointers from adjacent allocations defeating ASLR, followed by heap allocator state corruption when the error cleanup path frees an uninitialized pointer from a non-zeroed realloc() region."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66034",
-              "help": {
-                "text": "Vulnerability CVE-2026-66034\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66034](https://security-tracker.debian.org/tracker/CVE-2026-66034)",
-                "markdown": "**Vulnerability CVE-2026-66034**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66034](https://security-tracker.debian.org/tracker/CVE-2026-66034)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "7.7"
-              }
-            },
-            {
-              "id": "CVE-2026-66035-libssh2-1t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-66035 high vulnerability for libssh2-1t64 package"
-              },
-              "fullDescription": {
-                "text": "libssh2 through 1.11.1, fixed in commit 42e33d8, contains a pre-authentication heap buffer overflow vulnerability that allows a malicious SSH server to corrupt heap metadata in any connecting client by sending a packet with a packet_length smaller than the cipher's block size during Encrypt-then-MAC cipher negotiation. In the fullpacket() function in src/transport.c, the ETM path allocates a buffer of packet_length bytes but copies blocksize minus one bytes via memcpy, causing an overflow that on 32-bit glibc writes attacker-controlled bytes into an adjacent chunk's SIZE field, enabling tcache bin confusion, overlapping live objects, and function pointer overwrite during the session handshake before authentication."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-66035",
-              "help": {
-                "text": "Vulnerability CVE-2026-66035\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-66035](https://security-tracker.debian.org/tracker/CVE-2026-66035)",
-                "markdown": "**Vulnerability CVE-2026-66035**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-66035](https://security-tracker.debian.org/tracker/CVE-2026-66035)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssh2-1t64@1.11.1-4?arch=amd64\u0026distro=debian\u0026upstream=libssh2"
-                ],
-                "security-severity": "7.7"
               }
             },
             {
@@ -4287,6 +4287,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-66033-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
+          }
+        },
+        {
           "ruleId": "CVE-2015-3276-libldap2",
           "level": "note",
           "message": {
@@ -4459,6 +4498,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-66035-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-8286-curl",
           "level": "error",
           "message": {
@@ -4538,6 +4616,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-66032-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
           }
         },
         {
@@ -5141,6 +5258,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-66034-libssh2-1t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssh2-1t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
           }
         },
         {
@@ -8387,162 +8543,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "36a8cc302a688fff355bfeb29f79275813e48b45757ec378cc620eb9b9afd8c8:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-66032-libssh2-1t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-66033-libssh2-1t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-66034-libssh2-1t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-66035-libssh2-1t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssh2-1t64, version 1.11.1-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssh2-1t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/usr/share/doc/libssh2-1t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/info/libssh2-1t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "69e3c4fa52777126091df83d96f7b2ae951ade4bb363d51d4d1eb20a5242d8a4:1"
           }
         },
         {
