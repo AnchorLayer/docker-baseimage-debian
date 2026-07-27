@@ -1858,27 +1858,6 @@
               }
             },
             {
-              "id": "CVE-2026-56391-coreutils",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-56391 medium vulnerability for coreutils package"
-              },
-              "fullDescription": {
-                "text": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value.  This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.  When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.   This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-56391",
-              "help": {
-                "text": "Vulnerability CVE-2026-56391\nSeverity: medium\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-56391](https://security-tracker.debian.org/tracker/CVE-2026-56391)",
-                "markdown": "**Vulnerability CVE-2026-56391**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-56391](https://security-tracker.debian.org/tracker/CVE-2026-56391)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "4.6"
-              }
-            },
-            {
               "id": "CVE-2026-42250-libbz2-1.0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2212,27 +2191,6 @@
                   "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64\u0026distro=debian\u0026upstream=krb5"
                 ],
                 "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-56392-coreutils",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-56392 low vulnerability for coreutils package"
-              },
-              "fullDescription": {
-                "text": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer. When processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.  When running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.           This issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d"
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-56392",
-              "help": {
-                "text": "Vulnerability CVE-2026-56392\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-56392](https://security-tracker.debian.org/tracker/CVE-2026-56392)",
-                "markdown": "**Vulnerability CVE-2026-56392**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-56392](https://security-tracker.debian.org/tracker/CVE-2026-56392)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "1.8"
               }
             },
             {
@@ -2716,6 +2674,48 @@
                   "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "4.4"
+              }
+            },
+            {
+              "id": "CVE-2026-56392-coreutils",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-56392 low vulnerability for coreutils package"
+              },
+              "fullDescription": {
+                "text": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer. When processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.  When running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.           This issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-56392",
+              "help": {
+                "text": "Vulnerability CVE-2026-56392\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-56392](https://security-tracker.debian.org/tracker/CVE-2026-56392)",
+                "markdown": "**Vulnerability CVE-2026-56392**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-56392](https://security-tracker.debian.org/tracker/CVE-2026-56392)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "1.8"
+              }
+            },
+            {
+              "id": "CVE-2026-56391-coreutils",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-56391 low vulnerability for coreutils package"
+              },
+              "fullDescription": {
+                "text": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value.  This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.  When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.   This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-56391",
+              "help": {
+                "text": "Vulnerability CVE-2026-56391\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-56391](https://security-tracker.debian.org/tracker/CVE-2026-56391)",
+                "markdown": "**Vulnerability CVE-2026-56391**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-56391](https://security-tracker.debian.org/tracker/CVE-2026-56391)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "4.6"
               }
             },
             {
@@ -6732,49 +6732,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-56391-coreutils",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/coreutils/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/coreutils/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-42250-libbz2-1.0",
           "level": "warning",
           "message": {
@@ -7476,49 +7433,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "ece204fd02ad5b5db0e969473afac866abc6344d3e8eafeb42fe64731aae1b96:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-56392-coreutils",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/coreutils/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/coreutils/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
           }
         },
         {
@@ -8465,6 +8379,92 @@
         },
         {
           "ruleId": "CVE-2025-5278-coreutils",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/coreutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/coreutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-56392-coreutils",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/coreutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/coreutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/coreutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-56391-coreutils",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
