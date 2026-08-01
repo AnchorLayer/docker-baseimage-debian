@@ -472,6 +472,27 @@
               }
             },
             {
+              "id": "CVE-2026-9538-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-9538 high vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+              "help": {
+                "text": "Vulnerability CVE-2026-9538\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)",
+                "markdown": "**Vulnerability CVE-2026-9538**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-11564-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -511,27 +532,6 @@
                   "pkg:deb/debian/libcurl4t64@8.20.0-5?arch=amd64\u0026distro=debian\u0026upstream=curl"
                 ],
                 "security-severity": "9.1"
-              }
-            },
-            {
-              "id": "CVE-2026-9538-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-9538 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
-              "help": {
-                "text": "Vulnerability CVE-2026-9538\nSeverity: high\nPackage: perl-base\nVersion: 5.40.1-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)",
-                "markdown": "**Vulnerability CVE-2026-9538**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.40.1-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.40.1-8?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "7.5"
               }
             },
             {
@@ -3818,6 +3818,49 @@
           }
         },
         {
+          "ruleId": "CVE-2026-9538-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-11564-curl",
           "level": "error",
           "message": {
@@ -3897,49 +3940,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "dc85d30d98cec72bd9be267c08c7b49e64cfb5d02d60c55b95c8270d17aa99f9:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-9538-perl-base",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: perl-base, version 5.40.1-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6dbedb0c63a4f66b54f636a6b3d11abcc1e743d4904d633b1a0ab7d3ce54a816:1"
           }
         },
         {
