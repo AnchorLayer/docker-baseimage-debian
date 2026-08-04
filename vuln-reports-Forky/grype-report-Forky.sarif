@@ -2740,6 +2740,48 @@
               }
             },
             {
+              "id": "CVE-2026-18477-tar",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-18477 medium vulnerability for tar package"
+              },
+              "fullDescription": {
+                "text": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-18477",
+              "help": {
+                "text": "Vulnerability CVE-2026-18477\nSeverity: medium\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-18477](https://security-tracker.debian.org/tracker/CVE-2026-18477)",
+                "markdown": "**Vulnerability CVE-2026-18477**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-18477](https://security-tracker.debian.org/tracker/CVE-2026-18477)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "4.4"
+              }
+            },
+            {
+              "id": "CVE-2026-18508-tar",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-18508 medium vulnerability for tar package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in GNU tar. When extracting an archive with the --one-top-level option, hardlink targets are not confined to the designated top-level directory and may resolve relative to the extraction working directory. A crafted archive can create hardlinks that escape the intended boundary and, when combined with a preexisting symbolic link under the working directory, may allow writing outside that boundary during a single extraction."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-18508",
+              "help": {
+                "text": "Vulnerability CVE-2026-18508\nSeverity: medium\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-18508](https://security-tracker.debian.org/tracker/CVE-2026-18508)",
+                "markdown": "**Vulnerability CVE-2026-18508**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-18508](https://security-tracker.debian.org/tracker/CVE-2026-18508)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "4.4"
+              }
+            },
+            {
               "id": "CVE-2026-53615-bsdutils",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -8543,6 +8585,108 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "36a8cc302a688fff355bfeb29f79275813e48b45757ec378cc620eb9b9afd8c8:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-18477-tar",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: tar, version 1.35+dfsg-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/tar/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/tar/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-18508-tar",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: tar, version 1.35+dfsg-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:ca2e39e9b8c96b6b9774165c718e3bb265ac814d8d9fdbfb84a74aabf922715a:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/tar/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/usr/share/doc/tar/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:e3b9e5e274e2c322ebb10d7c702428e7f6fa709be6eb7ced87ac200f28e8c877:/var/lib/dpkg/info/tar.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
           }
         },
         {
