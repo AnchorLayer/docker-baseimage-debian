@@ -1291,6 +1291,27 @@
               }
             },
             {
+              "id": "CVE-2026-18477-tar",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-18477 medium vulnerability for tar package"
+              },
+              "fullDescription": {
+                "text": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-18477",
+              "help": {
+                "text": "Vulnerability CVE-2026-18477\nSeverity: medium\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-18477](https://security-tracker.debian.org/tracker/CVE-2026-18477)",
+                "markdown": "**Vulnerability CVE-2026-18477**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-18477](https://security-tracker.debian.org/tracker/CVE-2026-18477)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "4.4"
+              }
+            },
+            {
               "id": "CVE-2007-5686-login.defs",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1330,27 +1351,6 @@
                   "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64\u0026distro=debian\u0026upstream=shadow"
                 ],
                 "security-severity": "4.9"
-              }
-            },
-            {
-              "id": "CVE-2026-18477-tar",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-18477 medium vulnerability for tar package"
-              },
-              "fullDescription": {
-                "text": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-18477",
-              "help": {
-                "text": "Vulnerability CVE-2026-18477\nSeverity: medium\nPackage: tar\nVersion: 1.35+dfsg-4\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-18477](https://security-tracker.debian.org/tracker/CVE-2026-18477)",
-                "markdown": "**Vulnerability CVE-2026-18477**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | tar  | 1.35+dfsg-4  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-18477](https://security-tracker.debian.org/tracker/CVE-2026-18477)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "4.4"
               }
             },
             {
@@ -1939,6 +1939,48 @@
                   "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.13%2Bdfsg-1"
                 ],
                 "security-severity": "4.6"
+              }
+            },
+            {
+              "id": "CVE-2026-54876-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54876 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A malicious TLS server can cause a memory leak in a TLS\nclient that has enabled OCSP response checking by sending an OCSP\nresponse that contains no single response entries.\n\nImpact summary: An attacker can leak an attacker-tunable amount of memory\nper TLS handshake in a victim client application. A long-running client\nthat repeatedly connects to a malicious server can have its memory\nexhausted, resulting in a Denial of Service.\n\nCWE: CWE-401: Missing Release of Memory after Effective Lifetime\n\nDescription: The affected function is called during X.509 certificate\nchain verification when OCSP response checking is enabled\nwith the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL\nverification flags, for example when a TLS client verifies an OCSP\nresponse stapled into the TLS handshake by the server.\n\nWhen the received BasicOCSPResponse contains an empty SEQUENCE OF\nSingleResponse, which is permitted on the wire and accepted by the\nOpenSSL decoder, the OCSP_BASICRESP structure allocated by\nOCSP_response_get1_basic() was not freed because an early return\nbypassed the cleanup code at the end of the function.\n\nThe amount of memory leaked per handshake can be amplified by the\nattacker by padding the certs field of the BasicOCSPResponse with\nbogus certificates, which are parsed and stored in the leaked\nstructure before the empty response check triggers the early return.\nA long-running TLS client that repeatedly connects to a malicious\nserver can have its memory exhausted over time.\n\nOCSP response checking is not enabled by default. Only client\napplications that explicitly enable the OCSP response check\nverification flags are affected.\n\nFIPS impact: no\n\nThe FIPS modules in 4.0 and 3.6 are not affected by this issue as the\naffected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54876",
+              "help": {
+                "text": "Vulnerability CVE-2026-54876\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)",
+                "markdown": "**Vulnerability CVE-2026-54876**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-54876-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54876 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A malicious TLS server can cause a memory leak in a TLS\nclient that has enabled OCSP response checking by sending an OCSP\nresponse that contains no single response entries.\n\nImpact summary: An attacker can leak an attacker-tunable amount of memory\nper TLS handshake in a victim client application. A long-running client\nthat repeatedly connects to a malicious server can have its memory\nexhausted, resulting in a Denial of Service.\n\nCWE: CWE-401: Missing Release of Memory after Effective Lifetime\n\nDescription: The affected function is called during X.509 certificate\nchain verification when OCSP response checking is enabled\nwith the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL\nverification flags, for example when a TLS client verifies an OCSP\nresponse stapled into the TLS handshake by the server.\n\nWhen the received BasicOCSPResponse contains an empty SEQUENCE OF\nSingleResponse, which is permitted on the wire and accepted by the\nOpenSSL decoder, the OCSP_BASICRESP structure allocated by\nOCSP_response_get1_basic() was not freed because an early return\nbypassed the cleanup code at the end of the function.\n\nThe amount of memory leaked per handshake can be amplified by the\nattacker by padding the certs field of the BasicOCSPResponse with\nbogus certificates, which are parsed and stored in the leaked\nstructure before the empty response check triggers the early return.\nA long-running TLS client that repeatedly connects to a malicious\nserver can have its memory exhausted over time.\n\nOCSP response checking is not enabled by default. Only client\napplications that explicitly enable the OCSP response check\nverification flags are affected.\n\nFIPS impact: no\n\nThe FIPS modules in 4.0 and 3.6 are not affected by this issue as the\naffected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54876",
+              "help": {
+                "text": "Vulnerability CVE-2026-54876\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)",
+                "markdown": "**Vulnerability CVE-2026-54876**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
               }
             },
             {
@@ -4869,6 +4911,57 @@
           }
         },
         {
+          "ruleId": "CVE-2026-18477-tar",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: tar, version 1.35+dfsg-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/tar/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/tar/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/tar.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
+          }
+        },
+        {
           "ruleId": "CVE-2007-5686-login.defs",
           "level": "note",
           "message": {
@@ -4980,57 +5073,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "27d4b5be1039e5031be2b08fd4b8b4f439262a659bdbfe2d89635ac5db0cc120:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-18477-tar",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: tar, version 1.35+dfsg-4 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/tar/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/tar/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/tar.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/tar.prerm"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "aa48ef6b127807dcad4d323b7765a0393b2e8753028e1185dbd1353fd953127c:1"
           }
         },
         {
@@ -6215,6 +6257,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "73541ec57b1dacffa7e9929a0f87f822e0d245a9924c848b98fc0de58dcf83d4:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54876-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54876-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
           }
         },
         {
