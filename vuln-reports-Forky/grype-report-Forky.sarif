@@ -409,6 +409,48 @@
               }
             },
             {
+              "id": "CVE-2026-54876-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54876 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A malicious TLS server can cause a memory leak in a TLS client that has enabled OCSP response checking by sending an OCSP response that contains no single response entries.  Impact summary: An attacker can leak an attacker-tunable amount of memory per TLS handshake in a victim client application. A long-running client that repeatedly connects to a malicious server can have its memory exhausted, resulting in a Denial of Service.  CWE: CWE-401: Missing Release of Memory after Effective Lifetime  Description: The affected function is called during X.509 certificate chain verification when OCSP response checking is enabled with the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL verification flags, for example when a TLS client verifies an OCSP response stapled into the TLS handshake by the server.  When the received BasicOCSPResponse contains an empty SEQUENCE OF SingleResponse, which is permitted on the wire and accepted by the OpenSSL decoder, the OCSP_BASICRESP structure allocated by OCSP_response_get1_basic() was not freed because an early return bypassed the cleanup code at the end of the function.  The amount of memory leaked per handshake can be amplified by the attacker by padding the certs field of the BasicOCSPResponse with bogus certificates, which are parsed and stored in the leaked structure before the empty response check triggers the early return. A long-running TLS client that repeatedly connects to a malicious server can have its memory exhausted over time.  OCSP response checking is not enabled by default. Only client applications that explicitly enable the OCSP response check verification flags are affected.  FIPS impact: no  The FIPS modules in 4.0 and 3.6 are not affected by this issue as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54876",
+              "help": {
+                "text": "Vulnerability CVE-2026-54876\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)",
+                "markdown": "**Vulnerability CVE-2026-54876**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-54876-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54876 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A malicious TLS server can cause a memory leak in a TLS client that has enabled OCSP response checking by sending an OCSP response that contains no single response entries.  Impact summary: An attacker can leak an attacker-tunable amount of memory per TLS handshake in a victim client application. A long-running client that repeatedly connects to a malicious server can have its memory exhausted, resulting in a Denial of Service.  CWE: CWE-401: Missing Release of Memory after Effective Lifetime  Description: The affected function is called during X.509 certificate chain verification when OCSP response checking is enabled with the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL verification flags, for example when a TLS client verifies an OCSP response stapled into the TLS handshake by the server.  When the received BasicOCSPResponse contains an empty SEQUENCE OF SingleResponse, which is permitted on the wire and accepted by the OpenSSL decoder, the OCSP_BASICRESP structure allocated by OCSP_response_get1_basic() was not freed because an early return bypassed the cleanup code at the end of the function.  The amount of memory leaked per handshake can be amplified by the attacker by padding the certs field of the BasicOCSPResponse with bogus certificates, which are parsed and stored in the leaked structure before the empty response check triggers the early return. A long-running TLS client that repeatedly connects to a malicious server can have its memory exhausted over time.  OCSP response checking is not enabled by default. Only client applications that explicitly enable the OCSP response check verification flags are affected.  FIPS impact: no  The FIPS modules in 4.0 and 3.6 are not affected by this issue as the affected code is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54876",
+              "help": {
+                "text": "Vulnerability CVE-2026-54876\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)",
+                "markdown": "**Vulnerability CVE-2026-54876**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-5704-tar",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -1942,48 +1984,6 @@
               }
             },
             {
-              "id": "CVE-2026-54876-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54876 high vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A malicious TLS server can cause a memory leak in a TLS\nclient that has enabled OCSP response checking by sending an OCSP\nresponse that contains no single response entries.\n\nImpact summary: An attacker can leak an attacker-tunable amount of memory\nper TLS handshake in a victim client application. A long-running client\nthat repeatedly connects to a malicious server can have its memory\nexhausted, resulting in a Denial of Service.\n\nCWE: CWE-401: Missing Release of Memory after Effective Lifetime\n\nDescription: The affected function is called during X.509 certificate\nchain verification when OCSP response checking is enabled\nwith the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL\nverification flags, for example when a TLS client verifies an OCSP\nresponse stapled into the TLS handshake by the server.\n\nWhen the received BasicOCSPResponse contains an empty SEQUENCE OF\nSingleResponse, which is permitted on the wire and accepted by the\nOpenSSL decoder, the OCSP_BASICRESP structure allocated by\nOCSP_response_get1_basic() was not freed because an early return\nbypassed the cleanup code at the end of the function.\n\nThe amount of memory leaked per handshake can be amplified by the\nattacker by padding the certs field of the BasicOCSPResponse with\nbogus certificates, which are parsed and stored in the leaked\nstructure before the empty response check triggers the early return.\nA long-running TLS client that repeatedly connects to a malicious\nserver can have its memory exhausted over time.\n\nOCSP response checking is not enabled by default. Only client\napplications that explicitly enable the OCSP response check\nverification flags are affected.\n\nFIPS impact: no\n\nThe FIPS modules in 4.0 and 3.6 are not affected by this issue as the\naffected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54876",
-              "help": {
-                "text": "Vulnerability CVE-2026-54876\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)",
-                "markdown": "**Vulnerability CVE-2026-54876**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-54876-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54876 high vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A malicious TLS server can cause a memory leak in a TLS\nclient that has enabled OCSP response checking by sending an OCSP\nresponse that contains no single response entries.\n\nImpact summary: An attacker can leak an attacker-tunable amount of memory\nper TLS handshake in a victim client application. A long-running client\nthat repeatedly connects to a malicious server can have its memory\nexhausted, resulting in a Denial of Service.\n\nCWE: CWE-401: Missing Release of Memory after Effective Lifetime\n\nDescription: The affected function is called during X.509 certificate\nchain verification when OCSP response checking is enabled\nwith the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL\nverification flags, for example when a TLS client verifies an OCSP\nresponse stapled into the TLS handshake by the server.\n\nWhen the received BasicOCSPResponse contains an empty SEQUENCE OF\nSingleResponse, which is permitted on the wire and accepted by the\nOpenSSL decoder, the OCSP_BASICRESP structure allocated by\nOCSP_response_get1_basic() was not freed because an early return\nbypassed the cleanup code at the end of the function.\n\nThe amount of memory leaked per handshake can be amplified by the\nattacker by padding the certs field of the BasicOCSPResponse with\nbogus certificates, which are parsed and stored in the leaked\nstructure before the empty response check triggers the early return.\nA long-running TLS client that repeatedly connects to a malicious\nserver can have its memory exhausted over time.\n\nOCSP response checking is not enabled by default. Only client\napplications that explicitly enable the OCSP response check\nverification flags are affected.\n\nFIPS impact: no\n\nThe FIPS modules in 4.0 and 3.6 are not affected by this issue as the\naffected code is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54876",
-              "help": {
-                "text": "Vulnerability CVE-2026-54876\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)",
-                "markdown": "**Vulnerability CVE-2026-54876**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54876](https://security-tracker.debian.org/tracker/CVE-2026-54876)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
               "id": "CVE-2026-53615-bsdutils",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -3022,6 +3022,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "9bbf9d7f19bdcdce5b7bd61ed0ca8f09022acfa6861931d3f67355cb5c198655:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54876-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54876-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
           }
         },
         {
@@ -6257,88 +6339,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "73541ec57b1dacffa7e9929a0f87f822e0d245a9924c848b98fc0de58dcf83d4:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54876-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54876-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
           }
         },
         {
