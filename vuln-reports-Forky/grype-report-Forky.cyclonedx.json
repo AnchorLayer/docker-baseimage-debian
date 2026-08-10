@@ -2,17 +2,17 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:ad5fa107-2cd6-4ad5-a3cd-b045e309a46b",
+  "serialNumber": "urn:uuid:4410dd05-f776-4647-b063-886ebfe44f86",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-10T15:11:36Z",
+    "timestamp": "2026-08-10T20:54:15Z",
     "tools": {
       "components": [
         {
           "type": "application",
           "author": "anchore",
           "name": "grype",
-          "version": "0.116.1"
+          "version": "0.117.0"
         }
       ]
     },
@@ -13559,6 +13559,17 @@
     },
     {
       "bom-ref": "c5874a9a999b4aa9",
+      "type": "file",
+      "name": "/usr/bin/perl",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0df2aab44c757f97995077027c7433ae7e5ae9b202e6fcd4f20c2a344d015d3c"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0de6e5138847baf1",
       "type": "file",
       "name": "/usr/bin/perl",
       "hashes": [
@@ -59642,7 +59653,7 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:c9dd5e3a-ca91-490b-8197-62f25e0d61e5",
+      "bom-ref": "urn:uuid:fab0dc53-1812-47a4-8235-2aa9cf1d6fb1",
       "id": "CVE-2026-13221",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59676,12 +59687,18 @@
       "description": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.  When such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.  A pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:c3670cd4-9955-44e3-a54e-c5df010799fc",
+      "bom-ref": "urn:uuid:078e3c00-3a77-4c5d-9e50-ba8c57a835b2",
       "id": "CVE-2026-42496",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59715,12 +59732,18 @@
       "description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.  _make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.  A subsequent open through the extracted name reads or writes the attacker chosen path.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:3aef3f66-42fe-4f85-9bf8-2c00d417f041",
+      "bom-ref": "urn:uuid:aa55b4f4-fde8-496b-85cb-bf947465400c",
       "id": "CVE-2017-17740",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59752,12 +59775,18 @@
       "description": "contrib/slapd-modules/nops/nops.c in OpenLDAP through 2.4.45, when both the nops module and the memberof overlay are enabled, attempts to free a buffer that was allocated on the stack, which allows remote attackers to cause a denial of service (slapd crash) via a member MODDN operation.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1"
+          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1",
+          "versions": [
+            {
+              "version": "2.6.13+dfsg-1+b1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:43279152-58a8-48d3-90bb-ba1e8e89ff03",
+      "bom-ref": "urn:uuid:43defbd1-ac4c-4821-9433-08c36c9fcfad",
       "id": "CVE-2026-12087",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59791,12 +59820,18 @@
       "description": "Socket versions before 2.041 for Perl have an out-of-bounds heap read.  In Socket.xs, pack_ip_mreq_source() checks the length of its source argument before the argument is read, so the check tests the byte length carried over from the preceding multiaddr argument instead. Both addresses occupy a 4-byte field, so a valid multiaddr lets a source of any length pass the check, and the source is then copied into the 4-byte imr_sourceaddr field with a fixed-size copy. A source shorter than 4 bytes is not rejected, and the copy reads up to 3 bytes past the end of its buffer.  Calling pack_ip_mreq_source() with a source value shorter than 4 bytes copies adjacent heap memory into the returned packed structure.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:cb8bc04a-2f09-4323-b61a-4d20e212df9a",
+      "bom-ref": "urn:uuid:50d8b5c3-9213-4ee6-bf76-034e50c808d6",
       "id": "CVE-2026-9538",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59830,12 +59865,18 @@
       "description": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.  _read_tar() reads each entry's payload with $handle->read($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.  A crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:34fec3fd-98eb-4ba7-8ce9-ee1e3b75ce61",
+      "bom-ref": "urn:uuid:532678cf-19ba-4ad0-ba2a-6f70cb2432de",
       "id": "CVE-2026-42497",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59869,12 +59910,18 @@
       "description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.  _make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.  A subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e872eb07-080a-402b-95bd-5c5cc3c177a4",
+      "bom-ref": "urn:uuid:3d6e1ccd-d994-4231-b918-ff9a3f2951e6",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59906,12 +59953,18 @@
       "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:60d50580-a5c3-4868-b3fc-2b4e8458f791",
+      "bom-ref": "urn:uuid:b556ca0b-b6f1-454f-a21f-ae08f2ad6cc7",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59943,12 +59996,18 @@
       "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:7a350b81-cf58-445b-839f-0b34830e1197",
+      "bom-ref": "urn:uuid:ff222ac6-fbbb-4d24-9b0b-dbd7abe40cec",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59980,12 +60039,18 @@
       "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:834ac770-07a1-45f2-8f87-d94f446ca3ce",
+      "bom-ref": "urn:uuid:7532da35-490e-452d-9e5a-da70224f1693",
       "id": "CVE-2015-3276",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60017,12 +60082,18 @@
       "description": "The nss_parse_ciphers function in libraries/libldap/tls_m.c in OpenLDAP does not properly parse OpenSSL-style multi-keyword mode cipher strings, which might cause a weaker than intended cipher to be used and allow remote attackers to have unspecified impact via unknown vectors.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1"
+          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1",
+          "versions": [
+            {
+              "version": "2.6.13+dfsg-1+b1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:7712d006-6e96-4f86-9a24-f352b1c8b70b",
+      "bom-ref": "urn:uuid:144fc06c-c940-4e1f-9e06-3a15c967b6ef",
       "id": "CVE-2026-41992",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60056,12 +60127,18 @@
       "description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation. By decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.  This issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681",
       "affects": [
         {
-          "ref": "pkg:deb/debian/gzip@1.13-1?arch=amd64&distro=debian&package-id=b30644f429eabdac"
+          "ref": "pkg:deb/debian/gzip@1.13-1?arch=amd64&distro=debian&package-id=b30644f429eabdac",
+          "versions": [
+            {
+              "version": "1.13-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:89405c1e-3aca-49ff-9ebe-f7546a18f595",
+      "bom-ref": "urn:uuid:48118569-3eaf-44ce-8723-2d8909071cb1",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60095,12 +60172,18 @@
       "description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.0.1 to version 2.43 fail to validate the RDATA content against the RDATA length in a DNS response when processing A6, CERT, LOC, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:c2564f73-1387-4e09-8c10-8ffc822cdffe",
+      "bom-ref": "urn:uuid:310cc72e-3abb-4287-8b33-cad0c365ed4e",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60134,12 +60217,18 @@
       "description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.0.1 to version 2.43 fail to validate the RDATA content against the RDATA length in a DNS response when processing A6, CERT, LOC, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:77a33f07-f841-4299-b6fe-a143d9c290df",
+      "bom-ref": "urn:uuid:5499a769-e6fa-456c-8e2d-3005cbb9a441",
       "id": "CVE-2026-6238",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60173,12 +60262,18 @@
       "description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.0.1 to version 2.43 fail to validate the RDATA content against the RDATA length in a DNS response when processing A6, CERT, LOC, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.  These functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:6509e0b6-718a-4ab0-a442-97c3b394ef31",
+      "bom-ref": "urn:uuid:7ebdba5a-9150-4779-8f88-5fdb9deee1f3",
       "id": "CVE-2005-2541",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60210,12 +60305,18 @@
       "description": "Tar 1.15.1 does not properly warn the user when extracting setuid or setgid files, which may allow local users or remote attackers to gain privileges.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783"
+          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783",
+          "versions": [
+            {
+              "version": "1.35+dfsg-4",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:9e7bc471-ce9b-4664-827c-d884bdf29b70",
+      "bom-ref": "urn:uuid:ab0d890c-9fa1-4bb4-8b61-dbb5e13d79b0",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60249,12 +60350,18 @@
       "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64&distro=debian&package-id=74248be0db6ddc14&upstream=pam"
+          "ref": "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64&distro=debian&package-id=74248be0db6ddc14&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:414975d8-5f9e-4240-81c4-45b4fbfc89c0",
+      "bom-ref": "urn:uuid:dd34f738-e199-4f30-9a9b-238c35ff0d80",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60288,12 +60395,18 @@
       "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64&distro=debian&package-id=91f7902a49a048f3&upstream=pam"
+          "ref": "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64&distro=debian&package-id=91f7902a49a048f3&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:a476c924-f926-4acd-a346-d846465c0ab8",
+      "bom-ref": "urn:uuid:d2ad37c1-bfbf-42da-a082-6972ff76a06d",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60327,12 +60440,18 @@
       "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all&distro=debian&package-id=336801a07758bebc&upstream=pam"
+          "ref": "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all&distro=debian&package-id=336801a07758bebc&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:b102059e-3601-4fd5-b1a5-6b743e804783",
+      "bom-ref": "urn:uuid:7d6db0e0-4e6c-48b8-a9c8-2b6dcf43e0b1",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60366,12 +60485,18 @@
       "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64&distro=debian&package-id=43aeba10c606005a&upstream=pam"
+          "ref": "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64&distro=debian&package-id=43aeba10c606005a&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:4a92f6b7-3d3f-4e2a-aee5-1fda5663397d",
+      "bom-ref": "urn:uuid:1479f974-832e-474f-883e-51a09210b841",
       "id": "CVE-2026-54876",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60405,12 +60530,18 @@
       "description": "Issue summary: A malicious TLS server can cause a memory leak in a TLS client that has enabled OCSP response checking by sending an OCSP response that contains no single response entries.  Impact summary: An attacker can leak an attacker-tunable amount of memory per TLS handshake in a victim client application. A long-running client that repeatedly connects to a malicious server can have its memory exhausted, resulting in a Denial of Service.  CWE: CWE-401: Missing Release of Memory after Effective Lifetime  Description: The affected function is called during X.509 certificate chain verification when OCSP response checking is enabled with the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL verification flags, for example when a TLS client verifies an OCSP response stapled into the TLS handshake by the server.  When the received BasicOCSPResponse contains an empty SEQUENCE OF SingleResponse, which is permitted on the wire and accepted by the OpenSSL decoder, the OCSP_BASICRESP structure allocated by OCSP_response_get1_basic() was not freed because an early return bypassed the cleanup code at the end of the function.  The amount of memory leaked per handshake can be amplified by the attacker by padding the certs field of the BasicOCSPResponse with bogus certificates, which are parsed and stored in the leaked structure before the empty response check triggers the early return. A long-running TLS client that repeatedly connects to a malicious server can have its memory exhausted over time.  OCSP response checking is not enabled by default. Only client applications that explicitly enable the OCSP response check verification flags are affected.  FIPS impact: no  The FIPS modules in 4.0 and 3.6 are not affected by this issue as the affected code is outside the OpenSSL FIPS module boundary.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl"
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:b52d75b4-203a-4d5b-9ea8-9e6777914dcc",
+      "bom-ref": "urn:uuid:ead54286-d8c4-4594-9bde-d26200d8d6af",
       "id": "CVE-2026-54876",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60444,12 +60575,18 @@
       "description": "Issue summary: A malicious TLS server can cause a memory leak in a TLS client that has enabled OCSP response checking by sending an OCSP response that contains no single response entries.  Impact summary: An attacker can leak an attacker-tunable amount of memory per TLS handshake in a victim client application. A long-running client that repeatedly connects to a malicious server can have its memory exhausted, resulting in a Denial of Service.  CWE: CWE-401: Missing Release of Memory after Effective Lifetime  Description: The affected function is called during X.509 certificate chain verification when OCSP response checking is enabled with the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL verification flags, for example when a TLS client verifies an OCSP response stapled into the TLS handshake by the server.  When the received BasicOCSPResponse contains an empty SEQUENCE OF SingleResponse, which is permitted on the wire and accepted by the OpenSSL decoder, the OCSP_BASICRESP structure allocated by OCSP_response_get1_basic() was not freed because an early return bypassed the cleanup code at the end of the function.  The amount of memory leaked per handshake can be amplified by the attacker by padding the certs field of the BasicOCSPResponse with bogus certificates, which are parsed and stored in the leaked structure before the empty response check triggers the early return. A long-running TLS client that repeatedly connects to a malicious server can have its memory exhausted over time.  OCSP response checking is not enabled by default. Only client applications that explicitly enable the OCSP response check verification flags are affected.  FIPS impact: no  The FIPS modules in 4.0 and 3.6 are not affected by this issue as the affected code is outside the OpenSSL FIPS module boundary.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl"
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:d2cb0c81-b042-4ece-818f-4c252d6866ad",
+      "bom-ref": "urn:uuid:12d93eb8-d577-4a28-ab66-8c70acb0dbfd",
       "id": "CVE-2026-5704",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60483,12 +60620,18 @@
       "description": "A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783"
+          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783",
+          "versions": [
+            {
+              "version": "1.35+dfsg-4",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:80100fc3-002a-40ab-8def-09dc7d38ac91",
+      "bom-ref": "urn:uuid:141c73c7-e5a7-4cd9-a3ed-9620d6a1d6d4",
       "id": "CVE-2026-7017",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60522,12 +60665,18 @@
       "description": "HTTP::Tiny versions before 0.095 for Perl forward credential headers to cross-origin redirect targets.  When the server returns a 3xx redirect, `_maybe_redirect` follows the `Location:` header and `_prepare_headers_and_cb` re-merges the caller's `headers` argument into the new request, without checking whether the redirect target shares an origin with the original URL. Caller-supplied `Authorization`, `Cookie` and `Proxy-Authorization` headers are therefore re-sent to whatever host the redirect names, across scheme, host or port boundaries, and including `https` to `http` downgrades that expose them in plaintext on the wire.  The HTTP::Tiny POD note that \"Authorization headers will not be included in a redirected request\" applied only to the URL-userinfo Basic-auth path, not to headers passed explicitly by the caller.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:1feaec6d-b784-4839-9f85-d5f2e6ebc6f4",
+      "bom-ref": "urn:uuid:d3249052-ecaa-41d1-8c9a-991fffd9291e",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60561,12 +60710,18 @@
       "description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:7372bb48-c4fe-4b3d-b48c-5ad5c35f10d8",
+      "bom-ref": "urn:uuid:9cab7ef0-44ae-44ac-89ef-ac255a92f8ca",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60600,12 +60755,18 @@
       "description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:db2650f3-d349-48c5-80d1-67369d46fc28",
+      "bom-ref": "urn:uuid:8de4270b-34c9-4d3f-9af8-1930a5cb741f",
       "id": "CVE-2026-5435",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60639,12 +60800,18 @@
       "description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:9c08acad-87b7-4e7d-9bcc-0248d7b321ea",
+      "bom-ref": "urn:uuid:1e39e7e9-93e9-4c5a-bf1e-046567017543",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60676,12 +60843,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e6bf63a4-0ee9-4f8c-9acd-474c7329be19",
+      "bom-ref": "urn:uuid:2e362255-fb0e-45d8-97fe-300b2754aca6",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60713,12 +60886,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:f9223cbb-aff4-42e3-8898-2182aadfa0ff",
+      "bom-ref": "urn:uuid:9091103f-c970-4a04-ace2-0c3a124c8dd9",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60750,12 +60929,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:cfbdaeb8-da4d-4c11-95cd-ebab095b6c9e",
+      "bom-ref": "urn:uuid:8a171088-443b-4621-a954-8fddef6f4cb8",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60787,12 +60972,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:d027fc2e-3dfb-4937-a942-53b30e3d0ad4",
+      "bom-ref": "urn:uuid:1bb00674-ebea-4269-b39e-bd950a69bd84",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60824,12 +61015,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:c09db3a3-61b9-4bb0-8026-a493c506299b",
+      "bom-ref": "urn:uuid:a70a7a66-4d9e-448b-bc23-91c8863a5cf8",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60861,12 +61058,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:81555ec7-8f00-4ae9-869f-589ef649cf25",
+      "bom-ref": "urn:uuid:671beef0-dab1-4f45-8785-9574fe35214a",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60898,12 +61101,18 @@
       "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:48e5a06c-7387-4668-8723-b6f5f74bcfae",
+      "bom-ref": "urn:uuid:21ac66ac-cca0-444f-8d37-cd199cb094f7",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60935,12 +61144,18 @@
       "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:392d402c-6423-42b3-af9e-3efc52e57358",
+      "bom-ref": "urn:uuid:180efb76-99c3-426f-9c05-830da8409b76",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60972,12 +61187,18 @@
       "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:5559320e-c8da-40e1-ba61-b65bc34426b8",
+      "bom-ref": "urn:uuid:d6af3f78-cae6-4366-8a60-8169c8dbf8de",
       "id": "CVE-2026-58055",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61011,12 +61232,18 @@
       "description": "nghttp2's nghttpx proxy through 1.69.0 forwards an HTTP/1.1 Upgrade request that also carries a Content-Length header and body onto reusable keep-alive backend connections, re-adding the Upgrade and Connection headers while passing Content-Length verbatim. A backend that resolves the resulting ambiguous message in the attacker's favor enables HTTP request/response smuggling and cross-client response-queue poisoning.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libnghttp2-14@1.69.0-1?arch=amd64&distro=debian&package-id=c2164d1f7a5ae406&upstream=nghttp2"
+          "ref": "pkg:deb/debian/libnghttp2-14@1.69.0-1?arch=amd64&distro=debian&package-id=c2164d1f7a5ae406&upstream=nghttp2",
+          "versions": [
+            {
+              "version": "1.69.0-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:1e6cb61e-97cc-4413-b5ab-5c86ebe24f79",
+      "bom-ref": "urn:uuid:3957d5de-91d6-48a3-bd73-d4c589487349",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61050,12 +61277,18 @@
       "description": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/login.defs@1%3A4.19.3-2?arch=all&distro=debian&package-id=ce437c4dd98ff6fd&upstream=shadow"
+          "ref": "pkg:deb/debian/login.defs@1%3A4.19.3-2?arch=all&distro=debian&package-id=ce437c4dd98ff6fd&upstream=shadow",
+          "versions": [
+            {
+              "version": "1:4.19.3-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e1fdcc29-f6bd-4ca8-ae26-fc628cf086ab",
+      "bom-ref": "urn:uuid:486858a4-1d7f-4976-a98e-894e191c18ab",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61089,12 +61322,18 @@
       "description": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&package-id=99271ecd5c4e2c46&upstream=shadow"
+          "ref": "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&package-id=99271ecd5c4e2c46&upstream=shadow",
+          "versions": [
+            {
+              "version": "1:4.19.3-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:c8900212-568d-4edd-9e03-7b2c6df5ba97",
+      "bom-ref": "urn:uuid:c072b7e8-23a7-49b1-b2ed-0587221ddd6a",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61126,12 +61365,18 @@
       "description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e3a4059b-0810-4084-ba97-4eecbe1bcfad",
+      "bom-ref": "urn:uuid:8521109e-664e-42c0-9b3f-cadee775f3de",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61163,12 +61408,18 @@
       "description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:45c5b432-d87d-4ee7-bb35-b05605e3d0ca",
+      "bom-ref": "urn:uuid:99dd6f15-945f-42de-9d51-a56242cea5c8",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61200,12 +61451,18 @@
       "description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:ae9abafc-13a5-485e-bd3f-0dc8bf7614b2",
+      "bom-ref": "urn:uuid:ec3b900a-e3a5-40dc-9337-217adcdc3576",
       "id": "CVE-2020-15719",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61237,12 +61494,18 @@
       "description": "libldap in certain third-party OpenLDAP packages has a certificate-validation flaw when the third-party package is asserting RFC6125 support. It considers CN even when there is a non-matching subjectAltName (SAN). This is fixed in, for example, openldap-2.4.46-10.el8 in Red Hat Enterprise Linux.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1"
+          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1",
+          "versions": [
+            {
+              "version": "2.6.13+dfsg-1+b1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:5e05eade-99bd-42fb-84b9-525b71012928",
+      "bom-ref": "urn:uuid:b7b7a433-abb3-4fec-91a9-228da63d2c0d",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61274,12 +61537,18 @@
       "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:6b39f1d3-26d0-4081-893d-ba03cd3129d9",
+      "bom-ref": "urn:uuid:9a406242-7a54-4488-b785-8f7f1de43ae5",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61311,12 +61580,18 @@
       "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:65393609-d16c-42c1-944a-7edacb0cee18",
+      "bom-ref": "urn:uuid:a46f02ad-742c-47ac-9a41-4b0a3d5fdeb2",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61348,12 +61623,18 @@
       "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:b9942023-61f5-43bb-81d7-e62d56d41042",
+      "bom-ref": "urn:uuid:1348aa19-88f7-4e2c-9c83-caba5f3af053",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61385,12 +61666,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-bin@2.42-17?arch=amd64&distro=debian&package-id=23ce2a74f4873981&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:235465bc-8099-48f0-b498-93aec3f60e43",
+      "bom-ref": "urn:uuid:7bb1e9eb-1846-4602-a70d-201e7f593f16",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61422,12 +61709,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc"
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64&distro=debian&package-id=02235b6768283e3f&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:cf3ab67a-f128-4fa8-9e93-ee829ce1004a",
+      "bom-ref": "urn:uuid:7ce54f1b-81f2-49ce-95b3-2edc85ccc3eb",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61459,12 +61752,18 @@
       "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc"
+          "ref": "pkg:deb/debian/libc6@2.42-17?arch=amd64&distro=debian&package-id=f3cf9e1d7eb8db03&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.42-17",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:d204ef01-8fc4-43f4-b59d-d765187fdb52",
+      "bom-ref": "urn:uuid:fda177dd-b8fb-4e73-ad14-c3cf0ee32976",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61496,12 +61795,18 @@
       "description": "An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable \"dbentry->n_key_data\" in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a \"u4\" variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&distro=debian&package-id=d249beb11f885479&upstream=krb5"
+          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&distro=debian&package-id=d249beb11f885479&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:f9e5a1c2-05ff-4b5b-9c7d-0b82d74ae34b",
+      "bom-ref": "urn:uuid:8cbf01d8-38c3-4fc7-b4b6-dafed5ef3246",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61533,12 +61838,18 @@
       "description": "An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable \"dbentry->n_key_data\" in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a \"u4\" variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&distro=debian&package-id=cf50314958384ae1&upstream=krb5"
+          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&distro=debian&package-id=cf50314958384ae1&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:382d0ed2-2441-43d8-96a6-a252a72d8ac5",
+      "bom-ref": "urn:uuid:19d73df6-6113-4977-9160-4e7c449916a8",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61570,12 +61881,18 @@
       "description": "An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable \"dbentry->n_key_data\" in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a \"u4\" variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&distro=debian&package-id=ec8a4905fa61cd25&upstream=krb5"
+          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&distro=debian&package-id=ec8a4905fa61cd25&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:339bab4d-74cb-4c5e-94da-be32d3490d87",
+      "bom-ref": "urn:uuid:0abc0436-6615-4e74-b447-730595beb285",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61607,12 +61924,18 @@
       "description": "An issue was discovered in MIT Kerberos 5 (aka krb5) through 1.16. There is a variable \"dbentry->n_key_data\" in kadmin/dbutil/dump.c that can store 16-bit data but unknowingly the developer has assigned a \"u4\" variable to it, which is for 32-bit data. An attacker can use this vulnerability to affect other artifacts of the database as we know that a Kerberos database dump file contains trusted data.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&distro=debian&package-id=ac27a00c1a045150&upstream=krb5"
+          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&distro=debian&package-id=ac27a00c1a045150&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:47302cdf-b438-4eed-b586-583da192d00b",
+      "bom-ref": "urn:uuid:0de152e5-801d-44e7-b93e-6f6b6bb4055d",
       "id": "CVE-2026-18508",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61646,12 +61969,18 @@
       "description": "A flaw was found in GNU tar. When extracting an archive with the --one-top-level option, hardlink targets are not confined to the designated top-level directory and may resolve relative to the extraction working directory. A crafted archive can create hardlinks that escape the intended boundary and, when combined with a preexisting symbolic link under the working directory, may allow writing outside that boundary during a single extraction.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783"
+          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783",
+          "versions": [
+            {
+              "version": "1.35+dfsg-4",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:17db9c9f-b460-4e4c-9a5d-e0a50ad72cb9",
+      "bom-ref": "urn:uuid:bb402aac-367e-434a-b8da-b0e9837aeb9b",
       "id": "CVE-2026-42250",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61685,12 +62014,18 @@
       "description": "bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing a specially crafted file, the application performs an out‑of‑bounds write to a global buffer, resulting in memory corruption and a crash (denial of service).  This issue was fixed in bzip2 patch 35d122a3df8b0cc4082a4d89fdc6ee99f375fe67",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64&distro=debian&package-id=da9cd667d901a272&upstream=bzip2%401.0.8-6"
+          "ref": "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64&distro=debian&package-id=da9cd667d901a272&upstream=bzip2%401.0.8-6",
+          "versions": [
+            {
+              "version": "1.0.8-6+b2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:d35c44d9-65d9-4642-b78d-8164c3092c6a",
+      "bom-ref": "urn:uuid:d0685c70-cd20-41a2-a09f-c397254f5e2d",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61722,12 +62057,18 @@
       "description": "It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/apt@3.3.1?arch=amd64&distro=debian&package-id=70b085103db18901"
+          "ref": "pkg:deb/debian/apt@3.3.1?arch=amd64&distro=debian&package-id=70b085103db18901",
+          "versions": [
+            {
+              "version": "3.3.1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:363cf527-1886-47a6-9fac-0f69192a4d43",
+      "bom-ref": "urn:uuid:9ababbc2-7d76-4bee-abca-8512946796fa",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61759,12 +62100,18 @@
       "description": "It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libapt-pkg7.0@3.3.1?arch=amd64&distro=debian&package-id=c5cd2a443d6efd81&upstream=apt"
+          "ref": "pkg:deb/debian/libapt-pkg7.0@3.3.1?arch=amd64&distro=debian&package-id=c5cd2a443d6efd81&upstream=apt",
+          "versions": [
+            {
+              "version": "3.3.1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:31faa298-a2d2-4593-8dbc-1d04960fec8c",
+      "bom-ref": "urn:uuid:7db88d44-85ff-4ecf-a239-ed85149b8ed1",
       "id": "CVE-2026-41991",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61798,12 +62145,18 @@
       "description": "GNU gzip contains a vulnerability in the gzexe utility related to insecure temporary file handling. When the mktemp utility is not available in the user’s PATH, gzexe falls back to constructing a temporary file path based solely on the process ID (PID). This predictable filename is created without exclusive access or existence checks. A local attacker can pre‑create the predicted temporary file path as a symbolic link pointing to an arbitrary file writable by the victim. When gzexe runs, it follows the symlink and overwrites the target file, resulting in a time‑of‑check to time‑of‑use (TOCTOU) condition that allows arbitrary file overwrite.  This issue has been fixed in the commit 4e6f8b24ab823146ab8776f0b7fe486ab34d4269",
       "affects": [
         {
-          "ref": "pkg:deb/debian/gzip@1.13-1?arch=amd64&distro=debian&package-id=b30644f429eabdac"
+          "ref": "pkg:deb/debian/gzip@1.13-1?arch=amd64&distro=debian&package-id=b30644f429eabdac",
+          "versions": [
+            {
+              "version": "1.13-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:4b2c2dbb-a5f6-4738-a818-f0fc4365448f",
+      "bom-ref": "urn:uuid:8f635bc7-d75e-42d8-a666-b89070feccb9",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61835,12 +62188,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak vulnerability in /krb5/src/lib/gssapi/krb5/k5sealv3.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&distro=debian&package-id=d249beb11f885479&upstream=krb5"
+          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&distro=debian&package-id=d249beb11f885479&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:008a3cce-1cb0-4fc9-9fbc-4d3c3b6b1f26",
+      "bom-ref": "urn:uuid:3099006c-dcec-4676-ae86-fa0cef3a3c6e",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61872,12 +62231,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak vulnerability in /krb5/src/lib/gssapi/krb5/k5sealv3.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&distro=debian&package-id=cf50314958384ae1&upstream=krb5"
+          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&distro=debian&package-id=cf50314958384ae1&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:38d663ea-9461-4759-953d-35c15dc8d25e",
+      "bom-ref": "urn:uuid:c22fce21-0575-4d6a-870f-3cab1979209f",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61909,12 +62274,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak vulnerability in /krb5/src/lib/gssapi/krb5/k5sealv3.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&distro=debian&package-id=ec8a4905fa61cd25&upstream=krb5"
+          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&distro=debian&package-id=ec8a4905fa61cd25&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:d2849489-ebb8-4856-9408-e2cd65b3df13",
+      "bom-ref": "urn:uuid:f07e0152-3f5c-4b2f-9257-444455f7962e",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61946,12 +62317,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak vulnerability in /krb5/src/lib/gssapi/krb5/k5sealv3.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&distro=debian&package-id=ac27a00c1a045150&upstream=krb5"
+          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&distro=debian&package-id=ac27a00c1a045150&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:dc4da418-425f-40d5-b31e-9ae7bf420adc",
+      "bom-ref": "urn:uuid:b895ff53-109c-455d-b1ab-8cb5cc3275c5",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61985,12 +62362,18 @@
       "description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd"
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:ed75b613-b063-42a9-8636-59cd265dd67e",
+      "bom-ref": "urn:uuid:119293cb-fac3-409a-8dbd-cc736d4e75b1",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62024,12 +62407,18 @@
       "description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd"
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e1f33fb6-22fe-4f5d-bc08-35d91cb50a71",
+      "bom-ref": "urn:uuid:2e2790fa-fe1a-4278-ac2f-16825f6cfcd0",
       "id": "CVE-2026-18477",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62063,12 +62452,18 @@
       "description": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783"
+          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-4?arch=amd64&distro=debian&package-id=9e7b40a42175f783",
+          "versions": [
+            {
+              "version": "1.35+dfsg-4",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:9b36becf-3b2c-4f67-9825-6f0c70ad4881",
+      "bom-ref": "urn:uuid:bdd6f962-2d5c-4c8c-8b49-91f8e7bda57a",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62100,12 +62495,18 @@
       "description": "initscripts in rPath Linux 1 sets insecure permissions for the /var/log/btmp file, which allows local users to obtain sensitive information regarding authentication attempts.  NOTE: because sshd detects the insecure permissions and does not log certain events, this also prevents sshd from logging failed authentication attempts by remote attackers.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/login.defs@1%3A4.19.3-2?arch=all&distro=debian&package-id=ce437c4dd98ff6fd&upstream=shadow"
+          "ref": "pkg:deb/debian/login.defs@1%3A4.19.3-2?arch=all&distro=debian&package-id=ce437c4dd98ff6fd&upstream=shadow",
+          "versions": [
+            {
+              "version": "1:4.19.3-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:936db774-1191-46fc-853b-35ad30b21f7d",
+      "bom-ref": "urn:uuid:c68ff9da-434e-456b-ae07-af10121fff79",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62137,12 +62538,18 @@
       "description": "initscripts in rPath Linux 1 sets insecure permissions for the /var/log/btmp file, which allows local users to obtain sensitive information regarding authentication attempts.  NOTE: because sshd detects the insecure permissions and does not log certain events, this also prevents sshd from logging failed authentication attempts by remote attackers.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&package-id=99271ecd5c4e2c46&upstream=shadow"
+          "ref": "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64&distro=debian&package-id=99271ecd5c4e2c46&upstream=shadow",
+          "versions": [
+            {
+              "version": "1:4.19.3-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e3fc1790-8080-4761-a28c-9df655d3f184",
+      "bom-ref": "urn:uuid:c1cc5bfc-3091-4b28-b762-3936f50de3f7",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62174,12 +62581,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak in /krb5/src/lib/rpc/pmap_rmt.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&distro=debian&package-id=d249beb11f885479&upstream=krb5"
+          "ref": "pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&distro=debian&package-id=d249beb11f885479&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:4a794414-02bd-4b3f-a73d-80b4c00a26c0",
+      "bom-ref": "urn:uuid:cdb8222b-e165-485a-91cd-bf2033db8df6",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62211,12 +62624,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak in /krb5/src/lib/rpc/pmap_rmt.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&distro=debian&package-id=cf50314958384ae1&upstream=krb5"
+          "ref": "pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&distro=debian&package-id=cf50314958384ae1&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:99d52394-761a-4370-a82c-3ef06389a029",
+      "bom-ref": "urn:uuid:e0c48bd4-1e7e-47f1-87ad-06445811cfda",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62248,12 +62667,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak in /krb5/src/lib/rpc/pmap_rmt.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&distro=debian&package-id=ec8a4905fa61cd25&upstream=krb5"
+          "ref": "pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&distro=debian&package-id=ec8a4905fa61cd25&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:815f4dde-2477-427f-8c4d-2fd5c11391d1",
+      "bom-ref": "urn:uuid:42491d77-2ba5-487d-9c81-b1378b3e2240",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62285,12 +62710,18 @@
       "description": "Kerberos 5 (aka krb5) 1.21.2 contains a memory leak in /krb5/src/lib/rpc/pmap_rmt.c.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&distro=debian&package-id=ac27a00c1a045150&upstream=krb5"
+          "ref": "pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&distro=debian&package-id=ac27a00c1a045150&upstream=krb5",
+          "versions": [
+            {
+              "version": "1.22.1-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:434b7ec9-4fc9-4cea-b83a-93736665d30e",
+      "bom-ref": "urn:uuid:23570d3e-f513-4596-9f7f-7c4d83cb75f7",
       "id": "CVE-2011-4116",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62322,12 +62753,18 @@
       "description": "_is_safe in the File::Temp module for Perl does not properly handle symlinks.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:8b0d6d21-afac-4060-a936-c2f0c39b8cf8",
+      "bom-ref": "urn:uuid:fd2b5f77-8b60-4df1-bbb5-2aa43fad7b5b",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62359,12 +62796,18 @@
       "description": "systemd, when updating file permissions, allows local users to change the permissions and SELinux security contexts for arbitrary files via a symlink attack on unspecified files.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd"
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:9a8e54d8-d7aa-420b-b7e9-18c6643fdb15",
+      "bom-ref": "urn:uuid:51b01db1-8e1e-4c1a-82d3-dc932b2e4211",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62396,12 +62839,18 @@
       "description": "systemd, when updating file permissions, allows local users to change the permissions and SELinux security contexts for arbitrary files via a symlink attack on unspecified files.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd"
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:e6dcfd04-51ae-4e1d-a2e2-4a5f6684358b",
+      "bom-ref": "urn:uuid:fbff5da9-9c4e-41be-b8cb-b5f494d0805d",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62433,12 +62882,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64&distro=debian&package-id=579d70c74d0d47d0&upstream=util-linux%402.42.2-2"
+          "ref": "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64&distro=debian&package-id=579d70c74d0d47d0&upstream=util-linux%402.42.2-2",
+          "versions": [
+            {
+              "version": "1:2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:3bd5bc1e-140d-4a05-b9be-9aa51ec1e16d",
+      "bom-ref": "urn:uuid:d7d4149b-a59e-48f0-a7c0-2a98887ca4bd",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62470,12 +62925,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64&distro=debian&package-id=c0ca58757da78e1d&upstream=util-linux"
+          "ref": "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64&distro=debian&package-id=c0ca58757da78e1d&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:1878ebd6-dfe1-4ce1-b658-b8469c5a0ea5",
+      "bom-ref": "urn:uuid:3b6be2f1-40e1-46a2-bb37-37bd796aa320",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62507,12 +62968,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64&distro=debian&package-id=98845bf1a7104bc9&upstream=util-linux"
+          "ref": "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64&distro=debian&package-id=98845bf1a7104bc9&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:97af0d3e-b51f-4a5e-a68b-5096dd8a7951",
+      "bom-ref": "urn:uuid:9d752cdf-0b55-4e0b-b487-cedf158477b0",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62544,12 +63011,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64&distro=debian&package-id=973dacb68e1250ac&upstream=util-linux"
+          "ref": "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64&distro=debian&package-id=973dacb68e1250ac&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:bf34e9c8-2935-42e5-878f-5cab63b6a527",
+      "bom-ref": "urn:uuid:ce09b331-4ba2-46d6-ad88-7dc1bbee7ecf",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62581,12 +63054,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64&distro=debian&package-id=3b42f98af8f91c4e&upstream=util-linux"
+          "ref": "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64&distro=debian&package-id=3b42f98af8f91c4e&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:5c5fd010-ae0e-4747-be3e-a8881194d287",
+      "bom-ref": "urn:uuid:c8b9705a-f47d-4c3b-bcaf-da2af31a26f8",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62618,12 +63097,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64&distro=debian&package-id=07b46f8bf25aebc8&upstream=util-linux%402.42.2-2"
+          "ref": "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64&distro=debian&package-id=07b46f8bf25aebc8&upstream=util-linux%402.42.2-2",
+          "versions": [
+            {
+              "version": "1:4.16.0-2+really2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:c4e03838-a352-4188-8bd6-034c426c5de0",
+      "bom-ref": "urn:uuid:75ee174e-2193-452b-8f92-a24dc73caa17",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62655,12 +63140,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/mount@2.42.2-2?arch=amd64&distro=debian&package-id=ea11424f5727074f&upstream=util-linux"
+          "ref": "pkg:deb/debian/mount@2.42.2-2?arch=amd64&distro=debian&package-id=ea11424f5727074f&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:37c86c36-dffa-4fd3-8b2d-94c6879321a7",
+      "bom-ref": "urn:uuid:d04dfb08-c0b5-4da5-a3c0-d2bc2fa29052",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62692,12 +63183,18 @@
       "description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64&distro=debian&package-id=a2a7aff905ddf766"
+          "ref": "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64&distro=debian&package-id=a2a7aff905ddf766",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:1d0e69a6-4de6-417c-84c6-251c8176d096",
+      "bom-ref": "urn:uuid:0336775b-af0d-4561-9304-e7b4c851b0a5",
       "id": "CVE-2017-14159",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62729,12 +63226,18 @@
       "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1"
+          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1",
+          "versions": [
+            {
+              "version": "2.6.13+dfsg-1+b1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:2286de8c-f98b-44ea-9699-fecb237af1f7",
+      "bom-ref": "urn:uuid:03c2277f-1e0d-49ad-8824-7d5dd5868970",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62766,12 +63269,18 @@
       "description": "An issue was discovered in systemd 253. An attacker can modify the contents of past events in a sealed log file and then adjust the file such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd"
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:07662ab5-89e0-4c8f-8932-d011cb0d96ac",
+      "bom-ref": "urn:uuid:90ad81ea-edaf-4fb6-8b2e-dc6954971adb",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62803,12 +63312,18 @@
       "description": "An issue was discovered in systemd 253. An attacker can modify the contents of past events in a sealed log file and then adjust the file such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd"
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:6581cb8a-6a4a-41fc-93c7-7e75e8607534",
+      "bom-ref": "urn:uuid:d859d0c1-d686-4811-bd4c-52a2889cc37f",
       "id": "CVE-2017-18018",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62840,12 +63355,18 @@
       "description": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe"
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:7ba0ba67-6acc-46cf-b5ad-7b9ed8001b89",
+      "bom-ref": "urn:uuid:4f074e44-9eeb-4d96-82d1-0fe4e9401198",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62877,12 +63398,18 @@
       "description": "An issue was discovered in systemd 253. An attacker can modify a sealed log file such that, in some views, not all existing and sealed log messages are displayed. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd"
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:dd467979-a106-4667-94f0-f5d744845625",
+      "bom-ref": "urn:uuid:e1b2ed1b-0a67-4e21-9ec2-1a7e1bae8c75",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62914,12 +63441,18 @@
       "description": "An issue was discovered in systemd 253. An attacker can modify a sealed log file such that, in some views, not all existing and sealed log messages are displayed. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd"
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:67119ee4-6b75-43b3-a4de-e76bea572a68",
+      "bom-ref": "urn:uuid:19c8e9a0-67d9-47a6-823a-d417a534b943",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62951,12 +63484,18 @@
       "description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd"
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:2a77842a-3cca-4b4b-a89e-df01bf1339ff",
+      "bom-ref": "urn:uuid:23a27127-6d85-4b11-830b-f8736d27323d",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62988,12 +63527,18 @@
       "description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd"
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:0f69f572-e4e3-4ede-8af0-3ffe8d352966",
+      "bom-ref": "urn:uuid:63beb62c-df7e-4504-970b-26e55cc5b3a6",
       "id": "CVE-2026-53910",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63025,12 +63570,18 @@
       "description": "diff3 tool from GNU diffutils is vulnerable to a heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations. Incorrect arithmetic in mapping line ranges can result in corrupted values being used for memory allocation and loop bounds. When processing crafted diff output, these overflows may cause the application to allocate insufficient memory and subsequently perform out‑of‑bounds writes during internal processing.  An attacker who can control the output of the diff program used by diff3 (e.g. via --diff-program pointing to a malicious script) can trigger out-of-bounds writes, resulting in a crash and potentially remote code execution depending on the environment.   This issue has been fixed in commit 9ff04d5b84743e331e80b589335a52c5480d1815   NOTE: The project maintainers claim that this is not a security issue. They state that the worst outcome this issue can cause is a crash of diff and that it cannot be used to escalate privileges.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/diffutils@1%3A3.12-1?arch=amd64&distro=debian&package-id=1929bc7ef736872d"
+          "ref": "pkg:deb/debian/diffutils@1%3A3.12-1?arch=amd64&distro=debian&package-id=1929bc7ef736872d",
+          "versions": [
+            {
+              "version": "1:3.12-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:f39f5e98-252e-482f-8e9e-1a85039800c0",
+      "bom-ref": "urn:uuid:732f0a74-ca20-44d0-a9bd-ea8733703f56",
       "id": "CVE-2025-5278",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63062,12 +63613,18 @@
       "description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe"
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:fa0294a5-9db9-4d49-bc6b-7bdf1044d258",
+      "bom-ref": "urn:uuid:4610b399-1ee0-4b7a-bb76-b113e4a6c840",
       "id": "CVE-2026-56392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63099,12 +63656,18 @@
       "description": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer. When processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.  When running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.           This issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d",
       "affects": [
         {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe"
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:b447ded4-25a1-41aa-ac28-d415531184fc",
+      "bom-ref": "urn:uuid:8501a05f-e62a-4ae3-8232-3338be1cbda3",
       "id": "CVE-2026-56391",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63136,12 +63699,18 @@
       "description": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value.  This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.  When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.   This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe"
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:9f75347d-1847-4bf6-9a7c-d62cbe66b574",
+      "bom-ref": "urn:uuid:88103381-f996-45f1-9b18-9f783ea965db",
       "id": "CVE-2026-22185",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63173,12 +63742,18 @@
       "description": "OpenLDAP Lightning Memory-Mapped Database (LMDB) versions up to and including 0.9.14, prior to commit 8e1fda8, contain a heap buffer underflow in the readline() function of mdb_load. When processing malformed input containing an embedded NUL byte, an unsigned offset calculation can underflow and cause an out-of-bounds read of one byte before the allocated heap buffer. This can cause mdb_load to crash, leading to a limited denial-of-service condition.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1"
+          "ref": "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64&distro=debian&package-id=1f9045c0aec06994&upstream=openldap%402.6.13%2Bdfsg-1",
+          "versions": [
+            {
+              "version": "2.6.13+dfsg-1+b1",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:91f4d6bb-5960-4968-9428-7670c3883ee2",
+      "bom-ref": "urn:uuid:dc19e714-3982-4e1d-9fbc-90c7e65ed7b3",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63201,12 +63776,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64&distro=debian&package-id=579d70c74d0d47d0&upstream=util-linux%402.42.2-2"
+          "ref": "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64&distro=debian&package-id=579d70c74d0d47d0&upstream=util-linux%402.42.2-2",
+          "versions": [
+            {
+              "version": "1:2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:8d7b9f2c-7369-4b70-95cc-1ab5584ba8f6",
+      "bom-ref": "urn:uuid:dad00687-b5eb-4b92-94c0-500ac9513d32",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63229,12 +63810,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64&distro=debian&package-id=c0ca58757da78e1d&upstream=util-linux"
+          "ref": "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64&distro=debian&package-id=c0ca58757da78e1d&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:f61db7be-3236-467d-9d5d-744dcd9b61a6",
+      "bom-ref": "urn:uuid:df45febe-bbaf-4140-a157-111a004af5c5",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63257,12 +63844,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64&distro=debian&package-id=98845bf1a7104bc9&upstream=util-linux"
+          "ref": "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64&distro=debian&package-id=98845bf1a7104bc9&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:741d5122-9848-4caa-90c4-b156624914f0",
+      "bom-ref": "urn:uuid:f13ab09c-d314-4dca-91da-b1b199306771",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63285,12 +63878,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64&distro=debian&package-id=973dacb68e1250ac&upstream=util-linux"
+          "ref": "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64&distro=debian&package-id=973dacb68e1250ac&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:35da1d8b-bf1d-42f7-9844-db96afff9f1c",
+      "bom-ref": "urn:uuid:f5a4e871-d4cf-4869-986c-1ec3c2e22c44",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63313,12 +63912,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64&distro=debian&package-id=3b42f98af8f91c4e&upstream=util-linux"
+          "ref": "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64&distro=debian&package-id=3b42f98af8f91c4e&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:1b52f4ed-c902-423b-be30-8435818defa8",
+      "bom-ref": "urn:uuid:97f0237c-8f27-4a5b-a413-b3bb82802005",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63341,12 +63946,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64&distro=debian&package-id=07b46f8bf25aebc8&upstream=util-linux%402.42.2-2"
+          "ref": "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64&distro=debian&package-id=07b46f8bf25aebc8&upstream=util-linux%402.42.2-2",
+          "versions": [
+            {
+              "version": "1:4.16.0-2+really2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:894417c6-a0df-48c2-b4e7-a3a0bbbce782",
+      "bom-ref": "urn:uuid:0e849870-24f8-4a66-9307-fa41a27ba1b9",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63369,12 +63980,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/mount@2.42.2-2?arch=amd64&distro=debian&package-id=ea11424f5727074f&upstream=util-linux"
+          "ref": "pkg:deb/debian/mount@2.42.2-2?arch=amd64&distro=debian&package-id=ea11424f5727074f&upstream=util-linux",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:90ec42a4-8513-47d9-84e7-14695c8ed2a6",
+      "bom-ref": "urn:uuid:9ae0312e-bca9-4fc5-9b95-f86443fe78b9",
       "id": "CVE-2026-15534",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63397,12 +64014,18 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl"
+          "ref": "pkg:deb/debian/perl-base@5.42.2-3?arch=amd64&distro=debian&package-id=00dd2b9cebb99e9d&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.2-3",
+              "status": "affected"
+            }
+          ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:c441e59a-ea5e-4e84-b5c9-c10192b0824b",
+      "bom-ref": "urn:uuid:295b7a1c-46a6-445d-befb-2a6aaf524a76",
       "id": "CVE-2026-53615",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63425,7 +64048,13 @@
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64&distro=debian&package-id=a2a7aff905ddf766"
+          "ref": "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64&distro=debian&package-id=a2a7aff905ddf766",
+          "versions": [
+            {
+              "version": "2.42.2-2",
+              "status": "affected"
+            }
+          ]
         }
       ]
     }
