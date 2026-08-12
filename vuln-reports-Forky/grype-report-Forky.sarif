@@ -373,7 +373,7 @@
                 "text": "CVE-2026-54411 medium vulnerability for libpam-modules package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext."
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
               "help": {
@@ -394,7 +394,7 @@
                 "text": "CVE-2026-54411 medium vulnerability for libpam-modules-bin package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext."
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
               "help": {
@@ -415,7 +415,7 @@
                 "text": "CVE-2026-54411 medium vulnerability for libpam-runtime package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext."
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
               "help": {
@@ -436,7 +436,7 @@
                 "text": "CVE-2026-54411 medium vulnerability for libpam0g package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences. The comparison uses strncmp() (or strncasecmp() when PAM_ICASE_ARG is set) preceded by a length-equality check, so the time to reject a candidate depends on the index of the first differing byte and on whether the candidate's length matches the stored password, leaking the password length and individual prefix bytes. The vulnerable path is reached when the administrator configures pam_userdb with crypt=none, with an unrecognized crypt method, or without a crypt= argument, causing the module to store and compare credentials in plaintext."
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
               "help": {
@@ -997,6 +997,69 @@
               }
             },
             {
+              "id": "CVE-2026-6791-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-6791 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
+              "help": {
+                "text": "Vulnerability CVE-2026-6791\nSeverity: medium\nPackage: libc-bin\nVersion: 2.42-17\nFix Version: 2.43-3\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)",
+                "markdown": "**Vulnerability CVE-2026-6791**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.42-17  | 2.43-3  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "6.6"
+              }
+            },
+            {
+              "id": "CVE-2026-6791-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-6791 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
+              "help": {
+                "text": "Vulnerability CVE-2026-6791\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.42-17\nFix Version: 2.43-3\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)",
+                "markdown": "**Vulnerability CVE-2026-6791**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.42-17  | 2.43-3  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "6.6"
+              }
+            },
+            {
+              "id": "CVE-2026-6791-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-6791 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
+              "help": {
+                "text": "Vulnerability CVE-2026-6791\nSeverity: medium\nPackage: libc6\nVersion: 2.42-17\nFix Version: 2.43-3\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)",
+                "markdown": "**Vulnerability CVE-2026-6791**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.42-17  | 2.43-3  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "6.6"
+              }
+            },
+            {
               "id": "CVE-2019-1010025-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1543,6 +1606,69 @@
               }
             },
             {
+              "id": "CVE-2026-6368-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-6368 low vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6368",
+              "help": {
+                "text": "Vulnerability CVE-2026-6368\nSeverity: low\nPackage: libc-bin\nVersion: 2.42-17\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6368](https://security-tracker.debian.org/tracker/CVE-2026-6368)",
+                "markdown": "**Vulnerability CVE-2026-6368**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.42-17  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6368](https://security-tracker.debian.org/tracker/CVE-2026-6368)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "2.1"
+              }
+            },
+            {
+              "id": "CVE-2026-6368-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-6368 low vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6368",
+              "help": {
+                "text": "Vulnerability CVE-2026-6368\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.42-17\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6368](https://security-tracker.debian.org/tracker/CVE-2026-6368)",
+                "markdown": "**Vulnerability CVE-2026-6368**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.42-17  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6368](https://security-tracker.debian.org/tracker/CVE-2026-6368)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "2.1"
+              }
+            },
+            {
+              "id": "CVE-2026-6368-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-6368 low vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6368",
+              "help": {
+                "text": "Vulnerability CVE-2026-6368\nSeverity: low\nPackage: libc6\nVersion: 2.42-17\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6368](https://security-tracker.debian.org/tracker/CVE-2026-6368)",
+                "markdown": "**Vulnerability CVE-2026-6368**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.42-17  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6368](https://security-tracker.debian.org/tracker/CVE-2026-6368)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "2.1"
+              }
+            },
+            {
               "id": "CVE-2011-4116-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2044,69 +2170,6 @@
                   "pkg:deb/debian/libldap2@2.6.13%2Bdfsg-1%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=openldap%402.6.13%2Bdfsg-1"
                 ],
                 "security-severity": "4.6"
-              }
-            },
-            {
-              "id": "CVE-2026-6791-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-6791 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
-              "help": {
-                "text": "Vulnerability CVE-2026-6791\nSeverity: medium\nPackage: libc-bin\nVersion: 2.42-17\nFix Version: 2.43-3\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)",
-                "markdown": "**Vulnerability CVE-2026-6791**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.42-17  | 2.43-3  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "6.6"
-              }
-            },
-            {
-              "id": "CVE-2026-6791-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-6791 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
-              "help": {
-                "text": "Vulnerability CVE-2026-6791\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.42-17\nFix Version: 2.43-3\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)",
-                "markdown": "**Vulnerability CVE-2026-6791**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.42-17  | 2.43-3  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "6.6"
-              }
-            },
-            {
-              "id": "CVE-2026-6791-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-6791 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory.  The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
-              "help": {
-                "text": "Vulnerability CVE-2026-6791\nSeverity: medium\nPackage: libc6\nVersion: 2.42-17\nFix Version: 2.43-3\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)",
-                "markdown": "**Vulnerability CVE-2026-6791**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.42-17  | 2.43-3  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-6791](https://security-tracker.debian.org/tracker/CVE-2026-6791)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.42-17?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "6.6"
               }
             },
             {
@@ -4419,6 +4482,143 @@
           }
         },
         {
+          "ruleId": "CVE-2026-6791-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "af1c561ee6752ded34afff1c7d6f44a59e248ecac0e5411f67170a713b79f087:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-6791-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ffd51cef91328049825cb9b4aa66a80c1f0fcbd76f1b636701bee92aa9f3856b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-6791-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b25dd4fd802aa0b67891634cae19a9e2c1650d00748f1f2203d2b7bc764d60a7:1"
+          }
+        },
+        {
           "ruleId": "CVE-2019-1010025-libc-bin",
           "level": "note",
           "message": {
@@ -5561,6 +5761,143 @@
           }
         },
         {
+          "ruleId": "CVE-2026-6368-libc-bin",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-bin, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "af1c561ee6752ded34afff1c7d6f44a59e248ecac0e5411f67170a713b79f087:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-6368-libc-gconv-modules-extra",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-gconv-modules-extra, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ffd51cef91328049825cb9b4aa66a80c1f0fcbd76f1b636701bee92aa9f3856b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-6368-libc6",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc6, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b25dd4fd802aa0b67891634cae19a9e2c1650d00748f1f2203d2b7bc764d60a7:1"
+          }
+        },
+        {
           "ruleId": "CVE-2011-4116-perl-base",
           "level": "note",
           "message": {
@@ -6586,143 +6923,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "73541ec57b1dacffa7e9929a0f87f822e0d245a9924c848b98fc0de58dcf83d4:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-6791-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "af1c561ee6752ded34afff1c7d6f44a59e248ecac0e5411f67170a713b79f087:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-6791-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "ffd51cef91328049825cb9b4aa66a80c1f0fcbd76f1b636701bee92aa9f3856b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-6791-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.42-17 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "b25dd4fd802aa0b67891634cae19a9e2c1650d00748f1f2203d2b7bc764d60a7:1"
           }
         },
         {
