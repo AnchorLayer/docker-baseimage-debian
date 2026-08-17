@@ -20,8 +20,8 @@
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-58050",
               "help": {
-                "text": "Vulnerability CVE-2026-58050\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58050](https://security-tracker.debian.org/tracker/CVE-2026-58050)",
-                "markdown": "**Vulnerability CVE-2026-58050**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58050](https://security-tracker.debian.org/tracker/CVE-2026-58050)  |\n"
+                "text": "Vulnerability CVE-2026-58050\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-5\nFix Version: 1.11.1-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58050](https://security-tracker.debian.org/tracker/CVE-2026-58050)",
+                "markdown": "**Vulnerability CVE-2026-58050**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-5  | 1.11.1-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58050](https://security-tracker.debian.org/tracker/CVE-2026-58050)  |\n"
               },
               "properties": {
                 "purls": [
@@ -94,6 +94,48 @@
               }
             },
             {
+              "id": "CVE-2026-14456-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-14456 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+              "help": {
+                "text": "Vulnerability CVE-2026-14456\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-14456](https://security-tracker.debian.org/tracker/CVE-2026-14456)",
+                "markdown": "**Vulnerability CVE-2026-14456**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-14456](https://security-tracker.debian.org/tracker/CVE-2026-14456)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-14456-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-14456 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+              "help": {
+                "text": "Vulnerability CVE-2026-14456\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-14456](https://security-tracker.debian.org/tracker/CVE-2026-14456)",
+                "markdown": "**Vulnerability CVE-2026-14456**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-14456](https://security-tracker.debian.org/tracker/CVE-2026-14456)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-58051-libssh2-1t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -104,8 +146,8 @@
               },
               "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-58051",
               "help": {
-                "text": "Vulnerability CVE-2026-58051\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58051](https://security-tracker.debian.org/tracker/CVE-2026-58051)",
-                "markdown": "**Vulnerability CVE-2026-58051**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58051](https://security-tracker.debian.org/tracker/CVE-2026-58051)  |\n"
+                "text": "Vulnerability CVE-2026-58051\nSeverity: high\nPackage: libssh2-1t64\nVersion: 1.11.1-5\nFix Version: 1.11.1-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58051](https://security-tracker.debian.org/tracker/CVE-2026-58051)",
+                "markdown": "**Vulnerability CVE-2026-58051**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssh2-1t64  | 1.11.1-5  | 1.11.1-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58051](https://security-tracker.debian.org/tracker/CVE-2026-58051)  |\n"
               },
               "properties": {
                 "purls": [
@@ -2171,174 +2213,6 @@
                 ],
                 "security-severity": "4.6"
               }
-            },
-            {
-              "id": "CVE-2026-53615-bsdutils",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for bsdutils package"
-              },
-              "fullDescription": {
-                "text": "Version 1:2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: bsdutils\nVersion: 1:2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | bsdutils  | 1:2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-libblkid1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for libblkid1 package"
-              },
-              "fullDescription": {
-                "text": "Version 2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: libblkid1\nVersion: 2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libblkid1  | 2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-libmount1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for libmount1 package"
-              },
-              "fullDescription": {
-                "text": "Version 2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: libmount1\nVersion: 2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libmount1  | 2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-libsmartcols1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for libsmartcols1 package"
-              },
-              "fullDescription": {
-                "text": "Version 2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: libsmartcols1\nVersion: 2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libsmartcols1  | 2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-libuuid1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for libuuid1 package"
-              },
-              "fullDescription": {
-                "text": "Version 2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: libuuid1\nVersion: 2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libuuid1  | 2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-login",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for login package"
-              },
-              "fullDescription": {
-                "text": "Version 1:4.16.0-2+really2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: login\nVersion: 1:4.16.0-2+really2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | login  | 1:4.16.0-2+really2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-mount",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for mount package"
-              },
-              "fullDescription": {
-                "text": "Version 2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: mount\nVersion: 2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | mount  | 2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/mount@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-53615-util-linux",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-53615 low vulnerability for util-linux package"
-              },
-              "fullDescription": {
-                "text": "Version 2.42.2-2 is affected with no fixes reported yet."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-53615",
-              "help": {
-                "text": "Vulnerability CVE-2026-53615\nSeverity: low\nPackage: util-linux\nVersion: 2.42.2-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)",
-                "markdown": "**Vulnerability CVE-2026-53615**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | util-linux  | 2.42.2-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-53615](https://security-tracker.debian.org/tracker/CVE-2026-53615)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "0.0"
-              }
             }
           ]
         }
@@ -2506,6 +2380,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "73541ec57b1dacffa7e9929a0f87f822e0d245a9924c848b98fc0de58dcf83d4:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-14456-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-14456-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
           }
         },
         {
@@ -6923,386 +6879,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "73541ec57b1dacffa7e9929a0f87f822e0d245a9924c848b98fc0de58dcf83d4:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-bsdutils",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: bsdutils, version 1:2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/bsdutils/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/bsdutils/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/bsdutils.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/bsdutils.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/bsdutils.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/bsdutils.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "3bdf89f44ecf5335f4a7a09777c7bff906a3a0eed7b3b8143b92188d1cc8dd68:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-libblkid1",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libblkid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libblkid1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libblkid1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libblkid1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libblkid1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "49dfbe59c96a899ac8728f78591d5138d6bf7fc795f6e6e6a2554d34504482be:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-libmount1",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libmount1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libmount1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libmount1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libmount1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libmount1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "663e985f7f49e285ba289a6ff2409efeda5f9a2c607f3a0613759c052f04078a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-libsmartcols1",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libsmartcols1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libsmartcols1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libsmartcols1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libsmartcols1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libsmartcols1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "2da7a42ee1ea8954e71d1da9060daa7acb5d83031fcf8a49b17553d5f996797b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-libuuid1",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libuuid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libuuid1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/libuuid1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libuuid1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/libuuid1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "654bc3e849d8089f2f74008723454bb539b42b3c10a322135f38cda1c9f012d3:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-login",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: login, version 1:4.16.0-2+really2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/login/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/login/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.defs.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.defs.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.defs.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.defs.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.postrm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.postrm"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.preinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.preinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/login.prerm"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6121874c9b2a3aa607d51e7a1cd9eaab301481d97eb4eb92a0f441f45afd42af:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-mount",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: mount, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/mount/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/mount/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/mount.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/mount.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/mount.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/mount.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "87f86927429413f3c2dda27e6e5910583d79a30b98b618eb0a88404d7b7f6431:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-53615-util-linux",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: util-linux, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2e4caca4fffa1a2cf7196425ab7fffb5b814d4d1b6b2d4e505e9d3227016e00f:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/util-linux/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/usr/share/doc/util-linux/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/util-linux.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/util-linux.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/util-linux.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/util-linux.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/util-linux.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/util-linux.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/util-linux.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/util-linux.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/util-linux.postrm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/util-linux.postrm"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/util-linux.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c021da0679356b85410b7b41e1e60b29451d4b3501f70a3a6ac2030db6da1a98:/var/lib/dpkg/info/util-linux.prerm"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "82f78da105aee8815402068d9b1b04523e69fa778ffec313e44cd806ad8e2fdb:1"
           }
         }
       ]

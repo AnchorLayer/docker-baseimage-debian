@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom xmlns="http://cyclonedx.org/schema/bom/1.7" serialNumber="urn:uuid:fa90b262-eeb0-4489-be74-cac68d92d78d" version="1">
+<bom xmlns="http://cyclonedx.org/schema/bom/1.7" serialNumber="urn:uuid:f81228ab-d581-4e70-a43c-d65602f0afa3" version="1">
   <metadata>
-    <timestamp>2026-08-17T03:08:32Z</timestamp>
+    <timestamp>2026-08-17T08:54:37Z</timestamp>
     <tools>
       <components>
         <component type="application">
@@ -31381,7 +31381,7 @@
     </dependency>
   </dependencies>
   <vulnerabilities>
-    <vulnerability bom-ref="urn:uuid:50d9ab5e-7165-4d19-b3f1-c89cd7709fd2">
+    <vulnerability bom-ref="urn:uuid:86eb4350-a961-4218-be24-41a770316acf">
       <id>CVE-2026-58050</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31421,11 +31421,15 @@
               <version>1.11.1-5</version>
               <status>affected</status>
             </version>
+            <version>
+              <range>vers:deb/&gt;=1.11.1-6</range>
+              <status>unaffected</status>
+            </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8de56d7b-8123-4724-b428-1cb1a369dee4">
+    <vulnerability bom-ref="urn:uuid:4441f81c-fc5b-441b-8289-9de0f742ed53">
       <id>CVE-2026-13221</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31469,7 +31473,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3561989a-1030-4181-9e86-78eca3b76e70">
+    <vulnerability bom-ref="urn:uuid:669959b6-8fa5-410b-af5f-015254df0504">
       <id>CVE-2026-42496</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31513,7 +31517,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:087699cf-ace9-4e07-ae68-db2fbc2faef0">
+    <vulnerability bom-ref="urn:uuid:0ac2f711-739a-48a4-a137-85412869cecc">
       <id>CVE-2017-17740</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31555,7 +31559,95 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f332817b-4655-45fa-b685-7fc3f80e0686">
+    <vulnerability bom-ref="urn:uuid:81785ef1-6492-49d9-8163-5cb95f909339">
+      <id>CVE-2026-14456</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-14456</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-14456</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-14456</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00465</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&amp;distro=debian&amp;package-id=d1d30a7df542387f&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.3-1</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:c787ca8f-b709-499b-9ebb-19caa54926d7">
+      <id>CVE-2026-14456</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-14456</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-14456</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-14456</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00465</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&amp;distro=debian&amp;package-id=a7ef079068974eb3&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.3-1</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:9ff98bf5-a42a-4835-8e38-659911b5db29">
       <id>CVE-2026-58051</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31595,11 +31687,15 @@
               <version>1.11.1-5</version>
               <status>affected</status>
             </version>
+            <version>
+              <range>vers:deb/&gt;=1.11.1-6</range>
+              <status>unaffected</status>
+            </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:94fae945-fd27-47e3-bd4f-dd4cff2bb6b8">
+    <vulnerability bom-ref="urn:uuid:ebc5a899-22ba-48da-8d5e-e9fab0bff1b4">
       <id>CVE-2026-12087</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31643,7 +31739,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7a49358c-cedc-4ba8-a0fb-bef9907b2b03">
+    <vulnerability bom-ref="urn:uuid:435e5515-eede-4b8a-b435-d5288811d114">
       <id>CVE-2026-9538</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31687,7 +31783,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e4bdcc2f-d91b-43bf-968b-54c2c75d89a4">
+    <vulnerability bom-ref="urn:uuid:3414f524-21a2-428a-a95a-1532b7eee169">
       <id>CVE-2026-42497</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31731,7 +31827,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9323867b-6dd8-4438-a534-56d9ff364613">
+    <vulnerability bom-ref="urn:uuid:d9705040-7b9f-4eac-9744-1caa582f1a08">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31773,7 +31869,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0b14b7ad-e986-4e2c-890a-09eb739175c5">
+    <vulnerability bom-ref="urn:uuid:d2a64320-f0a3-48fd-895e-383bd0e9189b">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31815,7 +31911,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dac35e9b-517d-4f52-b76d-36009b2d9f56">
+    <vulnerability bom-ref="urn:uuid:e86104c3-bc94-4c5d-8aa6-65018707a578">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31857,7 +31953,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6d72047a-9cea-4e62-afc3-59fe2714a3ce">
+    <vulnerability bom-ref="urn:uuid:fe5f93b2-68b2-4444-b9b6-2a9ab2f174c3">
       <id>CVE-2015-3276</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31899,7 +31995,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:89928a11-0133-4bdd-a8d2-01049edc8a96">
+    <vulnerability bom-ref="urn:uuid:2f02c8a1-6acc-4b80-9073-456e39f2b105">
       <id>CVE-2026-41992</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31943,7 +32039,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:254508b1-34cd-4cd7-9f87-48d1cfc1b981">
+    <vulnerability bom-ref="urn:uuid:70b89b02-7db7-40b3-9b7b-0d227fd4a0a3">
       <id>CVE-2026-6238</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31991,7 +32087,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8931086f-4072-49b3-ac56-54743298d9e6">
+    <vulnerability bom-ref="urn:uuid:5910b4a4-a1da-486a-a5df-376fd5b542c6">
       <id>CVE-2026-6238</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32039,7 +32135,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a1d2e0f2-c2ef-45c2-bc18-e86859981786">
+    <vulnerability bom-ref="urn:uuid:f972cabc-ba99-40ff-afa2-cf4b13c61484">
       <id>CVE-2026-6238</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32087,7 +32183,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:59f04f3f-4d32-4aac-8bd3-2baab9940572">
+    <vulnerability bom-ref="urn:uuid:4c19d22f-5188-42b1-b676-ca3e881220d2">
       <id>CVE-2005-2541</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32129,7 +32225,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f4edb6b4-aa9b-40d5-81ea-ab1b845a63d3">
+    <vulnerability bom-ref="urn:uuid:5a9945c1-56a6-4318-9e91-e3b551b74cd5">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32173,7 +32269,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6595ecc1-d1cd-4101-a845-2ab7d11412f3">
+    <vulnerability bom-ref="urn:uuid:31178054-7123-42ee-b7d1-e6cda8ba06ad">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32217,7 +32313,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2e1caee4-fba0-4629-8502-67146761a487">
+    <vulnerability bom-ref="urn:uuid:6e4f5954-62d9-4a6d-9638-17b913c1dac9">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32261,7 +32357,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7d96f8ab-d3b9-465a-9c14-bf5f795322ff">
+    <vulnerability bom-ref="urn:uuid:e3439fd9-942c-4f32-829a-81770303821f">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32305,7 +32401,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3484802c-a785-4aa5-8362-7ad7c09abe5d">
+    <vulnerability bom-ref="urn:uuid:19322dbb-b06b-48c7-ab6b-22dea664c0c8">
       <id>CVE-2026-54876</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32349,7 +32445,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:83de6302-da5d-4d6c-aa68-ecfa1d062967">
+    <vulnerability bom-ref="urn:uuid:59812fd4-c719-4b7d-889c-508fd49ec169">
       <id>CVE-2026-54876</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32393,7 +32489,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d8c10269-5544-4465-9141-17546593dc91">
+    <vulnerability bom-ref="urn:uuid:40ccfcc1-3805-4bd8-91a5-af4b2a4b3db0">
       <id>CVE-2026-5704</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32437,7 +32533,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:14fe9d56-3d6d-4052-b652-9951019867bb">
+    <vulnerability bom-ref="urn:uuid:271f20be-e365-4e6b-a786-c26393935957">
       <id>CVE-2026-7017</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32481,7 +32577,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9ebcce92-fe8d-46a6-8059-97161b00c6cd">
+    <vulnerability bom-ref="urn:uuid:b5d94345-c160-4d48-b132-adb99096a097">
       <id>CVE-2026-5435</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32529,7 +32625,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:96c3485c-b162-4534-93d9-cdedd8ab1ac0">
+    <vulnerability bom-ref="urn:uuid:817b1fd6-d998-432a-a481-b2f509a4a251">
       <id>CVE-2026-5435</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32577,7 +32673,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:608d0877-3d14-4285-85a8-f54d937e6128">
+    <vulnerability bom-ref="urn:uuid:402155fd-f241-49fc-9ede-a6571de5bc45">
       <id>CVE-2026-5435</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32625,7 +32721,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:467a1e91-d581-4504-8eac-45108d462509">
+    <vulnerability bom-ref="urn:uuid:5bf04e1b-d77b-47bd-bba4-e656a8978934">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32667,7 +32763,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:09d97f61-9079-4704-bb24-787e9393fb66">
+    <vulnerability bom-ref="urn:uuid:2e0e03aa-d5fb-48fa-a0eb-530e7acf61c0">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32709,7 +32805,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b4aa0702-9256-4139-9cf5-6a307ecef4ef">
+    <vulnerability bom-ref="urn:uuid:4e4a14bb-c6fd-45b2-a849-d8a39a69f984">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32751,7 +32847,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:aead111f-80c4-4cec-ae78-172a177ecbab">
+    <vulnerability bom-ref="urn:uuid:df4a1894-1e80-41db-b490-b9c6be31cbc0">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32793,7 +32889,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ab4bf900-f64a-4004-9b72-0b09e19cdf06">
+    <vulnerability bom-ref="urn:uuid:b5e0cc01-ae88-42d0-86aa-31d8f192ba75">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32835,7 +32931,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f5bd233f-3f9f-461d-9bb5-d32d3d3d31b2">
+    <vulnerability bom-ref="urn:uuid:b3bb51da-0459-4a61-8c1e-b575419c4845">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32877,7 +32973,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0512840d-f860-418b-97d0-29fde5c18777">
+    <vulnerability bom-ref="urn:uuid:a7550245-714f-49e4-8c0d-f3297fea71b5">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32919,7 +33015,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:649e006b-37f9-4012-9781-578eab406067">
+    <vulnerability bom-ref="urn:uuid:e5b9f5cc-c172-486b-b77b-b3d2c7c69523">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32961,7 +33057,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:65b4763b-00ac-457d-acb3-78df97ecb863">
+    <vulnerability bom-ref="urn:uuid:483bb55a-ebfc-40b2-a4e3-b27c112a21cd">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33003,7 +33099,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:03726aad-a0c5-42f4-bdc7-5c6bac8a56c5">
+    <vulnerability bom-ref="urn:uuid:1a9be213-920f-4997-b4d0-067b8b356826">
       <id>CVE-2026-58055</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33047,7 +33143,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:21b999af-c16f-45f7-902c-b5f995653201">
+    <vulnerability bom-ref="urn:uuid:47a5745c-3281-45d3-9e37-b67bd975370e">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33091,7 +33187,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d0e6f5ca-8792-48c6-82d9-b07ed883f856">
+    <vulnerability bom-ref="urn:uuid:8e5a4812-8553-4a8e-b8b2-49641f5a8b67">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33135,7 +33231,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:523e4168-db32-4f78-801d-df333cfb7f89">
+    <vulnerability bom-ref="urn:uuid:39359b93-616a-4003-88a1-800587014953">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33177,7 +33273,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:151cf5ea-43fa-4bd6-8623-8b6b6c7f9548">
+    <vulnerability bom-ref="urn:uuid:d5b35f88-5b58-4442-9229-e99c069f85c6">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33219,7 +33315,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:26247b97-8932-4fe8-bad4-a09eb4a63807">
+    <vulnerability bom-ref="urn:uuid:e0d25b50-dc80-486e-8c51-6d4d3cb6528b">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33261,7 +33357,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b7bbf3aa-fa0f-4ff9-a6f3-2e986dd17e32">
+    <vulnerability bom-ref="urn:uuid:9a4a13aa-e429-42e0-b665-1d98e25b0aac">
       <id>CVE-2020-15719</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33303,7 +33399,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6a4aa75e-1e5c-4f52-8520-243af2f13c51">
+    <vulnerability bom-ref="urn:uuid:14bf6b87-18e2-455e-8672-c3bcb081894f">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33345,7 +33441,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f541ccf2-79b8-440f-8375-d9de264c15b1">
+    <vulnerability bom-ref="urn:uuid:b31fed80-25c9-4d28-87b3-24946fd99a49">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33387,7 +33483,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e3e08c41-c36e-448a-b2f1-aa41d1953921">
+    <vulnerability bom-ref="urn:uuid:b76c49ae-c48b-40e9-ab0e-09061d0fba1b">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33429,7 +33525,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:99531d9c-9dc6-4822-a4e4-23a96ed20357">
+    <vulnerability bom-ref="urn:uuid:9a9fd75b-ee6b-4942-9e75-3571aa9d882b">
       <id>CVE-2026-6791</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33477,7 +33573,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:54374d78-11b9-480d-9f18-c4b8dadd8b4d">
+    <vulnerability bom-ref="urn:uuid:735a161c-81cf-4b52-abd8-8061302b8b1f">
       <id>CVE-2026-6791</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33525,7 +33621,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9b9da4e6-1402-4504-a488-bb8ff4a22c78">
+    <vulnerability bom-ref="urn:uuid:c72668d6-909c-4c09-b6c4-38add6c7dd6e">
       <id>CVE-2026-6791</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33573,7 +33669,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:56cd81c2-3815-49dd-b73a-661f79008dae">
+    <vulnerability bom-ref="urn:uuid:45111a1f-eb3d-4497-a303-507193a48522">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33615,7 +33711,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0d8b7ae7-ec01-4002-9d1a-28aaa52f3fb6">
+    <vulnerability bom-ref="urn:uuid:3035191e-2c72-4a09-8044-8ac990cf6a81">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33657,7 +33753,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8c234d72-4c15-46f3-b80c-4de6b3598501">
+    <vulnerability bom-ref="urn:uuid:930ebf69-3822-4624-9b2b-702b5f86936f">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33699,7 +33795,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:932d1167-82a2-405a-a87a-35e5af102d85">
+    <vulnerability bom-ref="urn:uuid:c065c6e3-d666-43e2-bd83-8f46bc2fd329">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33741,7 +33837,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0aca622d-dd47-49e7-8671-7ec3d5ab1fd2">
+    <vulnerability bom-ref="urn:uuid:911d2849-b9c2-4c0b-a34a-6f6fdbca8f40">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33783,7 +33879,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f9e6a8df-7c39-45c7-aaa7-9a80fb86f23c">
+    <vulnerability bom-ref="urn:uuid:10e9c25e-9df7-4b7d-bd64-85349aa871c0">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33825,7 +33921,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:435250cc-8599-4b0a-952b-1155dcf4bfc3">
+    <vulnerability bom-ref="urn:uuid:c6857b04-6eb6-4c3d-aa0e-ce298338a3ad">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33867,7 +33963,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:15d373ed-187d-4dcb-a495-2145f3b84b63">
+    <vulnerability bom-ref="urn:uuid:9cea57ac-f97d-41d8-b642-714ae9982b1f">
       <id>CVE-2026-15534</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33911,7 +34007,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:285d5ed6-583c-433a-921b-a509ecc9e20c">
+    <vulnerability bom-ref="urn:uuid:0021024c-ce37-4c54-9f86-866f178fbe34">
       <id>CVE-2026-18508</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33955,7 +34051,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9c52445d-bb32-4e20-904d-b71ca5b39f50">
+    <vulnerability bom-ref="urn:uuid:e23bbd51-557b-4b87-86d0-ab37d84d972a">
       <id>CVE-2026-42250</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33999,7 +34095,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5174791e-2024-4b15-82f3-a083a300b5d4">
+    <vulnerability bom-ref="urn:uuid:bc09664f-b80a-4142-b4a5-60184462135f">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34041,7 +34137,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:032e8e22-62d5-4a53-830e-0779bfb7dba0">
+    <vulnerability bom-ref="urn:uuid:3aec3ff3-7913-42bf-99b1-9016c79ce1b8">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34083,7 +34179,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e23da34a-61c5-4e0b-bb36-63ee58dbd949">
+    <vulnerability bom-ref="urn:uuid:db991e0d-b1bd-4748-ac5c-47f7649d1de0">
       <id>CVE-2026-41991</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34127,7 +34223,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d0209cbc-5833-40fe-a5f1-c9a9c7d50516">
+    <vulnerability bom-ref="urn:uuid:a0e42e64-1b2b-4d08-bd19-b86405f9ff80">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34169,7 +34265,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:56907ae5-c06e-4b1c-b3e4-d5c97c66d7b5">
+    <vulnerability bom-ref="urn:uuid:8143cc3d-741d-44ce-96d4-35ce654e7293">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34211,7 +34307,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6193e26a-a9d1-4c58-8e9e-efc438362635">
+    <vulnerability bom-ref="urn:uuid:a7947f06-9bf6-4a07-a95c-6ab618c1467f">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34253,7 +34349,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:13264916-2c27-422b-94da-8f2611d6ae1e">
+    <vulnerability bom-ref="urn:uuid:0b0dab58-b470-49c9-96b3-1b0c39784322">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34295,7 +34391,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:bbfa6a5b-1926-4217-a245-aa41113fbf34">
+    <vulnerability bom-ref="urn:uuid:a1c2fe0d-6c39-4b3b-a4b4-b52673dd6445">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34339,7 +34435,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7ff11598-36cf-4eac-82d8-ece897a8f4f5">
+    <vulnerability bom-ref="urn:uuid:4207f878-1604-451e-81eb-4eb23732bde7">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34383,7 +34479,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:04fe4035-8007-4be1-a72f-5d119af3b819">
+    <vulnerability bom-ref="urn:uuid:8059c844-283d-45a6-a616-a0474bc38949">
       <id>CVE-2026-18477</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34427,7 +34523,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5926b5ae-dac6-41c3-a314-c622c4cffb34">
+    <vulnerability bom-ref="urn:uuid:3e51573c-364a-4f36-8f52-5809844d3dc6">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34469,7 +34565,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a05f28e7-3cfe-4f31-b67c-535dad880a6f">
+    <vulnerability bom-ref="urn:uuid:8a75bafb-3f91-42a4-90de-bd5aadd2785f">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34511,7 +34607,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3c0288fd-7b33-4931-a898-7e8ac6b9d650">
+    <vulnerability bom-ref="urn:uuid:184aa65a-568a-4db7-ae32-03feea641564">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34553,7 +34649,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0f2f8624-8794-43cc-b6b3-73649e3ec189">
+    <vulnerability bom-ref="urn:uuid:c29b301d-0638-4d10-ae03-2c7d7bac2970">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34595,7 +34691,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b7fd3f19-7f43-4e71-961e-012c540944e5">
+    <vulnerability bom-ref="urn:uuid:584b2c2a-10e5-4be9-a08a-45e9da027160">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34637,7 +34733,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d07e1696-4964-46fd-a59b-36d6b142e27d">
+    <vulnerability bom-ref="urn:uuid:f5472cdb-f292-4777-b10a-7c50dd0b20d5">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34679,7 +34775,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cd6cfefe-0269-4149-82a4-dc8e0ff1b79c">
+    <vulnerability bom-ref="urn:uuid:35dcebe1-368b-459e-afcd-3bd3777983a2">
       <id>CVE-2026-6368</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34723,7 +34819,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3ba22d21-a69e-4fee-9706-23b76448c78f">
+    <vulnerability bom-ref="urn:uuid:897375e6-66f9-42d3-a4da-596b864ae0bc">
       <id>CVE-2026-6368</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34767,7 +34863,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:100c9c6c-ea2c-4b7d-83d0-bf54d29d88f0">
+    <vulnerability bom-ref="urn:uuid:07f7f227-d5d9-4a3a-965c-a4a3abf684a5">
       <id>CVE-2026-6368</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34811,7 +34907,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:65bab0d4-cd72-4582-be1e-add6cc93e912">
+    <vulnerability bom-ref="urn:uuid:84d3002d-5227-4fdd-a1aa-18fb705a3fbc">
       <id>CVE-2011-4116</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34853,7 +34949,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:11e54aca-803e-4153-b2b8-7173095625cd">
+    <vulnerability bom-ref="urn:uuid:dbc0596c-acb4-45da-9ccb-ddaf14c60cf2">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34895,7 +34991,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1583929e-b0cf-44e3-968a-1912a91c67c3">
+    <vulnerability bom-ref="urn:uuid:1f5cebae-f215-4045-93cb-35008c3ea93e">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34937,7 +35033,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6950435c-5b36-4b8d-89fc-feae140a7b4e">
+    <vulnerability bom-ref="urn:uuid:351e042e-8cd7-4e7b-882b-79f22097d7e1">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34979,7 +35075,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d15895cf-1167-473f-9847-60c73ddb364b">
+    <vulnerability bom-ref="urn:uuid:ed2010df-fe86-46e3-ad34-f6db1ca9226a">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35021,7 +35117,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:06e97dbc-b394-4f21-93c5-08967e359e92">
+    <vulnerability bom-ref="urn:uuid:c4b12484-1c2d-4b50-96ef-9782555a94c0">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35063,7 +35159,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:39fb2a93-7447-41fc-b110-6280d10e648e">
+    <vulnerability bom-ref="urn:uuid:8eba9e67-7298-4d7f-a205-3146844a948c">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35105,7 +35201,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6b69e368-9aeb-4fd3-959e-da068c0f3a3b">
+    <vulnerability bom-ref="urn:uuid:f5b8342e-2b67-42d2-8a6a-34c4da8a6bc0">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35147,7 +35243,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:62e3d00f-f8ec-48c6-956f-83de85f50deb">
+    <vulnerability bom-ref="urn:uuid:2779d2c5-95be-4f33-bb64-98832e86ee34">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35189,7 +35285,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d93e63e0-1cda-4b25-ad3f-4111225c301a">
+    <vulnerability bom-ref="urn:uuid:df8cff75-0da5-49d8-84ef-8b3c034d73b9">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35231,7 +35327,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7464e771-462f-47bc-bc4e-f45f45c14994">
+    <vulnerability bom-ref="urn:uuid:b5341b3a-92e7-4873-8df0-d0f23ea118a9">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35273,7 +35369,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cb3aa811-2abc-4a5a-8e7c-ebb496a5a8b3">
+    <vulnerability bom-ref="urn:uuid:69270aec-41ea-4854-bc62-9e0adf5b5ffe">
       <id>CVE-2017-14159</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35315,7 +35411,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9074d87e-3876-4392-9b43-884d1ae7ac02">
+    <vulnerability bom-ref="urn:uuid:79038864-d37f-4ebb-a7bd-44e18416b95a">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35357,7 +35453,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8fe012b8-1d1b-44ad-ad42-8be7784c9d5a">
+    <vulnerability bom-ref="urn:uuid:a4ab0c75-6fc0-4464-96c1-da14690b0151">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35399,7 +35495,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:82d9a7dc-b34e-47bb-bc52-d54ddd04c6a8">
+    <vulnerability bom-ref="urn:uuid:42a3f565-45de-4a2a-822e-60905a74f14b">
       <id>CVE-2017-18018</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35441,7 +35537,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1a081019-1825-4ccd-87cb-35af2df42f61">
+    <vulnerability bom-ref="urn:uuid:473c7b7c-e3c2-4770-8d4f-9a3cf432b948">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35483,7 +35579,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d0731385-6ea4-454e-998f-d46918ae1f22">
+    <vulnerability bom-ref="urn:uuid:f67f78e4-09a5-45f2-bfc7-33b53d995534">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35525,7 +35621,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:307866b0-a355-470f-bb9c-f6ce267ff656">
+    <vulnerability bom-ref="urn:uuid:4788cfd2-ecbf-40c2-b959-cab15b86e2c1">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35567,7 +35663,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c5806fae-b01d-43c6-bcfc-331c4c3a0d09">
+    <vulnerability bom-ref="urn:uuid:c5d40869-8ebc-4816-ab84-2653061e3745">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35609,7 +35705,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4b8bfc1d-8355-4e9f-a98a-f19939ee7bec">
+    <vulnerability bom-ref="urn:uuid:a56039d7-3bc2-4ade-86d6-908b215b6a43">
       <id>CVE-2026-53910</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35651,7 +35747,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7f94ed6a-8daa-4f40-bc6a-4eb8dcd85923">
+    <vulnerability bom-ref="urn:uuid:ee719f15-d2e5-49ed-9695-e76a9810a69e">
       <id>CVE-2025-5278</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35693,7 +35789,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4a03eacb-1803-4a5e-99c1-08ba941b8bb1">
+    <vulnerability bom-ref="urn:uuid:ce0146c1-8e6a-4631-a9b4-29853c6cc254">
       <id>CVE-2026-56392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35735,7 +35831,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0c6ad7ac-5079-47b8-af53-03f76a374305">
+    <vulnerability bom-ref="urn:uuid:5fe232c5-f9e0-4730-b8d7-9bbd02de528f">
       <id>CVE-2026-56391</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35777,7 +35873,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2a85597e-d345-4806-ac57-7e1748d8e46b">
+    <vulnerability bom-ref="urn:uuid:23dcc3b9-054e-4048-803a-324c22bbec68">
       <id>CVE-2026-22185</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35813,270 +35909,6 @@
           <versions>
             <version>
               <version>2.6.13+dfsg-1+b1</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f87b96a8-e5dd-4836-a7a5-6cd77394add8">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=579d70c74d0d47d0&amp;upstream=util-linux%402.42.2-2</ref>
-          <versions>
-            <version>
-              <version>1:2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:75d0ea81-71a9-424b-a95f-cc7679acdb29">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=c0ca58757da78e1d&amp;upstream=util-linux</ref>
-          <versions>
-            <version>
-              <version>2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:64eaaa99-16a9-4805-9ed2-722a7a9e8fd4">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libmount1@2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=98845bf1a7104bc9&amp;upstream=util-linux</ref>
-          <versions>
-            <version>
-              <version>2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:73ea5ba0-f4e8-451c-998e-0ce5ac21d257">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=973dacb68e1250ac&amp;upstream=util-linux</ref>
-          <versions>
-            <version>
-              <version>2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f84a61c7-546a-4444-b024-b087278e57ed">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=3b42f98af8f91c4e&amp;upstream=util-linux</ref>
-          <versions>
-            <version>
-              <version>2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7d56240f-f7a5-437d-955f-7fe266e6ed43">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=07b46f8bf25aebc8&amp;upstream=util-linux%402.42.2-2</ref>
-          <versions>
-            <version>
-              <version>1:4.16.0-2+really2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3f43d1cb-5a88-4e5a-8630-10f8368c365b">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/mount@2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=ea11424f5727074f&amp;upstream=util-linux</ref>
-          <versions>
-            <version>
-              <version>2.42.2-2</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:85d44b85-7e7c-4e14-a824-b004931e570f">
-      <id>CVE-2026-53615</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-53615</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-53615</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>unknown</severity>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/util-linux@2.42.2-2?arch=amd64&amp;distro=debian&amp;package-id=a2a7aff905ddf766</ref>
-          <versions>
-            <version>
-              <version>2.42.2-2</version>
               <status>affected</status>
             </version>
           </versions>
