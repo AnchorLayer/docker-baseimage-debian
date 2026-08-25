@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:25c8d121-3836-4e8c-9bf6-63aba0db7ad6",
+  "serialNumber": "urn:uuid:95034d28-2f29-4de0-9822-2765aaa6aa0b",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-25T03:07:59Z",
+    "timestamp": "2026-08-25T09:11:40Z",
     "tools": {
       "components": [
         {
@@ -59659,7 +59659,97 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:44fb40df-4ba6-4e9a-8301-8d0067957335",
+      "bom-ref": "urn:uuid:837c8f16-228b-403b-8c40-b69d5ff0e9dd",
+      "id": "CVE-2026-14456",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-14456",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00612,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:83b4e48b-6b01-4e3a-829f-cab0566926e5",
+      "id": "CVE-2026-14456",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-14456",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00612,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:fe860cec-c51f-4853-aafb-d56e21b67909",
       "id": "CVE-2017-17740",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59702,44 +59792,42 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ca658a67-559e-421c-a043-b53011d36c6d",
-      "id": "CVE-2026-14456",
+      "bom-ref": "urn:uuid:65ea2887-0fe6-478e-9365-e4c68188e535",
+      "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
       },
       "references": [
         {
-          "id": "CVE-2026-14456",
+          "id": "CVE-2018-20796",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
           }
         }
       ],
       "ratings": [
         {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          "severity": "none",
+          "method": "other"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00465,
+          "score": 0.05757,
           "method": "other"
         }
       ],
-      "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+      "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
           "versions": [
             {
-              "version": "3.6.3-1",
+              "version": "2.43-3",
               "status": "affected"
             }
           ]
@@ -59747,44 +59835,42 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b6a86b15-4872-4947-a07c-26c40943d419",
-      "id": "CVE-2026-14456",
+      "bom-ref": "urn:uuid:3810e702-7891-4803-8077-a87fea8e5e50",
+      "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
       },
       "references": [
         {
-          "id": "CVE-2026-14456",
+          "id": "CVE-2018-20796",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14456"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
           }
         }
       ],
       "ratings": [
         {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          "severity": "none",
+          "method": "other"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00465,
+          "score": 0.05757,
           "method": "other"
         }
       ],
-      "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit.  Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests.  The issue is present since OpenSSL 3.5 when the QUIC server implementation was added.  The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl).  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+      "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
           "versions": [
             {
-              "version": "3.6.3-1",
+              "version": "2.43-3",
               "status": "affected"
             }
           ]
@@ -59792,7 +59878,50 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1dced277-26ed-4c85-8ff7-484a2c2c509a",
+      "bom-ref": "urn:uuid:27506a9d-0a69-47f9-8469-4c69631e185b",
+      "id": "CVE-2018-20796",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
+      },
+      "references": [
+        {
+          "id": "CVE-2018-20796",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.05757,
+          "method": "other"
+        }
+      ],
+      "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:e42b6968-7372-4429-b963-e36b62409a82",
       "id": "CVE-2015-3276",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59835,136 +59964,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6474aab6-f96e-44a4-9832-464c23214236",
-      "id": "CVE-2018-20796",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
-      },
-      "references": [
-        {
-          "id": "CVE-2018-20796",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.05168,
-          "method": "other"
-        }
-      ],
-      "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:a660a17d-a51f-4b45-ac1e-2d1e380af420",
-      "id": "CVE-2018-20796",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
-      },
-      "references": [
-        {
-          "id": "CVE-2018-20796",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.05168,
-          "method": "other"
-        }
-      ],
-      "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:0f214d0d-c4bd-49b8-882e-f0ac9b0b1a91",
-      "id": "CVE-2018-20796",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
-      },
-      "references": [
-        {
-          "id": "CVE-2018-20796",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2018-20796"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.05168,
-          "method": "other"
-        }
-      ],
-      "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:cd33553b-7dfd-4b4f-b4c6-20508e9e05a7",
+      "bom-ref": "urn:uuid:21866ed0-75e5-4bdb-9425-35a1f6b4979d",
       "id": "CVE-2005-2541",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60007,7 +60007,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9889e3b3-2541-4575-b4ff-b200466ad758",
+      "bom-ref": "urn:uuid:46915538-008e-4089-99f6-1c9fa87144cb",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60052,7 +60052,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1538c1d7-bbeb-4375-8068-6d86edd9171f",
+      "bom-ref": "urn:uuid:c3143346-2d8d-4832-ae12-8a69417bb254",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60097,7 +60097,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:16b1055e-becf-423c-ac30-44d8c02cb0bc",
+      "bom-ref": "urn:uuid:f1ff458e-35c6-4d93-b573-88c984152217",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60142,7 +60142,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:970c9794-c279-4249-9998-8ac8764e6d52",
+      "bom-ref": "urn:uuid:3281e3be-2df9-452e-9cbf-ab9e29317e70",
       "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60187,7 +60187,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f98d8e18-b0d6-4160-9d21-4ede7405c1c3",
+      "bom-ref": "urn:uuid:c75adcfc-271d-4906-a2ac-059199ce585d",
       "id": "CVE-2026-54876",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60232,7 +60232,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2892901e-6e41-4274-bc58-2c30a57c713f",
+      "bom-ref": "urn:uuid:61d92024-2b7e-498c-a540-eda69f83ec61",
       "id": "CVE-2026-54876",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60277,7 +60277,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ff9ca240-e940-462c-b1c9-977698ead4b1",
+      "bom-ref": "urn:uuid:31d38051-bf8f-44e0-b964-8db264e4d1c2",
       "id": "CVE-2026-5704",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60322,7 +60322,136 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0412d889-73d7-4bba-ad37-aadb2fa699ba",
+      "bom-ref": "urn:uuid:663cd384-6eac-43f8-be7e-f2acff5c911e",
+      "id": "CVE-2019-1010022",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010022",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.03223,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:9ee46f37-d56b-4810-b20a-e9a7273a3476",
+      "id": "CVE-2019-1010022",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010022",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.03223,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:7cdebc52-0df9-4e7e-834d-4ee604c23439",
+      "id": "CVE-2019-1010022",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010022",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.03223,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:c1c270ea-0bcf-4e51-b03d-8676da96e04a",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60347,7 +60476,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.03344,
+          "score": 0.03193,
           "method": "other"
         }
       ],
@@ -60365,7 +60494,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:282d59ea-22ef-4fea-b524-4a6a023b1f18",
+      "bom-ref": "urn:uuid:3220c3b5-81ea-46a5-b847-fe4f63488330",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60390,7 +60519,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.03344,
+          "score": 0.03193,
           "method": "other"
         }
       ],
@@ -60408,7 +60537,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:52d2947b-0ac1-439f-bfb8-c62f51fd16ca",
+      "bom-ref": "urn:uuid:9856af54-1bf8-4568-b434-44ebe5a411b4",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60433,7 +60562,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.03344,
+          "score": 0.03193,
           "method": "other"
         }
       ],
@@ -60451,7 +60580,136 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e9c6f599-7f50-4d6a-9ddf-303bfb8cb565",
+      "bom-ref": "urn:uuid:21ec8930-dbb7-483e-a682-c9bad661c3a0",
+      "id": "CVE-2019-1010023",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010023",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.03044,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:d9136379-dcae-42ca-8b38-3de2512bdc88",
+      "id": "CVE-2019-1010023",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010023",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.03044,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:9a5e57b9-1ef2-4863-9811-92392efd21c9",
+      "id": "CVE-2019-1010023",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010023",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.03044,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:5b094864-7958-4861-91d5-e304a584eb43",
       "id": "CVE-2026-58055",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60478,7 +60736,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00263,
+          "score": 0.00253,
           "method": "other"
         }
       ],
@@ -60496,265 +60754,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:04a7ca93-ab97-4576-81fd-8c54fdbd27b4",
-      "id": "CVE-2019-1010023",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010023",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02781,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:d6da5556-574f-4ce8-9517-71f23982fb6f",
-      "id": "CVE-2019-1010023",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010023",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02781,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:69aed676-7052-486a-aaa9-2792ccddbbd6",
-      "id": "CVE-2019-1010023",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010023",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010023"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02781,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:9acf821f-b2bc-42db-9587-40c3bfc58721",
-      "id": "CVE-2019-1010022",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010022",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02778,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:43398d50-c663-40e9-b4f5-c6c1264cc292",
-      "id": "CVE-2019-1010022",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010022",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02778,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:1b248cf3-acd8-468e-b492-670b7cc05783",
-      "id": "CVE-2019-1010022",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010022",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010022"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02778,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:36fa2832-e628-457b-9090-084fa8b50b0e",
+      "bom-ref": "urn:uuid:1f09c736-20a2-4e59-a1b7-58c1a77997b7",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60781,7 +60781,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00408,
+          "score": 0.00423,
           "method": "other"
         }
       ],
@@ -60799,7 +60799,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bfd6192d-c067-4a11-a84f-7bc064d727ab",
+      "bom-ref": "urn:uuid:84b9176d-de5d-4db5-b666-a910f2b69687",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60826,7 +60826,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00408,
+          "score": 0.00423,
           "method": "other"
         }
       ],
@@ -60844,7 +60844,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:351c1281-3c48-4d5b-a5a4-db536d27f6d6",
+      "bom-ref": "urn:uuid:e61e2519-612e-4431-8f0a-a2bba80e3450",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60887,7 +60887,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:07a8cc88-f6eb-4f95-bcae-64410fcd6d79",
+      "bom-ref": "urn:uuid:30126bca-fa44-4779-8639-3139d26aa85e",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60930,7 +60930,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d75985eb-7b48-4038-ad17-1db429adcfe6",
+      "bom-ref": "urn:uuid:8e306e37-f46e-4a81-92f9-e5b98a84765c",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60973,7 +60973,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e74c48ad-cc5f-41fd-be0f-43f0fcb07aa3",
+      "bom-ref": "urn:uuid:ab0c18b7-2ae5-4de0-9ffc-27a2bcad5ee9",
       "id": "CVE-2020-15719",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61016,136 +61016,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6cd2274c-bc58-4b8c-ab91-0be5d1fd316a",
-      "id": "CVE-2019-1010025",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010025",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02327,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:69a0a3b0-e325-41a6-9437-9125c77760a8",
-      "id": "CVE-2019-1010025",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010025",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02327,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:343f9d7f-17c5-4ef1-a50d-817228a63d01",
-      "id": "CVE-2019-1010025",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
-      },
-      "references": [
-        {
-          "id": "CVE-2019-1010025",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.02327,
-          "method": "other"
-        }
-      ],
-      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-3",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:46204a36-1412-45e6-965a-e2a363201d4b",
+      "bom-ref": "urn:uuid:e3d6b282-b250-4e20-ba4f-42cd5461afc5",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61170,7 +61041,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.02218,
+          "score": 0.02427,
           "method": "other"
         }
       ],
@@ -61188,7 +61059,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:41db86cb-6678-4bc4-a8e6-a51f162df358",
+      "bom-ref": "urn:uuid:3c56bff1-a7f7-4d9b-a922-8d3191c5379d",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61213,7 +61084,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.02218,
+          "score": 0.02427,
           "method": "other"
         }
       ],
@@ -61231,7 +61102,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3294355a-c147-4970-a2c0-e96a80afb057",
+      "bom-ref": "urn:uuid:9c44eb1c-3dba-4b0c-9d09-dc6800b3530e",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61256,7 +61127,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.02218,
+          "score": 0.02427,
           "method": "other"
         }
       ],
@@ -61274,7 +61145,136 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:07766b57-33fc-4765-a8c8-efbd7ac807c6",
+      "bom-ref": "urn:uuid:878bcf39-93e9-4244-868d-fe6bc9a7ba04",
+      "id": "CVE-2019-1010025",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010025",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.02267,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:d0841143-79dd-4da8-9d9e-24551cd330f4",
+      "id": "CVE-2019-1010025",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010025",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.02267,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:528bcc82-6a27-45a8-adf1-247c3bd550e2",
+      "id": "CVE-2019-1010025",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
+      },
+      "references": [
+        {
+          "id": "CVE-2019-1010025",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2019-1010025"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.02267,
+          "method": "other"
+        }
+      ],
+      "description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:8cabe173-b94b-4140-8377-7015200b002a",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61299,7 +61299,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.01972,
+          "score": 0.02067,
           "method": "other"
         }
       ],
@@ -61317,7 +61317,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:43e8c759-72e3-4e9c-8ea6-e23571de9f5a",
+      "bom-ref": "urn:uuid:a140f53a-1758-4868-8118-7ca5506e4002",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61342,7 +61342,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.01972,
+          "score": 0.02067,
           "method": "other"
         }
       ],
@@ -61360,7 +61360,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:fe63762a-7ae5-461d-8ad9-1caf004608b2",
+      "bom-ref": "urn:uuid:962fd741-3d5e-492f-bddb-5b0d8cb834a5",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61385,7 +61385,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.01972,
+          "score": 0.02067,
           "method": "other"
         }
       ],
@@ -61403,7 +61403,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f0a1afee-9ce4-40a7-8c92-15acabc4f006",
+      "bom-ref": "urn:uuid:b34e09e1-979f-4516-9267-780b65c9d2e0",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61428,7 +61428,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.01972,
+          "score": 0.02067,
           "method": "other"
         }
       ],
@@ -61446,7 +61446,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f5760bfa-ed00-441f-b672-56919eb7479d",
+      "bom-ref": "urn:uuid:47b1aff3-2fa6-4f77-ac79-2bf4bd47761c",
       "id": "CVE-2026-15534",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61491,7 +61491,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6c0225c2-9291-46e0-a911-58cf5ab4ba98",
+      "bom-ref": "urn:uuid:38ed06c4-4fc0-45ae-bc57-b9552e2fbd6f",
       "id": "CVE-2026-18508",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61536,7 +61536,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:59984615-365e-44a2-a51e-133abf774952",
+      "bom-ref": "urn:uuid:a31086ff-7e96-4328-a781-8c88d1ab4e20",
       "id": "CVE-2026-42250",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61581,7 +61581,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f2c572a8-8230-4eed-8223-e02a089be6b9",
+      "bom-ref": "urn:uuid:8cc86e9c-3873-4427-89e5-743d548bd24c",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61624,7 +61624,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6b55d37f-8d2b-4cab-8b37-e4f83ff5ccf7",
+      "bom-ref": "urn:uuid:04b6390a-040d-4d17-b6fc-b38ee4170c44",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61667,7 +61667,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d9a2f751-6d1c-4e4f-9c37-df292e661ed3",
+      "bom-ref": "urn:uuid:17fa37b1-8a36-4f97-a077-7567405fa8e4",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61710,7 +61710,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a8948e33-a9d9-47be-afe7-d8ea15b9f203",
+      "bom-ref": "urn:uuid:d9c85580-56d7-4c4b-9cf2-02960fdc29ff",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61753,7 +61753,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3ce4be6b-9ec7-4197-b5ea-17529fb544d4",
+      "bom-ref": "urn:uuid:920c64e2-3453-4ab2-a57b-e4c35dbde5a5",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61796,7 +61796,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d6f0bd4a-c1b6-4a9b-a41c-078e25253e16",
+      "bom-ref": "urn:uuid:922c2e32-d69e-4a7a-a694-3ab71c76f8c2",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61839,7 +61839,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4f479719-d258-4f04-ba24-c610aafd5b3f",
+      "bom-ref": "urn:uuid:0513936c-19d3-465e-8d3c-710b3fc65f01",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61884,7 +61884,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:89798e66-895f-48a7-8267-54e0a80a736a",
+      "bom-ref": "urn:uuid:a017285d-c2d4-4929-9088-b5bb65f6ef66",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61929,52 +61929,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:dd09e3f6-d937-4c6e-a57b-6c724c379e60",
-      "id": "CVE-2026-18477",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-18477"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-18477",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-18477"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 4.4,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00104,
-          "method": "other"
-        }
-      ],
-      "description": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-5?arch=amd64&distro=debian&package-id=61e596b80c0448c0",
-          "versions": [
-            {
-              "version": "1.35+dfsg-5",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:c98e1d6e-dfef-4a35-9610-33acd9691566",
+      "bom-ref": "urn:uuid:f0ced7b4-6136-42bd-b053-15103c3ef80e",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62017,7 +61972,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:18547d15-736f-4b13-b131-9a7f13b13ddf",
+      "bom-ref": "urn:uuid:126cf1f0-0163-470a-9469-c251e7235274",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62060,7 +62015,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2f6048dd-d6e4-4cfa-9fc8-cefe630929cd",
+      "bom-ref": "urn:uuid:96e41ca7-5c1e-4ab3-b7a2-cd2a8a9f34a2",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62103,7 +62058,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:21b73c8d-bc77-40ed-abed-15daa88557cd",
+      "bom-ref": "urn:uuid:2f5f9bf2-eeaa-4bd5-b616-663ef604517a",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62146,7 +62101,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e5ecbe3e-2098-4be0-a1f6-a00343d78b5c",
+      "bom-ref": "urn:uuid:851e26c4-8f60-460d-98ff-0fe1bf5c437a",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62189,7 +62144,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f1e62599-a4a8-40ac-b303-3e8fdb6566e0",
+      "bom-ref": "urn:uuid:3b4d8c71-cdc4-4f68-8eb8-cce36ca57880",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62232,7 +62187,52 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:330d6c2d-0fef-4978-a184-2c73874a7b40",
+      "bom-ref": "urn:uuid:4458c3c9-f22b-4204-8a2a-537b89b5c9b0",
+      "id": "CVE-2026-18477",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-18477"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-18477",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-18477"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 4.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00079,
+          "method": "other"
+        }
+      ],
+      "description": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/tar@1.35%2Bdfsg-5?arch=amd64&distro=debian&package-id=61e596b80c0448c0",
+          "versions": [
+            {
+              "version": "1.35+dfsg-5",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:3d7f2b92-124e-4ae2-80b2-bd42d00a6f63",
       "id": "CVE-2026-6368",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62281,7 +62281,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d81583a8-dfd6-4b4d-9f94-3d543a101c47",
+      "bom-ref": "urn:uuid:10d694de-6492-41b4-a192-c279d8718a0b",
       "id": "CVE-2026-6368",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62330,7 +62330,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:eb8beee5-c87d-4dd6-bf73-05e088d448c4",
+      "bom-ref": "urn:uuid:41a9f93c-b5ef-460d-bea5-a517f67354a1",
       "id": "CVE-2026-6368",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62379,7 +62379,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:21fbf0f8-ef1d-4ca7-a5c6-e968427ecc0d",
+      "bom-ref": "urn:uuid:6b90e59d-420c-4559-903b-3955e95216f3",
       "id": "CVE-2011-4116",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62422,7 +62422,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bf6c4784-7293-45fe-bd5f-d0fea277e4ea",
+      "bom-ref": "urn:uuid:86d2c024-17ed-45b3-9fec-d1c7edb96a07",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62465,7 +62465,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5d170d19-74ac-4a9f-af5b-ad59427e4328",
+      "bom-ref": "urn:uuid:56b4317d-3767-4ed9-861b-c36ed9a98409",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62508,7 +62508,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f7275d6b-0412-45db-9727-d855d1163683",
+      "bom-ref": "urn:uuid:5f65463f-5d37-47f4-a1b4-562a5aa4ce47",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62551,7 +62551,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7ddacf45-6dc6-4dc4-b6ad-654035dddecc",
+      "bom-ref": "urn:uuid:10d12071-7fe2-45b6-8f53-bab8957c0bf3",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62594,7 +62594,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7a559255-5842-4089-a458-f9ed9d0e1814",
+      "bom-ref": "urn:uuid:f9f0de94-a545-45f8-95e9-196ecc4513c7",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62637,7 +62637,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:87dde329-33d4-48ae-ae21-1a433790d302",
+      "bom-ref": "urn:uuid:03039738-5c2d-4bc2-8f1c-7e1896c38b42",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62680,7 +62680,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8c96713b-be3e-4e56-9629-ebbcf48811b2",
+      "bom-ref": "urn:uuid:88929439-c453-47e3-af79-07e9d0c8b294",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62723,7 +62723,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6eec88eb-ea21-49d3-8997-0e82765384e7",
+      "bom-ref": "urn:uuid:8b9d6f14-3ff0-44a0-94d2-774463fd36f7",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62766,7 +62766,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3f679c66-b424-457d-8144-595db9f4c19e",
+      "bom-ref": "urn:uuid:93b84920-a4ec-4a29-af64-6d8043f216f4",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62809,7 +62809,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:78b6869b-0460-44ca-b6e9-83a7e6f37e36",
+      "bom-ref": "urn:uuid:d0359922-59fa-401c-9fb0-517c7280d2e5",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62852,50 +62852,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:930cbdc3-1525-4a4b-a41d-7551ccdb64c4",
-      "id": "CVE-2017-18018",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2017-18018"
-      },
-      "references": [
-        {
-          "id": "CVE-2017-18018",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2017-18018"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00353,
-          "method": "other"
-        }
-      ],
-      "description": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
-          "versions": [
-            {
-              "version": "9.10-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:877ca940-1e3a-445d-80ee-5b70ae465124",
+      "bom-ref": "urn:uuid:901a390a-0ca6-40b4-bcfb-1f27fe369255",
       "id": "CVE-2017-14159",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62938,7 +62895,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:db0c4dae-2cec-4a0a-b867-7ce717a6b3ed",
+      "bom-ref": "urn:uuid:5f90b4f2-3569-411c-aa58-143a93b1543f",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62981,7 +62938,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:fc93da49-5db5-49f8-8883-c658cd881c56",
+      "bom-ref": "urn:uuid:1cc14b8c-f0f5-498a-967d-dde4cc938325",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63024,7 +62981,50 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3d4ad721-a204-4a0b-b965-93e2297dfe63",
+      "bom-ref": "urn:uuid:79f154a3-5e54-4528-bf64-1ef9c9694253",
+      "id": "CVE-2017-18018",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2017-18018"
+      },
+      "references": [
+        {
+          "id": "CVE-2017-18018",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2017-18018"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00348,
+          "method": "other"
+        }
+      ],
+      "description": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:21f37dc5-6346-4e5c-9ac9-bcd54b3445c8",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63067,7 +63067,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:503c7f0e-0197-4871-9fa7-88f737adf0f7",
+      "bom-ref": "urn:uuid:6509be55-be36-4b3e-8baa-a92514a28172",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63110,93 +63110,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:aaff8768-c803-43ad-85d2-fde98774c480",
-      "id": "CVE-2023-31438",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
-      },
-      "references": [
-        {
-          "id": "CVE-2023-31438",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00325,
-          "method": "other"
-        }
-      ],
-      "description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
-          "versions": [
-            {
-              "version": "261.2-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:81988aa8-cfb3-4206-b58d-2a4786926ae2",
-      "id": "CVE-2023-31438",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
-      },
-      "references": [
-        {
-          "id": "CVE-2023-31438",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00325,
-          "method": "other"
-        }
-      ],
-      "description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
-          "versions": [
-            {
-              "version": "261.2-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:128f9e29-034c-48fa-959b-e1d344ecd2ec",
+      "bom-ref": "urn:uuid:20d18ba8-6cc8-4dc7-9088-383fef0c5569",
       "id": "CVE-2026-53910",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63221,7 +63135,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00253,
+          "score": 0.00332,
           "method": "other"
         }
       ],
@@ -63239,7 +63153,93 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5b32f008-37ee-46c3-ae85-04b582599b7b",
+      "bom-ref": "urn:uuid:9550c029-f514-47d9-a3e6-e38768242529",
+      "id": "CVE-2023-31438",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-31438",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00325,
+          "method": "other"
+        }
+      ],
+      "description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:00b5bc0e-78ab-4e93-8685-2f2e9c49810c",
+      "id": "CVE-2023-31438",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
+      },
+      "references": [
+        {
+          "id": "CVE-2023-31438",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2023-31438"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00325,
+          "method": "other"
+        }
+      ],
+      "description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:d7848aba-1cb9-4cf5-b0ba-e6b1f4899a51",
       "id": "CVE-2025-5278",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63282,7 +63282,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c692bf0b-d741-4e52-b624-2ec924242d5f",
+      "bom-ref": "urn:uuid:dc894bce-4ac8-47a4-bd2b-d124ad28f9c4",
       "id": "CVE-2026-56392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63307,7 +63307,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00149,
+          "score": 0.00155,
           "method": "other"
         }
       ],
@@ -63325,7 +63325,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:52ab28bc-b20c-4202-aa0c-23a07cfb688e",
+      "bom-ref": "urn:uuid:ba4be8ef-d34c-40aa-bb4f-cbccfbb6bd18",
       "id": "CVE-2026-56391",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63350,7 +63350,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00135,
+          "score": 0.0014,
           "method": "other"
         }
       ],
@@ -63368,7 +63368,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:702576a7-bb8d-4c99-991a-d6822d25a167",
+      "bom-ref": "urn:uuid:9303ea1c-6b1c-4a16-b977-fc55fccf34eb",
       "id": "CVE-2026-22185",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63411,7 +63411,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9fd1b745-57c7-43ca-8d3f-f3f0b11bdc7b",
+      "bom-ref": "urn:uuid:caebcbb0-b311-43b9-84a0-289d4e459297",
       "id": "CVE-2026-19542",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63449,7 +63449,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b3dd1696-8639-4ef4-ace5-ce1cfc21b522",
+      "bom-ref": "urn:uuid:b2eb71fb-0240-4a6c-80e8-88b3576863dd",
       "id": "CVE-2026-19542",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63487,7 +63487,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9e66492e-ef7e-49d6-8bc5-d82fce3265a5",
+      "bom-ref": "urn:uuid:c3f5f529-ea4d-4470-a892-eece9b53d1e4",
       "id": "CVE-2026-19542",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63525,7 +63525,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f4baff06-311f-4997-ae18-8f84ebbf505d",
+      "bom-ref": "urn:uuid:7abd9f8b-b68e-4a0f-a07c-734f73ac65b0",
       "id": "CVE-2026-75803",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63559,7 +63559,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4908ad42-b5ef-4e25-a013-47af876c1d78",
+      "bom-ref": "urn:uuid:063b12a8-ae31-4007-b97d-abba7b7ea482",
       "id": "CVE-2026-75803",
       "source": {
         "name": "debian-distro-debian-unstable",
