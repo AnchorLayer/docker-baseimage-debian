@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:59c8eed4-35f8-4bf1-b0da-7b9fb595ceac",
+  "serialNumber": "urn:uuid:13530947-907f-4bdc-b023-ce3af2a7a6ad",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-26T21:03:21Z",
+    "timestamp": "2026-08-27T11:59:13Z",
     "tools": {
       "components": [
         {
@@ -59659,7 +59659,301 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:0330b4dd-39f9-47fa-94a3-d37dd29c1fe3",
+      "bom-ref": "urn:uuid:a1598ec0-05c3-4098-b9f6-644e17fea92f",
+      "id": "CVE-2026-18798",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-18798",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.01481,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: QUIC server may double free QRX (QUIC record layer RX) object when channel creation fails for initial packet.  Impact summary: Double free leads to heap corruption, which typically results in  termination of QUIC server process, leading to Denial of Service. There is so far no evidence that this double free is exploitable for remote code execution, thus it is considered highly improbable.  CWE: CWE-415: Double Free  Description: In order to validate initial packet, OpenSSL QUIC stack default packet handler (port_default_packet_handler()) creates a so-called QRX object. If the initial packet validates successfully with QRX object, the default packet handler proceeds to channel (connection object) creation. The QRX object used for packet validation is passed to port_bind_channel(), so it becomes part of the newly created connection. If port_bind_channel() fails, then it also frees the QRX object. Once port_bind_channel() returns, the port_default_packet_handler() detects the failure and proceeds to the error branch, where the same QRX object is freed for the second time.  The failure in port_bind_channel() function can be induced with a relatively low effort by a malformed (non RFC 9000 compliant) INITIAL packet. If the packet carries DCID (destination connection ID) which is shorter than 8 bytes, then port_bind_channel() jumps to the error path after ossl_quic_lcidm_enrol_odcid() detects that the DCID has invalid length.  FIPS impact: no The FIPS module is not affected, as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:63b573f4-29a9-458f-b1eb-2005d66a2e78",
+      "id": "CVE-2026-18798",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-18798",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.01481,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: QUIC server may double free QRX (QUIC record layer RX) object when channel creation fails for initial packet.  Impact summary: Double free leads to heap corruption, which typically results in  termination of QUIC server process, leading to Denial of Service. There is so far no evidence that this double free is exploitable for remote code execution, thus it is considered highly improbable.  CWE: CWE-415: Double Free  Description: In order to validate initial packet, OpenSSL QUIC stack default packet handler (port_default_packet_handler()) creates a so-called QRX object. If the initial packet validates successfully with QRX object, the default packet handler proceeds to channel (connection object) creation. The QRX object used for packet validation is passed to port_bind_channel(), so it becomes part of the newly created connection. If port_bind_channel() fails, then it also frees the QRX object. Once port_bind_channel() returns, the port_default_packet_handler() detects the failure and proceeds to the error branch, where the same QRX object is freed for the second time.  The failure in port_bind_channel() function can be induced with a relatively low effort by a malformed (non RFC 9000 compliant) INITIAL packet. If the packet carries DCID (destination connection ID) which is shorter than 8 bytes, then port_bind_channel() jumps to the error path after ossl_quic_lcidm_enrol_odcid() detects that the DCID has invalid length.  FIPS impact: no The FIPS module is not affected, as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:7ca346b6-af95-4f3c-96d6-03a66d599927",
+      "id": "CVE-2026-63076",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63076",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0133,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: OpenSSL CMP password based protection verification only checks whether the protectionAlg parameter was not NULL and not its ASN.1 type, before treating it as a PBMParameter. A crafted message can contain a parameter of a different type, which is then dereferenced as an invalid pointer.  Impact summary: A remote, unauthenticated attacker can crash an application acting as a CMP server that accepts PBM-protected messages, or a CMP client talking to a malicious or intercepted CMP server, resulting in a Denial of Service.  CWE: CWE-476: NULL Pointer Dereference  Description: When verifying the password-based MAC protection of a CMP message, OpenSSL library reads the protectionAlg algorithm parameter with X509_ALGOR_get0(), which returns both the parameter type and its value pointer. The value is then cast to an ASN1_STRING and treated as the expected PBMParameter after only checking that pointer is not NULL. The parameter type returned by X509_ALGOR_get0() was never consulted.  This happens during protection verification, before any MAC is computed, so no knowledge of the PBM shared secret is required; the only precondition is that PBM verification is reachable. On the server side this is reached from OSSL_CMP_SRV_process_request() for any application that stands up a CMP server accepting PBM-protected messages, and on the client side from CMP response validation against a malicious or on-path (MITM) server. The reliable consequence is a denial of service; there is no memory disclosure, no controlled memory write, and no path to code execution. CMP is a specialized feature that an application must explicitly enable.  FIPS impact: no As the CMP code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:32fda1eb-b212-41e6-befd-b9cdcdde3ccc",
+      "id": "CVE-2026-63076",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63076",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0133,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: OpenSSL CMP password based protection verification only checks whether the protectionAlg parameter was not NULL and not its ASN.1 type, before treating it as a PBMParameter. A crafted message can contain a parameter of a different type, which is then dereferenced as an invalid pointer.  Impact summary: A remote, unauthenticated attacker can crash an application acting as a CMP server that accepts PBM-protected messages, or a CMP client talking to a malicious or intercepted CMP server, resulting in a Denial of Service.  CWE: CWE-476: NULL Pointer Dereference  Description: When verifying the password-based MAC protection of a CMP message, OpenSSL library reads the protectionAlg algorithm parameter with X509_ALGOR_get0(), which returns both the parameter type and its value pointer. The value is then cast to an ASN1_STRING and treated as the expected PBMParameter after only checking that pointer is not NULL. The parameter type returned by X509_ALGOR_get0() was never consulted.  This happens during protection verification, before any MAC is computed, so no knowledge of the PBM shared secret is required; the only precondition is that PBM verification is reachable. On the server side this is reached from OSSL_CMP_SRV_process_request() for any application that stands up a CMP server accepting PBM-protected messages, and on the client side from CMP response validation against a malicious or on-path (MITM) server. The reliable consequence is a denial of service; there is no memory disclosure, no controlled memory write, and no path to code execution. CMP is a specialized feature that an application must explicitly enable.  FIPS impact: no As the CMP code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:885c7bfb-2aed-4ccf-b4b0-d5c5cc958599",
+      "id": "CVE-2026-14457",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-14457",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00984,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs) enabled, and only the private key (with no associated certificate) configured locally, a NULL pointer dereference may occur when the remote peer solicits raw public keys and also sends the typically omitted \"signature_algorithms_cert\" TLS extension.  Impact summary: The impact is limited to a possible Denial of Service as a result of an application abort, no data disclosure or remote command execution are possible.  CWE: CWE-476: NULL Pointer Dereference  Description: While a passing comment in sample code in the documentation suggests that key-only RPK configurations are supported, the best-practice RPK configuration is to always configure a corresponding certificate (possibly self-signed or signed by any convenient CA).  When the private key is configured along with a matching certificate, the \"signature_algorithms_cert\" extension is handled reliably even without the fix, and peer clients or servers that don't support raw public keys may be able to complete a TLS connection by pinning or verifying the corresponding certificate or its public key.  Deployments that prefer to configure just a private key with no certificate need to upgrade to an updated release as noted below.  FIPS impact: no  No FIPS modules are affected by this issue, as the SSL protocol implementation is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:7e4c7d1b-55df-490d-9f2d-58fb3c657cdd",
+      "id": "CVE-2026-14457",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-14457",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00984,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs) enabled, and only the private key (with no associated certificate) configured locally, a NULL pointer dereference may occur when the remote peer solicits raw public keys and also sends the typically omitted \"signature_algorithms_cert\" TLS extension.  Impact summary: The impact is limited to a possible Denial of Service as a result of an application abort, no data disclosure or remote command execution are possible.  CWE: CWE-476: NULL Pointer Dereference  Description: While a passing comment in sample code in the documentation suggests that key-only RPK configurations are supported, the best-practice RPK configuration is to always configure a corresponding certificate (possibly self-signed or signed by any convenient CA).  When the private key is configured along with a matching certificate, the \"signature_algorithms_cert\" extension is handled reliably even without the fix, and peer clients or servers that don't support raw public keys may be able to complete a TLS connection by pinning or verifying the corresponding certificate or its public key.  Deployments that prefer to configure just a private key with no certificate need to upgrade to an updated release as noted below.  FIPS impact: no  No FIPS modules are affected by this issue, as the SSL protocol implementation is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:56daa14c-eede-47b7-b5f7-911666134b61",
       "id": "CVE-2026-14456",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59686,7 +59980,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00612,
+          "score": 0.00729,
           "method": "other"
         }
       ],
@@ -59698,13 +59992,17 @@
             {
               "version": "3.6.3-1",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:8f61e3df-ad40-4c3c-8ded-a1bce958154e",
+      "bom-ref": "urn:uuid:f504119a-d227-4b24-a84a-1d97d1dc4324",
       "id": "CVE-2026-14456",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59731,7 +60029,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00612,
+          "score": 0.00729,
           "method": "other"
         }
       ],
@@ -59743,13 +60041,311 @@
             {
               "version": "3.6.3-1",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:2a2f9992-850b-417b-a2da-e023969f0a0c",
+      "bom-ref": "urn:uuid:d37f499f-26c3-4949-b637-4a8f4da44e64",
+      "id": "CVE-2026-63072",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63072",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00612,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based on querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive can write and cleanse more bytes than that query reports, causing an 8-byte out-of-bounds heap write.  Impact summary: An attacker who supplies a crafted CMS message can trigger a deterministic 8-byte out-of-bounds heap write when the victim decrypts it with CMS_decrypt(), corrupting the heap and typically resulting in a Denial of Service.  CWE: CWE-787: Out-of-bounds Write  Description: The key-wrap OID is potentially attacker-controlled on the wire. CMS unwrapping allows both id-aesNNN-wrap-pad and id-aesNNN-wrap ciphers. An attacker can take a legitimate message and change a single OID byte to select the padded variant while leaving the message otherwise valid. Since the unwrap key is derived from the recipient's private operation (ECDH key agreement or ML-KEM decapsulation), the RFC 5649 integrity check cannot pass, and the decryption fails with integrity failure.  The write is a fixed-size (8-byte), fixed-value (zero) heap overflow immediately past the allocation, requires no special configuration, and is reachable from the public CMS_decrypt() function. The consequence is a heap corruption leading to a Denial of Service. The fix in the CMS code sizes the unwrap output buffer for the worst case so a failed unwrap cannot write past the allocation.  FIPS impact: no  As the CMS code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:86f26be3-e923-41a7-b2f6-6011f38053bf",
+      "id": "CVE-2026-63072",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63072",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00612,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based on querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive can write and cleanse more bytes than that query reports, causing an 8-byte out-of-bounds heap write.  Impact summary: An attacker who supplies a crafted CMS message can trigger a deterministic 8-byte out-of-bounds heap write when the victim decrypts it with CMS_decrypt(), corrupting the heap and typically resulting in a Denial of Service.  CWE: CWE-787: Out-of-bounds Write  Description: The key-wrap OID is potentially attacker-controlled on the wire. CMS unwrapping allows both id-aesNNN-wrap-pad and id-aesNNN-wrap ciphers. An attacker can take a legitimate message and change a single OID byte to select the padded variant while leaving the message otherwise valid. Since the unwrap key is derived from the recipient's private operation (ECDH key agreement or ML-KEM decapsulation), the RFC 5649 integrity check cannot pass, and the decryption fails with integrity failure.  The write is a fixed-size (8-byte), fixed-value (zero) heap overflow immediately past the allocation, requires no special configuration, and is reachable from the public CMS_decrypt() function. The consequence is a heap corruption leading to a Denial of Service. The fix in the CMS code sizes the unwrap output buffer for the worst case so a failed unwrap cannot write past the allocation.  FIPS impact: no  As the CMS code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:b9ecd226-9e7c-4d5e-b97d-bd926f372f49",
+      "id": "CVE-2026-54874",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54874",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00516,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake is in progress causes OpenSSL to buffer far more memory than the record itself requires.  Impact summary: A peer can use a small amount of network traffic to make an OpenSSL DTLS endpoint retain a disproportionately large amount of memory, which may lead to a Denial of Service.  CWE: CWE-405: Asymmetric Resource Consumption (Amplification)  Description: While a DTLS handshake is in progress, a peer may legitimately have already moved on to the next epoch (for example, having sent its ChangeCipherSpec and Finished messages) before the local endpoint has processed the same transition, typically because of reordering on the underlying UDP transport. OpenSSL buffers such early records so that they can be processed once the local endpoint catches up.  Buffering a record currently retains the entire read buffer it arrived in, which is sized to hold the largest possible DTLS record (around 16 kilobytes), rather than just the bytes that make up the record itself. Up to 100 such records may be buffered per connection. As a result, a peer that sends a stream of small forged records claiming to belong to the next epoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of memory, despite sending only a small fraction of that amount of data over the network.  An attacker therefore gains a memory amplification factor of around 1200, and can multiply the effect across as many associations as it is able to open, making this a remote memory exhaustion Denial of Service risk for DTLS servers. Since the memory retained per connection remains bounded, and any limit an application already places on the number of concurrent associations also bounds the total exposure, this issue has been assessed as Low severity.  FIPS impact: no  No FIPS modules are affected by this issue as the affected code is outside the OpenSSL FIPS module boundary.  OpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.  OpenSSL 4.0 users should upgrade to OpenSSL 4.0.2. OpenSSL 3.6 users should upgrade to OpenSSL 3.6.4. OpenSSL 3.5 users should upgrade to OpenSSL 3.5.8. OpenSSL 3.4 users should upgrade to OpenSSL 3.4.7. OpenSSL 3.0 users should upgrade to OpenSSL 3.0.22.  Premium support customers only: OpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi OpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr  This issue was reported on 18 May 2026 by Amazon Web Services. The fix has been developed by Matt Caswell.  -- cut (non-publishing metadata for internal use) -- Reported by: Amazon Web Services Fixed by: Matt Caswell",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:501b0c6a-3d4c-4112-8c5f-19892bee4a0d",
+      "id": "CVE-2026-54874",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54874",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00516,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake is in progress causes OpenSSL to buffer far more memory than the record itself requires.  Impact summary: A peer can use a small amount of network traffic to make an OpenSSL DTLS endpoint retain a disproportionately large amount of memory, which may lead to a Denial of Service.  CWE: CWE-405: Asymmetric Resource Consumption (Amplification)  Description: While a DTLS handshake is in progress, a peer may legitimately have already moved on to the next epoch (for example, having sent its ChangeCipherSpec and Finished messages) before the local endpoint has processed the same transition, typically because of reordering on the underlying UDP transport. OpenSSL buffers such early records so that they can be processed once the local endpoint catches up.  Buffering a record currently retains the entire read buffer it arrived in, which is sized to hold the largest possible DTLS record (around 16 kilobytes), rather than just the bytes that make up the record itself. Up to 100 such records may be buffered per connection. As a result, a peer that sends a stream of small forged records claiming to belong to the next epoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of memory, despite sending only a small fraction of that amount of data over the network.  An attacker therefore gains a memory amplification factor of around 1200, and can multiply the effect across as many associations as it is able to open, making this a remote memory exhaustion Denial of Service risk for DTLS servers. Since the memory retained per connection remains bounded, and any limit an application already places on the number of concurrent associations also bounds the total exposure, this issue has been assessed as Low severity.  FIPS impact: no  No FIPS modules are affected by this issue as the affected code is outside the OpenSSL FIPS module boundary.  OpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.  OpenSSL 4.0 users should upgrade to OpenSSL 4.0.2. OpenSSL 3.6 users should upgrade to OpenSSL 3.6.4. OpenSSL 3.5 users should upgrade to OpenSSL 3.5.8. OpenSSL 3.4 users should upgrade to OpenSSL 3.4.7. OpenSSL 3.0 users should upgrade to OpenSSL 3.0.22.  Premium support customers only: OpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi OpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr  This issue was reported on 18 May 2026 by Amazon Web Services. The fix has been developed by Matt Caswell.  -- cut (non-publishing metadata for internal use) -- Reported by: Amazon Web Services Fixed by: Matt Caswell",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:f288e477-95d7-4ff4-87bb-124e970f5aa6",
+      "id": "CVE-2026-63075",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63075",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0048,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: When OpenSSL processes QUIC traffic from a peer that repeatedly sends ack-eliciting packets while not acknowledging ACK-only responses, the QUIC stack can retain ACK-only packet metadata for the lifetime of the connection.  Impact summary: A remote peer that can complete a QUIC handshake can cause connection-scoped memory growth which may lead to Denial of Service through memory exhaustion, especially with sustained traffic or many concurrent QUIC connections.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: When the OpenSSL QUIC stack sends an ACK-only packet, there is no requirement by the QUIC protocol that the peer will acknowledge that ACK-only packet (i.e. it is itself not ack-eliciting). However, the OpenSSL implementation stores the metadata about the ACK frames regardless. In and of itself that's ok, but if a malicious peer establishes a connection, and then drives the connection such that ACK-only packets are forced from the  OpenSSL implementation peer (i.e., by sending numerous PING frames), and then withholding any subsequent acks for ack-eliciting data, like legitimate data, said malicious peer can force inappropriate memory growth on the OpenSSL peer, potentially leading to a Denial of Service.  The fix is to ensure that we account for the transmission of the ACK-only packet in the packet histories high and low watermark without actually storing the ACK-only packet metadata itself.  FIPS impact: no The OpenSSL FIPS module is not affected as the QUIC code is outside the FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:5429670a-b725-4c7a-aa0a-41996dbe8181",
+      "id": "CVE-2026-63075",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63075",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0048,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: When OpenSSL processes QUIC traffic from a peer that repeatedly sends ack-eliciting packets while not acknowledging ACK-only responses, the QUIC stack can retain ACK-only packet metadata for the lifetime of the connection.  Impact summary: A remote peer that can complete a QUIC handshake can cause connection-scoped memory growth which may lead to Denial of Service through memory exhaustion, especially with sustained traffic or many concurrent QUIC connections.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: When the OpenSSL QUIC stack sends an ACK-only packet, there is no requirement by the QUIC protocol that the peer will acknowledge that ACK-only packet (i.e. it is itself not ack-eliciting). However, the OpenSSL implementation stores the metadata about the ACK frames regardless. In and of itself that's ok, but if a malicious peer establishes a connection, and then drives the connection such that ACK-only packets are forced from the  OpenSSL implementation peer (i.e., by sending numerous PING frames), and then withholding any subsequent acks for ack-eliciting data, like legitimate data, said malicious peer can force inappropriate memory growth on the OpenSSL peer, potentially leading to a Denial of Service.  The fix is to ensure that we account for the transmission of the ACK-only packet in the packet histories high and low watermark without actually storing the ACK-only packet metadata itself.  FIPS impact: no The OpenSSL FIPS module is not affected as the QUIC code is outside the FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:2bc0f95b-f4d1-40ca-9802-7cee6e9d9a62",
       "id": "CVE-2017-17740",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59792,7 +60388,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:84ae6b1e-590b-4932-9361-2357fc822b32",
+      "bom-ref": "urn:uuid:b27fbb52-5cb8-4ce8-8c9f-d266e69eb5ed",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59835,7 +60431,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:cc4db8d5-3a82-4b74-a523-ae91b0cf976d",
+      "bom-ref": "urn:uuid:61fc2923-418e-4866-bf12-718fe9c1c4d4",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59878,7 +60474,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0d0ca660-736e-4d0f-a5db-98651fa6d7e3",
+      "bom-ref": "urn:uuid:852b877e-2d4a-401d-8223-a4ec9c2d9d77",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59921,7 +60517,105 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:cb171f62-565c-4830-9819-ad65bf996e76",
+      "bom-ref": "urn:uuid:a2a822f2-49c1-4a6f-8998-db1aa94b2a45",
+      "id": "CVE-2026-63074",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63074",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00488,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches additional certificates (extraCerts) sent in a CMP message, but never expunges them (for instance if they are invalid).  If a server reuses an OSSL_CMP_CTX frequently, this cache of extraCerts may grow unboundedly, and a malicious client may flood a CMP server with requests driving this growth.  Impact summary: Users utilizing a CMP server that reuses a single OSSL_CMP_CTX for the lifetime of a server process may observe unbounded memory growth in the event a malicious client repeatedly sends requests containing unique extra certificates, which may lead to OOM conditions.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: If a remote user sends CMP messages to a server with a list of extraCerts and the message is rejected, the extraCerts from the message remains in the server contexts untrusted certificate stack.  This exposes servers with long lived ctx objects to Denial of Service attacks in which an attacker sends messages intending to be rejected with a large list of additional certificates repeatedly, forcing the server to store them indefinitely.     The issue was fixed by removing the added extra certs if the message is rejected, using the same method as when the context is configured to not do caching at all.  FIPS impact: no As the CMP code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:8797a904-f5fe-4327-a410-fd464ef40c5e",
+      "id": "CVE-2026-63074",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63074",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00488,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches additional certificates (extraCerts) sent in a CMP message, but never expunges them (for instance if they are invalid).  If a server reuses an OSSL_CMP_CTX frequently, this cache of extraCerts may grow unboundedly, and a malicious client may flood a CMP server with requests driving this growth.  Impact summary: Users utilizing a CMP server that reuses a single OSSL_CMP_CTX for the lifetime of a server process may observe unbounded memory growth in the event a malicious client repeatedly sends requests containing unique extra certificates, which may lead to OOM conditions.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: If a remote user sends CMP messages to a server with a list of extraCerts and the message is rejected, the extraCerts from the message remains in the server contexts untrusted certificate stack.  This exposes servers with long lived ctx objects to Denial of Service attacks in which an attacker sends messages intending to be rejected with a large list of additional certificates repeatedly, forcing the server to store them indefinitely.     The issue was fixed by removing the added extra certs if the message is rejected, using the same method as when the context is configured to not do caching at all.  FIPS impact: no As the CMP code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:7de79ded-40d9-4824-83b0-380744d5be51",
       "id": "CVE-2015-3276",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59964,7 +60658,101 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1b65fd44-4dbf-4120-bad2-d3b6c7d19050",
+      "bom-ref": "urn:uuid:3526423a-6f12-4031-9f78-65c3cca2002a",
+      "id": "CVE-2026-63073",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63073",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "unknown",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00409,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`.  Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender.  CWE: CWE-134 (Use of Externally-Controlled Format String)  Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses.  Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution.  FIPS impact: no  No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:e01642c6-927b-4f7f-af54-18b66c5d99a4",
+      "id": "CVE-2026-63073",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-63073",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "unknown",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00409,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`.  Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender.  CWE: CWE-134 (Use of Externally-Controlled Format String)  Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses.  Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution.  FIPS impact: no  No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:a6d3b703-0977-4631-bf8f-7009556473fb",
       "id": "CVE-2005-2541",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60007,187 +60795,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:38ddaea9-1519-4bf3-87c8-28444c6ca9c5",
-      "id": "CVE-2026-54411",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54411",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 6.9,
-          "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00333,
-          "method": "other"
-        }
-      ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64&distro=debian&package-id=74248be0db6ddc14&upstream=pam",
-          "versions": [
-            {
-              "version": "1.7.0-8",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:868f2c2a-5850-4084-ac38-68645db6a69c",
-      "id": "CVE-2026-54411",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54411",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 6.9,
-          "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00333,
-          "method": "other"
-        }
-      ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64&distro=debian&package-id=91f7902a49a048f3&upstream=pam",
-          "versions": [
-            {
-              "version": "1.7.0-8",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:a6d4d06f-2795-4abc-b887-6e7f6949bb82",
-      "id": "CVE-2026-54411",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54411",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 6.9,
-          "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00333,
-          "method": "other"
-        }
-      ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all&distro=debian&package-id=336801a07758bebc&upstream=pam",
-          "versions": [
-            {
-              "version": "1.7.0-8",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:66841e8c-354a-41a5-8a5c-2070d64b0f83",
-      "id": "CVE-2026-54411",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54411",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 6.9,
-          "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00333,
-          "method": "other"
-        }
-      ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64&distro=debian&package-id=43aeba10c606005a&upstream=pam",
-          "versions": [
-            {
-              "version": "1.7.0-8",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:916f2d89-8a73-4568-b28a-d5ee385e28b7",
+      "bom-ref": "urn:uuid:bb6f6497-b1ff-404e-9bac-98618d9cc37e",
       "id": "CVE-2026-54876",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60226,13 +60834,17 @@
             {
               "version": "3.6.3-1",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:29753637-e432-4154-9331-12182c3dbfaf",
+      "bom-ref": "urn:uuid:2e968af7-c421-4c3b-bc45-65802667bd3b",
       "id": "CVE-2026-54876",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60271,13 +60883,17 @@
             {
               "version": "3.6.3-1",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:27a9f94e-744b-4d03-a86b-6163f29270f5",
+      "bom-ref": "urn:uuid:31971fcc-96a4-45b5-8ed4-f956f6b99d7e",
       "id": "CVE-2026-5704",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60322,7 +60938,187 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7ba9ea4a-130c-4204-8814-b32cb3691fa2",
+      "bom-ref": "urn:uuid:764feee4-ff35-40d8-8120-cb3b18bfbe61",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0032,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64&distro=debian&package-id=74248be0db6ddc14&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:932abd5e-ab60-4d4c-9b1f-b29e9e0b011b",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0032,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64&distro=debian&package-id=91f7902a49a048f3&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:9d6c323a-e203-46df-b4e0-2a080616a324",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0032,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all&distro=debian&package-id=336801a07758bebc&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:7b638230-9c7c-4564-b588-09295408abb9",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.0032,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64&distro=debian&package-id=43aeba10c606005a&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:4a39d588-7d33-467b-ad99-7e11df70c8da",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60365,7 +61161,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:888e0c80-4e3d-4b63-8c23-a71f00876671",
+      "bom-ref": "urn:uuid:a65803c7-a8fc-4114-902c-e7011d979623",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60408,7 +61204,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6f44d7e0-e33a-422d-9357-ffe35df2ebc2",
+      "bom-ref": "urn:uuid:7fd043bc-84e8-4a7e-9ba1-2999a8e99631",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60451,7 +61247,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3be13e44-4ad0-4d18-a5d3-b3f014ab8a48",
+      "bom-ref": "urn:uuid:f9baef3a-206e-4e91-b9f5-68fe6232ed09",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60494,7 +61290,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5877ee3b-3028-4106-9fd1-f00309e60e0d",
+      "bom-ref": "urn:uuid:bc4dc974-df80-4ca4-9b02-85cc9ae0da69",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60537,7 +61333,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:806b76de-4e15-4c0e-ba94-c2e545d5157c",
+      "bom-ref": "urn:uuid:b5a3b67e-ca08-40be-8a9b-d9a7e1529193",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60580,7 +61376,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:31c917e0-3436-40d5-9da5-cecd1d6dced5",
+      "bom-ref": "urn:uuid:ba69b353-b0cf-4184-b6a1-28186914069c",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60623,7 +61419,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:503a85dc-7bc2-493e-96a2-52dd8848a839",
+      "bom-ref": "urn:uuid:725116c8-3dcf-4fed-8832-272de1b83486",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60666,7 +61462,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7212ff9e-c15b-4dde-a26f-4d1ee19dce84",
+      "bom-ref": "urn:uuid:5b818189-cc06-4683-94ea-60df95db8f30",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60709,7 +61505,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f7c20b14-2e03-488d-b402-48739c869d76",
+      "bom-ref": "urn:uuid:4fc5cc3d-5981-4131-8bf4-a5f23ccd2696",
       "id": "CVE-2026-58055",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60754,7 +61550,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e5557ddd-40d0-401f-ba5a-1515fc3be881",
+      "bom-ref": "urn:uuid:f1b8f25d-0a40-4e8a-b241-e1b04125f0c4",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60799,7 +61595,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:425c3056-f43b-4e59-8f3e-046e0a728e36",
+      "bom-ref": "urn:uuid:1c99c836-76c8-4d11-9165-25d71f8a568c",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60844,7 +61640,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:cedf472c-87f6-4bb4-8f77-35a8e294d51a",
+      "bom-ref": "urn:uuid:d1503e58-15de-42ec-81ce-f7e6316f2c3a",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60887,7 +61683,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5fe951e4-8ce8-4537-9a44-5c6b1fe86f50",
+      "bom-ref": "urn:uuid:baeeafec-2d44-44ee-9ffb-31fc36969e93",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60930,7 +61726,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:90587a5a-3bcf-483e-ab22-60aeca99e248",
+      "bom-ref": "urn:uuid:04b1f3ed-ccb0-491e-9d1c-b7bcef949235",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60973,7 +61769,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1bdf8445-d917-4d5c-a74e-bacfeeb8393c",
+      "bom-ref": "urn:uuid:65ca50f8-1120-455d-bba5-268e98b9be6f",
       "id": "CVE-2020-15719",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61016,7 +61812,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2cae1774-5896-41ad-84b1-c3c5df140e38",
+      "bom-ref": "urn:uuid:fc1e5117-cc1a-4fa3-b908-340a8195a45f",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61059,7 +61855,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c41c2a73-dd19-48cb-ab8e-74cd3fd3d1af",
+      "bom-ref": "urn:uuid:28006fbd-3868-4417-be0b-f9baeb00de1c",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61102,7 +61898,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b6f2ee92-8c98-41cb-b98f-166dbecad174",
+      "bom-ref": "urn:uuid:8ccd7c23-aa0e-4f3b-9f03-3667bccd4435",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61145,7 +61941,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8484bd06-6202-43d9-940e-aa4fa0753410",
+      "bom-ref": "urn:uuid:a8992e2b-3f58-477d-969d-7849b29795b1",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61188,7 +61984,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6afb96ed-e14b-43b4-b848-4ba0be03a78a",
+      "bom-ref": "urn:uuid:62f894bc-f538-4172-87e7-5f88fedad324",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61231,7 +62027,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0169dc49-7fb2-4ca7-89b2-ebc2f3e4446f",
+      "bom-ref": "urn:uuid:a9dfcf07-4932-43d8-9c72-c35beca90a12",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61274,7 +62070,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4551991b-6969-49e8-bab3-880a3c08507f",
+      "bom-ref": "urn:uuid:af489e62-2cab-43e8-b9db-24c93195f33a",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61317,7 +62113,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7b0e3550-6792-4d38-a5a8-8fc89a201f50",
+      "bom-ref": "urn:uuid:20e9dcc3-2c88-4a83-adc1-7f503ac5e45f",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61360,7 +62156,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c12b4b1a-1938-48b3-b3ad-275fb2c06eeb",
+      "bom-ref": "urn:uuid:2c8bac03-1f6d-4fa9-8cae-9cad2d9a67d2",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61403,7 +62199,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e64238b1-0b29-4241-a551-26d033858af3",
+      "bom-ref": "urn:uuid:5b15e060-725c-4c41-bdd1-4bd0746c0cac",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61446,7 +62242,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:52228d77-1eff-4099-ac88-9a3e51658bf6",
+      "bom-ref": "urn:uuid:2fa58427-e1b3-4c9d-be9d-486ede52ee5a",
       "id": "CVE-2026-15534",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61491,7 +62287,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c7f015ab-c281-4af2-b3c0-6a2027b53597",
+      "bom-ref": "urn:uuid:390fcb7b-78bd-41fb-9b0f-05fa8fdcc4cf",
       "id": "CVE-2026-18508",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61536,7 +62332,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b80a8959-434d-4bfe-b8f8-92592310f3bb",
+      "bom-ref": "urn:uuid:d96329f4-f155-42d0-994d-889311ee3077",
       "id": "CVE-2026-42250",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61581,7 +62377,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6bc01d36-d14c-4e8c-a79d-2425191b2a5a",
+      "bom-ref": "urn:uuid:bee2b210-8559-450a-8035-1301a69100d0",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61624,7 +62420,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:aa6c035c-c27f-40f4-a51e-0b1b4d6a7e25",
+      "bom-ref": "urn:uuid:ba0fdce9-d9ec-4db6-91e0-375f06bf6acf",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61667,7 +62463,101 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4d9209ca-66d4-4418-b651-0234173a8387",
+      "bom-ref": "urn:uuid:934d5284-f5a9-4c77-afc9-c44616895092",
+      "id": "CVE-2026-75803",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-75803",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "unknown",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00116,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function.  Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages.  CWE: CWE-354 (Improper Validation of Integrity Check Value)  Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case.  FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:1144c097-a585-4287-ba5b-b16f49305df1",
+      "id": "CVE-2026-75803",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-75803",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "unknown",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00116,
+          "method": "other"
+        }
+      ],
+      "description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function.  Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages.  CWE: CWE-354 (Improper Validation of Integrity Check Value)  Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case.  FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
+          "versions": [
+            {
+              "version": "3.6.3-1",
+              "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=3.6.4-1",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:4e26620c-55c8-4542-801e-e7c537ec73c2",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61710,7 +62600,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:70857776-3e47-4a89-bb70-5d6d3cda2386",
+      "bom-ref": "urn:uuid:d1a3e11e-951a-4cf8-aded-dc229fe212bc",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61753,7 +62643,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:fce24db2-a707-4aea-a0c3-78b42fb21b39",
+      "bom-ref": "urn:uuid:f790af48-b781-4ee2-86cc-36a405c1ea94",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61796,7 +62686,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:677867ad-2b65-49b7-9b1e-744d40bba735",
+      "bom-ref": "urn:uuid:d5da8077-8a35-4aa3-821d-da17d938dfe6",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61839,7 +62729,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0b7e032e-2ec9-41cd-b7fb-4db6715b77f3",
+      "bom-ref": "urn:uuid:a5120237-b4f4-476e-973c-32f6989054ba",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61884,7 +62774,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e306c96e-9b1c-4c18-ae94-72648fc0088f",
+      "bom-ref": "urn:uuid:c4f39e9a-c06b-464b-a572-05ca265c0959",
       "id": "CVE-2026-40228",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61929,7 +62819,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3505dec6-ccef-4c17-b670-505022a118bb",
+      "bom-ref": "urn:uuid:c5f1c9d3-7acc-4436-8de1-1992d3d8f181",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61972,7 +62862,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0a40a651-c57e-4677-91b4-2a59c3683071",
+      "bom-ref": "urn:uuid:924f0166-e0c0-4da6-a1f6-f4b0a8b26506",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62015,7 +62905,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:699e4659-92f2-46d5-929f-4e9f9461dd20",
+      "bom-ref": "urn:uuid:368d3680-9273-4ba1-a1e1-2fc523615e1c",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62058,7 +62948,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4e90e102-b5a5-4f16-a9cb-41e1ea671551",
+      "bom-ref": "urn:uuid:a988f09f-ff65-47b8-bb65-175a3dd2869e",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62101,7 +62991,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5f98c3ce-5f1a-4b03-bb21-fcae010f6e21",
+      "bom-ref": "urn:uuid:29bcc5f8-ee80-4440-bc97-167be6ab0b47",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62144,7 +63034,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:11c2fd8d-bdd4-4a9a-8547-608c6bf67799",
+      "bom-ref": "urn:uuid:2ccbe3ad-142f-4a84-a798-a6e283d13190",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62187,7 +63077,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:7f7b72d1-69c9-45d7-bd4d-2abd849661b8",
+      "bom-ref": "urn:uuid:6f07ec2f-3721-4dca-8bd5-59fc494bf7a5",
       "id": "CVE-2026-18477",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62232,7 +63122,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d089bc63-63f1-4e3c-aa17-ab7badc4512d",
+      "bom-ref": "urn:uuid:cf0704da-2e76-410e-b039-662f98d72569",
       "id": "CVE-2026-6368",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62281,7 +63171,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8964f422-3078-4c27-b48e-7bb881bc1448",
+      "bom-ref": "urn:uuid:56e161f0-5894-4e1a-b56c-211572025c9b",
       "id": "CVE-2026-6368",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62330,7 +63220,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:cdb99626-8d24-473a-bcfc-da557d69de57",
+      "bom-ref": "urn:uuid:ec6e1a44-930c-43fc-8da8-47cb98790d71",
       "id": "CVE-2026-6368",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62379,7 +63269,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ac83553b-a4d9-4dab-b972-6a56949c35b5",
+      "bom-ref": "urn:uuid:e8583942-2d1e-49ef-9d25-dc430c689fd0",
       "id": "CVE-2011-4116",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62422,7 +63312,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:26754883-a8a3-474e-afd9-b5bbbe3f2ba8",
+      "bom-ref": "urn:uuid:db969356-d7ae-4b43-ae5f-3712ef27d1f9",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62465,7 +63355,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:76d83bf6-f276-40dd-8aec-479e117b5ed8",
+      "bom-ref": "urn:uuid:bfdf73d5-5cd8-4760-b3e8-d09ed9240235",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62508,7 +63398,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:fe39907b-ad3f-4a19-88c8-cae654bae6e9",
+      "bom-ref": "urn:uuid:c09a67ac-ab77-4f1d-86f7-49985f5ecbd5",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62551,7 +63441,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:335a23c7-d20c-40d5-8995-449e8d736487",
+      "bom-ref": "urn:uuid:d2b3c661-064b-4ed8-854e-afefd724db68",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62594,7 +63484,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:06b77417-c21a-4d4d-9250-a18a3cc16b31",
+      "bom-ref": "urn:uuid:ab1fb360-1ac6-491c-b2ea-39f83a3d4ab1",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62637,7 +63527,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2ddad03c-13da-4873-9686-26bf5b285655",
+      "bom-ref": "urn:uuid:ed9408b1-ac02-4166-b4fb-5cc12b4c1df1",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62680,7 +63570,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:68001202-1fb7-4bb8-9e29-c72537dfacca",
+      "bom-ref": "urn:uuid:e78946e1-c76c-47eb-b6b6-404a8d53f846",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62723,7 +63613,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5a9878bb-414d-41da-bfff-aa504925b499",
+      "bom-ref": "urn:uuid:7cca9949-5016-4725-a368-48f434d30e68",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62766,7 +63656,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f8055335-9236-4b3d-b97e-855988c200d6",
+      "bom-ref": "urn:uuid:e96b5d67-cd53-40fb-8f1f-4946789b204a",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62809,7 +63699,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:76f40a1d-d7fc-4283-a1e9-2eba1bc2570c",
+      "bom-ref": "urn:uuid:b8c7d832-7370-4d1b-a021-388d4977532e",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62852,7 +63742,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:97ce80d5-a76b-4540-ad0e-bc90191df842",
+      "bom-ref": "urn:uuid:f54e8d70-ab3b-475a-a3cb-cd458da0eb2b",
       "id": "CVE-2017-14159",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62895,7 +63785,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:71d0a481-93bd-48b6-9993-3e062e5a3ed1",
+      "bom-ref": "urn:uuid:d516efbe-5047-4975-8e70-2ec7b8e2ff1c",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62938,7 +63828,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:47404ae1-0373-41f2-870c-d31315c235e2",
+      "bom-ref": "urn:uuid:c7b838a5-5ffe-457b-98a2-585d4680fbaa",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62981,7 +63871,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f051149f-f882-47db-9fc3-7bdf29600e08",
+      "bom-ref": "urn:uuid:17de59a8-401b-4bfb-a685-aeff9f0c8f0f",
       "id": "CVE-2017-18018",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63024,7 +63914,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d4de3ad3-17ed-4f97-b112-fa21cea12160",
+      "bom-ref": "urn:uuid:55927bef-428e-4668-a9ff-61e03d799e15",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63067,7 +63957,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2a873ecf-80aa-4c9c-98b4-cee6e9577709",
+      "bom-ref": "urn:uuid:3bff06a9-27d3-4726-8ad1-c6692d55f9c1",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63110,7 +64000,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:305d92bc-786c-4de1-93d8-bd5a1aa2d55a",
+      "bom-ref": "urn:uuid:fd5839d7-f897-4247-a8db-853bb04560b9",
       "id": "CVE-2026-53910",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63153,7 +64043,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ced8daeb-8b4e-4ccd-b978-1bd37e078d62",
+      "bom-ref": "urn:uuid:add9818b-3235-4a6f-a6b6-e6a0d0aef488",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63196,7 +64086,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:03e24da8-a632-42e8-b20f-5f7ca413cb4a",
+      "bom-ref": "urn:uuid:8a3ebaed-4a96-4045-83ac-b51acff54602",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63239,7 +64129,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:dd362dc1-9396-49d9-a84b-0f8897763e57",
+      "bom-ref": "urn:uuid:b7951e30-a3a5-418c-a97e-e8466be2a08e",
       "id": "CVE-2025-5278",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63282,7 +64172,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2d88bca3-dbd0-484f-a732-7e362a3de23d",
+      "bom-ref": "urn:uuid:214ccba0-3544-4afb-850b-e460605bc250",
       "id": "CVE-2026-56392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63325,7 +64215,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:51ab971c-3ff2-43b4-87c8-c4d26fe7be1f",
+      "bom-ref": "urn:uuid:76c9fa0c-6591-4780-a560-14ac1f764ee8",
       "id": "CVE-2026-56391",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63368,7 +64258,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ca7bfb41-f2dc-4335-850a-f8e932236de5",
+      "bom-ref": "urn:uuid:4df6542a-00b1-493a-a327-6b8f552954ec",
       "id": "CVE-2026-22185",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63393,7 +64283,7 @@
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00132,
+          "score": 0.00135,
           "method": "other"
         }
       ],
@@ -63411,35 +64301,33 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:492e4e3a-4288-445b-a36e-142a1bbdce51",
-      "id": "CVE-2026-14457",
+      "bom-ref": "urn:uuid:6dd1e17b-3ed1-4a23-8fb4-0aa008acb796",
+      "id": "CVE-2026-19499",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-19499"
       },
       "references": [
         {
-          "id": "CVE-2026-14457",
+          "id": "CVE-2026-19499",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-19499"
           }
         }
       ],
       "ratings": [
         {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          "severity": "unknown",
+          "method": "other"
         }
       ],
       "affects": [
         {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
+          "ref": "pkg:deb/debian/libc-bin@2.43-3?arch=amd64&distro=debian&package-id=036d2c54f6548dbb&upstream=glibc",
           "versions": [
             {
-              "version": "3.6.3-1",
+              "version": "2.43-3",
               "status": "affected"
             }
           ]
@@ -63447,475 +64335,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:adcd236b-7cc4-41dd-ba3e-8e01f35ce743",
-      "id": "CVE-2026-18798",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-18798",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:6e73cb49-afcc-4344-a7f5-51f0d4a59aee",
-      "id": "CVE-2026-54874",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54874",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:c9b9c0fd-823e-46fc-b156-ae189cab05d0",
-      "id": "CVE-2026-63072",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63072",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:71848568-814e-4bc6-beb0-cd3891cb8023",
-      "id": "CVE-2026-63075",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63075",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:9f7cdf6d-dd86-4443-89de-8927fc332d2c",
-      "id": "CVE-2026-63076",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63076",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:6138903f-4cd9-420c-a734-2fcaf94e82b3",
-      "id": "CVE-2026-14457",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-14457",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-14457"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:3f0899df-de74-41d3-b1b1-1101ce7eca40",
-      "id": "CVE-2026-18798",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-18798",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-18798"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:d46b578d-00b0-49df-9981-4ac9c61612bd",
-      "id": "CVE-2026-54874",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54874",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54874"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:baef0398-1bb2-4ec3-86b9-f97de7bcc03f",
-      "id": "CVE-2026-63072",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63072",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63072"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:0b0a6db7-b573-42db-a848-65e328f34bf0",
-      "id": "CVE-2026-63075",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63075",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63075"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:548536f2-abe9-4469-a467-545276d9f909",
-      "id": "CVE-2026-63076",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63076",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63076"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:12954355-bd7f-4ddb-9b06-a4d4368104f1",
-      "id": "CVE-2026-63074",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63074",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.9,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:e1088f26-dc8c-470f-85a7-7e6ffa342ee6",
-      "id": "CVE-2026-63074",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63074",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63074"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.9,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:3f1349ef-fe11-4a14-92d2-7e3cb70bfd4f",
+      "bom-ref": "urn:uuid:24ef2573-036c-4e53-9b36-fe6686f07268",
       "id": "CVE-2026-19542",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63953,7 +64373,41 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:edf2cf88-8f0e-4986-8484-cf0853827d46",
+      "bom-ref": "urn:uuid:c8d7d727-08c5-443a-bee5-c16cdce468be",
+      "id": "CVE-2026-19499",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-19499"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-19499",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-19499"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "unknown",
+          "method": "other"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64&distro=debian&package-id=8df84da508f8dce2&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:f7d5c653-2431-4346-80c9-08651e96a55c",
       "id": "CVE-2026-19542",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63991,7 +64445,41 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9dd2e189-d908-4e16-ada5-b54ddacdc8cf",
+      "bom-ref": "urn:uuid:23014fd7-a706-4dc9-bbee-e9f0ad0b01fd",
+      "id": "CVE-2026-19499",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-19499"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-19499",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-19499"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "unknown",
+          "method": "other"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.43-3?arch=amd64&distro=debian&package-id=e932ba6a1efdeecd&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:66e90dc7-ac90-4927-986b-d215f4cd0ca9",
       "id": "CVE-2026-19542",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -64023,142 +64511,6 @@
             {
               "range": "vers:deb/>=2.43-4",
               "status": "unaffected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:5b2ba610-1bd7-455d-b3a7-54ca32c4954f",
-      "id": "CVE-2026-63073",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63073",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "unknown",
-          "method": "other"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:e3bac5c7-de42-4dc4-86a5-2c1c3cc42393",
-      "id": "CVE-2026-75803",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-75803",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "unknown",
-          "method": "other"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64&distro=debian&package-id=d1d30a7df542387f&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:ff1c7ae6-7601-4a9d-926d-b3c794eebafc",
-      "id": "CVE-2026-63073",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-63073",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-63073"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "unknown",
-          "method": "other"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:f8ea0826-378e-4bcf-ae41-73a31f360fcd",
-      "id": "CVE-2026-75803",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-75803",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-75803"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "unknown",
-          "method": "other"
-        }
-      ],
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64&distro=debian&package-id=a7ef079068974eb3&upstream=openssl",
-          "versions": [
-            {
-              "version": "3.6.3-1",
-              "status": "affected"
             }
           ]
         }
