@@ -262,6 +262,48 @@
               }
             },
             {
+              "id": "CVE-2026-63073-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-63073 critical vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`.  Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender.  CWE: CWE-134 (Use of Externally-Controlled Format String)  Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses.  Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution.  FIPS impact: no  No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+              "help": {
+                "text": "Vulnerability CVE-2026-63073\nSeverity: critical\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)",
+                "markdown": "**Vulnerability CVE-2026-63073**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libssl3t64  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2026-63073-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-63073 critical vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`.  Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender.  CWE: CWE-134 (Use of Externally-Controlled Format String)  Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses.  Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution.  FIPS impact: no  No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+              "help": {
+                "text": "Vulnerability CVE-2026-63073\nSeverity: critical\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)",
+                "markdown": "**Vulnerability CVE-2026-63073**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | openssl-provider-legacy  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
               "id": "CVE-2026-63075-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -448,48 +490,6 @@
                   "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-1?arch=amd64\u0026distro=debian\u0026upstream=openldap"
                 ],
                 "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-63073-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-63073 low vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`.  Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender.  CWE: CWE-134 (Use of Externally-Controlled Format String)  Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses.  Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution.  FIPS impact: no  No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
-              "help": {
-                "text": "Vulnerability CVE-2026-63073\nSeverity: low\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)",
-                "markdown": "**Vulnerability CVE-2026-63073**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libssl3t64  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-63073-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-63073 low vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`.  Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender.  CWE: CWE-134 (Use of Externally-Controlled Format String)  Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses.  Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution.  FIPS impact: no  No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
-              "help": {
-                "text": "Vulnerability CVE-2026-63073\nSeverity: low\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)",
-                "markdown": "**Vulnerability CVE-2026-63073**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | openssl-provider-legacy  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-63073](https://security-tracker.debian.org/tracker/CVE-2026-63073)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "0.0"
               }
             },
             {
@@ -847,27 +847,6 @@
                   "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "8.8"
-              }
-            },
-            {
-              "id": "CVE-2026-58055-libnghttp2-14",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-58055 medium vulnerability for libnghttp2-14 package"
-              },
-              "fullDescription": {
-                "text": "nghttp2's nghttpx proxy through 1.69.0 forwards an HTTP/1.1 Upgrade request that also carries a Content-Length header and body onto reusable keep-alive backend connections, re-adding the Upgrade and Connection headers while passing Content-Length verbatim. A backend that resolves the resulting ambiguous message in the attacker's favor enables HTTP request/response smuggling and cross-client response-queue poisoning."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-58055",
-              "help": {
-                "text": "Vulnerability CVE-2026-58055\nSeverity: medium\nPackage: libnghttp2-14\nVersion: 1.70.0-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-58055](https://security-tracker.debian.org/tracker/CVE-2026-58055)",
-                "markdown": "**Vulnerability CVE-2026-58055**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libnghttp2-14  | 1.70.0-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-58055](https://security-tracker.debian.org/tracker/CVE-2026-58055)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libnghttp2-14@1.70.0-1?arch=amd64\u0026distro=debian\u0026upstream=nghttp2"
-                ],
-                "security-severity": "6.3"
               }
             },
             {
@@ -3005,6 +2984,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-63073-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-63073-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-63075-libssl3t64",
           "level": "error",
           "message": {
@@ -3381,88 +3442,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "03b290467b3eb7c3bc186d406ccf63086a1cc01d2e591956f95dde9630d1523f:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-63073-libssl3t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-63073-openssl-provider-legacy",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
           }
         },
         {
@@ -4258,45 +4237,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-58055-libnghttp2-14",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libnghttp2-14, version 1.70.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libnghttp2-14/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libnghttp2-14/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libnghttp2-14:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libnghttp2-14:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6c4d78e666dac9132753e030ecdbdeb5203cc69f3046991d2461c6e866570a4f:1"
           }
         },
         {
