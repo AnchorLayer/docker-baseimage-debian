@@ -661,6 +661,48 @@
               }
             },
             {
+              "id": "CVE-2026-75803-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-75803 critical vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function.  Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages.  CWE: CWE-354 (Improper Validation of Integrity Check Value)  Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case.  FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+              "help": {
+                "text": "Vulnerability CVE-2026-75803\nSeverity: critical\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)",
+                "markdown": "**Vulnerability CVE-2026-75803**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libssl3t64  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "9.1"
+              }
+            },
+            {
+              "id": "CVE-2026-75803-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-75803 critical vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function.  Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages.  CWE: CWE-354 (Improper Validation of Integrity Check Value)  Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case.  FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+              "help": {
+                "text": "Vulnerability CVE-2026-75803\nSeverity: critical\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)",
+                "markdown": "**Vulnerability CVE-2026-75803**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | openssl-provider-legacy  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "9.1"
+              }
+            },
+            {
               "id": "CVE-2019-1010022-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1099,48 +1141,6 @@
                   "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-75803-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-75803 critical vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function.  Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages.  CWE: CWE-354 (Improper Validation of Integrity Check Value)  Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case.  FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
-              "help": {
-                "text": "Vulnerability CVE-2026-75803\nSeverity: critical\nPackage: libssl3t64\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)",
-                "markdown": "**Vulnerability CVE-2026-75803**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | libssl3t64  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "9.1"
-              }
-            },
-            {
-              "id": "CVE-2026-75803-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-75803 critical vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function.  Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages.  CWE: CWE-354 (Improper Validation of Integrity Check Value)  Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case.  FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
-              "help": {
-                "text": "Vulnerability CVE-2026-75803\nSeverity: critical\nPackage: openssl-provider-legacy\nVersion: 3.6.3-1\nFix Version: 3.6.4-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)",
-                "markdown": "**Vulnerability CVE-2026-75803**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| critical  | openssl-provider-legacy  | 3.6.3-1  | 3.6.4-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-75803](https://security-tracker.debian.org/tracker/CVE-2026-75803)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.3-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "9.1"
               }
             },
             {
@@ -2236,6 +2236,195 @@
               }
             },
             {
+              "id": "CVE-2026-82208-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-82208 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82208",
+              "help": {
+                "text": "Vulnerability CVE-2026-82208\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82208](https://security-tracker.debian.org/tracker/CVE-2026-82208)",
+                "markdown": "**Vulnerability CVE-2026-82208**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82208](https://security-tracker.debian.org/tracker/CVE-2026-82208)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-82208-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-82208 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82208",
+              "help": {
+                "text": "Vulnerability CVE-2026-82208\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82208](https://security-tracker.debian.org/tracker/CVE-2026-82208)",
+                "markdown": "**Vulnerability CVE-2026-82208**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82208](https://security-tracker.debian.org/tracker/CVE-2026-82208)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-13608-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-13608 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc2-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-13608",
+              "help": {
+                "text": "Vulnerability CVE-2026-13608\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-13608](https://security-tracker.debian.org/tracker/CVE-2026-13608)",
+                "markdown": "**Vulnerability CVE-2026-13608**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-13608](https://security-tracker.debian.org/tracker/CVE-2026-13608)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-18924-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-18924 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc2-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-18924",
+              "help": {
+                "text": "Vulnerability CVE-2026-18924\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-18924](https://security-tracker.debian.org/tracker/CVE-2026-18924)",
+                "markdown": "**Vulnerability CVE-2026-18924**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-18924](https://security-tracker.debian.org/tracker/CVE-2026-18924)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-19931-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-19931 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc2-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-19931",
+              "help": {
+                "text": "Vulnerability CVE-2026-19931\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-19931](https://security-tracker.debian.org/tracker/CVE-2026-19931)",
+                "markdown": "**Vulnerability CVE-2026-19931**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-19931](https://security-tracker.debian.org/tracker/CVE-2026-19931)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-80229-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80229 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc3-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80229",
+              "help": {
+                "text": "Vulnerability CVE-2026-80229\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80229](https://security-tracker.debian.org/tracker/CVE-2026-80229)",
+                "markdown": "**Vulnerability CVE-2026-80229**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80229](https://security-tracker.debian.org/tracker/CVE-2026-80229)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-80230-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80230 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc3-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80230",
+              "help": {
+                "text": "Vulnerability CVE-2026-80230\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80230](https://security-tracker.debian.org/tracker/CVE-2026-80230)",
+                "markdown": "**Vulnerability CVE-2026-80230**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80230](https://security-tracker.debian.org/tracker/CVE-2026-80230)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-80255-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80255 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80255",
+              "help": {
+                "text": "Vulnerability CVE-2026-80255\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80255](https://security-tracker.debian.org/tracker/CVE-2026-80255)",
+                "markdown": "**Vulnerability CVE-2026-80255**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80255](https://security-tracker.debian.org/tracker/CVE-2026-80255)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-82209-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-82209 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82209",
+              "help": {
+                "text": "Vulnerability CVE-2026-82209\nSeverity: low\nPackage: curl\nVersion: 8.21.0-2\nFix Version: 8.22.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82209](https://security-tracker.debian.org/tracker/CVE-2026-82209)",
+                "markdown": "**Vulnerability CVE-2026-82209**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.21.0-2  | 8.22.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82209](https://security-tracker.debian.org/tracker/CVE-2026-82209)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.21.0-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
               "id": "CVE-2026-19499-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2483,6 +2672,153 @@
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-13608-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-13608 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc2-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-13608",
+              "help": {
+                "text": "Vulnerability CVE-2026-13608\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-13608](https://security-tracker.debian.org/tracker/CVE-2026-13608)",
+                "markdown": "**Vulnerability CVE-2026-13608**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-13608](https://security-tracker.debian.org/tracker/CVE-2026-13608)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-18924-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-18924 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc2-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-18924",
+              "help": {
+                "text": "Vulnerability CVE-2026-18924\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-18924](https://security-tracker.debian.org/tracker/CVE-2026-18924)",
+                "markdown": "**Vulnerability CVE-2026-18924**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-18924](https://security-tracker.debian.org/tracker/CVE-2026-18924)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-19931-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-19931 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc2-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-19931",
+              "help": {
+                "text": "Vulnerability CVE-2026-19931\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc2-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-19931](https://security-tracker.debian.org/tracker/CVE-2026-19931)",
+                "markdown": "**Vulnerability CVE-2026-19931**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0~rc2-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-19931](https://security-tracker.debian.org/tracker/CVE-2026-19931)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-80229-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80229 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc3-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80229",
+              "help": {
+                "text": "Vulnerability CVE-2026-80229\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80229](https://security-tracker.debian.org/tracker/CVE-2026-80229)",
+                "markdown": "**Vulnerability CVE-2026-80229**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80229](https://security-tracker.debian.org/tracker/CVE-2026-80229)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-80230-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80230 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0~rc3-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80230",
+              "help": {
+                "text": "Vulnerability CVE-2026-80230\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0~rc3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80230](https://security-tracker.debian.org/tracker/CVE-2026-80230)",
+                "markdown": "**Vulnerability CVE-2026-80230**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0~rc3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80230](https://security-tracker.debian.org/tracker/CVE-2026-80230)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-80255-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80255 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80255",
+              "help": {
+                "text": "Vulnerability CVE-2026-80255\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80255](https://security-tracker.debian.org/tracker/CVE-2026-80255)",
+                "markdown": "**Vulnerability CVE-2026-80255**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80255](https://security-tracker.debian.org/tracker/CVE-2026-80255)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-82209-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-82209 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "Version 8.21.0-2 is affected with an available fix in versions 8.22.0-1"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82209",
+              "help": {
+                "text": "Vulnerability CVE-2026-82209\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.21.0-2\nFix Version: 8.22.0-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82209](https://security-tracker.debian.org/tracker/CVE-2026-82209)",
+                "markdown": "**Vulnerability CVE-2026-82209**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.21.0-2  | 8.22.0-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82209](https://security-tracker.debian.org/tracker/CVE-2026-82209)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.21.0-2?arch=amd64\u0026distro=debian\u0026upstream=curl"
                 ],
                 "security-severity": "0.0"
               }
@@ -3829,6 +4165,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-75803-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-75803-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A critical vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
+          }
+        },
+        {
           "ruleId": "CVE-2019-1010022-libc-bin",
           "level": "note",
           "message": {
@@ -4801,88 +5219,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-75803-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A critical vulnerability in deb package: libssl3t64, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "0498ade295af9fc60003aa2d2bcfb54d7250fcbe1c2e1617bd3d52bd53393632:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-75803-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A critical vulnerability in deb package: openssl-provider-legacy, version 3.6.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "abff9b254b8c556f43f93f87f580b81030c1637f7a07eea0ac61e9162af9a738:1"
           }
         },
         {
@@ -7142,6 +7478,389 @@
           }
         },
         {
+          "ruleId": "CVE-2026-82208-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-82208-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-13608-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-18924-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-19931-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80229-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80230-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80255-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-82209-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7e902b7b21f025a9e58e7569b5a7f8d5fee277dc3e38064b1dfba8dbeee3906f:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-19499-libc-bin",
           "level": "note",
           "message": {
@@ -7687,6 +8406,279 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-13608-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-18924-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-19931-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80229-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80230-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80255-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-82209-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.21.0-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b08a99f463cdcd60d2909c7cdaf17b18ec45e3efb1a9cfa59373a48aa6f0ce3b:1"
           }
         }
       ]
