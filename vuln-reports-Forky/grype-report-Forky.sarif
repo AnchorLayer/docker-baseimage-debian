@@ -367,6 +367,27 @@
               }
             },
             {
+              "id": "CVE-2026-85091-zlib1g",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-85091 high vulnerability for zlib1g package"
+              },
+              "fullDescription": {
+                "text": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-85091",
+              "help": {
+                "text": "Vulnerability CVE-2026-85091\nSeverity: high\nPackage: zlib1g\nVersion: 1:1.3.dfsg+really1.3.2-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-85091](https://security-tracker.debian.org/tracker/CVE-2026-85091)",
+                "markdown": "**Vulnerability CVE-2026-85091**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | zlib1g  | 1:1.3.dfsg+really1.3.2-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-85091](https://security-tracker.debian.org/tracker/CVE-2026-85091)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=zlib"
+                ],
+                "security-severity": "8.3"
+              }
+            },
+            {
               "id": "CVE-2018-20796-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -934,6 +955,174 @@
               }
             },
             {
+              "id": "CVE-2026-76642-bsdutils",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for bsdutils package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: bsdutils\nVersion: 1:2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | bsdutils  | 1:2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-libblkid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for libblkid1 package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: libblkid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libblkid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-libmount1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for libmount1 package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: libmount1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libmount1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-libsmartcols1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for libsmartcols1 package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: libsmartcols1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsmartcols1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-libuuid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for libuuid1 package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: libuuid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libuuid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-login",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for login package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: login\nVersion: 1:4.16.0-2+really2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | login  | 1:4.16.0-2+really2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-mount",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for mount package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: mount\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | mount  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/mount@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
+              "id": "CVE-2026-76642-util-linux",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-76642 high vulnerability for util-linux package"
+              },
+              "fullDescription": {
+                "text": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+              "help": {
+                "text": "Vulnerability CVE-2026-76642\nSeverity: high\nPackage: util-linux\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)",
+                "markdown": "**Vulnerability CVE-2026-76642**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | util-linux  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "8.5"
+              }
+            },
+            {
               "id": "CVE-2010-4756-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1228,6 +1417,342 @@
               }
             },
             {
+              "id": "CVE-2026-78409-bsdutils",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for bsdutils package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: bsdutils\nVersion: 1:2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | bsdutils  | 1:2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-libblkid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for libblkid1 package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: libblkid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libblkid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-libmount1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for libmount1 package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: libmount1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libmount1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-libsmartcols1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for libsmartcols1 package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: libsmartcols1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsmartcols1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-libuuid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for libuuid1 package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: libuuid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libuuid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-login",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for login package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: login\nVersion: 1:4.16.0-2+really2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | login  | 1:4.16.0-2+really2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-mount",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for mount package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: mount\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | mount  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/mount@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78409-util-linux",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78409 high vulnerability for util-linux package"
+              },
+              "fullDescription": {
+                "text": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+              "help": {
+                "text": "Vulnerability CVE-2026-78409\nSeverity: high\nPackage: util-linux\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)",
+                "markdown": "**Vulnerability CVE-2026-78409**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | util-linux  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-bsdutils",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for bsdutils package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: bsdutils\nVersion: 1:2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | bsdutils  | 1:2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-libblkid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for libblkid1 package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: libblkid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libblkid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-libmount1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for libmount1 package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: libmount1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libmount1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-libsmartcols1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for libsmartcols1 package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: libsmartcols1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsmartcols1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-libuuid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for libuuid1 package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: libuuid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libuuid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-login",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for login package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: login\nVersion: 1:4.16.0-2+really2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | login  | 1:4.16.0-2+really2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-mount",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for mount package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: mount\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | mount  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/mount@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78408-util-linux",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78408 high vulnerability for util-linux package"
+              },
+              "fullDescription": {
+                "text": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+              "help": {
+                "text": "Vulnerability CVE-2026-78408\nSeverity: high\nPackage: util-linux\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)",
+                "markdown": "**Vulnerability CVE-2026-78408**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | util-linux  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.9"
+              }
+            },
+            {
               "id": "CVE-2026-15534-perl-base",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1309,6 +1834,174 @@
                   "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "4.9"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-bsdutils",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for bsdutils package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: bsdutils\nVersion: 1:2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | bsdutils  | 1:2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/bsdutils@1%3A2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-libblkid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for libblkid1 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: libblkid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libblkid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libblkid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-libmount1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for libmount1 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: libmount1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libmount1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libmount1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-libsmartcols1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for libsmartcols1 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: libsmartcols1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsmartcols1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsmartcols1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-libuuid1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for libuuid1 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: libuuid1\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libuuid1  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libuuid1@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-login",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for login package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: login\nVersion: 1:4.16.0-2+really2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | login  | 1:4.16.0-2+really2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux%402.42.2-2"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-mount",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for mount package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: mount\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | mount  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/mount@2.42.2-2?arch=amd64\u0026distro=debian\u0026upstream=util-linux"
+                ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-78410-util-linux",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-78410 high vulnerability for util-linux package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+              "help": {
+                "text": "Vulnerability CVE-2026-78410\nSeverity: high\nPackage: util-linux\nVersion: 2.42.2-2\nFix Version: 2.42.3-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)",
+                "markdown": "**Vulnerability CVE-2026-78410**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | util-linux  | 2.42.2-2  | 2.42.3-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/util-linux@2.42.2-2?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.8"
               }
             },
             {
@@ -3523,6 +4216,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-85091-zlib1g",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: zlib1g, version 1:1.3.dfsg+really1.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/zlib1g/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/zlib1g/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/zlib1g:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/zlib1g:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "f2b1d2c45ef9dc4b36bd36e614504d51e40bd50fb8978c16bf3fc0fbd5434d79:1"
+          }
+        },
+        {
           "ruleId": "CVE-2018-20796-libc-bin",
           "level": "note",
           "message": {
@@ -4772,6 +5504,386 @@
           }
         },
         {
+          "ruleId": "CVE-2026-76642-bsdutils",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: bsdutils, version 1:2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/bsdutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/bsdutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "3bdf89f44ecf5335f4a7a09777c7bff906a3a0eed7b3b8143b92188d1cc8dd68:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-libblkid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libblkid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libblkid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libblkid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libblkid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libblkid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "49dfbe59c96a899ac8728f78591d5138d6bf7fc795f6e6e6a2554d34504482be:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-libmount1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libmount1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libmount1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libmount1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libmount1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libmount1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "663e985f7f49e285ba289a6ff2409efeda5f9a2c607f3a0613759c052f04078a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-libsmartcols1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libsmartcols1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsmartcols1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libsmartcols1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsmartcols1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libsmartcols1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2da7a42ee1ea8954e71d1da9060daa7acb5d83031fcf8a49b17553d5f996797b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-libuuid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libuuid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libuuid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libuuid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libuuid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libuuid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "654bc3e849d8089f2f74008723454bb539b42b3c10a322135f38cda1c9f012d3:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-login",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: login, version 1:4.16.0-2+really2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/login/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/login/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.preinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6121874c9b2a3aa607d51e7a1cd9eaab301481d97eb4eb92a0f441f45afd42af:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-mount",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: mount, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/mount/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/mount/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "87f86927429413f3c2dda27e6e5910583d79a30b98b618eb0a88404d7b7f6431:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-76642-util-linux",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: util-linux, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/util-linux/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/util-linux/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "82f78da105aee8815402068d9b1b04523e69fa778ffec313e44cd806ad8e2fdb:1"
+          }
+        },
+        {
           "ruleId": "CVE-2010-4756-libc-bin",
           "level": "note",
           "message": {
@@ -5378,6 +6490,766 @@
           }
         },
         {
+          "ruleId": "CVE-2026-78409-bsdutils",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: bsdutils, version 1:2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/bsdutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/bsdutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "3bdf89f44ecf5335f4a7a09777c7bff906a3a0eed7b3b8143b92188d1cc8dd68:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-libblkid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libblkid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libblkid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libblkid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libblkid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libblkid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "49dfbe59c96a899ac8728f78591d5138d6bf7fc795f6e6e6a2554d34504482be:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-libmount1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libmount1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libmount1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libmount1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libmount1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libmount1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "663e985f7f49e285ba289a6ff2409efeda5f9a2c607f3a0613759c052f04078a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-libsmartcols1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libsmartcols1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsmartcols1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libsmartcols1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsmartcols1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libsmartcols1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2da7a42ee1ea8954e71d1da9060daa7acb5d83031fcf8a49b17553d5f996797b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-libuuid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libuuid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libuuid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libuuid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libuuid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libuuid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "654bc3e849d8089f2f74008723454bb539b42b3c10a322135f38cda1c9f012d3:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-login",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: login, version 1:4.16.0-2+really2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/login/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/login/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.preinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6121874c9b2a3aa607d51e7a1cd9eaab301481d97eb4eb92a0f441f45afd42af:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-mount",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: mount, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/mount/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/mount/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "87f86927429413f3c2dda27e6e5910583d79a30b98b618eb0a88404d7b7f6431:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78409-util-linux",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: util-linux, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/util-linux/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/util-linux/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "82f78da105aee8815402068d9b1b04523e69fa778ffec313e44cd806ad8e2fdb:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-bsdutils",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: bsdutils, version 1:2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/bsdutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/bsdutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "3bdf89f44ecf5335f4a7a09777c7bff906a3a0eed7b3b8143b92188d1cc8dd68:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-libblkid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libblkid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libblkid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libblkid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libblkid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libblkid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "49dfbe59c96a899ac8728f78591d5138d6bf7fc795f6e6e6a2554d34504482be:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-libmount1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libmount1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libmount1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libmount1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libmount1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libmount1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "663e985f7f49e285ba289a6ff2409efeda5f9a2c607f3a0613759c052f04078a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-libsmartcols1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libsmartcols1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsmartcols1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libsmartcols1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsmartcols1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libsmartcols1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2da7a42ee1ea8954e71d1da9060daa7acb5d83031fcf8a49b17553d5f996797b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-libuuid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libuuid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libuuid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libuuid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libuuid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libuuid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "654bc3e849d8089f2f74008723454bb539b42b3c10a322135f38cda1c9f012d3:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-login",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: login, version 1:4.16.0-2+really2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/login/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/login/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.preinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6121874c9b2a3aa607d51e7a1cd9eaab301481d97eb4eb92a0f441f45afd42af:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-mount",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: mount, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/mount/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/mount/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "87f86927429413f3c2dda27e6e5910583d79a30b98b618eb0a88404d7b7f6431:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78408-util-linux",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: util-linux, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/util-linux/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/util-linux/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "82f78da105aee8815402068d9b1b04523e69fa778ffec313e44cd806ad8e2fdb:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-15534-perl-base",
           "level": "warning",
           "message": {
@@ -5555,6 +7427,386 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-bsdutils",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: bsdutils, version 1:2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/bsdutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/bsdutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/bsdutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/bsdutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "3bdf89f44ecf5335f4a7a09777c7bff906a3a0eed7b3b8143b92188d1cc8dd68:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-libblkid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libblkid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libblkid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libblkid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libblkid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libblkid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "49dfbe59c96a899ac8728f78591d5138d6bf7fc795f6e6e6a2554d34504482be:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-libmount1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libmount1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libmount1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libmount1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libmount1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libmount1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "663e985f7f49e285ba289a6ff2409efeda5f9a2c607f3a0613759c052f04078a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-libsmartcols1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libsmartcols1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsmartcols1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libsmartcols1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsmartcols1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libsmartcols1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2da7a42ee1ea8954e71d1da9060daa7acb5d83031fcf8a49b17553d5f996797b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-libuuid1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libuuid1, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libuuid1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libuuid1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libuuid1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libuuid1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "654bc3e849d8089f2f74008723454bb539b42b3c10a322135f38cda1c9f012d3:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-login",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: login, version 1:4.16.0-2+really2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/login/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/login/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.defs.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.defs.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.preinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/login.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/login.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6121874c9b2a3aa607d51e7a1cd9eaab301481d97eb4eb92a0f441f45afd42af:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-mount",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: mount, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/mount/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/mount/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/mount.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/mount.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "87f86927429413f3c2dda27e6e5910583d79a30b98b618eb0a88404d7b7f6431:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-78410-util-linux",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: util-linux, version 2.42.2-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/util-linux/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/util-linux/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/util-linux.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/util-linux.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "82f78da105aee8815402068d9b1b04523e69fa778ffec313e44cd806ad8e2fdb:1"
           }
         },
         {
