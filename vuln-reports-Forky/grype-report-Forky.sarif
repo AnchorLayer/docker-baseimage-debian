@@ -892,6 +892,132 @@
               }
             },
             {
+              "id": "CVE-2026-77117-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-77117 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.  Some SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
+              "help": {
+                "text": "Vulnerability CVE-2026-77117\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)",
+                "markdown": "**Vulnerability CVE-2026-77117**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.9"
+              }
+            },
+            {
+              "id": "CVE-2026-80489-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80489 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.  Some EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
+              "help": {
+                "text": "Vulnerability CVE-2026-80489\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)",
+                "markdown": "**Vulnerability CVE-2026-80489**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.9"
+              }
+            },
+            {
+              "id": "CVE-2026-77117-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-77117 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.  Some SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
+              "help": {
+                "text": "Vulnerability CVE-2026-77117\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)",
+                "markdown": "**Vulnerability CVE-2026-77117**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.9"
+              }
+            },
+            {
+              "id": "CVE-2026-80489-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80489 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.  Some EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
+              "help": {
+                "text": "Vulnerability CVE-2026-80489\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)",
+                "markdown": "**Vulnerability CVE-2026-80489**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.9"
+              }
+            },
+            {
+              "id": "CVE-2026-77117-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-77117 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.  Some SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
+              "help": {
+                "text": "Vulnerability CVE-2026-77117\nSeverity: medium\nPackage: libc6\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)",
+                "markdown": "**Vulnerability CVE-2026-77117**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.9"
+              }
+            },
+            {
+              "id": "CVE-2026-80489-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-80489 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.  Some EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
+              "help": {
+                "text": "Vulnerability CVE-2026-80489\nSeverity: medium\nPackage: libc6\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)",
+                "markdown": "**Vulnerability CVE-2026-80489**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.9"
+              }
+            },
+            {
               "id": "CVE-2026-5704-tar",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -1648,6 +1774,27 @@
               }
             },
             {
+              "id": "CVE-2026-89160-libpcre2-8-0",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89160 medium vulnerability for libpcre2-8-0 package"
+              },
+              "fullDescription": {
+                "text": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read during the PCRE2_MATCH_INVALID_UTF matching of an invalid UTF subject."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89160",
+              "help": {
+                "text": "Vulnerability CVE-2026-89160\nSeverity: medium\nPackage: libpcre2-8-0\nVersion: 10.46-1+b2\nFix Version: 10.48-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89160](https://security-tracker.debian.org/tracker/CVE-2026-89160)",
+                "markdown": "**Vulnerability CVE-2026-89160**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpcre2-8-0  | 10.46-1+b2  | 10.48-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89160](https://security-tracker.debian.org/tracker/CVE-2026-89160)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
+                ],
+                "security-severity": "6.5"
+              }
+            },
+            {
               "id": "CVE-2020-15719-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2316,6 +2463,27 @@
                 "purls": [
                   "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
                 ],
+                "security-severity": "7.8"
+              }
+            },
+            {
+              "id": "CVE-2026-89157-libpcre2-8-0",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89157 high vulnerability for libpcre2-8-0 package"
+              },
+              "fullDescription": {
+                "text": "PCRE2 before 10.48, on 32-bit platforms, has a pcre2_pattern_convert out-of-bounds write when an attacker can provide a large pattern."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89157",
+              "help": {
+                "text": "Vulnerability CVE-2026-89157\nSeverity: high\nPackage: libpcre2-8-0\nVersion: 10.46-1+b2\nFix Version: 10.48-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89157](https://security-tracker.debian.org/tracker/CVE-2026-89157)",
+                "markdown": "**Vulnerability CVE-2026-89157**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libpcre2-8-0  | 10.46-1+b2  | 10.48-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89157](https://security-tracker.debian.org/tracker/CVE-2026-89157)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
+                ],
                 "security-severity": "7.4"
               }
             },
@@ -2380,27 +2548,6 @@
                   "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "4.9"
-              }
-            },
-            {
-              "id": "CVE-2026-89160-libpcre2-8-0",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89160 low vulnerability for libpcre2-8-0 package"
-              },
-              "fullDescription": {
-                "text": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read during the PCRE2_MATCH_INVALID_UTF matching of an invalid UTF subject."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89160",
-              "help": {
-                "text": "Vulnerability CVE-2026-89160\nSeverity: low\nPackage: libpcre2-8-0\nVersion: 10.46-1+b2\nFix Version: 10.48-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89160](https://security-tracker.debian.org/tracker/CVE-2026-89160)",
-                "markdown": "**Vulnerability CVE-2026-89160**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libpcre2-8-0  | 10.46-1+b2  | 10.48-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89160](https://security-tracker.debian.org/tracker/CVE-2026-89160)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
-                ],
-                "security-severity": "3.7"
               }
             },
             {
@@ -2740,24 +2887,24 @@
               }
             },
             {
-              "id": "CVE-2026-89157-libpcre2-8-0",
+              "id": "CVE-2026-89156-libpcre2-8-0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-89157 medium vulnerability for libpcre2-8-0 package"
+                "text": "CVE-2026-89156 medium vulnerability for libpcre2-8-0 package"
               },
               "fullDescription": {
-                "text": "PCRE2 before 10.48, on 32-bit platforms, has a pcre2_pattern_convert out-of-bounds write when an attacker can provide a large pattern."
+                "text": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read after a JIT fallback when an attacker can provide invalid UTF data."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89157",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89156",
               "help": {
-                "text": "Vulnerability CVE-2026-89157\nSeverity: medium\nPackage: libpcre2-8-0\nVersion: 10.46-1+b2\nFix Version: 10.48-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89157](https://security-tracker.debian.org/tracker/CVE-2026-89157)",
-                "markdown": "**Vulnerability CVE-2026-89157**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpcre2-8-0  | 10.46-1+b2  | 10.48-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89157](https://security-tracker.debian.org/tracker/CVE-2026-89157)  |\n"
+                "text": "Vulnerability CVE-2026-89156\nSeverity: medium\nPackage: libpcre2-8-0\nVersion: 10.46-1+b2\nFix Version: 10.48-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89156](https://security-tracker.debian.org/tracker/CVE-2026-89156)",
+                "markdown": "**Vulnerability CVE-2026-89156**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpcre2-8-0  | 10.46-1+b2  | 10.48-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89156](https://security-tracker.debian.org/tracker/CVE-2026-89156)  |\n"
               },
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
                 ],
-                "security-severity": "5.7"
+                "security-severity": "5.9"
               }
             },
             {
@@ -2967,28 +3114,7 @@
                 "purls": [
                   "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
                 ],
-                "security-severity": "2.9"
-              }
-            },
-            {
-              "id": "CVE-2026-89156-libpcre2-8-0",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89156 low vulnerability for libpcre2-8-0 package"
-              },
-              "fullDescription": {
-                "text": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read after a JIT fallback when an attacker can provide invalid UTF data."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89156",
-              "help": {
-                "text": "Vulnerability CVE-2026-89156\nSeverity: low\nPackage: libpcre2-8-0\nVersion: 10.46-1+b2\nFix Version: 10.48-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89156](https://security-tracker.debian.org/tracker/CVE-2026-89156)",
-                "markdown": "**Vulnerability CVE-2026-89156**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libpcre2-8-0  | 10.46-1+b2  | 10.48-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89156](https://security-tracker.debian.org/tracker/CVE-2026-89156)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libpcre2-8-0@10.46-1%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=pcre2%4010.46-1"
-                ],
-                "security-severity": "2.9"
+                "security-severity": "3.3"
               }
             },
             {
@@ -3598,132 +3724,6 @@
                   "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "6.1"
-              }
-            },
-            {
-              "id": "CVE-2026-77117-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-77117 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
-              "help": {
-                "text": "Vulnerability CVE-2026-77117\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)",
-                "markdown": "**Vulnerability CVE-2026-77117**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.9"
-              }
-            },
-            {
-              "id": "CVE-2026-80489-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-80489 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
-              "help": {
-                "text": "Vulnerability CVE-2026-80489\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)",
-                "markdown": "**Vulnerability CVE-2026-80489**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.9"
-              }
-            },
-            {
-              "id": "CVE-2026-77117-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-77117 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
-              "help": {
-                "text": "Vulnerability CVE-2026-77117\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)",
-                "markdown": "**Vulnerability CVE-2026-77117**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.9"
-              }
-            },
-            {
-              "id": "CVE-2026-80489-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-80489 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
-              "help": {
-                "text": "Vulnerability CVE-2026-80489\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)",
-                "markdown": "**Vulnerability CVE-2026-80489**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.9"
-              }
-            },
-            {
-              "id": "CVE-2026-77117-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-77117 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
-              "help": {
-                "text": "Vulnerability CVE-2026-77117\nSeverity: medium\nPackage: libc6\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)",
-                "markdown": "**Vulnerability CVE-2026-77117**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77117](https://security-tracker.debian.org/tracker/CVE-2026-77117)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.9"
-              }
-            },
-            {
-              "id": "CVE-2026-80489-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-80489 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
-              "help": {
-                "text": "Vulnerability CVE-2026-80489\nSeverity: medium\nPackage: libc6\nVersion: 2.43-3\nFix Version: 2.43-5\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)",
-                "markdown": "**Vulnerability CVE-2026-80489**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-3  | 2.43-5  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-80489](https://security-tracker.debian.org/tracker/CVE-2026-80489)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-3?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.9"
               }
             }
           ]
@@ -5473,6 +5473,280 @@
           }
         },
         {
+          "ruleId": "CVE-2026-77117-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "615701ba09d73b9d040589b5ef9457172b950a580491dbeb252675c38c370879:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80489-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "615701ba09d73b9d040589b5ef9457172b950a580491dbeb252675c38c370879:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-77117-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ab6e2c0b2c63a1de091ff2a0421911a039907c167f2c798845b08211adaa1d32:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80489-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ab6e2c0b2c63a1de091ff2a0421911a039907c167f2c798845b08211adaa1d32:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-77117-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-80489-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-5704-tar",
           "level": "warning",
           "message": {
@@ -7157,6 +7431,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-89160-libpcre2-8-0",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libpcre2-8-0, version 10.46-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libpcre2-8-0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libpcre2-8-0/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "e4932bd8395dabc68bf7bafcb4ebb59a394c727f2242f92e01f507c9c3f1fc9a:1"
+          }
+        },
+        {
           "ruleId": "CVE-2020-15719-libldap2",
           "level": "note",
           "message": {
@@ -8605,6 +8918,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-89157-libpcre2-8-0",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libpcre2-8-0, version 10.46-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libpcre2-8-0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libpcre2-8-0/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "e4932bd8395dabc68bf7bafcb4ebb59a394c727f2242f92e01f507c9c3f1fc9a:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-18374-libc-bin",
           "level": "warning",
           "message": {
@@ -8739,45 +9091,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-89160-libpcre2-8-0",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libpcre2-8-0, version 10.46-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libpcre2-8-0/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libpcre2-8-0/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "e4932bd8395dabc68bf7bafcb4ebb59a394c727f2242f92e01f507c9c3f1fc9a:1"
           }
         },
         {
@@ -9517,7 +9830,7 @@
           }
         },
         {
-          "ruleId": "CVE-2026-89157-libpcre2-8-0",
+          "ruleId": "CVE-2026-89156-libpcre2-8-0",
           "level": "warning",
           "message": {
             "text": "A medium vulnerability in deb package: libpcre2-8-0, version 10.46-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -9956,45 +10269,6 @@
         },
         {
           "ruleId": "CVE-2026-89162-libpcre2-8-0",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libpcre2-8-0, version 10.46-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libpcre2-8-0/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libpcre2-8-0/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libpcre2-8-0:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "e4932bd8395dabc68bf7bafcb4ebb59a394c727f2242f92e01f507c9c3f1fc9a:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-89156-libpcre2-8-0",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libpcre2-8-0, version 10.46-1+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -11277,280 +11551,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-77117-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "615701ba09d73b9d040589b5ef9457172b950a580491dbeb252675c38c370879:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-80489-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "615701ba09d73b9d040589b5ef9457172b950a580491dbeb252675c38c370879:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-77117-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "ab6e2c0b2c63a1de091ff2a0421911a039907c167f2c798845b08211adaa1d32:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-80489-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "ab6e2c0b2c63a1de091ff2a0421911a039907c167f2c798845b08211adaa1d32:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-77117-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-80489-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.43-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:8102b0f9308db959c798e6696014db046a63e78b1cbe8a59ad64d2d3e88fc4fa:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:a7808f166a00678ae2b1f37b8086dd5b9c702a7d4d2f132c7e8cf4248329b9d9:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "f1167a7fe459c19b97aded7d122995497a1d8a8856dd0bf6fab11ab6b6e05405:1"
           }
         }
       ]
