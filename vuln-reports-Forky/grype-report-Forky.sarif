@@ -388,6 +388,69 @@
               }
             },
             {
+              "id": "CVE-2026-8674-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-8674 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
+              "help": {
+                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
+                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-8674-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-8674 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
+              "help": {
+                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
+                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-8674-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-8674 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
+              "help": {
+                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
+                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
               "id": "CVE-2019-1010023-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1730,69 +1793,6 @@
                 ],
                 "security-severity": "6.1"
               }
-            },
-            {
-              "id": "CVE-2026-8674-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-8674 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
-              "help": {
-                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
-                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-8674-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-8674 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
-              "help": {
-                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
-                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-8674-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-8674 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
-              "help": {
-                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
-                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
             }
           ]
         }
@@ -2590,6 +2590,143 @@
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8674-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8674-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-8674-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -5446,143 +5583,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8674-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8674-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8674-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
           }
         }
       ]
