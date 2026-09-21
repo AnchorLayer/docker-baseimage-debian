@@ -829,6 +829,27 @@
               }
             },
             {
+              "id": "CVE-2026-82560-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-82560 low vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion formatting a POD document whose =over nesting drives the margin to the output width.  Each =over adds its indent to the margin, which wrap() subtracts from the output width to get the space available for text. When that space reaches zero, the line-splitting substitution matches the empty string, and the loop consumes no input while appending the margin padding on every pass.  Formatting an attacker-supplied POD document never returns, and the output grows until memory is exhausted."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82560",
+              "help": {
+                "text": "Vulnerability CVE-2026-82560\nSeverity: low\nPackage: perl-base\nVersion: 5.42.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)",
+                "markdown": "**Vulnerability CVE-2026-82560**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | perl-base  | 5.42.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
               "id": "CVE-2018-5709-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1792,27 +1813,6 @@
                   "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "6.1"
-              }
-            },
-            {
-              "id": "CVE-2026-82560-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-82560 low vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion formatting a POD document whose =over nesting drives the margin to the output width.\n\nEach =over adds its indent to the margin, which wrap() subtracts from the output width to get the space available for text. When that space reaches zero, the line-splitting substitution matches the empty string, and the loop consumes no input while appending the margin padding on every pass.\n\nFormatting an attacker-supplied POD document never returns, and the output grows until memory is exhausted."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82560",
-              "help": {
-                "text": "Vulnerability CVE-2026-82560\nSeverity: low\nPackage: perl-base\nVersion: 5.42.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)",
-                "markdown": "**Vulnerability CVE-2026-82560**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | perl-base  | 5.42.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "0.0"
               }
             }
           ]
@@ -3622,6 +3622,49 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-82560-perl-base",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: perl-base, version 5.42.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "384874de0bf634fffebeb3a2d6052345f95ee8b7ef88b29f059f40024f5a7222:1"
           }
         },
         {
@@ -5604,49 +5647,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-82560-perl-base",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: perl-base, version 5.42.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "384874de0bf634fffebeb3a2d6052345f95ee8b7ef88b29f059f40024f5a7222:1"
           }
         }
       ]
