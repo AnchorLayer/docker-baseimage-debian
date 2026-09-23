@@ -10,6 +10,27 @@
           "informationUri": "https://github.com/anchore/grype",
           "rules": [
             {
+              "id": "CVE-2026-82560-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-82560 high vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion formatting a POD document whose =over nesting drives the margin to the output width.  Each =over adds its indent to the margin, which wrap() subtracts from the output width to get the space available for text. When that space reaches zero, the line-splitting substitution matches the empty string, and the loop consumes no input while appending the margin padding on every pass.  Formatting an attacker-supplied POD document never returns, and the output grows until memory is exhausted."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82560",
+              "help": {
+                "text": "Vulnerability CVE-2026-82560\nSeverity: high\nPackage: perl-base\nVersion: 5.42.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)",
+                "markdown": "**Vulnerability CVE-2026-82560**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.42.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2017-17740-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -49,27 +70,6 @@
                   "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=zlib"
                 ],
                 "security-severity": "8.3"
-              }
-            },
-            {
-              "id": "CVE-2015-3276-libldap2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2015-3276 low vulnerability for libldap2 package"
-              },
-              "fullDescription": {
-                "text": "The nss_parse_ciphers function in libraries/libldap/tls_m.c in OpenLDAP does not properly parse OpenSSL-style multi-keyword mode cipher strings, which might cause a weaker than intended cipher to be used and allow remote attackers to have unspecified impact via unknown vectors."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2015-3276",
-              "help": {
-                "text": "Vulnerability CVE-2015-3276\nSeverity: low\nPackage: libldap2\nVersion: 2.6.14+dfsg-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)",
-                "markdown": "**Vulnerability CVE-2015-3276**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.14+dfsg-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
-                ],
-                "security-severity": "7.5"
               }
             },
             {
@@ -131,6 +131,27 @@
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2015-3276-libldap2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2015-3276 low vulnerability for libldap2 package"
+              },
+              "fullDescription": {
+                "text": "The nss_parse_ciphers function in libraries/libldap/tls_m.c in OpenLDAP does not properly parse OpenSSL-style multi-keyword mode cipher strings, which might cause a weaker than intended cipher to be used and allow remote attackers to have unspecified impact via unknown vectors."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2015-3276",
+              "help": {
+                "text": "Vulnerability CVE-2015-3276\nSeverity: low\nPackage: libldap2\nVersion: 2.6.14+dfsg-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)",
+                "markdown": "**Vulnerability CVE-2015-3276**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.14+dfsg-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2015-3276](https://security-tracker.debian.org/tracker/CVE-2015-3276)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
                 ],
                 "security-severity": "7.5"
               }
@@ -262,6 +283,69 @@
               }
             },
             {
+              "id": "CVE-2019-1010022-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2019-1010022 low vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+              "help": {
+                "text": "Vulnerability CVE-2019-1010022\nSeverity: low\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)",
+                "markdown": "**Vulnerability CVE-2019-1010022**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2019-1010022-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2019-1010022 low vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+              "help": {
+                "text": "Vulnerability CVE-2019-1010022\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)",
+                "markdown": "**Vulnerability CVE-2019-1010022**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
+              "id": "CVE-2019-1010022-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2019-1010022 low vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+              "help": {
+                "text": "Vulnerability CVE-2019-1010022\nSeverity: low\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)",
+                "markdown": "**Vulnerability CVE-2019-1010022**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "9.8"
+              }
+            },
+            {
               "id": "CVE-2019-1010024-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -388,69 +472,6 @@
               }
             },
             {
-              "id": "CVE-2026-82560-perl-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-82560 high vulnerability for perl-base package"
-              },
-              "fullDescription": {
-                "text": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion formatting a POD document whose =over nesting drives the margin to the output width.  Each =over adds its indent to the margin, which wrap() subtracts from the output width to get the space available for text. When that space reaches zero, the line-splitting substitution matches the empty string, and the loop consumes no input while appending the margin padding on every pass.  Formatting an attacker-supplied POD document never returns, and the output grows until memory is exhausted."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-82560",
-              "help": {
-                "text": "Vulnerability CVE-2026-82560\nSeverity: high\nPackage: perl-base\nVersion: 5.42.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)",
-                "markdown": "**Vulnerability CVE-2026-82560**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | perl-base  | 5.42.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-82560](https://security-tracker.debian.org/tracker/CVE-2026-82560)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64\u0026distro=debian\u0026upstream=perl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2024-56433-login.defs",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2024-56433 low vulnerability for login.defs package"
-              },
-              "fullDescription": {
-                "text": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
-              "help": {
-                "text": "Vulnerability CVE-2024-56433\nSeverity: low\nPackage: login.defs\nVersion: 1:4.19.3-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)",
-                "markdown": "**Vulnerability CVE-2024-56433**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | login.defs  | 1:4.19.3-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/login.defs@1%3A4.19.3-2?arch=all\u0026distro=debian\u0026upstream=shadow"
-                ],
-                "security-severity": "3.6"
-              }
-            },
-            {
-              "id": "CVE-2024-56433-passwd",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2024-56433 low vulnerability for passwd package"
-              },
-              "fullDescription": {
-                "text": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
-              "help": {
-                "text": "Vulnerability CVE-2024-56433\nSeverity: low\nPackage: passwd\nVersion: 1:4.19.3-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)",
-                "markdown": "**Vulnerability CVE-2024-56433**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | passwd  | 1:4.19.3-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64\u0026distro=debian\u0026upstream=shadow"
-                ],
-                "security-severity": "3.6"
-              }
-            },
-            {
               "id": "CVE-2019-1010023-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -514,66 +535,45 @@
               }
             },
             {
-              "id": "CVE-2019-1010022-libc-bin",
+              "id": "CVE-2024-56433-login.defs",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2019-1010022 low vulnerability for libc-bin package"
+                "text": "CVE-2024-56433 low vulnerability for login.defs package"
               },
               "fullDescription": {
-                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat."
+                "text": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
               "help": {
-                "text": "Vulnerability CVE-2019-1010022\nSeverity: low\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)",
-                "markdown": "**Vulnerability CVE-2019-1010022**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)  |\n"
+                "text": "Vulnerability CVE-2024-56433\nSeverity: low\nPackage: login.defs\nVersion: 1:4.19.3-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)",
+                "markdown": "**Vulnerability CVE-2024-56433**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | login.defs  | 1:4.19.3-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/login.defs@1%3A4.19.3-2?arch=all\u0026distro=debian\u0026upstream=shadow"
                 ],
-                "security-severity": "9.8"
+                "security-severity": "3.6"
               }
             },
             {
-              "id": "CVE-2019-1010022-libc-gconv-modules-extra",
+              "id": "CVE-2024-56433-passwd",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2019-1010022 low vulnerability for libc-gconv-modules-extra package"
+                "text": "CVE-2024-56433 low vulnerability for passwd package"
               },
               "fullDescription": {
-                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat."
+                "text": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
               "help": {
-                "text": "Vulnerability CVE-2019-1010022\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)",
-                "markdown": "**Vulnerability CVE-2019-1010022**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)  |\n"
+                "text": "Vulnerability CVE-2024-56433\nSeverity: low\nPackage: passwd\nVersion: 1:4.19.3-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)",
+                "markdown": "**Vulnerability CVE-2024-56433**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | passwd  | 1:4.19.3-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2024-56433](https://security-tracker.debian.org/tracker/CVE-2024-56433)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                  "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64\u0026distro=debian\u0026upstream=shadow"
                 ],
-                "security-severity": "9.8"
-              }
-            },
-            {
-              "id": "CVE-2019-1010022-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2019-1010022 low vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
-              "help": {
-                "text": "Vulnerability CVE-2019-1010022\nSeverity: low\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)",
-                "markdown": "**Vulnerability CVE-2019-1010022**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010022](https://security-tracker.debian.org/tracker/CVE-2019-1010022)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "9.8"
+                "security-severity": "3.6"
               }
             },
             {
@@ -661,69 +661,6 @@
               }
             },
             {
-              "id": "CVE-2019-1010025-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2019-1010025 low vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
-              "help": {
-                "text": "Vulnerability CVE-2019-1010025\nSeverity: low\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)",
-                "markdown": "**Vulnerability CVE-2019-1010025**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2019-1010025-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2019-1010025 low vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
-              "help": {
-                "text": "Vulnerability CVE-2019-1010025\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)",
-                "markdown": "**Vulnerability CVE-2019-1010025**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2019-1010025-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2019-1010025 low vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
-              "help": {
-                "text": "Vulnerability CVE-2019-1010025\nSeverity: low\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)",
-                "markdown": "**Vulnerability CVE-2019-1010025**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
               "id": "CVE-2019-9192-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -784,6 +721,69 @@
                   "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2019-1010025-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2019-1010025 low vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
+              "help": {
+                "text": "Vulnerability CVE-2019-1010025\nSeverity: low\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)",
+                "markdown": "**Vulnerability CVE-2019-1010025**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2019-1010025-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2019-1010025 low vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
+              "help": {
+                "text": "Vulnerability CVE-2019-1010025\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)",
+                "markdown": "**Vulnerability CVE-2019-1010025**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2019-1010025-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2019-1010025 low vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
+              "help": {
+                "text": "Vulnerability CVE-2019-1010025\nSeverity: low\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)",
+                "markdown": "**Vulnerability CVE-2019-1010025**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2019-1010025](https://security-tracker.debian.org/tracker/CVE-2019-1010025)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "5.3"
               }
             },
             {
@@ -1543,27 +1543,6 @@
               }
             },
             {
-              "id": "CVE-2017-18018-coreutils",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2017-18018 low vulnerability for coreutils package"
-              },
-              "fullDescription": {
-                "text": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-18018",
-              "help": {
-                "text": "Vulnerability CVE-2017-18018\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)",
-                "markdown": "**Vulnerability CVE-2017-18018**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "7.1"
-              }
-            },
-            {
               "id": "CVE-2017-14159-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1624,6 +1603,27 @@
                   "pkg:deb/debian/libudev1@261.2-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
                 ],
                 "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2017-18018-coreutils",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2017-18018 low vulnerability for coreutils package"
+              },
+              "fullDescription": {
+                "text": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-18018",
+              "help": {
+                "text": "Vulnerability CVE-2017-18018\nSeverity: low\nPackage: coreutils\nVersion: 9.10-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)",
+                "markdown": "**Vulnerability CVE-2017-18018**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | coreutils  | 9.10-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-18018](https://security-tracker.debian.org/tracker/CVE-2017-18018)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "7.1"
               }
             },
             {
@@ -1814,11 +1814,180 @@
                 ],
                 "security-severity": "6.1"
               }
+            },
+            {
+              "id": "CVE-2026-86805-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-86805 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86805",
+              "help": {
+                "text": "Vulnerability CVE-2026-86805\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86805](https://security-tracker.debian.org/tracker/CVE-2026-86805)",
+                "markdown": "**Vulnerability CVE-2026-86805**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86805](https://security-tracker.debian.org/tracker/CVE-2026-86805)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "6.3"
+              }
+            },
+            {
+              "id": "CVE-2026-86805-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-86805 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86805",
+              "help": {
+                "text": "Vulnerability CVE-2026-86805\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86805](https://security-tracker.debian.org/tracker/CVE-2026-86805)",
+                "markdown": "**Vulnerability CVE-2026-86805**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86805](https://security-tracker.debian.org/tracker/CVE-2026-86805)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "6.3"
+              }
+            },
+            {
+              "id": "CVE-2026-86805-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-86805 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86805",
+              "help": {
+                "text": "Vulnerability CVE-2026-86805\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86805](https://security-tracker.debian.org/tracker/CVE-2026-86805)",
+                "markdown": "**Vulnerability CVE-2026-86805**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86805](https://security-tracker.debian.org/tracker/CVE-2026-86805)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "6.3"
+              }
+            },
+            {
+              "id": "CVE-2026-95818-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-95818 low vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-95818",
+              "help": {
+                "text": "Vulnerability CVE-2026-95818\nSeverity: low\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-95818](https://security-tracker.debian.org/tracker/CVE-2026-95818)",
+                "markdown": "**Vulnerability CVE-2026-95818**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-95818](https://security-tracker.debian.org/tracker/CVE-2026-95818)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "3.6"
+              }
+            },
+            {
+              "id": "CVE-2026-95818-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-95818 low vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-95818",
+              "help": {
+                "text": "Vulnerability CVE-2026-95818\nSeverity: low\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-95818](https://security-tracker.debian.org/tracker/CVE-2026-95818)",
+                "markdown": "**Vulnerability CVE-2026-95818**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-95818](https://security-tracker.debian.org/tracker/CVE-2026-95818)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "3.6"
+              }
+            },
+            {
+              "id": "CVE-2026-95818-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-95818 low vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-95818",
+              "help": {
+                "text": "Vulnerability CVE-2026-95818\nSeverity: low\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-95818](https://security-tracker.debian.org/tracker/CVE-2026-95818)",
+                "markdown": "**Vulnerability CVE-2026-95818**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-95818](https://security-tracker.debian.org/tracker/CVE-2026-95818)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "3.6"
+              }
             }
           ]
         }
       },
       "results": [
+        {
+          "ruleId": "CVE-2026-82560-perl-base",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: perl-base, version 5.42.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "384874de0bf634fffebeb3a2d6052345f95ee8b7ef88b29f059f40024f5a7222:1"
+          }
+        },
         {
           "ruleId": "CVE-2017-17740-libldap2",
           "level": "note",
@@ -1895,45 +2064,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "f2b1d2c45ef9dc4b36bd36e614504d51e40bd50fb8978c16bf3fc0fbd5434d79:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2015-3276-libldap2",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libldap2, version 2.6.14+dfsg-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libldap2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/usr/share/doc/libldap2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/info/libldap2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
           }
         },
         {
@@ -2071,6 +2201,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2015-3276-libldap2",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libldap2, version 2.6.14+dfsg-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libldap2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/usr/share/doc/libldap2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/info/libldap2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
           }
         },
         {
@@ -2376,6 +2545,143 @@
           }
         },
         {
+          "ruleId": "CVE-2019-1010022-libc-bin",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2019-1010022-libc-gconv-modules-extra",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2019-1010022-libc6",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+          }
+        },
+        {
           "ruleId": "CVE-2019-1010024-libc-bin",
           "level": "note",
           "message": {
@@ -2650,163 +2956,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-82560-perl-base",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: perl-base, version 5.42.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/perl-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "384874de0bf634fffebeb3a2d6052345f95ee8b7ef88b29f059f40024f5a7222:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2024-56433-login.defs",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: login.defs, version 1:4.19.3-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/login.defs/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/login.defs/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/login.defs.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.postinst"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "bb09bb274c173e3fb095dc3f67cab5e1cc0077c1c99da2d70c7b150a10a66592:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2024-56433-passwd",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: passwd, version 1:4.19.3-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/passwd/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/passwd/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.postrm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.postrm"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.preinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.preinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/passwd.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.prerm"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "27d4b5be1039e5031be2b08fd4b8b4f439262a659bdbfe2d89635ac5db0cc120:1"
-          }
-        },
-        {
           "ruleId": "CVE-2019-1010023-libc-bin",
           "level": "note",
           "message": {
@@ -2944,10 +3093,10 @@
           }
         },
         {
-          "ruleId": "CVE-2019-1010022-libc-bin",
+          "ruleId": "CVE-2024-56433-login.defs",
           "level": "note",
           "message": {
-            "text": "A low vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A low vulnerability in deb package: login.defs, version 1:4.19.3-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -2968,41 +3117,37 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                  "name": "/usr/share/doc/login.defs/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/login.defs/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                  "name": "/var/lib/dpkg/info/login.defs.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.conffiles"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                  "name": "/var/lib/dpkg/info/login.defs.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.md5sums"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                  "name": "/var/lib/dpkg/info/login.defs.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.list"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                  "name": "/var/lib/dpkg/info/login.defs.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/login.defs.postinst"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+            "primaryLocationLineHash": "bb09bb274c173e3fb095dc3f67cab5e1cc0077c1c99da2d70c7b150a10a66592:1"
           }
         },
         {
-          "ruleId": "CVE-2019-1010022-libc-gconv-modules-extra",
+          "ruleId": "CVE-2024-56433-passwd",
           "level": "note",
           "message": {
-            "text": "A low vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A low vulnerability in deb package: passwd, version 1:4.19.3-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3023,61 +3168,42 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                  "name": "/usr/share/doc/passwd/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/passwd/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                  "name": "/var/lib/dpkg/info/passwd.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/passwd.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/passwd.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/passwd.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/passwd.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/passwd.preinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.preinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/passwd.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/passwd.prerm"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2019-1010022-libc6",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+            "primaryLocationLineHash": "27d4b5be1039e5031be2b08fd4b8b4f439262a659bdbfe2d89635ac5db0cc120:1"
           }
         },
         {
@@ -3257,143 +3383,6 @@
           }
         },
         {
-          "ruleId": "CVE-2019-1010025-libc-bin",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2019-1010025-libc-gconv-modules-extra",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2019-1010025-libc6",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
-          }
-        },
-        {
           "ruleId": "CVE-2019-9192-libc-bin",
           "level": "note",
           "message": {
@@ -3489,6 +3478,143 @@
         },
         {
           "ruleId": "CVE-2019-9192-libc6",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2019-1010025-libc-bin",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2019-1010025-libc-gconv-modules-extra",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2019-1010025-libc6",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -5123,49 +5249,6 @@
           }
         },
         {
-          "ruleId": "CVE-2017-18018-coreutils",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/coreutils/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/coreutils/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/coreutils.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/coreutils.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/coreutils.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
-          }
-        },
-        {
           "ruleId": "CVE-2017-14159-libldap2",
           "level": "note",
           "message": {
@@ -5280,6 +5363,49 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "6bce07da25c683ce625cf4c386f1698f687f456e74d181947af91d23bcc301a7:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2017-18018-coreutils",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: coreutils, version 9.10-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/coreutils/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/coreutils/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/coreutils.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/coreutils.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/coreutils.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
           }
         },
         {
@@ -5647,6 +5773,280 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-86805-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-86805-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-86805-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-95818-libc-bin",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-95818-libc-gconv-modules-extra",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-95818-libc6",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
           }
         }
       ]
