@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:01dc60f1-f877-4d39-8ad8-d1b53d401a60",
+  "serialNumber": "urn:uuid:ea1fb6ae-3ac3-4c61-8418-da87103721e4",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-09-25T04:42:16Z",
+    "timestamp": "2026-09-25T10:08:45Z",
     "tools": {
       "components": [
         {
@@ -59478,7 +59478,7 @@
   ],
   "vulnerabilities": [
     {
-      "bom-ref": "urn:uuid:ccb8c55f-06e9-43c3-b4fc-948686f2d728",
+      "bom-ref": "urn:uuid:c8d31749-0515-4ef0-960a-8e37db0f03a7",
       "id": "CVE-2026-82560",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59523,7 +59523,52 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:03408302-aae8-4141-8252-09ccc682366f",
+      "bom-ref": "urn:uuid:38927a39-ec1a-4fae-a433-d0d06b57e43f",
+      "id": "CVE-2026-85091",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-85091"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-85091",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-85091"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 8.3,
+          "severity": "high",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00592,
+          "method": "other"
+        }
+      ],
+      "description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.2-3?arch=amd64&distro=debian&package-id=3339159594e483f3&upstream=zlib",
+          "versions": [
+            {
+              "version": "1:1.3.dfsg+really1.3.2-3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:171c6cbe-d951-4b48-b043-d4b0cd6dfdba",
       "id": "CVE-2017-17740",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59566,44 +59611,44 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a4025e7e-65a9-430a-9638-6a0f4e8bdbe1",
-      "id": "CVE-2026-85091",
+      "bom-ref": "urn:uuid:f7db085b-0eb5-43df-8d78-34302382c7c0",
+      "id": "CVE-2026-54411",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-85091"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
       },
       "references": [
         {
-          "id": "CVE-2026-85091",
+          "id": "CVE-2026-54411",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-85091"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
           }
         }
       ],
       "ratings": [
         {
-          "score": 8.3,
-          "severity": "high",
+          "score": 6.9,
+          "severity": "medium",
           "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00442,
+          "score": 0.005,
           "method": "other"
         }
       ],
-      "description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.2-3?arch=amd64&distro=debian&package-id=3339159594e483f3&upstream=zlib",
+          "ref": "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64&distro=debian&package-id=74248be0db6ddc14&upstream=pam",
           "versions": [
             {
-              "version": "1:1.3.dfsg+really1.3.2-3",
+              "version": "1.7.0-8",
               "status": "affected"
             }
           ]
@@ -59611,7 +59656,142 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:242303c0-4d56-4fc5-b222-153a17ba64f4",
+      "bom-ref": "urn:uuid:3d0a9e97-14e1-4f29-bd7e-bca14a71d0a2",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.005,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64&distro=debian&package-id=91f7902a49a048f3&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:bb4a5f12-cf6c-4866-886e-3e04fa3363ac",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.005,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all&distro=debian&package-id=336801a07758bebc&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:3247505c-0f30-48da-a635-501f9d147eb3",
+      "id": "CVE-2026-54411",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-54411",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 6.9,
+          "severity": "medium",
+          "method": "other",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.005,
+          "method": "other"
+        }
+      ],
+      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64&distro=debian&package-id=43aeba10c606005a&upstream=pam",
+          "versions": [
+            {
+              "version": "1.7.0-8",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:9a6fade3-f1ae-410a-a000-151f380544f7",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59654,7 +59834,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ed4b32fd-d901-4402-a274-494bcfb6e763",
+      "bom-ref": "urn:uuid:66aacb74-46d3-4fd6-9fd9-65c1f367454e",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59697,7 +59877,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6159e2c6-4c23-4fc5-ae20-6a3ed5966b9c",
+      "bom-ref": "urn:uuid:23cb669c-2129-4196-ab7b-f9c49956ce12",
       "id": "CVE-2018-20796",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59740,7 +59920,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:631caf30-c221-4f60-9070-26879a8753c3",
+      "bom-ref": "urn:uuid:4f140e6f-6d30-4284-a8ba-bc87711104db",
       "id": "CVE-2015-3276",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59783,7 +59963,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3e1ed91a-ab73-4ea1-ac44-42d0d284d28b",
+      "bom-ref": "urn:uuid:ba6debac-492c-42d1-9f2d-0301ce100324",
       "id": "CVE-2026-5704",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59828,7 +60008,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:42b79185-d26a-4501-b60a-7c8aaa827d8f",
+      "bom-ref": "urn:uuid:294a9fdc-36cb-4d03-8536-7b5f564a4fd8",
       "id": "CVE-2005-2541",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -59871,187 +60051,154 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:79da9751-032b-48e4-a3bc-7a9be3666e0a",
-      "id": "CVE-2026-54411",
+      "bom-ref": "urn:uuid:97f793d0-3dc5-4c89-be03-b8d87d4afbf5",
+      "id": "CVE-2026-8674",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
       },
       "references": [
         {
-          "id": "CVE-2026-54411",
+          "id": "CVE-2026-8674",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
           }
         }
       ],
       "ratings": [
         {
-          "score": 6.9,
+          "score": 5.3,
           "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00342,
           "method": "other"
         }
       ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64&distro=debian&package-id=74248be0db6ddc14&upstream=pam",
+          "ref": "pkg:deb/debian/libc-bin@2.43-5?arch=amd64&distro=debian&package-id=4da0e3bf88895faa&upstream=glibc",
           "versions": [
             {
-              "version": "1.7.0-8",
+              "version": "2.43-5",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=2.43-6",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:6da66aee-dcbf-4d4b-a362-8c5d2c5f617a",
-      "id": "CVE-2026-54411",
+      "bom-ref": "urn:uuid:d1a3189b-d354-4af2-818e-a200e3f0677b",
+      "id": "CVE-2026-8674",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
       },
       "references": [
         {
-          "id": "CVE-2026-54411",
+          "id": "CVE-2026-8674",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
           }
         }
       ],
       "ratings": [
         {
-          "score": 6.9,
+          "score": 5.3,
           "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00342,
           "method": "other"
         }
       ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64&distro=debian&package-id=91f7902a49a048f3&upstream=pam",
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64&distro=debian&package-id=b05a401d785ff48e&upstream=glibc",
           "versions": [
             {
-              "version": "1.7.0-8",
+              "version": "2.43-5",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=2.43-6",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:75525846-0551-4e77-bc74-26d02294a409",
-      "id": "CVE-2026-54411",
+      "bom-ref": "urn:uuid:9eff8c65-702b-4606-bdd4-d7a0610be5bf",
+      "id": "CVE-2026-8674",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
       },
       "references": [
         {
-          "id": "CVE-2026-54411",
+          "id": "CVE-2026-8674",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
           }
         }
       ],
       "ratings": [
         {
-          "score": 6.9,
+          "score": 5.3,
           "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.0032,
+          "score": 0.00342,
           "method": "other"
         }
       ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
+      "description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
       "affects": [
         {
-          "ref": "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all&distro=debian&package-id=336801a07758bebc&upstream=pam",
+          "ref": "pkg:deb/debian/libc6@2.43-5?arch=amd64&distro=debian&package-id=34cb8b0d4fe5dfd8&upstream=glibc",
           "versions": [
             {
-              "version": "1.7.0-8",
+              "version": "2.43-5",
               "status": "affected"
+            },
+            {
+              "range": "vers:deb/>=2.43-6",
+              "status": "unaffected"
             }
           ]
         }
       ]
     },
     {
-      "bom-ref": "urn:uuid:514b4f13-14b5-4a89-8028-fe3d37001440",
-      "id": "CVE-2026-54411",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-54411",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-54411"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 6.9,
-          "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:N/R:X/V:D/RE:X/U:X"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.0032,
-          "method": "other"
-        }
-      ],
-      "description": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64&distro=debian&package-id=43aeba10c606005a&upstream=pam",
-          "versions": [
-            {
-              "version": "1.7.0-8",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:93f23744-d820-496d-8550-e8e5ef1309b5",
+      "bom-ref": "urn:uuid:e7da659b-e674-4a8e-afd1-7c9317db1181",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60094,7 +60241,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:51767c84-bda7-404b-9df2-d73dcdb57712",
+      "bom-ref": "urn:uuid:972737f9-e90e-4974-9361-f7a8b741b3cb",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60137,7 +60284,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a3618646-a874-48a3-bea9-6a72f4d8a241",
+      "bom-ref": "urn:uuid:182ddd3d-369c-4ea7-8345-165fefbabb0c",
       "id": "CVE-2019-1010022",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60180,7 +60327,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:3f22dc65-2f2d-4a1e-9281-626dccc72e29",
+      "bom-ref": "urn:uuid:ef401c37-285d-4863-bcb9-891db1da0204",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60223,7 +60370,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4108aa39-a784-46b3-bd59-0dd12d370d7a",
+      "bom-ref": "urn:uuid:49c0708a-512b-4ac6-afa2-87278409ca8a",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60266,7 +60413,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0bfcf9a1-3f13-4a3f-9602-2da71b4acef3",
+      "bom-ref": "urn:uuid:30fc462d-f248-48e3-ba38-39dac597feac",
       "id": "CVE-2019-1010024",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60309,154 +60456,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:14223eb1-21a1-4447-a4bb-c0edb2c6c0fd",
-      "id": "CVE-2026-8674",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-8674",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.3,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00306,
-          "method": "other"
-        }
-      ],
-      "description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.43-5?arch=amd64&distro=debian&package-id=4da0e3bf88895faa&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-5",
-              "status": "affected"
-            },
-            {
-              "range": "vers:deb/>=2.43-6",
-              "status": "unaffected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:86ef852b-4bff-450e-939e-0f432cff4dbb",
-      "id": "CVE-2026-8674",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-8674",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.3,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00306,
-          "method": "other"
-        }
-      ],
-      "description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64&distro=debian&package-id=b05a401d785ff48e&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-5",
-              "status": "affected"
-            },
-            {
-              "range": "vers:deb/>=2.43-6",
-              "status": "unaffected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:96d15261-a180-4a86-837e-4539362e0eff",
-      "id": "CVE-2026-8674",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-8674",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-8674"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 5.3,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00306,
-          "method": "other"
-        }
-      ],
-      "description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.43-5?arch=amd64&distro=debian&package-id=34cb8b0d4fe5dfd8&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-5",
-              "status": "affected"
-            },
-            {
-              "range": "vers:deb/>=2.43-6",
-              "status": "unaffected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:637e4647-67d0-4fd5-ab86-5781afa9fb5b",
+      "bom-ref": "urn:uuid:73a4df59-aaab-4f1a-813c-e9819db95975",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60499,7 +60499,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6a4d104c-b5e0-4ad2-bcdb-8542d6f84bbc",
+      "bom-ref": "urn:uuid:8209932f-881c-4442-ad90-71e326df6d86",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60542,7 +60542,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:2f2953ff-a366-42ff-a7ad-b54947081f5b",
+      "bom-ref": "urn:uuid:586d13c4-98d7-44ce-bc94-a391d23d9826",
       "id": "CVE-2019-1010023",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60585,7 +60585,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:d71c8b5a-a933-476a-a214-37462c709d32",
+      "bom-ref": "urn:uuid:5112cbc6-4fa8-467d-b661-2add46f6f51e",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60630,7 +60630,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ded79301-b94b-42a8-a589-cf9801611f6b",
+      "bom-ref": "urn:uuid:d4146e2b-8c03-4770-8613-6fcaed9f1145",
       "id": "CVE-2024-56433",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60675,7 +60675,52 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:17618206-0a0a-44e1-abbb-e4a7e77dc735",
+      "bom-ref": "urn:uuid:aeb94888-a9a8-46e1-8484-c4bdfcb88782",
+      "id": "CVE-2026-15534",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-15534"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-15534",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-15534"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 5.7,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00256,
+          "method": "other"
+        }
+      ],
+      "description": "Perl versions through 5.45.1 have out-of-bounds heap reads and writes during regular expression matching via an undersized superlinear cache in S_regmatch.  The regex engine's superlinear cache holds one bit per subject position for each participating WHILEM node, so the bit count is the subject length plus one times the number of nodes. Nothing checks that product for positive overflow of the signed 32-bit count: a 286331153 byte subject matched against a pattern with 15 participating nodes stores the count as 14, leaving a two byte cache. The cache is then indexed from the real match position and node number, so reads go past the end of the allocation, and on failure CACHEsayNO sets a bit past it.  A caller that matches an attacker controlled subject of this size against a pattern of this shape can crash the process or corrupt heap memory.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64&distro=debian&package-id=6c639d2a48be13c9&upstream=perl",
+          "versions": [
+            {
+              "version": "5.42.3-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:418de784-4208-4e6d-863c-6321ecf9e6b5",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60718,7 +60763,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:eb5dfa5d-de17-49c8-ae10-f46eb8736af4",
+      "bom-ref": "urn:uuid:a556a457-6f48-4e70-8624-fa91bcc07f53",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60761,7 +60806,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:05207d4b-ce41-4733-a5e6-3d1d8dc5daa3",
+      "bom-ref": "urn:uuid:60dfc3a4-0b51-40a2-96e2-0cd3bca27f0a",
       "id": "CVE-2010-4756",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60804,7 +60849,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4e005cdd-42d5-40cc-87c3-8d4574495851",
+      "bom-ref": "urn:uuid:db97d640-b970-4bd9-80ad-f6ee35dac779",
       "id": "CVE-2020-15719",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60847,7 +60892,142 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1d26d313-1bf1-4018-bece-96a319f68f3f",
+      "bom-ref": "urn:uuid:629bfc98-9954-44bb-9e3d-076ebad0cfa3",
+      "id": "CVE-2026-89092",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-89092",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 4.2,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00265,
+          "method": "other"
+        }
+      ],
+      "description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-bin@2.43-5?arch=amd64&distro=debian&package-id=4da0e3bf88895faa&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-5",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:e8d681e5-dfda-40ac-863c-7c3c54ec9e60",
+      "id": "CVE-2026-89092",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-89092",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 4.2,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00265,
+          "method": "other"
+        }
+      ],
+      "description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64&distro=debian&package-id=b05a401d785ff48e&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-5",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:ffb4ad32-073a-4854-9994-7b46d1b8e488",
+      "id": "CVE-2026-89092",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-89092",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 4.2,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00265,
+          "method": "other"
+        }
+      ],
+      "description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libc6@2.43-5?arch=amd64&distro=debian&package-id=34cb8b0d4fe5dfd8&upstream=glibc",
+          "versions": [
+            {
+              "version": "2.43-5",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:3dee5056-3e7f-4fd5-969e-1c0a4d9d8f41",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60890,7 +61070,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1b8639d0-1657-4e98-bdc2-baefc12af8f7",
+      "bom-ref": "urn:uuid:156a2c54-1b67-4e02-8a5e-dc9dfe4f7123",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60933,7 +61113,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:02d3a8a9-c3d6-48e5-80ca-45a2e2205198",
+      "bom-ref": "urn:uuid:c02cb033-d0b8-477d-ab39-e0bc55d14480",
       "id": "CVE-2019-9192",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -60976,7 +61156,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:77dddd05-5dbd-40e6-a16a-02e0497ac04c",
+      "bom-ref": "urn:uuid:97462251-b4da-4770-a98c-32cad742d341",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61019,7 +61199,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:272ecc3b-dcac-492c-8352-1153629f65db",
+      "bom-ref": "urn:uuid:7521249d-c244-4a1b-8284-aa8ef73a47fd",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61062,7 +61242,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:03f32586-2848-492a-bcab-788269c0c193",
+      "bom-ref": "urn:uuid:5851e481-2c01-4d31-b38d-0d764c71adb6",
       "id": "CVE-2019-1010025",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61105,142 +61285,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9a7fb7e1-b713-4db1-bb72-854374908861",
-      "id": "CVE-2026-89092",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-89092",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 4.2,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00241,
-          "method": "other"
-        }
-      ],
-      "description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-bin@2.43-5?arch=amd64&distro=debian&package-id=4da0e3bf88895faa&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-5",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:82aa163b-8b08-4cb5-aaae-c4ec84bb17ab",
-      "id": "CVE-2026-89092",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-89092",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 4.2,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00241,
-          "method": "other"
-        }
-      ],
-      "description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64&distro=debian&package-id=b05a401d785ff48e&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-5",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:09b85fb3-93b8-423d-b781-2aa43a599ea8",
-      "id": "CVE-2026-89092",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-89092",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-89092"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 4.2,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00241,
-          "method": "other"
-        }
-      ],
-      "description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libc6@2.43-5?arch=amd64&distro=debian&package-id=34cb8b0d4fe5dfd8&upstream=glibc",
-          "versions": [
-            {
-              "version": "2.43-5",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:c659e640-df7b-491e-8c30-d24899ca929c",
+      "bom-ref": "urn:uuid:384cd102-839b-4336-8095-0f9b9c38cbd7",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61283,7 +61328,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b3b69522-1f1d-4852-b442-bf525b0a603e",
+      "bom-ref": "urn:uuid:9b34b7d9-da51-4ea9-abdc-508e31bbad14",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61326,7 +61371,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:548abe8b-09c3-4b07-8314-de078cc9cc47",
+      "bom-ref": "urn:uuid:f5745e50-e75f-4124-9c8a-33b2287cab6d",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61369,7 +61414,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c3eed4a6-727d-4798-aabd-70f2a1e0f2fe",
+      "bom-ref": "urn:uuid:77aa42b3-1685-4425-be74-e4fa3b3f5107",
       "id": "CVE-2018-5709",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61412,44 +61457,44 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:59fc5461-5fb8-449b-8a78-99c09671e325",
-      "id": "CVE-2026-15534",
+      "bom-ref": "urn:uuid:215a107f-e36c-4cef-a70d-e4e387dadafe",
+      "id": "CVE-2026-42250",
       "source": {
         "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-15534"
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42250"
       },
       "references": [
         {
-          "id": "CVE-2026-15534",
+          "id": "CVE-2026-42250",
           "source": {
             "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-15534"
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42250"
           }
         }
       ],
       "ratings": [
         {
-          "score": 5.7,
+          "score": 4.8,
           "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
+          "method": "other",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
         },
         {
           "source": {
             "name": "FIRST",
             "url": "https://www.first.org/epss/"
           },
-          "score": 0.00167,
+          "score": 0.00182,
           "method": "other"
         }
       ],
-      "description": "Perl versions through 5.45.1 have out-of-bounds heap reads and writes during regular expression matching via an undersized superlinear cache in S_regmatch.  The regex engine's superlinear cache holds one bit per subject position for each participating WHILEM node, so the bit count is the subject length plus one times the number of nodes. Nothing checks that product for positive overflow of the signed 32-bit count: a 286331153 byte subject matched against a pattern with 15 participating nodes stores the count as 14, leaving a two byte cache. The cache is then indexed from the real match position and node number, so reads go past the end of the allocation, and on failure CACHEsayNO sets a bit past it.  A caller that matches an attacker controlled subject of this size against a pattern of this shape can crash the process or corrupt heap memory.",
+      "description": "bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing a specially crafted file, the application performs an out‑of‑bounds write to a global buffer, resulting in memory corruption and a crash (denial of service).  This issue was fixed in bzip2 patch 35d122a3df8b0cc4082a4d89fdc6ee99f375fe67",
       "affects": [
         {
-          "ref": "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64&distro=debian&package-id=6c639d2a48be13c9&upstream=perl",
+          "ref": "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64&distro=debian&package-id=da9cd667d901a272&upstream=bzip2%401.0.8-6",
           "versions": [
             {
-              "version": "5.42.3-1",
+              "version": "1.0.8-6+b2",
               "status": "affected"
             }
           ]
@@ -61457,7 +61502,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:eacc8d84-4ef8-49e4-afbd-80e8cadba99c",
+      "bom-ref": "urn:uuid:b5474d72-ddf4-4c56-929e-883b13622e7f",
       "id": "CVE-2026-86805",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61502,7 +61547,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:5f28fb60-9b1b-4583-9014-4097e0f4e331",
+      "bom-ref": "urn:uuid:a97800e6-60f5-462e-825e-415ce4a96725",
       "id": "CVE-2026-86805",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61547,7 +61592,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e50954a0-3da9-4911-88b2-54162a35bad8",
+      "bom-ref": "urn:uuid:b9048efa-40ea-45df-8c98-c4f4ea2cf9d7",
       "id": "CVE-2026-86805",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61592,7 +61637,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:c924df2d-bfbe-4813-bfe7-3ea8c53dd3d5",
+      "bom-ref": "urn:uuid:1f4573c9-1880-410a-92a4-93dc57429f80",
       "id": "CVE-2026-18508",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61637,52 +61682,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:76657be2-9b37-4aad-9a0c-d24dcaffc420",
-      "id": "CVE-2026-42250",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-42250"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-42250",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-42250"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 4.8,
-          "severity": "medium",
-          "method": "other",
-          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00126,
-          "method": "other"
-        }
-      ],
-      "description": "bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing a specially crafted file, the application performs an out‑of‑bounds write to a global buffer, resulting in memory corruption and a crash (denial of service).  This issue was fixed in bzip2 patch 35d122a3df8b0cc4082a4d89fdc6ee99f375fe67",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64&distro=debian&package-id=da9cd667d901a272&upstream=bzip2%401.0.8-6",
-          "versions": [
-            {
-              "version": "1.0.8-6+b2",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:3c644bb8-eab3-41e9-aafc-bfe8d243da6f",
+      "bom-ref": "urn:uuid:fa7f59a4-7b2b-4ac4-b748-f5f8b3a0d0dd",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61725,7 +61725,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:9e2194ba-d04e-4ff0-9b13-5b7614903bd4",
+      "bom-ref": "urn:uuid:a141c58f-833e-4b33-b7f1-f2f40ee57813",
       "id": "CVE-2011-3374",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61768,7 +61768,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b2c929f8-c500-423f-8d94-cf1dc45319c1",
+      "bom-ref": "urn:uuid:64d2bb50-1bd0-4c8e-8d10-528681eae67d",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61811,7 +61811,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b4a26394-d0c5-4417-a9da-0d929fdc9397",
+      "bom-ref": "urn:uuid:9d7f7119-e7e6-4382-8736-d3d6343f941e",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61854,7 +61854,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:96a329ff-45b6-4ba0-8f11-b1adbba15ed6",
+      "bom-ref": "urn:uuid:1f9e6667-6786-4767-b7d4-62ef14514f2b",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61897,7 +61897,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a50f8f33-bc08-49b8-9d41-4fc02ab22b45",
+      "bom-ref": "urn:uuid:5a03ef36-a30f-4aeb-bbdb-7db9c48ba8fa",
       "id": "CVE-2024-26461",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -61940,97 +61940,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:0033d849-7456-4798-94c5-16303966ec46",
-      "id": "CVE-2026-40228",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-40228",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 3.3,
-          "severity": "low",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00173,
-          "method": "other"
-        }
-      ],
-      "description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
-          "versions": [
-            {
-              "version": "261.2-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:ee0059f9-333e-45ed-abc1-6496088ccfe3",
-      "id": "CVE-2026-40228",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-40228",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "score": 3.3,
-          "severity": "low",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00173,
-          "method": "other"
-        }
-      ],
-      "description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
-          "versions": [
-            {
-              "version": "261.2-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:75e35f10-a9b5-4a68-8f1e-8b6158ff69e6",
+      "bom-ref": "urn:uuid:bee28295-91c8-4239-93c2-e269f46793e3",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62073,7 +61983,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8f33e724-2dff-4b45-8397-ba7756e89767",
+      "bom-ref": "urn:uuid:3afb035c-04ad-439a-a728-1d8f60035fa0",
       "id": "CVE-2007-5686",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62116,7 +62026,97 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:de903588-50f8-4f2f-9a03-74ce39302014",
+      "bom-ref": "urn:uuid:008ebdf2-55f8-4f35-a75c-c368aaefee25",
+      "id": "CVE-2026-40228",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-40228",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 3.3,
+          "severity": "low",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00139,
+          "method": "other"
+        }
+      ],
+      "description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64&distro=debian&package-id=2f9056dc22a5ad87&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:058575c2-1e28-44ac-b7cf-440a41630c9f",
+      "id": "CVE-2026-40228",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-40228",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-40228"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "score": 3.3,
+          "severity": "low",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00139,
+          "method": "other"
+        }
+      ],
+      "description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/libudev1@261.2-1?arch=amd64&distro=debian&package-id=2d7322578423b6fa&upstream=systemd",
+          "versions": [
+            {
+              "version": "261.2-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:ad3c425e-9d54-4ae7-a910-09edfc015438",
       "id": "CVE-2026-95818",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62161,7 +62161,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:23cab0eb-033d-4d61-9159-ae6ea1c55059",
+      "bom-ref": "urn:uuid:80203670-3285-42c2-a565-19c23dd1d7f9",
       "id": "CVE-2026-95818",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62206,7 +62206,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:6183cf9a-572e-40ff-9549-f1d2e193ebc3",
+      "bom-ref": "urn:uuid:e287c106-f54c-41e3-8d9d-db4c2bd510b9",
       "id": "CVE-2026-95818",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62251,7 +62251,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4daae4ee-d583-4744-a80a-556aedc80983",
+      "bom-ref": "urn:uuid:6447b9ed-5e03-451a-acf8-59e026cc1b64",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62294,7 +62294,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1c9260be-5bab-4747-bfc6-0f3e70b497e8",
+      "bom-ref": "urn:uuid:7390ba88-5a78-4acd-9223-14f205eab7e7",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62337,7 +62337,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a233105b-1eb4-45c2-9c9c-d3bfc1bc3cff",
+      "bom-ref": "urn:uuid:67529b52-832c-45b2-a393-cb09b599f85b",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62380,7 +62380,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8d1b68a3-0e3d-464f-a11c-a054ea654481",
+      "bom-ref": "urn:uuid:d3ec9bdd-b03b-4863-9140-32439061ebd3",
       "id": "CVE-2024-26458",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62423,7 +62423,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a4748688-fef6-4ee1-bb42-669d6c577ca0",
+      "bom-ref": "urn:uuid:9b071ec5-56b8-404f-a953-3a884ae4b4a5",
       "id": "CVE-2026-18477",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62468,7 +62468,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a25a2d93-4ca6-49fa-a68e-073a7309273a",
+      "bom-ref": "urn:uuid:79bbc0fd-f855-4957-8bd4-35a5fce09399",
       "id": "CVE-2011-4116",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62511,7 +62511,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f6aeeaa3-36c0-47a3-ab30-31c6e894f3a0",
+      "bom-ref": "urn:uuid:9f3a24b0-c602-48f9-9ed8-e6e12d7afdf8",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62554,7 +62554,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:e9c04c19-0e06-4c1d-bfe2-ed56b08054d7",
+      "bom-ref": "urn:uuid:f9771924-8669-4c1a-a7f3-60a3aab4d0e4",
       "id": "CVE-2013-4392",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62597,7 +62597,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:df198efa-82df-407d-a730-381dd5661959",
+      "bom-ref": "urn:uuid:0adefa6f-0055-4c5f-845b-a977fd92ce21",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62640,7 +62640,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ff49f66b-3bd6-4059-8c9c-3729ebea5c29",
+      "bom-ref": "urn:uuid:9d4a9d9e-08ed-44ec-9b45-1856d7ca0567",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62683,7 +62683,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:691a6741-765e-4c17-8ef2-14f1f674dab2",
+      "bom-ref": "urn:uuid:e21039a8-a8fe-4f9f-b476-a85b30f2b9c4",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62726,7 +62726,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:27c94ed9-d424-45d3-bb9f-24d780166d16",
+      "bom-ref": "urn:uuid:eee61f9e-5bdb-4959-810d-d593445437de",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62769,7 +62769,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:8fc70c78-aab6-4695-9ce4-dfdd7034cbc1",
+      "bom-ref": "urn:uuid:96a8f728-2bf9-4929-916b-928ea6033214",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62812,7 +62812,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:514e43fb-9e49-4b2c-a83d-631536ed2f49",
+      "bom-ref": "urn:uuid:ce07570f-078e-4ac0-b70d-7b0555e32f9b",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62855,7 +62855,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:906b6c40-3767-4116-a86e-9656f1a2339a",
+      "bom-ref": "urn:uuid:53f2cd52-cda6-45bc-bc8c-32218fd9a6b1",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62898,7 +62898,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:82937d45-9b78-48dc-864d-7d6d0f35b633",
+      "bom-ref": "urn:uuid:29a18cc3-abf6-470b-9b2d-3e500644bc98",
       "id": "CVE-2022-0563",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62941,7 +62941,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:148a250c-9e74-4639-b525-36a7aa5122a0",
+      "bom-ref": "urn:uuid:dac0ad0e-4610-497a-b661-3902cc1a84ea",
       "id": "CVE-2017-14159",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -62984,7 +62984,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:ab0d2c22-6285-4eae-a7a4-d92003623506",
+      "bom-ref": "urn:uuid:3570a08f-1671-4efb-af46-340d7a8f12b5",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63027,7 +63027,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:4e279724-0ae8-4f55-bd5b-0d66dee0e76f",
+      "bom-ref": "urn:uuid:73e519d8-4dcc-4e3e-a66d-6721035f4cc2",
       "id": "CVE-2023-31439",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63070,7 +63070,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:356bb885-4382-4cf4-9d79-e500a9711402",
+      "bom-ref": "urn:uuid:d2d7d75e-4c70-4a42-b557-82f575bd2db4",
       "id": "CVE-2017-18018",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63113,7 +63113,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:f70c40b7-d48d-42bb-8d08-263709ad031d",
+      "bom-ref": "urn:uuid:f8395c14-4d9d-4fc0-89cb-c8bedea8c233",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63156,7 +63156,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:1d91cda9-67de-4a49-aacb-e9378dd65707",
+      "bom-ref": "urn:uuid:e7e7952c-2d28-4662-bd3e-1932107f9fd5",
       "id": "CVE-2023-31437",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63199,7 +63199,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:a22a2786-6340-4152-a925-2de71392aff1",
+      "bom-ref": "urn:uuid:ad8db650-1151-4db3-8c6c-7d26d1862916",
       "id": "CVE-2026-53910",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63242,7 +63242,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:bbf24759-ba9f-4230-bf14-048ecc2fc035",
+      "bom-ref": "urn:uuid:8893ccba-aed1-4670-9a7f-8220056cb61d",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63285,7 +63285,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:b8eb51e0-7a6b-43a8-8c76-aa0e04501781",
+      "bom-ref": "urn:uuid:39d0c284-c015-4770-91f3-1af55cb7a75f",
       "id": "CVE-2023-31438",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63328,7 +63328,7 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:78827da0-586e-4adc-9917-dbd74812d434",
+      "bom-ref": "urn:uuid:0cae7fda-7369-4156-ad70-dc8a083a3f06",
       "id": "CVE-2025-5278",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63371,7 +63371,93 @@
       ]
     },
     {
-      "bom-ref": "urn:uuid:234ce8c4-35fa-4610-abcb-850e7ac50eef",
+      "bom-ref": "urn:uuid:6bf12b7d-8566-44d1-80ef-474dd37c0d25",
+      "id": "CVE-2026-56392",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-56392"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-56392",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-56392"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00186,
+          "method": "other"
+        }
+      ],
+      "description": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer. When processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.  When running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.           This issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:a846f8ba-fc51-4d92-8276-75c3df569939",
+      "id": "CVE-2026-56391",
+      "source": {
+        "name": "debian-distro-debian-unstable",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-56391"
+      },
+      "references": [
+        {
+          "id": "CVE-2026-56391",
+          "source": {
+            "name": "debian-distro-debian-unstable",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2026-56391"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "severity": "none",
+          "method": "other"
+        },
+        {
+          "source": {
+            "name": "FIRST",
+            "url": "https://www.first.org/epss/"
+          },
+          "score": 0.00171,
+          "method": "other"
+        }
+      ],
+      "description": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value.  This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.  When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.   This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371.",
+      "affects": [
+        {
+          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
+          "versions": [
+            {
+              "version": "9.10-1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "urn:uuid:613a5e08-b2bb-4c9e-81fb-20f5c3453033",
       "id": "CVE-2026-22185",
       "source": {
         "name": "debian-distro-debian-unstable",
@@ -63407,92 +63493,6 @@
           "versions": [
             {
               "version": "2.6.14+dfsg-2",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:ce140155-96bc-486c-9f47-e2d1460b378a",
-      "id": "CVE-2026-56392",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-56392"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-56392",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-56392"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00146,
-          "method": "other"
-        }
-      ],
-      "description": "GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an integer overflow during buffer allocation when processing large tab stop (-t) values. The multiplication used to calculate the allocation size can wrap around, resulting in an undersized buffer. When processing crafted input, subsequent writes exceed the allocated memory, leading to an out‑of‑bounds heap write.  When running GNU coreutils unexpand with attacker-provided large tab stop (-t) arguments, this behavior leads to a crash and potentially achieve a heap write primitive depending on memory layout.           This issue has been fixed in the commit b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
-          "versions": [
-            {
-              "version": "9.10-1",
-              "status": "affected"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bom-ref": "urn:uuid:e5e39494-eec9-4df1-9202-5e8c6eb9986b",
-      "id": "CVE-2026-56391",
-      "source": {
-        "name": "debian-distro-debian-unstable",
-        "url": "https://security-tracker.debian.org/tracker/CVE-2026-56391"
-      },
-      "references": [
-        {
-          "id": "CVE-2026-56391",
-          "source": {
-            "name": "debian-distro-debian-unstable",
-            "url": "https://security-tracker.debian.org/tracker/CVE-2026-56391"
-          }
-        }
-      ],
-      "ratings": [
-        {
-          "severity": "none",
-          "method": "other"
-        },
-        {
-          "source": {
-            "name": "FIRST",
-            "url": "https://www.first.org/epss/"
-          },
-          "score": 0.00131,
-          "method": "other"
-        }
-      ],
-      "description": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value.  This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input.  When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure.   This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371.",
-      "affects": [
-        {
-          "ref": "pkg:deb/debian/coreutils@9.10-1?arch=amd64&distro=debian&package-id=6375ccc856af23fe",
-          "versions": [
-            {
-              "version": "9.10-1",
               "status": "affected"
             }
           ]

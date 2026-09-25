@@ -31,6 +31,27 @@
               }
             },
             {
+              "id": "CVE-2026-85091-zlib1g",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-85091 high vulnerability for zlib1g package"
+              },
+              "fullDescription": {
+                "text": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-85091",
+              "help": {
+                "text": "Vulnerability CVE-2026-85091\nSeverity: high\nPackage: zlib1g\nVersion: 1:1.3.dfsg+really1.3.2-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-85091](https://security-tracker.debian.org/tracker/CVE-2026-85091)",
+                "markdown": "**Vulnerability CVE-2026-85091**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | zlib1g  | 1:1.3.dfsg+really1.3.2-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-85091](https://security-tracker.debian.org/tracker/CVE-2026-85091)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=zlib"
+                ],
+                "security-severity": "8.3"
+              }
+            },
+            {
               "id": "CVE-2017-17740-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -52,24 +73,87 @@
               }
             },
             {
-              "id": "CVE-2026-85091-zlib1g",
+              "id": "CVE-2026-54411-libpam-modules",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-85091 high vulnerability for zlib1g package"
+                "text": "CVE-2026-54411 medium vulnerability for libpam-modules package"
               },
               "fullDescription": {
-                "text": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary."
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-85091",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
               "help": {
-                "text": "Vulnerability CVE-2026-85091\nSeverity: high\nPackage: zlib1g\nVersion: 1:1.3.dfsg+really1.3.2-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-85091](https://security-tracker.debian.org/tracker/CVE-2026-85091)",
-                "markdown": "**Vulnerability CVE-2026-85091**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | zlib1g  | 1:1.3.dfsg+really1.3.2-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-85091](https://security-tracker.debian.org/tracker/CVE-2026-85091)  |\n"
+                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam-modules\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
+                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam-modules  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.2-3?arch=amd64\u0026distro=debian\u0026upstream=zlib"
+                  "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64\u0026distro=debian\u0026upstream=pam"
                 ],
-                "security-severity": "8.3"
+                "security-severity": "6.9"
+              }
+            },
+            {
+              "id": "CVE-2026-54411-libpam-modules-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54411 medium vulnerability for libpam-modules-bin package"
+              },
+              "fullDescription": {
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+              "help": {
+                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam-modules-bin\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
+                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam-modules-bin  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64\u0026distro=debian\u0026upstream=pam"
+                ],
+                "security-severity": "6.9"
+              }
+            },
+            {
+              "id": "CVE-2026-54411-libpam-runtime",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54411 medium vulnerability for libpam-runtime package"
+              },
+              "fullDescription": {
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+              "help": {
+                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam-runtime\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
+                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam-runtime  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all\u0026distro=debian\u0026upstream=pam"
+                ],
+                "security-severity": "6.9"
+              }
+            },
+            {
+              "id": "CVE-2026-54411-libpam0g",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54411 medium vulnerability for libpam0g package"
+              },
+              "fullDescription": {
+                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+              "help": {
+                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam0g\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
+                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam0g  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64\u0026distro=debian\u0026upstream=pam"
+                ],
+                "security-severity": "6.9"
               }
             },
             {
@@ -199,87 +283,66 @@
               }
             },
             {
-              "id": "CVE-2026-54411-libpam-modules",
+              "id": "CVE-2026-8674-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-54411 medium vulnerability for libpam-modules package"
+                "text": "CVE-2026-8674 medium vulnerability for libc-bin package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
+                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
               "help": {
-                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam-modules\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
-                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam-modules  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
+                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: 2.43-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
+                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  | 2.43-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libpam-modules@1.7.0-8?arch=amd64\u0026distro=debian\u0026upstream=pam"
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
-                "security-severity": "6.9"
+                "security-severity": "5.3"
               }
             },
             {
-              "id": "CVE-2026-54411-libpam-modules-bin",
+              "id": "CVE-2026-8674-libc-gconv-modules-extra",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-54411 medium vulnerability for libpam-modules-bin package"
+                "text": "CVE-2026-8674 medium vulnerability for libc-gconv-modules-extra package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
+                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
               "help": {
-                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam-modules-bin\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
-                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam-modules-bin  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
+                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: 2.43-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
+                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  | 2.43-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libpam-modules-bin@1.7.0-8?arch=amd64\u0026distro=debian\u0026upstream=pam"
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
-                "security-severity": "6.9"
+                "security-severity": "5.3"
               }
             },
             {
-              "id": "CVE-2026-54411-libpam-runtime",
+              "id": "CVE-2026-8674-libc6",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-54411 medium vulnerability for libpam-runtime package"
+                "text": "CVE-2026-8674 medium vulnerability for libc6 package"
               },
               "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
+                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
               "help": {
-                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam-runtime\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
-                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam-runtime  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
+                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: 2.43-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
+                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  | 2.43-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/libpam-runtime@1.7.0-8?arch=all\u0026distro=debian\u0026upstream=pam"
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
-                "security-severity": "6.9"
-              }
-            },
-            {
-              "id": "CVE-2026-54411-libpam0g",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54411 medium vulnerability for libpam0g package"
-              },
-              "fullDescription": {
-                "text": "Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module's plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive authentication through a calling service to recover the plaintext password of a target account by measuring response-timing differences."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
-              "help": {
-                "text": "Vulnerability CVE-2026-54411\nSeverity: medium\nPackage: libpam0g\nVersion: 1.7.0-8\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)",
-                "markdown": "**Vulnerability CVE-2026-54411**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libpam0g  | 1.7.0-8  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54411](https://security-tracker.debian.org/tracker/CVE-2026-54411)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libpam0g@1.7.0-8?arch=amd64\u0026distro=debian\u0026upstream=pam"
-                ],
-                "security-severity": "6.9"
+                "security-severity": "5.3"
               }
             },
             {
@@ -409,69 +472,6 @@
               }
             },
             {
-              "id": "CVE-2026-8674-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-8674 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
-              "help": {
-                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: 2.43-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
-                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  | 2.43-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-8674-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-8674 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
-              "help": {
-                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: 2.43-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
-                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  | 2.43-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-8674-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-8674 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.  The resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
-              "help": {
-                "text": "Vulnerability CVE-2026-8674\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: 2.43-6\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)",
-                "markdown": "**Vulnerability CVE-2026-8674**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  | 2.43-6  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-8674](https://security-tracker.debian.org/tracker/CVE-2026-8674)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
               "id": "CVE-2019-1010023-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -577,6 +577,27 @@
               }
             },
             {
+              "id": "CVE-2026-15534-perl-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-15534 medium vulnerability for perl-base package"
+              },
+              "fullDescription": {
+                "text": "Perl versions through 5.45.1 have out-of-bounds heap reads and writes during regular expression matching via an undersized superlinear cache in S_regmatch.  The regex engine's superlinear cache holds one bit per subject position for each participating WHILEM node, so the bit count is the subject length plus one times the number of nodes. Nothing checks that product for positive overflow of the signed 32-bit count: a 286331153 byte subject matched against a pattern with 15 participating nodes stores the count as 14, leaving a two byte cache. The cache is then indexed from the real match position and node number, so reads go past the end of the allocation, and on failure CACHEsayNO sets a bit past it.  A caller that matches an attacker controlled subject of this size against a pattern of this shape can crash the process or corrupt heap memory."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-15534",
+              "help": {
+                "text": "Vulnerability CVE-2026-15534\nSeverity: medium\nPackage: perl-base\nVersion: 5.42.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-15534](https://security-tracker.debian.org/tracker/CVE-2026-15534)",
+                "markdown": "**Vulnerability CVE-2026-15534**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | perl-base  | 5.42.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-15534](https://security-tracker.debian.org/tracker/CVE-2026-15534)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                ],
+                "security-severity": "5.7"
+              }
+            },
+            {
               "id": "CVE-2010-4756-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -656,6 +677,69 @@
               "properties": {
                 "purls": [
                   "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
+                ],
+                "security-severity": "4.2"
+              }
+            },
+            {
+              "id": "CVE-2026-89092-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89092 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+              "help": {
+                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
+                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "4.2"
+              }
+            },
+            {
+              "id": "CVE-2026-89092-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89092 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+              "help": {
+                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
+                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "4.2"
+              }
+            },
+            {
+              "id": "CVE-2026-89092-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89092 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+              "help": {
+                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
+                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "4.2"
               }
@@ -787,69 +871,6 @@
               }
             },
             {
-              "id": "CVE-2026-89092-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89092 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
-              "help": {
-                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
-                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "4.2"
-              }
-            },
-            {
-              "id": "CVE-2026-89092-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89092 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
-              "help": {
-                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
-                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "4.2"
-              }
-            },
-            {
-              "id": "CVE-2026-89092-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89092 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
-              "help": {
-                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc6\nVersion: 2.43-5\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
-                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-5  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-5?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "4.2"
-              }
-            },
-            {
               "id": "CVE-2018-5709-libgssapi-krb5-2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -934,24 +955,24 @@
               }
             },
             {
-              "id": "CVE-2026-15534-perl-base",
+              "id": "CVE-2026-42250-libbz2-1.0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-15534 medium vulnerability for perl-base package"
+                "text": "CVE-2026-42250 medium vulnerability for libbz2-1.0 package"
               },
               "fullDescription": {
-                "text": "Perl versions through 5.45.1 have out-of-bounds heap reads and writes during regular expression matching via an undersized superlinear cache in S_regmatch.  The regex engine's superlinear cache holds one bit per subject position for each participating WHILEM node, so the bit count is the subject length plus one times the number of nodes. Nothing checks that product for positive overflow of the signed 32-bit count: a 286331153 byte subject matched against a pattern with 15 participating nodes stores the count as 14, leaving a two byte cache. The cache is then indexed from the real match position and node number, so reads go past the end of the allocation, and on failure CACHEsayNO sets a bit past it.  A caller that matches an attacker controlled subject of this size against a pattern of this shape can crash the process or corrupt heap memory."
+                "text": "bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing a specially crafted file, the application performs an out‑of‑bounds write to a global buffer, resulting in memory corruption and a crash (denial of service).  This issue was fixed in bzip2 patch 35d122a3df8b0cc4082a4d89fdc6ee99f375fe67"
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-15534",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42250",
               "help": {
-                "text": "Vulnerability CVE-2026-15534\nSeverity: medium\nPackage: perl-base\nVersion: 5.42.3-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-15534](https://security-tracker.debian.org/tracker/CVE-2026-15534)",
-                "markdown": "**Vulnerability CVE-2026-15534**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | perl-base  | 5.42.3-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-15534](https://security-tracker.debian.org/tracker/CVE-2026-15534)  |\n"
+                "text": "Vulnerability CVE-2026-42250\nSeverity: medium\nPackage: libbz2-1.0\nVersion: 1.0.8-6+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42250](https://security-tracker.debian.org/tracker/CVE-2026-42250)",
+                "markdown": "**Vulnerability CVE-2026-42250**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libbz2-1.0  | 1.0.8-6+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42250](https://security-tracker.debian.org/tracker/CVE-2026-42250)  |\n"
               },
               "properties": {
                 "purls": [
-                  "pkg:deb/debian/perl-base@5.42.3-1?arch=amd64\u0026distro=debian\u0026upstream=perl"
+                  "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=bzip2%401.0.8-6"
                 ],
-                "security-severity": "5.7"
+                "security-severity": "4.8"
               }
             },
             {
@@ -1036,27 +1057,6 @@
                   "pkg:deb/debian/tar@1.35%2Bdfsg-5?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "4.4"
-              }
-            },
-            {
-              "id": "CVE-2026-42250-libbz2-1.0",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42250 medium vulnerability for libbz2-1.0 package"
-              },
-              "fullDescription": {
-                "text": "bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing a specially crafted file, the application performs an out‑of‑bounds write to a global buffer, resulting in memory corruption and a crash (denial of service).  This issue was fixed in bzip2 patch 35d122a3df8b0cc4082a4d89fdc6ee99f375fe67"
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42250",
-              "help": {
-                "text": "Vulnerability CVE-2026-42250\nSeverity: medium\nPackage: libbz2-1.0\nVersion: 1.0.8-6+b2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42250](https://security-tracker.debian.org/tracker/CVE-2026-42250)",
-                "markdown": "**Vulnerability CVE-2026-42250**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libbz2-1.0  | 1.0.8-6+b2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42250](https://security-tracker.debian.org/tracker/CVE-2026-42250)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libbz2-1.0@1.0.8-6%2Bb2?arch=amd64\u0026distro=debian\u0026upstream=bzip2%401.0.8-6"
-                ],
-                "security-severity": "4.8"
               }
             },
             {
@@ -1186,48 +1186,6 @@
               }
             },
             {
-              "id": "CVE-2026-40228-libsystemd0",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-40228 low vulnerability for libsystemd0 package"
-              },
-              "fullDescription": {
-                "text": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
-              "help": {
-                "text": "Vulnerability CVE-2026-40228\nSeverity: low\nPackage: libsystemd0\nVersion: 261.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)",
-                "markdown": "**Vulnerability CVE-2026-40228**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libsystemd0  | 261.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
-                ],
-                "security-severity": "3.3"
-              }
-            },
-            {
-              "id": "CVE-2026-40228-libudev1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-40228 low vulnerability for libudev1 package"
-              },
-              "fullDescription": {
-                "text": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
-              "help": {
-                "text": "Vulnerability CVE-2026-40228\nSeverity: low\nPackage: libudev1\nVersion: 261.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)",
-                "markdown": "**Vulnerability CVE-2026-40228**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libudev1  | 261.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libudev1@261.2-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
-                ],
-                "security-severity": "3.3"
-              }
-            },
-            {
               "id": "CVE-2007-5686-login.defs",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1267,6 +1225,48 @@
                   "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64\u0026distro=debian\u0026upstream=shadow"
                 ],
                 "security-severity": "4.9"
+              }
+            },
+            {
+              "id": "CVE-2026-40228-libsystemd0",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-40228 low vulnerability for libsystemd0 package"
+              },
+              "fullDescription": {
+                "text": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
+              "help": {
+                "text": "Vulnerability CVE-2026-40228\nSeverity: low\nPackage: libsystemd0\nVersion: 261.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)",
+                "markdown": "**Vulnerability CVE-2026-40228**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libsystemd0  | 261.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsystemd0@261.2-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
+                ],
+                "security-severity": "3.3"
+              }
+            },
+            {
+              "id": "CVE-2026-40228-libudev1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-40228 low vulnerability for libudev1 package"
+              },
+              "fullDescription": {
+                "text": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
+              "help": {
+                "text": "Vulnerability CVE-2026-40228\nSeverity: low\nPackage: libudev1\nVersion: 261.2-1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)",
+                "markdown": "**Vulnerability CVE-2026-40228**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libudev1  | 261.2-1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-40228](https://security-tracker.debian.org/tracker/CVE-2026-40228)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libudev1@261.2-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
+                ],
+                "security-severity": "3.3"
               }
             },
             {
@@ -1879,27 +1879,6 @@
               }
             },
             {
-              "id": "CVE-2026-22185-libldap2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-22185 low vulnerability for libldap2 package"
-              },
-              "fullDescription": {
-                "text": "OpenLDAP Lightning Memory-Mapped Database (LMDB) versions up to and including 0.9.14, prior to commit 8e1fda8, contain a heap buffer underflow in the readline() function of mdb_load. When processing malformed input containing an embedded NUL byte, an unsigned offset calculation can underflow and cause an out-of-bounds read of one byte before the allocated heap buffer. This can cause mdb_load to crash, leading to a limited denial-of-service condition."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-22185",
-              "help": {
-                "text": "Vulnerability CVE-2026-22185\nSeverity: low\nPackage: libldap2\nVersion: 2.6.14+dfsg-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)",
-                "markdown": "**Vulnerability CVE-2026-22185**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.14+dfsg-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
-                ],
-                "security-severity": "4.6"
-              }
-            },
-            {
               "id": "CVE-2026-56392-coreutils",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -1939,6 +1918,27 @@
                   "pkg:deb/debian/coreutils@9.10-1?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "6.1"
+              }
+            },
+            {
+              "id": "CVE-2026-22185-libldap2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-22185 low vulnerability for libldap2 package"
+              },
+              "fullDescription": {
+                "text": "OpenLDAP Lightning Memory-Mapped Database (LMDB) versions up to and including 0.9.14, prior to commit 8e1fda8, contain a heap buffer underflow in the readline() function of mdb_load. When processing malformed input containing an embedded NUL byte, an unsigned offset calculation can underflow and cause an out-of-bounds read of one byte before the allocated heap buffer. This can cause mdb_load to crash, leading to a limited denial-of-service condition."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-22185",
+              "help": {
+                "text": "Vulnerability CVE-2026-22185\nSeverity: low\nPackage: libldap2\nVersion: 2.6.14+dfsg-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)",
+                "markdown": "**Vulnerability CVE-2026-22185**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.14+dfsg-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-22185](https://security-tracker.debian.org/tracker/CVE-2026-22185)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
+                ],
+                "security-severity": "4.6"
               }
             }
           ]
@@ -1989,6 +1989,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-85091-zlib1g",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: zlib1g, version 1:1.3.dfsg+really1.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/zlib1g/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/zlib1g/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/zlib1g:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/zlib1g:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "f2b1d2c45ef9dc4b36bd36e614504d51e40bd50fb8978c16bf3fc0fbd5434d79:1"
+          }
+        },
+        {
           "ruleId": "CVE-2017-17740-libldap2",
           "level": "note",
           "message": {
@@ -2028,10 +2067,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-85091-zlib1g",
-          "level": "error",
+          "ruleId": "CVE-2026-54411-libpam-modules",
+          "level": "warning",
           "message": {
-            "text": "A high vulnerability in deb package: zlib1g, version 1:1.3.dfsg+really1.3.2-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A medium vulnerability in deb package: libpam-modules, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -2052,18 +2091,179 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/zlib1g/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/zlib1g/copyright"
+                  "name": "/usr/share/doc/libpam-modules/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam-modules/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/zlib1g:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/zlib1g:amd64.md5sums"
+                  "name": "/var/lib/dpkg/info/libpam-modules:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-modules:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules:amd64.md5sums"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "f2b1d2c45ef9dc4b36bd36e614504d51e40bd50fb8978c16bf3fc0fbd5434d79:1"
+            "primaryLocationLineHash": "cbf855de1afdbc4b98dcc4e8d1b4cb2b896939a70855584cc59462f2e3052b44:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54411-libpam-modules-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libpam-modules-bin, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libpam-modules-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam-modules-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-modules-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-modules-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-modules-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-modules-bin.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-modules-bin.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.prerm"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "2dc0267d5c2934c72adf5a6386f76504a50a9d25f01a2d03ce7bb0337dfa164a:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54411-libpam-runtime",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libpam-runtime, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libpam-runtime/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam-runtime/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.postrm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.postrm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.prerm",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.prerm"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam-runtime.templates",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.templates"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7cea71c99ea5a4228040fe0f1e6e2a3ed70258e7699369c000ae46ef1d0b85c9:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54411-libpam0g",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libpam0g, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libpam0g/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam0g/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libpam0g:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam0g:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "9bbf9d7f19bdcdce5b7bd61ed0ca8f09022acfa6861931d3f67355cb5c198655:1"
           }
         },
         {
@@ -2345,10 +2545,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-54411-libpam-modules",
+          "ruleId": "CVE-2026-8674-libc-bin",
           "level": "warning",
           "message": {
-            "text": "A medium vulnerability in deb package: libpam-modules, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -2369,29 +2569,41 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/libpam-modules/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam-modules/copyright"
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libpam-modules:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules:amd64.conffiles"
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libpam-modules:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules:amd64.md5sums"
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "cbf855de1afdbc4b98dcc4e8d1b4cb2b896939a70855584cc59462f2e3052b44:1"
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
           }
         },
         {
-          "ruleId": "CVE-2026-54411-libpam-modules-bin",
+          "ruleId": "CVE-2026-8674-libc-gconv-modules-extra",
           "level": "warning",
           "message": {
-            "text": "A medium vulnerability in deb package: libpam-modules-bin, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -2412,41 +2624,25 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/libpam-modules-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam-modules-bin/copyright"
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libpam-modules-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-modules-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-modules-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-modules-bin.postrm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.postrm"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-modules-bin.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-modules-bin.prerm"
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "2dc0267d5c2934c72adf5a6386f76504a50a9d25f01a2d03ce7bb0337dfa164a:1"
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
           }
         },
         {
-          "ruleId": "CVE-2026-54411-libpam-runtime",
+          "ruleId": "CVE-2026-8674-libc6",
           "level": "warning",
           "message": {
-            "text": "A medium vulnerability in deb package: libpam-runtime, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -2467,81 +2663,22 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/libpam-runtime/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam-runtime/copyright"
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.conffiles"
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.postrm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.postrm"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.prerm",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.prerm"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam-runtime.templates",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam-runtime.templates"
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "7cea71c99ea5a4228040fe0f1e6e2a3ed70258e7699369c000ae46ef1d0b85c9:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54411-libpam0g",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libpam0g, version 1.7.0-8 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libpam0g/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libpam0g/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libpam0g:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libpam0g:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "9bbf9d7f19bdcdce5b7bd61ed0ca8f09022acfa6861931d3f67355cb5c198655:1"
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
           }
         },
         {
@@ -2780,143 +2917,6 @@
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8674-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8674-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-8674-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3207,6 +3207,49 @@
           }
         },
         {
+          "ruleId": "CVE-2026-15534-perl-base",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: perl-base, version 5.42.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/perl-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/perl-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/perl-base.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "384874de0bf634fffebeb3a2d6052345f95ee8b7ef88b29f059f40024f5a7222:1"
+          }
+        },
+        {
           "ruleId": "CVE-2010-4756-libc-bin",
           "level": "note",
           "message": {
@@ -3380,6 +3423,143 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-89092-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-89092-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-89092-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
           }
         },
         {
@@ -3657,143 +3837,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-89092-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "33d2d74c8cf945f0543f6950a28668e856ca7bd199a45e499da3f620972bcc26:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-89092-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "18bcb7dc32fb7111242d153cb9ce95cd68d91a3937e91eeb60c5664e6ec419a0:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-89092-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.43-5 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d5dab4ecbadbd3551880287239c62bb62fdb841c5e052dadbfc53ad9b2621b9f:1"
-          }
-        },
-        {
           "ruleId": "CVE-2018-5709-libgssapi-krb5-2",
           "level": "note",
           "message": {
@@ -3950,10 +3993,10 @@
           }
         },
         {
-          "ruleId": "CVE-2026-15534-perl-base",
+          "ruleId": "CVE-2026-42250-libbz2-1.0",
           "level": "warning",
           "message": {
-            "text": "A medium vulnerability in deb package: perl-base, version 5.42.3-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+            "text": "A medium vulnerability in deb package: libbz2-1.0, version 1.0.8-6+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -3974,22 +4017,18 @@
                   "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
                 },
                 {
-                  "name": "/usr/share/doc/perl-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/perl-base/copyright"
+                  "name": "/usr/share/doc/libbz2-1.0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libbz2-1.0/copyright"
                 },
                 {
-                  "name": "/var/lib/dpkg/info/perl-base.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/perl-base.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/perl-base.list"
+                  "name": "/var/lib/dpkg/info/libbz2-1.0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libbz2-1.0:amd64.md5sums"
                 }
               ]
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "384874de0bf634fffebeb3a2d6052345f95ee8b7ef88b29f059f40024f5a7222:1"
+            "primaryLocationLineHash": "56843080719578d0e90cdf4a640613cf6e39b29ad70737028c87e0fa27794c3f:1"
           }
         },
         {
@@ -4178,45 +4217,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "1120935ddcf89594ec58ddfc5d1fed80bddf979fdef4fba9b89f6100eba79b72:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-42250-libbz2-1.0",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libbz2-1.0, version 1.0.8-6+b2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libbz2-1.0/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libbz2-1.0/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libbz2-1.0:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libbz2-1.0:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "56843080719578d0e90cdf4a640613cf6e39b29ad70737028c87e0fa27794c3f:1"
           }
         },
         {
@@ -4486,84 +4486,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-40228-libsystemd0",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libsystemd0, version 261.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libsystemd0/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libsystemd0/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libsystemd0:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "b4882bc790df92cc456d1fae8ecf985f7a99a6c4575ffdb39c3af9a0d3b4051c:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-40228-libudev1",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libudev1, version 261.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libudev1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libudev1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libudev1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6bce07da25c683ce625cf4c386f1698f687f456e74d181947af91d23bcc301a7:1"
-          }
-        },
-        {
           "ruleId": "CVE-2007-5686-login.defs",
           "level": "note",
           "message": {
@@ -4675,6 +4597,84 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "27d4b5be1039e5031be2b08fd4b8b4f439262a659bdbfe2d89635ac5db0cc120:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-40228-libsystemd0",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libsystemd0, version 261.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsystemd0/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libsystemd0/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsystemd0:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libsystemd0:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b4882bc790df92cc456d1fae8ecf985f7a99a6c4575ffdb39c3af9a0d3b4051c:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-40228-libudev1",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libudev1, version 261.2-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libudev1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libudev1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libudev1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libudev1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6bce07da25c683ce625cf4c386f1698f687f456e74d181947af91d23bcc301a7:1"
           }
         },
         {
@@ -5925,45 +5925,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-22185-libldap2",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libldap2, version 2.6.14+dfsg-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libldap2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/usr/share/doc/libldap2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/info/libldap2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-56392-coreutils",
           "level": "note",
           "message": {
@@ -6047,6 +6008,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "d2ff659408eec8cd28975f444af2fb973bfcc73628c52ca11d961c725b4aebb1:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-22185-libldap2",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libldap2, version 2.6.14+dfsg-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libldap2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/usr/share/doc/libldap2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:bf39e3f62103ac30f5a0e6d7e3703c8b926889460dd26d379bc8876d1b267092:/var/lib/dpkg/info/libldap2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
           }
         }
       ]
