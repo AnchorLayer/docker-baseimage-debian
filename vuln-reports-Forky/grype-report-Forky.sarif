@@ -73,6 +73,48 @@
               }
             },
             {
+              "id": "CVE-2026-54873-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54873 high vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
+              "help": {
+                "text": "Vulnerability CVE-2026-54873\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)",
+                "markdown": "**Vulnerability CVE-2026-54873**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-54873-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-54873 high vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
+              "help": {
+                "text": "Vulnerability CVE-2026-54873\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)",
+                "markdown": "**Vulnerability CVE-2026-54873**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2026-84782-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -493,6 +535,111 @@
               }
             },
             {
+              "id": "CVE-2026-102010-gcc-16-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-102010 high vulnerability for gcc-16-base package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
+              "help": {
+                "text": "Vulnerability CVE-2026-102010\nSeverity: high\nPackage: gcc-16-base\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)",
+                "markdown": "**Vulnerability CVE-2026-102010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | gcc-16-base  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/gcc-16-base@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-102010-libgcc-s1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-102010 high vulnerability for libgcc-s1 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
+              "help": {
+                "text": "Vulnerability CVE-2026-102010\nSeverity: high\nPackage: libgcc-s1\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)",
+                "markdown": "**Vulnerability CVE-2026-102010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libgcc-s1  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgcc-s1@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-102010-libstdc++6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-102010 high vulnerability for libstdc++6 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
+              "help": {
+                "text": "Vulnerability CVE-2026-102010\nSeverity: high\nPackage: libstdc++6\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)",
+                "markdown": "**Vulnerability CVE-2026-102010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libstdc++6  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libstdc%2B%2B6@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
+                ],
+                "security-severity": "7.0"
+              }
+            },
+            {
+              "id": "CVE-2026-42772-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42772 medium vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
+              "help": {
+                "text": "Vulnerability CVE-2026-42772\nSeverity: medium\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)",
+                "markdown": "**Vulnerability CVE-2026-42772**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-42772-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-42772 medium vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
+              "help": {
+                "text": "Vulnerability CVE-2026-42772\nSeverity: medium\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)",
+                "markdown": "**Vulnerability CVE-2026-42772**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
               "id": "CVE-2019-1010022-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -616,48 +763,6 @@
                   "pkg:deb/debian/libc6@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-54873-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54873 high vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
-              "help": {
-                "text": "Vulnerability CVE-2026-54873\nSeverity: high\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)",
-                "markdown": "**Vulnerability CVE-2026-54873**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-54873-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-54873 high vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
-              "help": {
-                "text": "Vulnerability CVE-2026-54873\nSeverity: high\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)",
-                "markdown": "**Vulnerability CVE-2026-54873**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-54873](https://security-tracker.debian.org/tracker/CVE-2026-54873)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "7.5"
               }
             },
             {
@@ -913,69 +1018,6 @@
               }
             },
             {
-              "id": "CVE-2026-102010-gcc-16-base",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-102010 high vulnerability for gcc-16-base package"
-              },
-              "fullDescription": {
-                "text": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
-              "help": {
-                "text": "Vulnerability CVE-2026-102010\nSeverity: high\nPackage: gcc-16-base\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)",
-                "markdown": "**Vulnerability CVE-2026-102010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | gcc-16-base  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/gcc-16-base@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
-                ],
-                "security-severity": "7.0"
-              }
-            },
-            {
-              "id": "CVE-2026-102010-libgcc-s1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-102010 high vulnerability for libgcc-s1 package"
-              },
-              "fullDescription": {
-                "text": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
-              "help": {
-                "text": "Vulnerability CVE-2026-102010\nSeverity: high\nPackage: libgcc-s1\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)",
-                "markdown": "**Vulnerability CVE-2026-102010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libgcc-s1  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libgcc-s1@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
-                ],
-                "security-severity": "7.0"
-              }
-            },
-            {
-              "id": "CVE-2026-102010-libstdc++6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-102010 high vulnerability for libstdc++6 package"
-              },
-              "fullDescription": {
-                "text": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-102010",
-              "help": {
-                "text": "Vulnerability CVE-2026-102010\nSeverity: high\nPackage: libstdc++6\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)",
-                "markdown": "**Vulnerability CVE-2026-102010**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libstdc++6  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-102010](https://security-tracker.debian.org/tracker/CVE-2026-102010)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libstdc%2B%2B6@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
-                ],
-                "security-severity": "7.0"
-              }
-            },
-            {
               "id": "CVE-2024-56433-login.defs",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1015,6 +1057,48 @@
                   "pkg:deb/debian/passwd@1%3A4.19.3-2?arch=amd64\u0026distro=debian\u0026upstream=shadow"
                 ],
                 "security-severity": "3.6"
+              }
+            },
+            {
+              "id": "CVE-2026-35189-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-35189 medium vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
+              "help": {
+                "text": "Vulnerability CVE-2026-35189\nSeverity: medium\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)",
+                "markdown": "**Vulnerability CVE-2026-35189**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2026-35189-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-35189 medium vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
+              "help": {
+                "text": "Vulnerability CVE-2026-35189\nSeverity: medium\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)",
+                "markdown": "**Vulnerability CVE-2026-35189**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "5.3"
               }
             },
             {
@@ -1246,6 +1330,48 @@
                   "pkg:deb/debian/libc6@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-35191-libssl3t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-35191 low vulnerability for libssl3t64 package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL's QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
+              "help": {
+                "text": "Vulnerability CVE-2026-35191\nSeverity: low\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)",
+                "markdown": "**Vulnerability CVE-2026-35191**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "3.7"
+              }
+            },
+            {
+              "id": "CVE-2026-35191-openssl-provider-legacy",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-35191 low vulnerability for openssl-provider-legacy package"
+              },
+              "fullDescription": {
+                "text": "Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL's QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
+              "help": {
+                "text": "Vulnerability CVE-2026-35191\nSeverity: low\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)",
+                "markdown": "**Vulnerability CVE-2026-35191**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
+                ],
+                "security-severity": "3.7"
               }
             },
             {
@@ -1606,48 +1732,6 @@
               }
             },
             {
-              "id": "CVE-2026-42772-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42772 medium vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
-              "help": {
-                "text": "Vulnerability CVE-2026-42772\nSeverity: medium\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)",
-                "markdown": "**Vulnerability CVE-2026-42772**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-42772-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-42772 medium vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
-              "help": {
-                "text": "Vulnerability CVE-2026-42772\nSeverity: medium\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)",
-                "markdown": "**Vulnerability CVE-2026-42772**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-42772](https://security-tracker.debian.org/tracker/CVE-2026-42772)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
               "id": "CVE-2026-77696-libssl3t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1681,48 +1765,6 @@
               "help": {
                 "text": "Vulnerability CVE-2026-77696\nSeverity: low\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-77696](https://security-tracker.debian.org/tracker/CVE-2026-77696)",
                 "markdown": "**Vulnerability CVE-2026-77696**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-77696](https://security-tracker.debian.org/tracker/CVE-2026-77696)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "3.7"
-              }
-            },
-            {
-              "id": "CVE-2026-35191-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-35191 low vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL's QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
-              "help": {
-                "text": "Vulnerability CVE-2026-35191\nSeverity: low\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)",
-                "markdown": "**Vulnerability CVE-2026-35191**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "3.7"
-              }
-            },
-            {
-              "id": "CVE-2026-35191-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-35191 low vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL's QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
-              "help": {
-                "text": "Vulnerability CVE-2026-35191\nSeverity: low\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)",
-                "markdown": "**Vulnerability CVE-2026-35191**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35191](https://security-tracker.debian.org/tracker/CVE-2026-35191)  |\n"
               },
               "properties": {
                 "purls": [
@@ -1834,48 +1876,6 @@
                   "pkg:deb/debian/tar@1.35%2Bdfsg-6?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "4.4"
-              }
-            },
-            {
-              "id": "CVE-2026-35189-libssl3t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-35189 medium vulnerability for libssl3t64 package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
-              "help": {
-                "text": "Vulnerability CVE-2026-35189\nSeverity: medium\nPackage: libssl3t64\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)",
-                "markdown": "**Vulnerability CVE-2026-35189**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libssl3t64  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "5.3"
-              }
-            },
-            {
-              "id": "CVE-2026-35189-openssl-provider-legacy",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-35189 medium vulnerability for openssl-provider-legacy package"
-              },
-              "fullDescription": {
-                "text": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
-              "help": {
-                "text": "Vulnerability CVE-2026-35189\nSeverity: medium\nPackage: openssl-provider-legacy\nVersion: 3.6.4-1\nFix Version: 3.6.5-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)",
-                "markdown": "**Vulnerability CVE-2026-35189**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | openssl-provider-legacy  | 3.6.4-1  | 3.6.5-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-35189](https://security-tracker.debian.org/tracker/CVE-2026-35189)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64\u0026distro=debian\u0026upstream=openssl"
-                ],
-                "security-severity": "5.3"
               }
             },
             {
@@ -2907,6 +2907,88 @@
           }
         },
         {
+          "ruleId": "CVE-2026-54873-libssl3t64",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-54873-openssl-provider-legacy",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-84782-libssl3t64",
           "level": "error",
           "message": {
@@ -3795,6 +3877,205 @@
           }
         },
         {
+          "ruleId": "CVE-2026-102010-gcc-16-base",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: gcc-16-base, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gcc-16-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/gcc-16-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gcc-16-base:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/gcc-16-base:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "348102a22b23cfc1e267e182aa4ac273ed8fce12cf91fa0fa6d6109b4a2ab0f8:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-102010-libgcc-s1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libgcc-s1, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gcc-16-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libgcc-s1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgcc-s1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libgcc-s1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "eb66a76989c139b34c3842dacea68f547c588d1a8bd37143cf47a5bd86d3fcdd:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-102010-libstdc++6",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libstdc++6, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gcc-16-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libstdc++6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libstdc++6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libstdc++6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ae3cd4a6acf136e9615cf2b2b8ba4c5f12a143e973bb858bfbb13c997241fa39:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42772-libssl3t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-42772-openssl-provider-legacy",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
+          }
+        },
+        {
           "ruleId": "CVE-2019-1010022-libc-bin",
           "level": "note",
           "message": {
@@ -4066,88 +4347,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "6b362c99fc2b9fa6e86e8cb9a0c0779f2e0531264d106c2c37af7c5730e70164:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54873-libssl3t64",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-54873-openssl-provider-legacy",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
           }
         },
         {
@@ -4707,123 +4906,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-102010-gcc-16-base",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: gcc-16-base, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/gcc-16-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/gcc-16-base/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/gcc-16-base:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/gcc-16-base:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "348102a22b23cfc1e267e182aa4ac273ed8fce12cf91fa0fa6d6109b4a2ab0f8:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-102010-libgcc-s1",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libgcc-s1, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/gcc-16-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libgcc-s1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libgcc-s1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libgcc-s1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "eb66a76989c139b34c3842dacea68f547c588d1a8bd37143cf47a5bd86d3fcdd:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-102010-libstdc++6",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libstdc++6, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/gcc-16-base/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libstdc++6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libstdc++6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libstdc++6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "ae3cd4a6acf136e9615cf2b2b8ba4c5f12a143e973bb858bfbb13c997241fa39:1"
-          }
-        },
-        {
           "ruleId": "CVE-2024-56433-login.defs",
           "level": "note",
           "message": {
@@ -4935,6 +5017,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "27d4b5be1039e5031be2b08fd4b8b4f439262a659bdbfe2d89635ac5db0cc120:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-35189-libssl3t64",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-35189-openssl-provider-legacy",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
           }
         },
         {
@@ -5428,6 +5592,88 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "6b362c99fc2b9fa6e86e8cb9a0c0779f2e0531264d106c2c37af7c5730e70164:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-35191-libssl3t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libssl3t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-35191-openssl-provider-legacy",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
           }
         },
         {
@@ -6146,88 +6392,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-42772-libssl3t64",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-42772-openssl-provider-legacy",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
-          }
-        },
-        {
           "ruleId": "CVE-2026-77696-libssl3t64",
           "level": "note",
           "message": {
@@ -6268,88 +6432,6 @@
         },
         {
           "ruleId": "CVE-2026-77696-openssl-provider-legacy",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-35191-libssl3t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-35191-openssl-provider-legacy",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -6640,88 +6722,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "1c47717570071c8ec0416ad899233e44fd7a7b3acc59c7227a61d4b2bd311a93:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-35189-libssl3t64",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libssl3t64, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libssl3t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/libssl3t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libssl3t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/libssl3t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "1d0e0a0965787060cf48b1c7aa58551fa75fbd5997978e01b2532f23778a6134:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-35189-openssl-provider-legacy",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: openssl-provider-legacy, version 3.6.4-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/openssl-provider-legacy/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/usr/share/doc/openssl-provider-legacy/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/openssl-provider-legacy.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:3639c03443420543a3a5a34e89329a965107084ce1e1baafd9ff8a952de78f62:/var/lib/dpkg/info/openssl-provider-legacy.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "5d7605f0ba4dd2a3281822de4a965e85c357e39a77c1e6160720b46278c3d37e:1"
           }
         },
         {

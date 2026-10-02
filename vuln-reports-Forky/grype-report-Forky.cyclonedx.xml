@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom xmlns="http://cyclonedx.org/schema/bom/1.7" serialNumber="urn:uuid:28c1509e-a72e-4bf2-8026-6058c52aef32" version="1">
+<bom xmlns="http://cyclonedx.org/schema/bom/1.7" serialNumber="urn:uuid:31bf2a40-39d0-461b-9ab4-23364c7d14b9" version="1">
   <metadata>
-    <timestamp>2026-10-01T23:25:51Z</timestamp>
+    <timestamp>2026-10-02T09:00:16Z</timestamp>
     <tools>
       <components>
         <component type="application">
@@ -31286,7 +31286,7 @@
     </dependency>
   </dependencies>
   <vulnerabilities>
-    <vulnerability bom-ref="urn:uuid:a3db634a-bd07-43d4-878b-b56b4825af4a">
+    <vulnerability bom-ref="urn:uuid:e0ca4f24-5a9b-4d75-b565-41a6177fa658">
       <id>CVE-2026-82560</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31330,7 +31330,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9fe54caa-53cc-4db4-9e95-0fa0961d33f3">
+    <vulnerability bom-ref="urn:uuid:88a36c1b-dd6d-4a21-9d03-5cf7450c9e40">
       <id>CVE-2026-85091</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31374,7 +31374,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b642a4e7-f746-4b6a-ba60-1dc638ac9f93">
+    <vulnerability bom-ref="urn:uuid:ed202107-0c00-40f4-99aa-961a46fa1b5f">
       <id>CVE-2017-17740</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31416,7 +31416,103 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1e5e64b5-f6ae-4cbd-b456-a6e6628e4431">
+    <vulnerability bom-ref="urn:uuid:061d9c94-9a29-4538-9c7f-7bfbef58ce57">
+      <id>CVE-2026-54873</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-54873</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00462</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.4-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=3.6.5-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:ee9a0fed-899d-44fb-8163-a5028fafa2b0">
+      <id>CVE-2026-54873</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-54873</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00462</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.4-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=3.6.5-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:534a8263-da03-4a3a-91ac-354935a542c4">
       <id>CVE-2026-84782</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31464,7 +31560,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d476c631-4737-4d34-847a-23efeef90af0">
+    <vulnerability bom-ref="urn:uuid:f1dc1a6c-1ead-49bd-a88f-1cc48ab978c1">
       <id>CVE-2026-84782</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31512,7 +31608,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3d3050d7-b312-4755-b2ae-eceb3de98ce1">
+    <vulnerability bom-ref="urn:uuid:ad4f2e62-9470-4ae2-a235-36a9e6d50351">
       <id>CVE-2026-84784</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31560,7 +31656,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:704c0768-1d3e-4ba4-b19b-0b8557def52b">
+    <vulnerability bom-ref="urn:uuid:3953ed79-73a6-490e-8484-b86ffb465b1c">
       <id>CVE-2026-84784</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31608,7 +31704,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d5ba08d1-78fe-4f9d-8b1d-d100db831da2">
+    <vulnerability bom-ref="urn:uuid:4299c4c3-a617-4b4e-b748-d253bc0a5901">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31652,7 +31748,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:033b3e1d-8089-45a6-b04e-f63453f79bb8">
+    <vulnerability bom-ref="urn:uuid:1d0547e1-8000-4167-a539-902b685a2a58">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31696,7 +31792,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:feb2f0e8-93e0-4255-b634-11db345f02da">
+    <vulnerability bom-ref="urn:uuid:41ebb7b6-ce07-427c-a302-f5eeabb047d6">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31740,7 +31836,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:050a23a9-7614-465c-81c2-d4c0d2adfe36">
+    <vulnerability bom-ref="urn:uuid:c9fcf917-e730-4ab8-a942-1b03493ba8d4">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31784,7 +31880,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8e74c87a-9370-40f2-8e22-1c893477f05e">
+    <vulnerability bom-ref="urn:uuid:3247652b-c3fa-4090-8e4f-0370a4fac897">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31826,7 +31922,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:47eabdae-dfbc-4bd8-bbd2-b944bf197333">
+    <vulnerability bom-ref="urn:uuid:60af64ed-6f95-4a27-a9e0-ab4ce0df7095">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31868,7 +31964,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ceab0c27-e491-4548-9ff3-926c8a4bd88a">
+    <vulnerability bom-ref="urn:uuid:988e8f12-9974-4ef7-a68b-e1bff4dcd1e3">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31910,7 +32006,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2955b518-0f67-4e59-ade9-b5b959da7f42">
+    <vulnerability bom-ref="urn:uuid:ade484b3-f3b9-4acf-a276-a9b27ad1f0c9">
       <id>CVE-2015-3276</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31952,7 +32048,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:772fbe8d-0cbc-4fe2-b353-cd572b0c96de">
+    <vulnerability bom-ref="urn:uuid:51107314-9047-4ef3-946a-68eca5ec9e2e">
       <id>CVE-2026-5704</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31996,7 +32092,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3545b9ca-931f-4604-841e-a869a423c442">
+    <vulnerability bom-ref="urn:uuid:37e37557-43c9-4bcc-a237-dd9e22d8506b">
       <id>CVE-2005-2541</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32038,7 +32134,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:70588ad0-965f-4eba-8a43-87268652c73f">
+    <vulnerability bom-ref="urn:uuid:c74efa4b-6853-4895-8255-1c51a0829486">
       <id>CVE-2026-72897</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32086,7 +32182,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:af1fc35a-6897-4aa7-a7ba-0be0366e446f">
+    <vulnerability bom-ref="urn:uuid:bd2443e8-4130-4f44-a1df-6d33d6ce3507">
       <id>CVE-2026-72897</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32134,7 +32230,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d0f42078-ae78-4f0e-a587-f10eccd3ff82">
+    <vulnerability bom-ref="urn:uuid:c96988b2-940d-417d-9fe7-acd6b991b7ec">
       <id>CVE-2026-75806</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32182,7 +32278,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9e4408f3-2686-417a-b526-249e724c5104">
+    <vulnerability bom-ref="urn:uuid:813df19d-45f3-4e52-8314-451c0bb81513">
       <id>CVE-2026-75806</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32230,7 +32326,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f49b5653-089e-411c-84d4-e74524a0e934">
+    <vulnerability bom-ref="urn:uuid:b39c9e53-8139-4055-b8a0-67d6af678942">
       <id>CVE-2026-75804</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32278,7 +32374,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:13c81912-0d93-4d9e-9278-d7e3985c41d8">
+    <vulnerability bom-ref="urn:uuid:2cf5b97c-b0d9-4e63-ae05-ab63fe1b1cc9">
       <id>CVE-2026-75804</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32326,290 +32422,170 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a784eae3-cea8-4a02-8c41-82a94ebb63c9">
-      <id>CVE-2019-1010022</id>
+    <vulnerability bom-ref="urn:uuid:c5c6aebe-20f3-42b9-b302-24f7ab5ffa36">
+      <id>CVE-2026-102010</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2019-1010022</id>
+          <id>CVE-2026-102010</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.03223</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-bin@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=128c1297061ff6f8&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-6</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:014469c2-1027-4fed-8a95-cd5520eb50e1">
-      <id>CVE-2019-1010022</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2019-1010022</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.03223</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=03b7e79f01a1acbc&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-6</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8e176550-e3a1-4ccc-9ed1-4584f35cb8fd">
-      <id>CVE-2019-1010022</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2019-1010022</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.03223</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc6@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=6a91c435e6e72dc2&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-6</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:204e85a7-ba74-4952-a14e-ac53eb52af90">
-      <id>CVE-2019-1010024</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2019-1010024</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.03193</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-bin@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=128c1297061ff6f8&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-6</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:10ce3081-0589-4354-87a2-ab232cfce897">
-      <id>CVE-2019-1010024</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2019-1010024</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.03193</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=03b7e79f01a1acbc&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-6</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dd520ba6-7691-4e38-bc7c-28fb56c0de35">
-      <id>CVE-2019-1010024</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2019-1010024</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <severity>none</severity>
-          <method>other</method>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.03193</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc6@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=6a91c435e6e72dc2&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-6</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a7b3f08f-8fe7-49f7-a4b8-c2da9588e722">
-      <id>CVE-2026-54873</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-54873</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
+          <score>7</score>
           <severity>high</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.0021</score>
+          <score>0.00242</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
+      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/gcc-16-base@16.2.0-3?arch=amd64&amp;distro=debian&amp;package-id=1b825b249b1ebaeb&amp;upstream=gcc-16</ref>
+          <versions>
+            <version>
+              <version>16.2.0-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:9b86ef9e-b093-40f1-a3ff-e5c360c07959">
+      <id>CVE-2026-102010</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-102010</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00242</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libgcc-s1@16.2.0-3?arch=amd64&amp;distro=debian&amp;package-id=8520c2979cc4e2cf&amp;upstream=gcc-16</ref>
+          <versions>
+            <version>
+              <version>16.2.0-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:bbe59dce-2ff0-4179-9e98-5798ae1f243b">
+      <id>CVE-2026-102010</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-102010</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00242</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libstdc%2B%2B6@16.2.0-3?arch=amd64&amp;distro=debian&amp;package-id=d4533c669aff8d23&amp;upstream=gcc-16</ref>
+          <versions>
+            <version>
+              <version>16.2.0-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:8c350b6d-547a-411d-b28f-388497c847fd">
+      <id>CVE-2026-42772</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-42772</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>5.3</score>
+          <severity>medium</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.0033</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
@@ -32626,38 +32602,38 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f8440672-3acc-40ef-bacd-853e27c94d76">
-      <id>CVE-2026-54873</id>
+    <vulnerability bom-ref="urn:uuid:5ca6ccfe-3be8-4a82-bd1c-ef1b0ec20ed5">
+      <id>CVE-2026-42772</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-54873</id>
+          <id>CVE-2026-42772</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-54873</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <score>7.5</score>
-          <severity>high</severity>
+          <score>5.3</score>
+          <severity>medium</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.0021</score>
+          <score>0.0033</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary.  Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memory for packet buffers allocated. The time for which the memory remains allocated is entirely under the control of the potentially malicious remote peer.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: To save copy operation from the packet buffer to the stream reassemble buffer the QUIC stack leaves the stream data on the packet buffer waiting to be copied to a buffer provided by the local receiving application. The QUIC stack releases a reference to the packet buffer only after the data are copied to the application buffer. This design is more efficient for legitimate data transfers but enables an attacker to allocate a lot more memory than actually required by the data kept in the receiving stream buffer.  To mitigate the vulnerability, the QUIC stack now calculates and monitors memory overhead for every stream. The memory overhead for a single stream frame is calculated as a difference between the size of the whole packet that carries the stream frame and the size of the stream frame itself. The memory overhead for a single stream frame is added to the total (cumulative) memory overhead QUIC stack keeps for each stream. Once the cumulative memory overhead exceeds 64kB, the QUIC stack moves the stream frame data from the packet buffer to the stream buffer, starting with the next packet received.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
+      <description>Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
@@ -32674,7 +32650,259 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5f074a5d-edde-49e8-af99-30ad66d7e412">
+    <vulnerability bom-ref="urn:uuid:31ce5205-deef-4941-91f3-9bb584944b41">
+      <id>CVE-2019-1010022</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2019-1010022</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.03223</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc-bin@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=128c1297061ff6f8&amp;upstream=glibc</ref>
+          <versions>
+            <version>
+              <version>2.43-6</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:fec728fe-eb57-4032-8869-44ffecc607cd">
+      <id>CVE-2019-1010022</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2019-1010022</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.03223</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=03b7e79f01a1acbc&amp;upstream=glibc</ref>
+          <versions>
+            <version>
+              <version>2.43-6</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:d9b85dcf-930f-4374-bd71-617d72ffea27">
+      <id>CVE-2019-1010022</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2019-1010022</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010022</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.03223</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc6@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=6a91c435e6e72dc2&amp;upstream=glibc</ref>
+          <versions>
+            <version>
+              <version>2.43-6</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:c5a243a0-a9b1-47b9-828b-b3fca20b9371">
+      <id>CVE-2019-1010024</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2019-1010024</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.03193</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc-bin@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=128c1297061ff6f8&amp;upstream=glibc</ref>
+          <versions>
+            <version>
+              <version>2.43-6</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:d7a1c0fa-af6b-45b4-ad1e-abe88968ac69">
+      <id>CVE-2019-1010024</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2019-1010024</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.03193</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=03b7e79f01a1acbc&amp;upstream=glibc</ref>
+          <versions>
+            <version>
+              <version>2.43-6</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:70cdb8fa-0398-40a4-a684-eaef8828a49e">
+      <id>CVE-2019-1010024</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2019-1010024</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2019-1010024</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <severity>none</severity>
+          <method>other</method>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.03193</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate &#34;this is being treated as a non-security bug and no real threat.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libc6@2.43-6?arch=amd64&amp;distro=debian&amp;package-id=6a91c435e6e72dc2&amp;upstream=glibc</ref>
+          <versions>
+            <version>
+              <version>2.43-6</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:c813af14-4a96-42fc-887d-b2d9fe9b7ea5">
       <id>CVE-2026-103111</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32705,6 +32933,7 @@
           <method>other</method>
         </rating>
       </ratings>
+      <description>PCRE2 before 10.49, when there is an attacker-controlled regular expression and certain JIT API usage, allows an out-of-bounds write with arbitrary data.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/libpcre2-8-0@10.48-3?arch=amd64&amp;distro=debian&amp;package-id=0a4b6fe7847eb42d&amp;upstream=pcre2</ref>
@@ -32721,7 +32950,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:617f1761-0f44-4a26-b98f-afc1b0aff6bb">
+    <vulnerability bom-ref="urn:uuid:891a86cd-e862-4e5f-b537-3bc04d9e2afc">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32763,7 +32992,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c7b5e3b3-10a0-4301-b6b9-a18029774939">
+    <vulnerability bom-ref="urn:uuid:ebed3743-7828-4485-93ba-2c525fa36031">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32805,7 +33034,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a9025530-369b-4847-8d83-bed8269c9cbd">
+    <vulnerability bom-ref="urn:uuid:78ee1389-4909-46aa-b33e-7de86959eded">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32847,7 +33076,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c7f03f56-9966-49fb-a25e-5aeaa932620f">
+    <vulnerability bom-ref="urn:uuid:15dd82ad-8ce6-42ef-b35b-ec3c8c29917d">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32895,7 +33124,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:591f4d71-9340-43ed-a321-5ef6a6de5fdb">
+    <vulnerability bom-ref="urn:uuid:69a2bf5f-cae8-4865-b5d9-c5cf2223c103">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32943,7 +33172,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f8f6ba21-e4e4-48c6-8864-08b701d38a17">
+    <vulnerability bom-ref="urn:uuid:733d5053-7746-45a2-8f71-6c331f918e04">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32991,7 +33220,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b3fc29e6-31cd-47a4-a0c3-904e6e91e56c">
+    <vulnerability bom-ref="urn:uuid:9afd0cfe-f0e9-4720-85c6-f28c50c5ad78">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33039,7 +33268,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:32cde9fe-4328-4205-9a07-9f71183bda55">
+    <vulnerability bom-ref="urn:uuid:d535ef2d-d459-4481-baff-80535359d1be">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33087,7 +33316,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:84d59fab-7c16-4a61-ad3a-033b4cbb9b5f">
+    <vulnerability bom-ref="urn:uuid:70966386-3362-4e69-a211-10bb9420627f">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33135,7 +33364,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:749b3083-5bdc-4c99-9b5c-b4c072843e86">
+    <vulnerability bom-ref="urn:uuid:b8553413-94a1-4d1c-a669-cc65256db3fb">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33183,7 +33412,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:14883eed-bfbe-4f7e-890e-75e3cb13a589">
+    <vulnerability bom-ref="urn:uuid:06a28b5e-3457-4079-b3fd-612090a79b70">
       <id>CVE-2026-78408</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33231,139 +33460,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c9492320-7f54-49de-8477-33b63261afa8">
-      <id>CVE-2026-102010</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-102010</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00195</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/gcc-16-base@16.2.0-3?arch=amd64&amp;distro=debian&amp;package-id=1b825b249b1ebaeb&amp;upstream=gcc-16</ref>
-          <versions>
-            <version>
-              <version>16.2.0-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3258b9d7-5466-4811-b62a-e39d59e0deb9">
-      <id>CVE-2026-102010</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-102010</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00195</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libgcc-s1@16.2.0-3?arch=amd64&amp;distro=debian&amp;package-id=8520c2979cc4e2cf&amp;upstream=gcc-16</ref>
-          <versions>
-            <version>
-              <version>16.2.0-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b7151e4d-e578-40ee-abce-314732d1ea82">
-      <id>CVE-2026-102010</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-102010</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-102010</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00195</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libstdc%2B%2B6@16.2.0-3?arch=amd64&amp;distro=debian&amp;package-id=d4533c669aff8d23&amp;upstream=gcc-16</ref>
-          <versions>
-            <version>
-              <version>16.2.0-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:81c52c3d-f93d-402a-92c2-a5d9858b8b5c">
+    <vulnerability bom-ref="urn:uuid:9756a85f-9071-427e-8525-0f44902462f0">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33407,7 +33504,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7c97a525-d891-4b48-bc89-9b61a6924357">
+    <vulnerability bom-ref="urn:uuid:173c3376-81e2-47e6-a217-d8b5eb563185">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33451,7 +33548,103 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d413a159-1a10-4332-8252-1ee71b4f5c3e">
+    <vulnerability bom-ref="urn:uuid:865f26da-5bcb-4c79-bcc5-3dca664b50a5">
+      <id>CVE-2026-35189</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-35189</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>5.3</score>
+          <severity>medium</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00267</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.4-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=3.6.5-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:a5be0e01-34d9-40b4-bc6c-3b60f53aad05">
+      <id>CVE-2026-35189</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-35189</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>5.3</score>
+          <severity>medium</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00267</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.4-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=3.6.5-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:47fd3e7c-611c-455b-b54d-3ed709601638">
       <id>CVE-2026-15534</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33495,7 +33688,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fe8bb022-c0d8-466b-82a6-bfa932743be1">
+    <vulnerability bom-ref="urn:uuid:8ffd4d48-6303-4d39-95c0-5f66de97baef">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33537,7 +33730,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:82692a93-23e5-4807-a4d3-e6961179350a">
+    <vulnerability bom-ref="urn:uuid:fea4603c-27df-4a64-98f6-5bd41da023b7">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33579,7 +33772,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8c24d5b4-9a4b-447f-b579-ae72aa7baa51">
+    <vulnerability bom-ref="urn:uuid:22bf59bb-2de0-4523-9968-4d80cd90aae6">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33621,7 +33814,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:670c7fc4-fea9-4114-bb5c-8c35d64f1423">
+    <vulnerability bom-ref="urn:uuid:06ea2d71-56cc-4328-9736-3694a9ae5aaa">
       <id>CVE-2020-15719</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33663,7 +33856,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b491ecf7-8d7c-4340-8807-764e22d2ff5e">
+    <vulnerability bom-ref="urn:uuid:55f632a3-3345-4d9b-b8b3-bc763cedcf9b">
       <id>CVE-2026-89092</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33707,7 +33900,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1fa6adf3-c979-43dc-b0d3-08f372617824">
+    <vulnerability bom-ref="urn:uuid:28e3334f-209a-4902-9a79-c410ed06e732">
       <id>CVE-2026-89092</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33751,7 +33944,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fd992ec4-8ed9-412d-b4f6-6d739c2be274">
+    <vulnerability bom-ref="urn:uuid:513d9191-2b22-4de5-a8b8-e54600374aa7">
       <id>CVE-2026-89092</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33795,7 +33988,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e735bcf4-ab54-4cf1-aa32-b1bb9d3aca85">
+    <vulnerability bom-ref="urn:uuid:07d3b6a8-d850-4513-9533-7290ca1269e2">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33837,7 +34030,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:274d01ca-330f-4445-98ce-9ca6253ded23">
+    <vulnerability bom-ref="urn:uuid:cf2018fa-080c-475c-ae55-e7fb7536926f">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33879,7 +34072,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7cf32103-ce5c-45eb-944a-8e4e1501f370">
+    <vulnerability bom-ref="urn:uuid:7a6419c2-8347-4e8b-9d3e-3c86da1c14e1">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33921,7 +34114,103 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fecd6ad2-07fc-46c2-bf95-b7c2ddf0b32f">
+    <vulnerability bom-ref="urn:uuid:452344bb-4c9a-4a9d-be7e-87b3b7807f39">
+      <id>CVE-2026-35191</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-35191</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>3.7</score>
+          <severity>low</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00357</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL&#39;s QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.4-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=3.6.5-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:cf754f18-a697-412b-83f4-1622ad16fd39">
+      <id>CVE-2026-35191</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-35191</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>3.7</score>
+          <severity>low</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00357</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL&#39;s QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
+          <versions>
+            <version>
+              <version>3.6.4-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=3.6.5-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:722f6f5a-3b11-423d-baaa-ba1fe9080363">
       <id>CVE-2026-75805</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33969,7 +34258,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b691b4b7-8be7-4f65-b4ee-ede14766109c">
+    <vulnerability bom-ref="urn:uuid:db632799-d63a-4055-8898-405182a2a5e2">
       <id>CVE-2026-75805</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34017,7 +34306,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:43a59770-0885-4781-bc45-151fb3b3c92d">
+    <vulnerability bom-ref="urn:uuid:0a99c7bb-defe-4b10-a3d5-786afd7e393b">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34059,7 +34348,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b2c62270-820e-4c6a-8499-b37d834b94ec">
+    <vulnerability bom-ref="urn:uuid:c0f7b7bb-136e-4cad-b872-9294a135bed3">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34101,7 +34390,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6d3caeb9-1668-4b4a-adb8-5a4b8e4a974e">
+    <vulnerability bom-ref="urn:uuid:f97ae783-8d24-4c55-a265-f8677821500a">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34143,7 +34432,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:99c16502-be1c-47f1-9304-e40681e40cc4">
+    <vulnerability bom-ref="urn:uuid:72b88465-a0f8-44dd-952a-f51ebcfa755c">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34185,7 +34474,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:361a9b69-3afb-45a0-a78f-515ebe36f7a6">
+    <vulnerability bom-ref="urn:uuid:769443b7-2f5b-4ace-aa16-de8905e87d5d">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34227,7 +34516,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:aef0afdf-028a-4158-ab8c-52a2413d5276">
+    <vulnerability bom-ref="urn:uuid:465001f8-fbcd-4893-8741-65df5e28d15f">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34269,7 +34558,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:28a625c0-0381-4e4b-ad94-fdcd17183397">
+    <vulnerability bom-ref="urn:uuid:561e4b19-d52a-47b3-9ae3-c662339c7547">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34311,7 +34600,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4b016391-cafd-4131-8baf-894a45a7905f">
+    <vulnerability bom-ref="urn:uuid:dacb54e5-d7d3-4174-b598-8c824983ad17">
       <id>CVE-2026-54875</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34359,7 +34648,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ce4a0280-cdf5-41ee-bb1f-de57491ca534">
+    <vulnerability bom-ref="urn:uuid:463c5f24-cb6d-4ae4-a471-1a5c514fa525">
       <id>CVE-2026-54875</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34407,7 +34696,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:11b9249f-26d8-4ea6-b5d4-82e7acd1f044">
+    <vulnerability bom-ref="urn:uuid:1670671a-31db-4bcd-982a-780cd05a6b7b">
       <id>CVE-2026-97399</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34451,7 +34740,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6e8518af-859e-430b-a5d3-f05c630b8ad8">
+    <vulnerability bom-ref="urn:uuid:a895f6e7-4da7-4c01-81a5-77ff65fa5fed">
       <id>CVE-2026-97399</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34495,7 +34784,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3995f26c-4b45-4beb-bc93-bba8f41ec505">
+    <vulnerability bom-ref="urn:uuid:94d43fc4-5488-4f33-8a57-03eb820254a0">
       <id>CVE-2026-97399</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34539,7 +34828,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e313a3df-97df-4e07-8dc3-0b8c572dd72c">
+    <vulnerability bom-ref="urn:uuid:14849a04-80e0-4fc2-9b98-caadeba229d5">
       <id>CVE-2026-42250</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34583,7 +34872,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9cd60595-ca09-413c-8555-3b7ac988d356">
+    <vulnerability bom-ref="urn:uuid:c3c8d09e-5be9-4246-ab19-d5e0a234dce4">
       <id>CVE-2026-54872</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34631,7 +34920,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a305aa1b-61af-4a3b-8a9c-945dafb8412d">
+    <vulnerability bom-ref="urn:uuid:449961ea-0f90-437e-8812-59d693e9f7bd">
       <id>CVE-2026-54872</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34679,103 +34968,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c0ce08b2-2308-4260-80bf-88f26ac10834">
-      <id>CVE-2026-42772</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-42772</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>5.3</score>
-          <severity>medium</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00166</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
-          <versions>
-            <version>
-              <version>3.6.4-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=3.6.5-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:af14a51c-6743-44e0-ae79-aaf2771107df">
-      <id>CVE-2026-42772</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-42772</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-42772</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>5.3</score>
-          <severity>medium</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00166</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received stream data.  Impact summary: A remote QUIC peer that completes the handshake can create a connection-scoped CPU pressure and potentially a Denial of Service using compliant STREAM frames inside the advertised receive window, with low attacker bandwidth.  CWE: CWE-407: Inefficient Algorithmic Complexity  Description: OpenSSL manages received QUIC stream fragments using a doubly-linked list. While it optimizes for append operations (at the end of the list), it falls back to a head-to-tail linear search for any fragment that does not immediately follow the current `tail`.  By manipulating the sequence of offsets, an attacker can force the server to perform O(n^2) operations, consuming excessive CPU time for the QUIC process.  FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
-          <versions>
-            <version>
-              <version>3.6.4-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=3.6.5-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f76dd1d5-a47a-43ee-80a7-51d138df04e9">
+    <vulnerability bom-ref="urn:uuid:0e362355-d9f2-4d09-a7b4-e36a3e9d8fdf">
       <id>CVE-2026-77696</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34823,7 +35016,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:17d37801-6b73-4552-8d1b-b28d7369c4fe">
+    <vulnerability bom-ref="urn:uuid:98273b7b-1e9e-4d1e-a722-e9795581b66c">
       <id>CVE-2026-77696</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34871,103 +35064,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b7ed864e-13f0-4df3-bffd-63ef74536653">
-      <id>CVE-2026-35191</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-35191</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>3.7</score>
-          <severity>low</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.0024</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL&#39;s QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
-          <versions>
-            <version>
-              <version>3.6.4-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=3.6.5-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:abd27d2b-7843-4089-bf40-2b378b564eac">
-      <id>CVE-2026-35191</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-35191</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-35191</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>3.7</score>
-          <severity>low</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.0024</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amplification limit of 3 times the amount of data received.  Impact summary: A remote attacker able to spoof packets to a server using the OpenSSL QUIC implementation might use the server for an amplification of a DDoS attack.  CWE: CWE-440: Expected Behavior Violation   Description: OpenSSL&#39;s QUIC stack, when operating as a server, enforces client address validation (RFC 9000, Section 8), to confirm the peer address is not used for a traffic amplification attack.  If this feature is disabled on the server, the QUIC stack limits the amount of server data that can be sent to 3 times the amount of data received from the peer address, until such time as the TLS handshake is completed.  The OpenSSL QUIC server, when operating in non-validation mode, adds the length of the whole datagram received to the unvalidated credit limit when processing each QUIC packet in the datagram. A remote peer may, after establishing a connection with an initial client hello frame, send a subsequent datagram containing multiple QUIC packets, leading the server to account the entire datagram length for each packet in the datagram, resulting in the server believing that the peer has sent more data than it actually has, thereby violating the 3x amplification limit mandated by the RFC.  FIPS impact: no As the QUIC stack lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
-          <versions>
-            <version>
-              <version>3.6.4-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=3.6.5-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e9ffd84b-6947-40fc-b1c6-eb67b9c02091">
+    <vulnerability bom-ref="urn:uuid:7c8ea79e-526d-4e69-98cc-7c346a1afd15">
       <id>CVE-2026-86805</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35011,7 +35108,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:96a6ad17-417b-4e4a-9f1a-028058c7fd99">
+    <vulnerability bom-ref="urn:uuid:3e9857c4-9d49-4178-99ff-f6a7c77be323">
       <id>CVE-2026-86805</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35055,7 +35152,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4cc6879d-50f4-4ae8-89fa-a9c702613485">
+    <vulnerability bom-ref="urn:uuid:5e932a9e-42b8-4d06-9180-8f967f26ceb5">
       <id>CVE-2026-86805</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35099,7 +35196,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:43633cbe-a063-4843-9d23-8014dfaa6efc">
+    <vulnerability bom-ref="urn:uuid:563dcce0-f5ab-40ad-adb2-5f203748e2de">
       <id>CVE-2026-102473</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35143,7 +35240,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d3cd83d8-a8d0-4d6e-9436-d67e5d73166d">
+    <vulnerability bom-ref="urn:uuid:6e59002f-4383-48fe-8735-3409b605116d">
       <id>CVE-2026-18508</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35187,103 +35284,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9cb6f127-2076-4845-bed5-870be623fbb1">
-      <id>CVE-2026-35189</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-35189</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>5.3</score>
-          <severity>medium</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00118</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libssl3t64@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=f2831d0e77af692b&amp;upstream=openssl</ref>
-          <versions>
-            <version>
-              <version>3.6.4-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=3.6.5-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d29dd78c-6123-4814-a222-d1df42ee7181">
-      <id>CVE-2026-35189</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-35189</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-35189</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>5.3</score>
-          <severity>medium</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00118</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions.  Impact summary: Receiving a crafted certificate from a malicious peer can lead to significant memory pressure and possible Denial of Service in clients or in servers that solicit client certificates.  CWE: CWE-770: Allocation of Resources Without Limits or Throttling  Description: A certificate or a set of certificates that fits under the limit for size of certificates accepted from the peer (~100 KiB) can result in allocation of several hundred MiB of resident memory on the receiving side during a normal TLS handshake.  This may be enough to crash the client or server, if multiple concurrent connections lead to similarly large memory allocations.  The fix postpones processing of the CRL distribution points extensions in certificates to the time when the processed value is required for CRL processing. This avoids keeping large memory allocations for a long time when such certificates are received.  FIPS impact: no The affected code is outside the FIPS module boundary.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/openssl-provider-legacy@3.6.4-1?arch=amd64&amp;distro=debian&amp;package-id=07ffecf198604ab7&amp;upstream=openssl</ref>
-          <versions>
-            <version>
-              <version>3.6.4-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=3.6.5-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:27a50fcc-179b-4cbc-bc55-647f9c3dfad9">
+    <vulnerability bom-ref="urn:uuid:cb8de493-0999-46ee-8e13-cd3e7eece5f6">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35325,7 +35326,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b23cb67f-9114-4f1f-ae23-be063862e44e">
+    <vulnerability bom-ref="urn:uuid:f16d736e-5c97-4bbb-9133-2bc473c7ccd9">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35367,7 +35368,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4e087494-a4e6-401d-8226-7f05cab12e83">
+    <vulnerability bom-ref="urn:uuid:9ade219b-daca-436b-97fe-86bf2907fb4a">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35409,7 +35410,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:676f832f-2f55-43dd-bd7e-60f7a2df6814">
+    <vulnerability bom-ref="urn:uuid:9c8bdcbb-7596-46b6-9a6a-ed5be2365489">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35451,7 +35452,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:bb2fc19c-2bde-4f13-a939-464ecf17c1da">
+    <vulnerability bom-ref="urn:uuid:a0c75101-d693-4575-9d25-0701cdaef209">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35493,7 +35494,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:98aa6514-89b5-496d-8c9c-0e19afe20151">
+    <vulnerability bom-ref="urn:uuid:99e181a5-05e6-4568-84c6-577f387c7e76">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35535,7 +35536,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7fd75d5b-befd-430e-b23a-1714c8cdb2b7">
+    <vulnerability bom-ref="urn:uuid:24902488-1ff3-40aa-a3ba-d71d39e70464">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35577,7 +35578,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e3a3f1db-e3de-4378-acae-9796f3b412b7">
+    <vulnerability bom-ref="urn:uuid:ecc17836-2d2c-45a2-88b8-4a521d409e2b">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35619,7 +35620,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:897028d4-77be-4f5e-ba58-33a226db9805">
+    <vulnerability bom-ref="urn:uuid:3c63ceb2-b5ec-4d5d-8ecd-8e5a648a158a">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35663,7 +35664,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:34fd6a04-afcf-4dfb-a1bd-1163b1b6935d">
+    <vulnerability bom-ref="urn:uuid:c7362005-4e88-4324-baac-4f87d633f5f5">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35707,7 +35708,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:59d9daeb-cf87-4f1e-9c93-3b91ef50da5b">
+    <vulnerability bom-ref="urn:uuid:057c7315-9454-4358-bf1a-bd10098ec089">
       <id>CVE-2026-95818</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35751,7 +35752,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f02adf93-d506-4ba3-9a12-2807a8fa2802">
+    <vulnerability bom-ref="urn:uuid:f0ce0698-053e-4eb2-beba-79f3b2209fd4">
       <id>CVE-2026-95818</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35795,7 +35796,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a322682c-3625-47cf-bbe5-257aa32d5abb">
+    <vulnerability bom-ref="urn:uuid:75c2d693-7adf-4762-9dd8-c3a2afeec88c">
       <id>CVE-2026-95818</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35839,7 +35840,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d2ebd37e-c501-4d48-b9c1-0bda2da338a5">
+    <vulnerability bom-ref="urn:uuid:47f4fa60-9951-404f-9560-13a68b9c41c4">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35881,7 +35882,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dc25da87-584f-4e0c-979d-b0cf5056fbb3">
+    <vulnerability bom-ref="urn:uuid:65585a0e-df1a-4efa-bd5b-834be6ae965a">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35923,7 +35924,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:49964854-8def-493c-af2a-2fa3d71ab46d">
+    <vulnerability bom-ref="urn:uuid:ceb5f659-c688-425a-a541-db2c95ee9180">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35965,7 +35966,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:4ae899e3-dfcd-4e69-9200-144f5dbc0ba6">
+    <vulnerability bom-ref="urn:uuid:c51cbabb-55a3-445f-b368-89ceb2db49dd">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36007,7 +36008,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f2858d17-4bac-4420-8a73-5edd242c0d5d">
+    <vulnerability bom-ref="urn:uuid:d03281e1-5131-4f92-88ef-b944eccba85a">
       <id>CVE-2026-18477</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36051,7 +36052,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6d84aa9a-93f9-4d29-b883-f8d2b97af541">
+    <vulnerability bom-ref="urn:uuid:b575753a-9a08-4146-911a-e7c779697f6d">
       <id>CVE-2011-4116</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36093,7 +36094,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:45172a93-fc43-4980-966b-0e7555bac744">
+    <vulnerability bom-ref="urn:uuid:4b67d0d3-f147-4156-9fa8-09765642bc8e">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36135,7 +36136,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:62a003ca-8f67-4f45-a7e3-1c599330b8b5">
+    <vulnerability bom-ref="urn:uuid:e735e102-bc4e-443a-92a3-1661bc095918">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36177,7 +36178,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:12358066-ab99-4468-bf81-e3f816649364">
+    <vulnerability bom-ref="urn:uuid:f5337e09-f6b1-4cab-b14a-732c65318b68">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36219,7 +36220,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a5e8f3aa-2a32-48a5-ae26-62fd6bfbeb5e">
+    <vulnerability bom-ref="urn:uuid:e17a3cf6-b50e-485c-8ce0-99e91fa5b9b3">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36261,7 +36262,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e531f9b2-9957-4f10-a417-4691fb77d8d7">
+    <vulnerability bom-ref="urn:uuid:8e2a17a7-23cb-4af4-8ff5-5fa9044e854e">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36303,7 +36304,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:37dff073-ab0a-442a-9420-3687928c6048">
+    <vulnerability bom-ref="urn:uuid:fa2a9c8b-f64b-4cb8-9695-c6bfaffbf789">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36345,7 +36346,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:293053a1-588a-4b99-86f0-ea964684b736">
+    <vulnerability bom-ref="urn:uuid:65a3eaed-1ed1-40f5-8119-e0c31aa05a8e">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36387,7 +36388,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5248793c-f762-43b2-9cf2-e7720e239de1">
+    <vulnerability bom-ref="urn:uuid:c8ea10cf-9481-4dc7-81ce-202bd73f2e87">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36429,7 +36430,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:83ea52e1-6f62-42ca-ac24-74fff2533446">
+    <vulnerability bom-ref="urn:uuid:ef44abe4-7899-4359-b058-62deed9085bb">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36471,7 +36472,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:217df282-f769-4150-aec5-184f7f9c17b9">
+    <vulnerability bom-ref="urn:uuid:dca58b09-c011-4e1e-8382-e787a1f0cefa">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36513,7 +36514,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:962fd7c2-ec70-4530-84cc-ac3714d30361">
+    <vulnerability bom-ref="urn:uuid:9e9835b2-6834-4b3b-97a1-b875dad1c4e2">
       <id>CVE-2017-14159</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36555,7 +36556,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1d7d7b8b-f34e-4e8e-9af3-96fa24328272">
+    <vulnerability bom-ref="urn:uuid:a21e2711-76d1-4be6-97b8-397644737844">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36597,7 +36598,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d09c9dcc-108e-4a14-99e7-5fc4e8b85029">
+    <vulnerability bom-ref="urn:uuid:7225c5c5-21ed-4bf6-9f44-ff8b49113d56">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36639,7 +36640,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f1f8560c-b6f3-4985-81c9-5b48bc2f8a81">
+    <vulnerability bom-ref="urn:uuid:d9d56bd8-c957-4029-b8a5-d026f7f08ed5">
       <id>CVE-2017-18018</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36681,7 +36682,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:355d2277-9794-4746-8ef4-464524585d56">
+    <vulnerability bom-ref="urn:uuid:fcbeb333-4f79-498c-a305-e5521d65da76">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36723,7 +36724,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5f27ab65-4f38-4b75-92cc-066334ca6fba">
+    <vulnerability bom-ref="urn:uuid:a78d5487-b650-4e5b-ba6b-5248ba65e06d">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36765,7 +36766,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f8c4a968-9cf9-44fa-b1d6-fd8c8b43ddf4">
+    <vulnerability bom-ref="urn:uuid:5de068a4-4fe4-4e21-9c02-b8d221d33e7e">
       <id>CVE-2026-53910</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36807,7 +36808,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:579cbcc0-913a-4652-894b-91d6688f03c6">
+    <vulnerability bom-ref="urn:uuid:2b71b42c-08d0-4912-9c73-5522fc8411b9">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36849,7 +36850,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:eab04c0a-f977-4f97-ad50-1e2c9442684c">
+    <vulnerability bom-ref="urn:uuid:a42fb006-4b4e-4bd9-8d5a-9c2f93b5a2ed">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36891,7 +36892,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:782a0a99-5be2-4328-a384-0e3e9a539efb">
+    <vulnerability bom-ref="urn:uuid:d198785a-6f80-4c79-8e17-8eb6c449090f">
       <id>CVE-2025-5278</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36933,7 +36934,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9b826a59-678a-49e1-bc5a-42a3c99a7cbd">
+    <vulnerability bom-ref="urn:uuid:bc627e1e-c086-4638-8152-b5ccc0509e3e">
       <id>CVE-2026-56392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36975,7 +36976,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6fda3c23-8a09-40ed-ae1e-83690b20ddba">
+    <vulnerability bom-ref="urn:uuid:8c0372e1-5fe6-478d-a4f5-620e35a73696">
       <id>CVE-2026-56391</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37017,7 +37018,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8dc92e40-756d-46c2-8657-d4ea00813fc3">
+    <vulnerability bom-ref="urn:uuid:8bb53e06-641a-4e6f-a961-62e521e2b48d">
       <id>CVE-2026-22185</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37059,7 +37060,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d262cde7-276f-4006-a447-5e383b433200">
+    <vulnerability bom-ref="urn:uuid:9fb57cb1-d577-47d2-bc7a-737fc7aa223f">
       <id>CVE-2026-102474</id>
       <source>
         <name>debian-distro-debian-unstable</name>
