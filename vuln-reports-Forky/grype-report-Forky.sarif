@@ -346,6 +346,69 @@
               }
             },
             {
+              "id": "CVE-2026-95619-gcc-16-base",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-95619 high vulnerability for gcc-16-base package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-95619",
+              "help": {
+                "text": "Vulnerability CVE-2026-95619\nSeverity: high\nPackage: gcc-16-base\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-95619](https://security-tracker.debian.org/tracker/CVE-2026-95619)",
+                "markdown": "**Vulnerability CVE-2026-95619**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | gcc-16-base  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-95619](https://security-tracker.debian.org/tracker/CVE-2026-95619)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/gcc-16-base@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
+                ],
+                "security-severity": "7.7"
+              }
+            },
+            {
+              "id": "CVE-2026-95619-libgcc-s1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-95619 high vulnerability for libgcc-s1 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-95619",
+              "help": {
+                "text": "Vulnerability CVE-2026-95619\nSeverity: high\nPackage: libgcc-s1\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-95619](https://security-tracker.debian.org/tracker/CVE-2026-95619)",
+                "markdown": "**Vulnerability CVE-2026-95619**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libgcc-s1  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-95619](https://security-tracker.debian.org/tracker/CVE-2026-95619)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libgcc-s1@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
+                ],
+                "security-severity": "7.7"
+              }
+            },
+            {
+              "id": "CVE-2026-95619-libstdc++6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-95619 high vulnerability for libstdc++6 package"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-95619",
+              "help": {
+                "text": "Vulnerability CVE-2026-95619\nSeverity: high\nPackage: libstdc++6\nVersion: 16.2.0-3\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-95619](https://security-tracker.debian.org/tracker/CVE-2026-95619)",
+                "markdown": "**Vulnerability CVE-2026-95619**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libstdc++6  | 16.2.0-3  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-95619](https://security-tracker.debian.org/tracker/CVE-2026-95619)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libstdc%2B%2B6@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
+                ],
+                "security-severity": "7.7"
+              }
+            },
+            {
               "id": "CVE-2015-3276-libldap2",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1207,69 +1270,6 @@
               }
             },
             {
-              "id": "CVE-2026-89092-libc-bin",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89092 medium vulnerability for libc-bin package"
-              },
-              "fullDescription": {
-                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
-              "help": {
-                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-6\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
-                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-6  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-bin@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "4.2"
-              }
-            },
-            {
-              "id": "CVE-2026-89092-libc-gconv-modules-extra",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89092 medium vulnerability for libc-gconv-modules-extra package"
-              },
-              "fullDescription": {
-                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
-              "help": {
-                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-6\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
-                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-6  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "4.2"
-              }
-            },
-            {
-              "id": "CVE-2026-89092-libc6",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-89092 medium vulnerability for libc6 package"
-              },
-              "fullDescription": {
-                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
-              "help": {
-                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc6\nVersion: 2.43-6\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
-                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-6  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libc6@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
-                ],
-                "security-severity": "4.2"
-              }
-            },
-            {
               "id": "CVE-2019-9192-libc-bin",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -1330,6 +1330,69 @@
                   "pkg:deb/debian/libc6@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
                 ],
                 "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-89092-libc-bin",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89092 medium vulnerability for libc-bin package"
+              },
+              "fullDescription": {
+                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+              "help": {
+                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-bin\nVersion: 2.43-6\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
+                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-bin  | 2.43-6  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-bin@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "4.2"
+              }
+            },
+            {
+              "id": "CVE-2026-89092-libc-gconv-modules-extra",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89092 medium vulnerability for libc-gconv-modules-extra package"
+              },
+              "fullDescription": {
+                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+              "help": {
+                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc-gconv-modules-extra\nVersion: 2.43-6\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
+                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc-gconv-modules-extra  | 2.43-6  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc-gconv-modules-extra@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "4.2"
+              }
+            },
+            {
+              "id": "CVE-2026-89092-libc6",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-89092 medium vulnerability for libc6 package"
+              },
+              "fullDescription": {
+                "text": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a  stack overflow when a malicious DNS server returns too large a response  for a DNS query, resulting in degraded DNS resolution for the system.    Exploitation of this bug needs a system that has nscd enabled and using  an untrusted DNS server for name resolution, with the compromised DNS  server being capable of processing records large enough to result in a  stack overflow in an nscd thread stack.  During experimentation, bind 9  was unable to handle large records, but that could change in future or  with a different name server.  In typical installations, nscd is  executed in an isolated context as its own user without a shell, due to  which any compromise of that service is isolated.    There is a remote possibility of nscd cache corruption if an attacker  manages to get the stack pointer into a desired point in the heap,  potentially resulting in other caches in nscd being overwritten with  corrupt data through the stack overflow, until the buggy code path  eventually results in a crash.    Finally, a crash in nscd may result in performance degradation when  resolving names, but it does not result in a denial of service."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+              "help": {
+                "text": "Vulnerability CVE-2026-89092\nSeverity: medium\nPackage: libc6\nVersion: 2.43-6\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)",
+                "markdown": "**Vulnerability CVE-2026-89092**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | libc6  | 2.43-6  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-89092](https://security-tracker.debian.org/tracker/CVE-2026-89092)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libc6@2.43-6?arch=amd64\u0026distro=debian\u0026upstream=glibc"
+                ],
+                "security-severity": "4.2"
               }
             },
             {
@@ -2488,27 +2551,6 @@
               }
             },
             {
-              "id": "CVE-2017-14159-libldap2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2017-14159 low vulnerability for libldap2 package"
-              },
-              "fullDescription": {
-                "text": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-14159",
-              "help": {
-                "text": "Vulnerability CVE-2017-14159\nSeverity: low\nPackage: libldap2\nVersion: 2.6.14+dfsg-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)",
-                "markdown": "**Vulnerability CVE-2017-14159**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.14+dfsg-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
-                ],
-                "security-severity": "4.7"
-              }
-            },
-            {
               "id": "CVE-2023-31439-libsystemd0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2548,6 +2590,27 @@
                   "pkg:deb/debian/libudev1@262-1?arch=amd64\u0026distro=debian\u0026upstream=systemd"
                 ],
                 "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "CVE-2017-14159-libldap2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2017-14159 low vulnerability for libldap2 package"
+              },
+              "fullDescription": {
+                "text": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-14159",
+              "help": {
+                "text": "Vulnerability CVE-2017-14159\nSeverity: low\nPackage: libldap2\nVersion: 2.6.14+dfsg-2\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)",
+                "markdown": "**Vulnerability CVE-2017-14159**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libldap2  | 2.6.14+dfsg-2  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2017-14159](https://security-tracker.debian.org/tracker/CVE-2017-14159)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libldap2@2.6.14%2Bdfsg-2?arch=amd64\u0026distro=debian\u0026upstream=openldap"
+                ],
+                "security-severity": "4.7"
               }
             },
             {
@@ -3487,6 +3550,123 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "6b362c99fc2b9fa6e86e8cb9a0c0779f2e0531264d106c2c37af7c5730e70164:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-95619-gcc-16-base",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: gcc-16-base, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gcc-16-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/gcc-16-base/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/gcc-16-base:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/gcc-16-base:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "348102a22b23cfc1e267e182aa4ac273ed8fce12cf91fa0fa6d6109b4a2ab0f8:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-95619-libgcc-s1",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libgcc-s1, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gcc-16-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libgcc-s1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libgcc-s1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libgcc-s1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "eb66a76989c139b34c3842dacea68f547c588d1a8bd37143cf47a5bd86d3fcdd:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-95619-libstdc++6",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libstdc++6, version 16.2.0-3 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/gcc-16-base/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libstdc++6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libstdc++6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libstdc++6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ae3cd4a6acf136e9615cf2b2b8ba4c5f12a143e973bb858bfbb13c997241fa39:1"
           }
         },
         {
@@ -5321,143 +5501,6 @@
           }
         },
         {
-          "ruleId": "CVE-2026-89092-libc-bin",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-bin/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libc-bin/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.list"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.postinst"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.triggers"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "9f512631449060bd36874b729c21c50c7dfde554df756c0044f43e18661e135b:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-89092-libc-gconv-modules-extra",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libc-gconv-modules-extra/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d087c99ccd2fa689f81cd48fe162371e8cf2c1ac9f959d468a7c5ef12f6ecf69:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-89092-libc6",
-          "level": "warning",
-          "message": {
-            "text": "A medium vulnerability in deb package: libc6, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libc6/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libc6/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc6:amd64.conffiles"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc6:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6b362c99fc2b9fa6e86e8cb9a0c0779f2e0531264d106c2c37af7c5730e70164:1"
-          }
-        },
-        {
           "ruleId": "CVE-2019-9192-libc-bin",
           "level": "note",
           "message": {
@@ -5556,6 +5599,143 @@
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libc6, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc6/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libc6/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc6:amd64.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc6:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc6:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6b362c99fc2b9fa6e86e8cb9a0c0779f2e0531264d106c2c37af7c5730e70164:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-89092-libc-bin",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-bin, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-bin/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libc-bin/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.conffiles",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.conffiles"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.list"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.postinst",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.postinst"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-bin.triggers",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-bin.triggers"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "9f512631449060bd36874b729c21c50c7dfde554df756c0044f43e18661e135b:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-89092-libc-gconv-modules-extra",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc-gconv-modules-extra, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libc-gconv-modules-extra/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libc-gconv-modules-extra/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libc-gconv-modules-extra:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d087c99ccd2fa689f81cd48fe162371e8cf2c1ac9f959d468a7c5ef12f6ecf69:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-89092-libc6",
+          "level": "warning",
+          "message": {
+            "text": "A medium vulnerability in deb package: libc6, version 2.43-6 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
           },
           "locations": [
             {
@@ -8028,45 +8208,6 @@
           }
         },
         {
-          "ruleId": "CVE-2017-14159-libldap2",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libldap2, version 2.6.14+dfsg-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libldap2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libldap2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libldap2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
-          }
-        },
-        {
           "ruleId": "CVE-2023-31439-libsystemd0",
           "level": "note",
           "message": {
@@ -8142,6 +8283,45 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "5adc48ca18db420bdff4dbbc3d0517e7ca0bb1d8083e029dff83a5659e59e0ad:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2017-14159-libldap2",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libldap2, version 2.6.14+dfsg-2 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libldap2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/usr/share/doc/libldap2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libldap2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:2a118218544e2947262a7ef26fc5a26584ed35bdf64c993ffedba0ebf2039ca0:/var/lib/dpkg/info/libldap2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "bfd8a499ebdcbb5eadfed1be7d68258f680c89f90cf5d5ddb331a744df0a8475:1"
           }
         },
         {
