@@ -619,6 +619,48 @@
               }
             },
             {
+              "id": "CVE-2026-107161-libsasl2-2",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-107161 high vulnerability for libsasl2-2 package"
+              },
+              "fullDescription": {
+                "text": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-107161",
+              "help": {
+                "text": "Vulnerability CVE-2026-107161\nSeverity: high\nPackage: libsasl2-2\nVersion: 2.1.28+dfsg1-11\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)",
+                "markdown": "**Vulnerability CVE-2026-107161**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsasl2-2  | 2.1.28+dfsg1-11  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsasl2-2@2.1.28%2Bdfsg1-11?arch=amd64\u0026distro=debian\u0026upstream=cyrus-sasl2"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "CVE-2026-107161-libsasl2-modules-db",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-107161 high vulnerability for libsasl2-modules-db package"
+              },
+              "fullDescription": {
+                "text": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-107161",
+              "help": {
+                "text": "Vulnerability CVE-2026-107161\nSeverity: high\nPackage: libsasl2-modules-db\nVersion: 2.1.28+dfsg1-11\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)",
+                "markdown": "**Vulnerability CVE-2026-107161**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsasl2-modules-db  | 2.1.28+dfsg1-11  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libsasl2-modules-db@2.1.28%2Bdfsg1-11?arch=amd64\u0026distro=debian\u0026upstream=cyrus-sasl2"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
               "id": "CVE-2005-2541-tar",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -826,48 +868,6 @@
                   "pkg:deb/debian/libstdc%2B%2B6@16.2.0-3?arch=amd64\u0026distro=debian\u0026upstream=gcc-16"
                 ],
                 "security-severity": "7.0"
-              }
-            },
-            {
-              "id": "CVE-2026-107161-libsasl2-2",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-107161 high vulnerability for libsasl2-2 package"
-              },
-              "fullDescription": {
-                "text": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-107161",
-              "help": {
-                "text": "Vulnerability CVE-2026-107161\nSeverity: high\nPackage: libsasl2-2\nVersion: 2.1.28+dfsg1-11\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)",
-                "markdown": "**Vulnerability CVE-2026-107161**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsasl2-2  | 2.1.28+dfsg1-11  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libsasl2-2@2.1.28%2Bdfsg1-11?arch=amd64\u0026distro=debian\u0026upstream=cyrus-sasl2"
-                ],
-                "security-severity": "7.5"
-              }
-            },
-            {
-              "id": "CVE-2026-107161-libsasl2-modules-db",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-107161 high vulnerability for libsasl2-modules-db package"
-              },
-              "fullDescription": {
-                "text": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-107161",
-              "help": {
-                "text": "Vulnerability CVE-2026-107161\nSeverity: high\nPackage: libsasl2-modules-db\nVersion: 2.1.28+dfsg1-11\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)",
-                "markdown": "**Vulnerability CVE-2026-107161**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | libsasl2-modules-db  | 2.1.28+dfsg1-11  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-107161](https://security-tracker.debian.org/tracker/CVE-2026-107161)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libsasl2-modules-db@2.1.28%2Bdfsg1-11?arch=amd64\u0026distro=debian\u0026upstream=cyrus-sasl2"
-                ],
-                "security-severity": "7.5"
               }
             },
             {
@@ -4114,6 +4114,84 @@
           }
         },
         {
+          "ruleId": "CVE-2026-107161-libsasl2-2",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libsasl2-2, version 2.1.28+dfsg1-11 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsasl2-2/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/usr/share/doc/libsasl2-2/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsasl2-2:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/info/libsasl2-2:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "13f6f42df83f1c665710ec89839b339c48a91c10ab2400ba8007bb118276d384:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-107161-libsasl2-modules-db",
+          "level": "error",
+          "message": {
+            "text": "A high vulnerability in deb package: libsasl2-modules-db, version 2.1.28+dfsg1-11 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libsasl2-modules-db/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/usr/share/doc/libsasl2-modules-db/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libsasl2-modules-db:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/info/libsasl2-modules-db:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "90553f33d5630dbdd0597909b5852c1051acabcdb060027c32dbf6d105144aef:1"
+          }
+        },
+        {
           "ruleId": "CVE-2005-2541-tar",
           "level": "note",
           "message": {
@@ -4525,84 +4603,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "ae3cd4a6acf136e9615cf2b2b8ba4c5f12a143e973bb858bfbb13c997241fa39:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-107161-libsasl2-2",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libsasl2-2, version 2.1.28+dfsg1-11 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libsasl2-2/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/usr/share/doc/libsasl2-2/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libsasl2-2:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/info/libsasl2-2:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "13f6f42df83f1c665710ec89839b339c48a91c10ab2400ba8007bb118276d384:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-107161-libsasl2-modules-db",
-          "level": "error",
-          "message": {
-            "text": "A high vulnerability in deb package: libsasl2-modules-db, version 2.1.28+dfsg1-11 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libsasl2-modules-db/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/usr/share/doc/libsasl2-modules-db/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libsasl2-modules-db:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:c5d6ccee3a8926e4b15d6e0bf2225f9b41c0b3fb0c3c20f4fca2010f287450f3:/var/lib/dpkg/info/libsasl2-modules-db:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "90553f33d5630dbdd0597909b5852c1051acabcdb060027c32dbf6d105144aef:1"
           }
         },
         {
