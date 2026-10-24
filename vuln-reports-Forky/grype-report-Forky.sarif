@@ -955,6 +955,111 @@
               }
             },
             {
+              "id": "CVE-2026-92388-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-92388 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-92388",
+              "help": {
+                "text": "Vulnerability CVE-2026-92388\nSeverity: low\nPackage: curl\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)",
+                "markdown": "**Vulnerability CVE-2026-92388**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.22.0-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-92386-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-92386 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` silently aborts parsing prematurely upon encountering the too long line, ignoring all subsequent valid cookies in the file."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-92386",
+              "help": {
+                "text": "Vulnerability CVE-2026-92386\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-92386](https://security-tracker.debian.org/tracker/CVE-2026-92386)",
+                "markdown": "**Vulnerability CVE-2026-92386**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-92386](https://security-tracker.debian.org/tracker/CVE-2026-92386)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-92388-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-92388 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-92388",
+              "help": {
+                "text": "Vulnerability CVE-2026-92388\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)",
+                "markdown": "**Vulnerability CVE-2026-92388**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-86412-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-86412 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "A remote HTTP server can set a cookie that curl accepts and writes to a Netscape cookie jar but cannot reload. On the next invocation using the same path for `--cookie` and `--cookie-jar`, curl fails before connecting, then the cleanup procedure replaces the jar with an empty file, deleting cookies for unrelated domains."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86412",
+              "help": {
+                "text": "Vulnerability CVE-2026-86412\nSeverity: low\nPackage: curl\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)",
+                "markdown": "**Vulnerability CVE-2026-86412**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.22.0-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-86414-curl",
+              "name": "DpkgMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-86414 low vulnerability for curl package"
+              },
+              "fullDescription": {
+                "text": "An HTTP proxy can trick libcurl into sending the origin's credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86414",
+              "help": {
+                "text": "Vulnerability CVE-2026-86414\nSeverity: low\nPackage: curl\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)",
+                "markdown": "**Vulnerability CVE-2026-86414**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/curl@8.22.0-1?arch=amd64\u0026distro=debian"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
               "id": "CVE-2026-92389-curl",
               "name": "DpkgMatcherExactDirectMatch",
               "shortDescription": {
@@ -997,18 +1102,39 @@
               }
             },
             {
-              "id": "CVE-2026-92386-libcurl4t64",
+              "id": "CVE-2026-86412-libcurl4t64",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
-                "text": "CVE-2026-92386 low vulnerability for libcurl4t64 package"
+                "text": "CVE-2026-86412 low vulnerability for libcurl4t64 package"
               },
               "fullDescription": {
-                "text": "When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` silently aborts parsing prematurely upon encountering the too long line, ignoring all subsequent valid cookies in the file."
+                "text": "A remote HTTP server can set a cookie that curl accepts and writes to a Netscape cookie jar but cannot reload. On the next invocation using the same path for `--cookie` and `--cookie-jar`, curl fails before connecting, then the cleanup procedure replaces the jar with an empty file, deleting cookies for unrelated domains."
               },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-92386",
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86412",
               "help": {
-                "text": "Vulnerability CVE-2026-92386\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-92386](https://security-tracker.debian.org/tracker/CVE-2026-92386)",
-                "markdown": "**Vulnerability CVE-2026-92386**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-92386](https://security-tracker.debian.org/tracker/CVE-2026-92386)  |\n"
+                "text": "Vulnerability CVE-2026-86412\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)",
+                "markdown": "**Vulnerability CVE-2026-86412**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64\u0026distro=debian\u0026upstream=curl"
+                ],
+                "security-severity": "0.0"
+              }
+            },
+            {
+              "id": "CVE-2026-86414-libcurl4t64",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-86414 low vulnerability for libcurl4t64 package"
+              },
+              "fullDescription": {
+                "text": "An HTTP proxy can trick libcurl into sending the origin's credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86414",
+              "help": {
+                "text": "Vulnerability CVE-2026-86414\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)",
+                "markdown": "**Vulnerability CVE-2026-86414**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)  |\n"
               },
               "properties": {
                 "purls": [
@@ -1219,132 +1345,6 @@
               "help": {
                 "text": "Vulnerability CVE-2026-87863\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-87863](https://security-tracker.debian.org/tracker/CVE-2026-87863)",
                 "markdown": "**Vulnerability CVE-2026-87863**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-87863](https://security-tracker.debian.org/tracker/CVE-2026-87863)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64\u0026distro=debian\u0026upstream=curl"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-86412-curl",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-86412 low vulnerability for curl package"
-              },
-              "fullDescription": {
-                "text": "A remote HTTP server can set a cookie that curl accepts and writes to a Netscape cookie jar but cannot reload. On the next invocation using the same path for `--cookie` and `--cookie-jar`, curl fails before connecting, then the cleanup procedure replaces the jar with an empty file, deleting cookies for unrelated domains."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86412",
-              "help": {
-                "text": "Vulnerability CVE-2026-86412\nSeverity: low\nPackage: curl\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)",
-                "markdown": "**Vulnerability CVE-2026-86412**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/curl@8.22.0-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-86414-curl",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-86414 low vulnerability for curl package"
-              },
-              "fullDescription": {
-                "text": "An HTTP proxy can trick libcurl into sending the origin's credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86414",
-              "help": {
-                "text": "Vulnerability CVE-2026-86414\nSeverity: low\nPackage: curl\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)",
-                "markdown": "**Vulnerability CVE-2026-86414**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/curl@8.22.0-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-92388-curl",
-              "name": "DpkgMatcherExactDirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-92388 low vulnerability for curl package"
-              },
-              "fullDescription": {
-                "text": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-92388",
-              "help": {
-                "text": "Vulnerability CVE-2026-92388\nSeverity: low\nPackage: curl\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)",
-                "markdown": "**Vulnerability CVE-2026-92388**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | curl  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/curl@8.22.0-1?arch=amd64\u0026distro=debian"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-86412-libcurl4t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-86412 low vulnerability for libcurl4t64 package"
-              },
-              "fullDescription": {
-                "text": "A remote HTTP server can set a cookie that curl accepts and writes to a Netscape cookie jar but cannot reload. On the next invocation using the same path for `--cookie` and `--cookie-jar`, curl fails before connecting, then the cleanup procedure replaces the jar with an empty file, deleting cookies for unrelated domains."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86412",
-              "help": {
-                "text": "Vulnerability CVE-2026-86412\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)",
-                "markdown": "**Vulnerability CVE-2026-86412**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86412](https://security-tracker.debian.org/tracker/CVE-2026-86412)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64\u0026distro=debian\u0026upstream=curl"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-86414-libcurl4t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-86414 low vulnerability for libcurl4t64 package"
-              },
-              "fullDescription": {
-                "text": "An HTTP proxy can trick libcurl into sending the origin's credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-86414",
-              "help": {
-                "text": "Vulnerability CVE-2026-86414\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)",
-                "markdown": "**Vulnerability CVE-2026-86414**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-86414](https://security-tracker.debian.org/tracker/CVE-2026-86414)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64\u0026distro=debian\u0026upstream=curl"
-                ],
-                "security-severity": "0.0"
-              }
-            },
-            {
-              "id": "CVE-2026-92388-libcurl4t64",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-92388 low vulnerability for libcurl4t64 package"
-              },
-              "fullDescription": {
-                "text": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-92388",
-              "help": {
-                "text": "Vulnerability CVE-2026-92388\nSeverity: low\nPackage: libcurl4t64\nVersion: 8.22.0-1\nFix Version: 8.23.0~rc1-1\nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)",
-                "markdown": "**Vulnerability CVE-2026-92388**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libcurl4t64  | 8.22.0-1  | 8.23.0~rc1-1  | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-92388](https://security-tracker.debian.org/tracker/CVE-2026-92388)  |\n"
               },
               "properties": {
                 "purls": [
@@ -2341,6 +2341,27 @@
               }
             },
             {
+              "id": "CVE-2026-111497-libbrotli1",
+              "name": "DpkgMatcherExactIndirectMatch",
+              "shortDescription": {
+                "text": "CVE-2026-111497 low vulnerability for libbrotli1 package"
+              },
+              "fullDescription": {
+                "text": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.      Users need to update any Brotli libraries or binaries between 1.0.3 through 1.2.0 to the latest available version: 1.0.10 or 1.1.1 or 1.2.1."
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-111497",
+              "help": {
+                "text": "Vulnerability CVE-2026-111497\nSeverity: low\nPackage: libbrotli1\nVersion: 1.2.0-4+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-111497](https://security-tracker.debian.org/tracker/CVE-2026-111497)",
+                "markdown": "**Vulnerability CVE-2026-111497**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libbrotli1  | 1.2.0-4+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-111497](https://security-tracker.debian.org/tracker/CVE-2026-111497)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:deb/debian/libbrotli1@1.2.0-4%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=brotli%401.2.0-4"
+                ],
+                "security-severity": "9.2"
+              }
+            },
+            {
               "id": "CVE-2013-4392-libsystemd0",
               "name": "DpkgMatcherExactIndirectMatch",
               "shortDescription": {
@@ -2905,27 +2926,6 @@
                   "pkg:deb/debian/dash@0.5.12-12?arch=amd64\u0026distro=debian"
                 ],
                 "security-severity": "5.5"
-              }
-            },
-            {
-              "id": "CVE-2026-111497-libbrotli1",
-              "name": "DpkgMatcherExactIndirectMatch",
-              "shortDescription": {
-                "text": "CVE-2026-111497 low vulnerability for libbrotli1 package"
-              },
-              "fullDescription": {
-                "text": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.\n\n\n\n\n\nUsers need to update any Brotli libraries or binaries between 1.0.3 through 1.2.0 to the latest available version: 1.0.10 or 1.1.1 or 1.2.1."
-              },
-              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2026-111497",
-              "help": {
-                "text": "Vulnerability CVE-2026-111497\nSeverity: low\nPackage: libbrotli1\nVersion: 1.2.0-4+b1\nFix Version: \nType: deb\nLocation: /var/lib/dpkg/status\nData Namespace: debian:distro:debian:unstable\nLink: [CVE-2026-111497](https://security-tracker.debian.org/tracker/CVE-2026-111497)",
-                "markdown": "**Vulnerability CVE-2026-111497**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | libbrotli1  | 1.2.0-4+b1  |   | deb  | /var/lib/dpkg/status  | debian:distro:debian:unstable  | [CVE-2026-111497](https://security-tracker.debian.org/tracker/CVE-2026-111497)  |\n"
-              },
-              "properties": {
-                "purls": [
-                  "pkg:deb/debian/libbrotli1@1.2.0-4%2Bb1?arch=amd64\u0026distro=debian\u0026upstream=brotli%401.2.0-4"
-                ],
-                "security-severity": "9.2"
               }
             }
           ]
@@ -4860,6 +4860,213 @@
           }
         },
         {
+          "ruleId": "CVE-2026-92388-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "48e3f3d97bbf0882e606f52fcf6205ff6ad78e77c7d267e91e1e40e87013f4cd:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-92386-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d130fe53de5e8b1510839c454779a1d038fbf0b2e8430aefebec0aeba67587a7:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-92388-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d130fe53de5e8b1510839c454779a1d038fbf0b2e8430aefebec0aeba67587a7:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-86412-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "48e3f3d97bbf0882e606f52fcf6205ff6ad78e77c7d267e91e1e40e87013f4cd:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-86414-curl",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: curl, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/curl/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/curl/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.md5sums"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/curl.list",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.list"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "48e3f3d97bbf0882e606f52fcf6205ff6ad78e77c7d267e91e1e40e87013f4cd:1"
+          }
+        },
+        {
           "ruleId": "CVE-2026-92389-curl",
           "level": "note",
           "message": {
@@ -4946,7 +5153,46 @@
           }
         },
         {
-          "ruleId": "CVE-2026-92386-libcurl4t64",
+          "ruleId": "CVE-2026-86412-libcurl4t64",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libcurl4t64/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libcurl4t64/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d130fe53de5e8b1510839c454779a1d038fbf0b2e8430aefebec0aeba67587a7:1"
+          }
+        },
+        {
+          "ruleId": "CVE-2026-86414-libcurl4t64",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -5353,252 +5599,6 @@
         },
         {
           "ruleId": "CVE-2026-87863-libcurl4t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d130fe53de5e8b1510839c454779a1d038fbf0b2e8430aefebec0aeba67587a7:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-86412-curl",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: curl, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "48e3f3d97bbf0882e606f52fcf6205ff6ad78e77c7d267e91e1e40e87013f4cd:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-86414-curl",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: curl, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "48e3f3d97bbf0882e606f52fcf6205ff6ad78e77c7d267e91e1e40e87013f4cd:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-92388-curl",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: curl, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/curl/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/curl/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.md5sums"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/curl.list",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/curl.list"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "48e3f3d97bbf0882e606f52fcf6205ff6ad78e77c7d267e91e1e40e87013f4cd:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-86412-libcurl4t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d130fe53de5e8b1510839c454779a1d038fbf0b2e8430aefebec0aeba67587a7:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-86414-libcurl4t64",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libcurl4t64/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libcurl4t64/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libcurl4t64:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libcurl4t64:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "d130fe53de5e8b1510839c454779a1d038fbf0b2e8430aefebec0aeba67587a7:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-92388-libcurl4t64",
           "level": "note",
           "message": {
             "text": "A low vulnerability in deb package: libcurl4t64, version 8.22.0-1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
@@ -7690,6 +7690,45 @@
           }
         },
         {
+          "ruleId": "CVE-2026-111497-libbrotli1",
+          "level": "note",
+          "message": {
+            "text": "A low vulnerability in deb package: libbrotli1, version 1.2.0-4+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "debian-forky//var/lib/dpkg/status"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "/var/lib/dpkg/status",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
+                },
+                {
+                  "name": "/usr/share/doc/libbrotli1/copyright",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libbrotli1/copyright"
+                },
+                {
+                  "name": "/var/lib/dpkg/info/libbrotli1:amd64.md5sums",
+                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libbrotli1:amd64.md5sums"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "6ed83e237f2931fefedf270fd3ce1f29599b3e5b1a8910340582f33aace8bc6a:1"
+          }
+        },
+        {
           "ruleId": "CVE-2013-4392-libsystemd0",
           "level": "note",
           "message": {
@@ -8880,45 +8919,6 @@
           ],
           "partialFingerprints": {
             "primaryLocationLineHash": "01ab9309f5c8f9d92967f798ab80399ebb6a01c6bd868ab02d053ba317ff259f:1"
-          }
-        },
-        {
-          "ruleId": "CVE-2026-111497-libbrotli1",
-          "level": "note",
-          "message": {
-            "text": "A low vulnerability in deb package: libbrotli1, version 1.2.0-4+b1 was found in image ghcr.io/anchorlayer/debian-forky:latest at: /var/lib/dpkg/status"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "debian-forky//var/lib/dpkg/status"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "name": "/var/lib/dpkg/status",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/status"
-                },
-                {
-                  "name": "/usr/share/doc/libbrotli1/copyright",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/usr/share/doc/libbrotli1/copyright"
-                },
-                {
-                  "name": "/var/lib/dpkg/info/libbrotli1:amd64.md5sums",
-                  "fullyQualifiedName": "ghcr.io/anchorlayer/debian-forky:latest@sha256:01efd52e89b67bad3b118e9ffdd9a941d9d94e80bf6f5ce11b38a66ccd0b91ab:/var/lib/dpkg/info/libbrotli1:amd64.md5sums"
-                }
-              ]
-            }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "6ed83e237f2931fefedf270fd3ce1f29599b3e5b1a8910340582f33aace8bc6a:1"
           }
         }
       ]
