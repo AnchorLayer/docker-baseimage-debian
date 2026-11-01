@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom xmlns="http://cyclonedx.org/schema/bom/1.7" serialNumber="urn:uuid:e81f6305-8a40-4843-aa44-102194ccf434" version="1">
+<bom xmlns="http://cyclonedx.org/schema/bom/1.7" serialNumber="urn:uuid:283a1233-4a4c-4863-997f-b7df1d9a9887" version="1">
   <metadata>
-    <timestamp>2026-11-01T05:47:05Z</timestamp>
+    <timestamp>2026-11-01T13:09:07Z</timestamp>
     <tools>
       <components>
         <component type="application">
@@ -31227,7 +31227,7 @@
     </dependency>
   </dependencies>
   <vulnerabilities>
-    <vulnerability bom-ref="urn:uuid:c85ef19d-107b-4694-b116-ccc83c2d03ff">
+    <vulnerability bom-ref="urn:uuid:13c51852-6061-4765-8d73-8ae328a3c228">
       <id>CVE-2026-111497</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31284,7 +31284,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:862d8d62-e6a9-431b-9de2-74575d8d476b">
+    <vulnerability bom-ref="urn:uuid:02c2df0a-2112-4dcc-8e4d-89dc972ee660">
       <id>CVE-2026-92392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31332,7 +31332,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2e724b30-1af3-49ec-acc6-fa0aec605291">
+    <vulnerability bom-ref="urn:uuid:007719dd-975d-422a-b10b-fb90db874d17">
       <id>CVE-2026-92392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31380,7 +31380,103 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1303a475-248d-4ae1-b21e-182ae19ceda5">
+    <vulnerability bom-ref="urn:uuid:d4a73dfd-8f7a-4466-be3a-d41bcf07198f">
+      <id>CVE-2026-92391</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92391</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.01166</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:33d0930e-d0a7-408c-97d0-48cdcb5b7ac0">
+      <id>CVE-2026-92391</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92391</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.01166</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:4bd680f2-b4dc-4267-8a3c-88cf6f74b320">
       <id>CVE-2026-92387</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31428,7 +31524,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c9add9cb-f5d6-4f71-93a1-b1c4a5947abb">
+    <vulnerability bom-ref="urn:uuid:2bd97935-46e0-421e-b3bc-f15510d077c9">
       <id>CVE-2026-92387</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31476,18 +31572,18 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a1f7daf8-be8b-44bc-a473-5d87419574ea">
-      <id>CVE-2026-92386</id>
+    <vulnerability bom-ref="urn:uuid:c1f7463f-bc00-4989-b7f5-294560fd1011">
+      <id>CVE-2026-87862</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-92386</id>
+          <id>CVE-2026-87862</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
           </source>
         </reference>
       </references>
@@ -31503,11 +31599,11 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00828</score>
+          <score>0.00995</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` silently aborts parsing prematurely upon encountering the too long line, ignoring all subsequent valid cookies in the file.</description>
+      <description>Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child&#39;s valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
@@ -31524,18 +31620,18 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c09825a7-0d41-4065-91e1-d5aa0829503d">
-      <id>CVE-2026-92386</id>
+    <vulnerability bom-ref="urn:uuid:a9fb38c4-ed0c-4733-86ba-c211a5df2326">
+      <id>CVE-2026-87862</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-92386</id>
+          <id>CVE-2026-87862</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
           </source>
         </reference>
       </references>
@@ -31551,11 +31647,11 @@
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00828</score>
+          <score>0.00995</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` silently aborts parsing prematurely upon encountering the too long line, ignoring all subsequent valid cookies in the file.</description>
+      <description>Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child&#39;s valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
@@ -31572,7 +31668,199 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a3e71b60-751b-459b-86ee-71f4906e7560">
+    <vulnerability bom-ref="urn:uuid:2a7140c3-22e0-482f-8afe-9143d548477f">
+      <id>CVE-2026-94265</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-94265</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00776</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When processing an HTTP redirect to a URL containing userinfo (a `username:password` component), curl might erroneously retain and re-transmit the original host&#39;s HTTP Negotiate authentication state. Consequently, a malicious server can trigger a redirect containing arbitrary userinfo to force curl to send a freshly minted Kerberos ticket—generated using the ambient identity of the client process to an untrusted third-party host, effectively bypassing the domain-scoping restrictions normally enforced by the absence of `--location-trusted`.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:c08aed7e-f7ac-4432-a6c0-0b1ede7a9bc3">
+      <id>CVE-2026-94265</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-94265</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00776</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When processing an HTTP redirect to a URL containing userinfo (a `username:password` component), curl might erroneously retain and re-transmit the original host&#39;s HTTP Negotiate authentication state. Consequently, a malicious server can trigger a redirect containing arbitrary userinfo to force curl to send a freshly minted Kerberos ticket—generated using the ambient identity of the client process to an untrusted third-party host, effectively bypassing the domain-scoping restrictions normally enforced by the absence of `--location-trusted`.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:91b00f66-a93a-4e97-abf2-a6b3515b7d53">
+      <id>CVE-2026-86413</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-86413</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00731</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When using an *ambient user* in a first transfer doing Negotiate authentication and asked to follow redirects, curl could pass on its credential details to an unrelated second origin when asked to redirect there.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:ff0f948b-3e78-49a6-8e22-060f16add3eb">
+      <id>CVE-2026-86413</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-86413</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00731</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When using an *ambient user* in a first transfer doing Negotiate authentication and asked to follow redirects, curl could pass on its credential details to an unrelated second origin when asked to redirect there.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:44c145b5-2b01-4a1b-91ad-1c51a29d402f">
       <id>CVE-2026-86412</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31620,7 +31908,103 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:46aef2ff-ecf8-4a29-8845-c035c6c3bfda">
+    <vulnerability bom-ref="urn:uuid:b5adaa45-736c-42e6-ab8c-d4ccc5d56bf1">
+      <id>CVE-2026-87863</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-87863</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00828</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An authenticated HTTPS origin can supply an HSTS `max-age` value that the parser accepts, but time serialization later fails to process. On 64-bit systems, extreme max-age values compute an absolute expiry within standard time integer limits that exceeds calendar time structure bounds. During cache saves, the original HSTS file is truncated before writing a temporary replacement; when serialization fails, the temporary file is deleted, leaving an empty or partial cache. Because the save error is silently ignored during cleanup, curl exits successfully despite the data loss.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:ebac5a5b-aac1-43bc-9b3e-d470f39a767e">
+      <id>CVE-2026-92386</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92386</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00828</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` silently aborts parsing prematurely upon encountering the too long line, ignoring all subsequent valid cookies in the file.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:057872c4-1472-4ee8-9e5d-a9eac8b5673d">
       <id>CVE-2026-86412</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31668,7 +32052,391 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8eb947f5-0dc0-4b63-8b26-f27a3ba3976b">
+    <vulnerability bom-ref="urn:uuid:08ac4912-f02d-4e90-9638-d2d1e6dd5ada">
+      <id>CVE-2026-87863</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-87863</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00828</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An authenticated HTTPS origin can supply an HSTS `max-age` value that the parser accepts, but time serialization later fails to process. On 64-bit systems, extreme max-age values compute an absolute expiry within standard time integer limits that exceeds calendar time structure bounds. During cache saves, the original HSTS file is truncated before writing a temporary replacement; when serialization fails, the temporary file is deleted, leaving an empty or partial cache. Because the save error is silently ignored during cleanup, curl exits successfully despite the data loss.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:eba65c38-a6fc-47b5-97da-a05c9567a1fb">
+      <id>CVE-2026-92386</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92386</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92386</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00828</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` silently aborts parsing prematurely upon encountering the too long line, ignoring all subsequent valid cookies in the file.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:7f8494a2-24e7-449b-8ee7-90263661b850">
+      <id>CVE-2026-92388</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92388</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00699</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:6c8ebc71-bde6-4fd9-b04b-fcc175ce1ddc">
+      <id>CVE-2026-92388</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92388</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00699</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:309450f5-a44d-485f-8dfd-248889bd4995">
+      <id>CVE-2026-86414</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-86414</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00676</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An HTTP proxy can trick libcurl into sending the origin&#39;s credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:3dc903a7-defa-4489-98d4-e4436daf79b0">
+      <id>CVE-2026-87861</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-87861</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00676</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When using ambient user credentials, an HTTP request directed to one origin may be dispatched over a connection previously authenticated via Negotiate for a different origin, leaving the request&#39;s intended credentials unused.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:4980a6bc-5a17-4589-b58e-7215c648c3c8">
+      <id>CVE-2026-86414</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-86414</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00676</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>An HTTP proxy can trick libcurl into sending the origin&#39;s credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:de7eaa65-8e51-4950-99bc-4b8408a65775">
+      <id>CVE-2026-87861</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-87861</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>9.1</score>
+          <severity>critical</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00676</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When using ambient user credentials, an HTTP request directed to one origin may be dispatched over a connection previously authenticated via Negotiate for a different origin, leaving the request&#39;s intended credentials unused.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:5aab1267-07d7-4536-a35e-3c9f3751b0b2">
       <id>CVE-2026-86410</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31716,7 +32484,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:96276bdb-95bb-4dbd-9def-787df3695cf3">
+    <vulnerability bom-ref="urn:uuid:1485ac88-de24-431a-a8e0-d0a85b17e0b0">
       <id>CVE-2026-86410</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31764,7 +32532,295 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:23c69927-0812-4c27-a6c4-06dcb13a8fa3">
+    <vulnerability bom-ref="urn:uuid:b3eedc81-b8c4-40a8-b940-59bc573de158">
+      <id>CVE-2026-92389</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92389</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00721</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>libcurl&#39;s TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle&#39;s persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:7614b73e-f8c9-4169-a3e0-ffc91da6b352">
+      <id>CVE-2026-92389</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92389</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00721</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>libcurl&#39;s TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle&#39;s persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:654293a0-0681-4420-b747-0db93dae8cc3">
+      <id>CVE-2026-107928</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107928</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00705</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When curl is built with GnuTLS, a malicious WebSocket server can make curl send memory past its send buffer. This is due to an out of bounds read following when `gnutls_record_send()` returns a number of bytes sent **greater than the number of bytes it was given to send**. GnuTLS does that after a blocked send.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:1d5995eb-6a54-433e-ad3c-05ec8854c91d">
+      <id>CVE-2026-107928</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107928</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00705</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When curl is built with GnuTLS, a malicious WebSocket server can make curl send memory past its send buffer. This is due to an out of bounds read following when `gnutls_record_send()` returns a number of bytes sent **greater than the number of bytes it was given to send**. GnuTLS does that after a blocked send.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:5c20a172-bf72-42e5-835b-a90b8b903dd9">
+      <id>CVE-2026-107929</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107929</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00667</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When `CURLOPT_INTERFACE` (or the command line tool&#39;s `--interface` option) is set with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that binding is not part of the connection reuse key, so a later transfer asking for a different source can silently reuse an existing connection and go out from the earlier transfer&#39;s source address</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:c9b12102-364d-46a0-9455-31a10a20d92a">
+      <id>CVE-2026-107929</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107929</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>8.1</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00667</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When `CURLOPT_INTERFACE` (or the command line tool&#39;s `--interface` option) is set with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that binding is not part of the connection reuse key, so a later transfer asking for a different source can silently reuse an existing connection and go out from the earlier transfer&#39;s source address</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:d568e36c-f7cc-473a-a339-d5a859e3d9a1">
       <id>CVE-2026-82560</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31808,7 +32864,295 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:773826de-9a81-4dff-bddf-32e5b48b8501">
+    <vulnerability bom-ref="urn:uuid:e047fd66-6d42-4432-a6f5-e4595ee20b07">
+      <id>CVE-2026-87865</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-87865</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.4</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00604</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated initial entry can cause host key validation to report a key *mismatch* as a *missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:321ed79e-19c8-406e-9de7-efef24449e91">
+      <id>CVE-2026-87865</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-87865</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.4</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00604</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated initial entry can cause host key validation to report a key *mismatch* as a *missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:c9949be2-044a-43c3-a325-1d2ee94cade5">
+      <id>CVE-2026-92390</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92390</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00589</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When invoked with `--remote-header-name` (`-J`), curl fails to preserve its documented anti-clobbering protection if an intermediate 103 Early Hints response precedes the final HTTP response, or if an `ETag` header is processed before `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S) server to overwrite an existing local file specified in the `Content-Disposition` header despite the presence of the `-J` non-overwrite constraint.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:bc63afe4-210b-4af5-ab12-cc2142f7ff55">
+      <id>CVE-2026-92390</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-92390</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00589</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>When invoked with `--remote-header-name` (`-J`), curl fails to preserve its documented anti-clobbering protection if an intermediate 103 Early Hints response precedes the final HTTP response, or if an `ETag` header is processed before `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S) server to overwrite an existing local file specified in the `Content-Disposition` header despite the presence of the `-J` non-overwrite constraint.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:776417c3-23e7-4a96-9418-5368b18895f6">
+      <id>CVE-2026-94266</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-94266</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00556</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>libcurl could accidentally return a URL for `curl_easy_getinfo()`&#39;s `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:02b8da7e-b711-4a62-8338-47726788abac">
+      <id>CVE-2026-94266</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-94266</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.5</score>
+          <severity>high</severity>
+          <method>CVSSv31</method>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00556</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>libcurl could accidentally return a URL for `curl_easy_getinfo()`&#39;s `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <versions>
+            <version>
+              <version>8.22.0-1</version>
+              <status>affected</status>
+            </version>
+            <version>
+              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
+              <status>unaffected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:e6a63ac8-5090-4797-b66e-842c02c76b21">
       <id>CVE-2026-85091</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31856,7 +33200,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7f2529b4-a39d-4e74-9f92-fc97c4be3e6c">
+    <vulnerability bom-ref="urn:uuid:be472244-79d6-42eb-b0a4-6958dcdd12d1">
       <id>CVE-2017-17740</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31898,7 +33242,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:0bfc3837-5cbb-4843-bceb-184902bd0e63">
+    <vulnerability bom-ref="urn:uuid:3f71f702-1ba1-4887-a586-e9cba9351f4d">
       <id>CVE-2026-95619</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31946,7 +33290,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:be1f96f9-318d-4bc6-b0cf-677f8c2f0307">
+    <vulnerability bom-ref="urn:uuid:dc127ae0-00d2-49a3-a1c3-e24b85498294">
       <id>CVE-2026-95619</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -31994,7 +33338,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2772e48d-9451-4925-a95c-32664e297dba">
+    <vulnerability bom-ref="urn:uuid:e4ec41db-fb08-48b5-b0a4-46daa757de6a">
       <id>CVE-2026-95619</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32042,390 +33386,38 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:569a7da2-1923-4ad8-9f3c-c74f0b77bffd">
-      <id>CVE-2026-107708</id>
+    <vulnerability bom-ref="urn:uuid:471e542f-9cfa-4986-8f9d-54a6a4ad9c59">
+      <id>CVE-2026-86415</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-107708</id>
+          <id>CVE-2026-86415</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <score>6.9</score>
-          <severity>medium</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00521</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=d249beb11f885479&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:86cbd97a-afbd-4859-9718-088cfb61122d">
-      <id>CVE-2026-107708</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107708</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>6.9</score>
-          <severity>medium</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00521</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=cf50314958384ae1&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1a0fcb9a-0b6c-4172-95a5-871ad81c5e7e">
-      <id>CVE-2026-107708</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107708</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>6.9</score>
-          <severity>medium</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00521</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ec8a4905fa61cd25&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cc59a0bd-4d97-45c4-8b0c-1950ec14e8db">
-      <id>CVE-2026-107708</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107708</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>6.9</score>
-          <severity>medium</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00521</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ac27a00c1a045150&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:248f5db9-25f1-4ad6-9621-ac6d82222d71">
-      <id>CVE-2026-107778</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107778</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.1</score>
+          <score>7.5</score>
           <severity>high</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00424</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=d249beb11f885479&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b2858223-cf5d-4c08-b636-d0356e0993eb">
-      <id>CVE-2026-107778</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107778</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.1</score>
-          <severity>high</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00424</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=cf50314958384ae1&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2481ba1f-73df-4f90-be17-51a9674c8358">
-      <id>CVE-2026-107778</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107778</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.1</score>
-          <severity>high</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00424</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ec8a4905fa61cd25&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:66bc5729-a9cc-4739-8f50-da99c4d32f44">
-      <id>CVE-2026-107778</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107778</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.1</score>
-          <severity>high</severity>
-          <method>other</method>
-          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00424</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ac27a00c1a045150&amp;upstream=krb5</ref>
-          <versions>
-            <version>
-              <version>1.22.1-3</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f6918caf-eb92-410c-9201-19b24a302bd9">
-      <id>CVE-2026-94265</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-94265</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00338</score>
+          <score>0.00419</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>When processing an HTTP redirect to a URL containing userinfo (a `username:password` component), curl might erroneously retain and re-transmit the original host&#39;s HTTP Negotiate authentication state. Consequently, a malicious server can trigger a redirect containing arbitrary userinfo to force curl to send a freshly minted Kerberos ticket—generated using the ambient identity of the client process to an untrusted third-party host, effectively bypassing the domain-scoping restrictions normally enforced by the absence of `--location-trusted`.</description>
+      <description>libcurl&#39;s connection cache match function never considers the automatic client certificate option, so a cached, already authenticated Schannel connection can be handed to a transfer that got redirected to a different origin, even though the code explicitly switched off the auto client cert option for that transfer to prevent exactly this.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
@@ -32435,45 +33427,45 @@
               <status>affected</status>
             </version>
             <version>
-              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
               <status>unaffected</status>
             </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ceb250c4-b5a6-4812-b537-663b9a18af0d">
-      <id>CVE-2026-94265</id>
+    <vulnerability bom-ref="urn:uuid:f991b6f6-f770-4061-a7a0-6ca3ce59505e">
+      <id>CVE-2026-86415</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-94265</id>
+          <id>CVE-2026-86415</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-94265</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
+          <score>7.5</score>
+          <severity>high</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
+          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00338</score>
+          <score>0.00419</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>When processing an HTTP redirect to a URL containing userinfo (a `username:password` component), curl might erroneously retain and re-transmit the original host&#39;s HTTP Negotiate authentication state. Consequently, a malicious server can trigger a redirect containing arbitrary userinfo to force curl to send a freshly minted Kerberos ticket—generated using the ambient identity of the client process to an untrusted third-party host, effectively bypassing the domain-scoping restrictions normally enforced by the absence of `--location-trusted`.</description>
+      <description>libcurl&#39;s connection cache match function never considers the automatic client certificate option, so a cached, already authenticated Schannel connection can be handed to a transfer that got redirected to a different origin, even though the code explicitly switched off the auto client cert option for that transfer to prevent exactly this.</description>
       <affects>
         <target>
           <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
@@ -32483,14 +33475,366 @@
               <status>affected</status>
             </version>
             <version>
-              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
+              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
               <status>unaffected</status>
             </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7100eeb2-4a59-406d-9c87-0f637f5def37">
+    <vulnerability bom-ref="urn:uuid:03e8804d-5c16-43f2-ba9e-ec8a1a4d1b01">
+      <id>CVE-2026-107708</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107708</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>6.9</score>
+          <severity>medium</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00521</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=d249beb11f885479&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:d44deec0-44fe-4198-9f6a-f33fff94a956">
+      <id>CVE-2026-107708</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107708</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>6.9</score>
+          <severity>medium</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00521</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=cf50314958384ae1&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:11203bb3-c05f-4527-9aa1-98e383688115">
+      <id>CVE-2026-107708</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107708</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>6.9</score>
+          <severity>medium</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00521</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ec8a4905fa61cd25&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:8a7fa58a-e9f2-4b82-ac17-626e212c640e">
+      <id>CVE-2026-107708</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107708</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107708</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>6.9</score>
+          <severity>medium</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00521</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT krb5 through 1.22.2 contains a NULL pointer dereference vulnerability in the KDC&#39;s get_pac_princ_with_realm() that returns success while leaving the client principal NULL on malformed names. A malicious or compromised cross-realm trusted KDC can send an S4U2Proxy request with a PAC carrying a malformed client name to crash krb5kdc and deny authentication.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ac27a00c1a045150&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:d28fe363-0797-47b4-94f4-3e5205a3c344">
+      <id>CVE-2026-107778</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107778</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.1</score>
+          <severity>high</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00424</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libgssapi-krb5-2@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=d249beb11f885479&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:09198009-8704-42df-8f35-7b84db73cae0">
+      <id>CVE-2026-107778</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107778</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.1</score>
+          <severity>high</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00424</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libk5crypto3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=cf50314958384ae1&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:04006022-bc00-4035-bce9-b1b727ea8fe4">
+      <id>CVE-2026-107778</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107778</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.1</score>
+          <severity>high</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00424</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libkrb5-3@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ec8a4905fa61cd25&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:d8e4ad2d-1de4-4065-a425-61511755005b">
+      <id>CVE-2026-107778</id>
+      <source>
+        <name>debian-distro-debian-unstable</name>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+      </source>
+      <references>
+        <reference>
+          <id>CVE-2026-107778</id>
+          <source>
+            <name>debian-distro-debian-unstable</name>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-107778</url>
+          </source>
+        </reference>
+      </references>
+      <ratings>
+        <rating>
+          <score>7.1</score>
+          <severity>high</severity>
+          <method>other</method>
+          <vector>CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X</vector>
+        </rating>
+        <rating>
+          <source>
+            <name>FIRST</name>
+            <url>https://www.first.org/epss/</url>
+          </source>
+          <score>0.00424</score>
+          <method>other</method>
+        </rating>
+      </ratings>
+      <description>MIT Kerberos 5 (krb5) through 1.22.2 contains a NULL pointer dereference in make_cred_list() in rd_cred.c that allows authenticated Kerberos clients to crash services by sending mismatched KRB-CRED arrays. Attackers can send forwarded credentials with more tickets than ticket_info entries through gss_accept_sec_context() to crash GSS-API acceptor services, causing denial of service.</description>
+      <affects>
+        <target>
+          <ref>pkg:deb/debian/libkrb5support0@1.22.1-3?arch=amd64&amp;distro=debian&amp;package-id=ac27a00c1a045150&amp;upstream=krb5</ref>
+          <versions>
+            <version>
+              <version>1.22.1-3</version>
+              <status>affected</status>
+            </version>
+          </versions>
+        </target>
+      </affects>
+    </vulnerability>
+    <vulnerability bom-ref="urn:uuid:ddcfe855-b064-426a-919a-87fa04c04ae6">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32532,7 +33876,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8983f6aa-66ab-41b2-be9b-41eda0c21e3b">
+    <vulnerability bom-ref="urn:uuid:876ad4ca-ea5b-4927-9f39-9c63e63b9e58">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32574,7 +33918,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9841e4b2-b26f-4ed8-869a-991e6066fd30">
+    <vulnerability bom-ref="urn:uuid:02197e32-7569-46d6-b64d-e1ae640eb6b7">
       <id>CVE-2018-20796</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32616,199 +33960,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:abd98284-27fa-431c-9b98-58f48bbb0097">
-      <id>CVE-2026-86413</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-86413</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00319</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When using an *ambient user* in a first transfer doing Negotiate authentication and asked to follow redirects, curl could pass on its credential details to an unrelated second origin when asked to redirect there.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:bc31ae53-5eff-4d76-8da0-68fdc3240d1e">
-      <id>CVE-2026-86413</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-86413</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-86413</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00319</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When using an *ambient user* in a first transfer doing Negotiate authentication and asked to follow redirects, curl could pass on its credential details to an unrelated second origin when asked to redirect there.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:9d80f177-8fca-41e7-b1e9-687941cd57fb">
-      <id>CVE-2026-92391</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92391</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00358</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:986a01e5-b7f1-4462-aca0-a408e392dfc7">
-      <id>CVE-2026-92391</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92391</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92391</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00358</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e99fa3f0-2b8d-4792-b324-e455caf9dcc9">
+    <vulnerability bom-ref="urn:uuid:c14453ba-a996-44da-baf2-900c92658031">
       <id>CVE-2015-3276</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32850,7 +34002,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d28bb8f7-363b-4edf-a377-f5f3f7e2d4d4">
+    <vulnerability bom-ref="urn:uuid:c90a5ead-9b35-47dd-80b4-788495bad7ef">
       <id>CVE-2026-102010</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32898,7 +34050,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2a739243-96ad-421c-a10b-8cd2bb71c3a2">
+    <vulnerability bom-ref="urn:uuid:c62ba37e-3706-4859-bfa9-b158e04ce896">
       <id>CVE-2026-102010</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32946,7 +34098,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f22c8d21-bc52-48e1-8adc-41f53f00776d">
+    <vulnerability bom-ref="urn:uuid:6a841e35-566f-4e41-92aa-97413f53331c">
       <id>CVE-2026-102010</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -32994,487 +34146,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:17f1c3bc-487e-4828-b37b-127ff056a3a7">
-      <id>CVE-2026-87862</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-87862</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00314</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child&#39;s valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:870b6884-973d-4c33-b144-d93d68198324">
-      <id>CVE-2026-87862</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-87862</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87862</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00314</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child&#39;s valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:46ff4a6f-1dd5-481d-992d-51f8c77d535c">
-      <id>CVE-2026-86414</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-86414</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00266</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>An HTTP proxy can trick libcurl into sending the origin&#39;s credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:43682702-eefd-406a-9a5b-79314cc5ddf7">
-      <id>CVE-2026-87861</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-87861</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00266</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When using ambient user credentials, an HTTP request directed to one origin may be dispatched over a connection previously authenticated via Negotiate for a different origin, leaving the request&#39;s intended credentials unused.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a9105320-6b3b-4f9d-a6ca-b9edfdc0ecf3">
-      <id>CVE-2026-86414</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-86414</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-86414</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00266</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>An HTTP proxy can trick libcurl into sending the origin&#39;s credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:97ac54dc-de79-458a-8675-4088827ed23b">
-      <id>CVE-2026-87861</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-87861</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87861</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00266</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When using ambient user credentials, an HTTP request directed to one origin may be dispatched over a connection previously authenticated via Negotiate for a different origin, leaving the request&#39;s intended credentials unused.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:228be372-4dd9-489e-928c-74bc5b0bf946">
-      <id>CVE-2026-92388</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92388</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00257</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5f386ebf-941d-4d73-ba29-6e213b135ea7">
-      <id>CVE-2026-92388</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92388</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92388</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>9.1</score>
-          <severity>critical</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00257</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while changing only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:259ad70f-149f-4505-bd6b-908ee5d22c8b">
-      <id>CVE-2026-107928</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107928</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00293</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When curl is built with GnuTLS, a malicious WebSocket server can make curl send memory past its send buffer. This is due to an out of bounds read following when `gnutls_record_send()` returns a number of bytes sent **greater than the number of bytes it was given to send**. GnuTLS does that after a blocked send.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3a7081c6-7be6-47ae-a444-cd0cd767998d">
-      <id>CVE-2026-107928</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107928</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107928</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00293</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When curl is built with GnuTLS, a malicious WebSocket server can make curl send memory past its send buffer. This is due to an out of bounds read following when `gnutls_record_send()` returns a number of bytes sent **greater than the number of bytes it was given to send**. GnuTLS does that after a blocked send.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d90c7e99-8784-4c22-87e0-75904ea6b70a">
+    <vulnerability bom-ref="urn:uuid:96ee899e-48e4-4a9e-a932-93e18d82a382">
       <id>CVE-2026-5704</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33518,199 +34190,139 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:52f3670c-c89d-4821-b97f-039c724b0b0d">
-      <id>CVE-2026-87863</id>
+    <vulnerability bom-ref="urn:uuid:0f91e52f-e391-4033-99c2-571a0c1be3a0">
+      <id>CVE-2026-84243</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-87863</id>
+          <id>CVE-2026-84243</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <score>8.1</score>
+          <score>7</score>
           <severity>high</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+          <vector>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00266</score>
+          <score>0.00297</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>An authenticated HTTPS origin can supply an HSTS `max-age` value that the parser accepts, but time serialization later fails to process. On 64-bit systems, extreme max-age values compute an absolute expiry within standard time integer limits that exceeds calendar time structure bounds. During cache saves, the original HSTS file is truncated before writing a temporary replacement; when serialization fails, the temporary file is deleted, leaving an empty or partial cache. Because the save error is silently ignored during cleanup, curl exits successfully despite the data loss.</description>
+      <description>The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain &#39;/&#39; or that are equal to &#34;..&#34;, unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.  The fix for CVE-2014-0475 rejects &#34;..&#34; path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.  LANGUAGE is only used when the LC_MESSAGES locale is not &#34;C&#34;, &#34;C.&lt;encoding&gt;&#34; or &#34;POSIX&#34;, so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.</description>
       <affects>
         <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <ref>pkg:deb/debian/libc-bin@2.43-7?arch=amd64&amp;distro=debian&amp;package-id=dc3f48400d31e994&amp;upstream=glibc</ref>
           <versions>
             <version>
-              <version>8.22.0-1</version>
+              <version>2.43-7</version>
               <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
             </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8bff5b99-2605-4263-ad0e-ee95b5c6c4e2">
-      <id>CVE-2026-87863</id>
+    <vulnerability bom-ref="urn:uuid:9764c2e6-8f01-40d4-ad2b-d9119247e5cc">
+      <id>CVE-2026-84243</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-87863</id>
+          <id>CVE-2026-84243</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87863</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <score>8.1</score>
+          <score>7</score>
           <severity>high</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+          <vector>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00266</score>
+          <score>0.00297</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>An authenticated HTTPS origin can supply an HSTS `max-age` value that the parser accepts, but time serialization later fails to process. On 64-bit systems, extreme max-age values compute an absolute expiry within standard time integer limits that exceeds calendar time structure bounds. During cache saves, the original HSTS file is truncated before writing a temporary replacement; when serialization fails, the temporary file is deleted, leaving an empty or partial cache. Because the save error is silently ignored during cleanup, curl exits successfully despite the data loss.</description>
+      <description>The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain &#39;/&#39; or that are equal to &#34;..&#34;, unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.  The fix for CVE-2014-0475 rejects &#34;..&#34; path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.  LANGUAGE is only used when the LC_MESSAGES locale is not &#34;C&#34;, &#34;C.&lt;encoding&gt;&#34; or &#34;POSIX&#34;, so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.</description>
       <affects>
         <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
+          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.43-7?arch=amd64&amp;distro=debian&amp;package-id=35e83c0ffe516ded&amp;upstream=glibc</ref>
           <versions>
             <version>
-              <version>8.22.0-1</version>
+              <version>2.43-7</version>
               <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
             </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:34bb1c7d-ac08-4418-a1bc-cd60ce45950c">
-      <id>CVE-2026-92389</id>
+    <vulnerability bom-ref="urn:uuid:778e3a56-684d-4422-8cf5-e760741da239">
+      <id>CVE-2026-84243</id>
       <source>
         <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
+        <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
       </source>
       <references>
         <reference>
-          <id>CVE-2026-92389</id>
+          <id>CVE-2026-84243</id>
           <source>
             <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
+            <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
           </source>
         </reference>
       </references>
       <ratings>
         <rating>
-          <score>8.1</score>
+          <score>7</score>
           <severity>high</severity>
           <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
+          <vector>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H</vector>
         </rating>
         <rating>
           <source>
             <name>FIRST</name>
             <url>https://www.first.org/epss/</url>
           </source>
-          <score>0.00257</score>
+          <score>0.00297</score>
           <method>other</method>
         </rating>
       </ratings>
-      <description>libcurl&#39;s TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle&#39;s persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.</description>
+      <description>The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain &#39;/&#39; or that are equal to &#34;..&#34;, unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.  The fix for CVE-2014-0475 rejects &#34;..&#34; path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.  LANGUAGE is only used when the LC_MESSAGES locale is not &#34;C&#34;, &#34;C.&lt;encoding&gt;&#34; or &#34;POSIX&#34;, so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.</description>
       <affects>
         <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
+          <ref>pkg:deb/debian/libc6@2.43-7?arch=amd64&amp;distro=debian&amp;package-id=9cdc119bd93005b7&amp;upstream=glibc</ref>
           <versions>
             <version>
-              <version>8.22.0-1</version>
+              <version>2.43-7</version>
               <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
             </version>
           </versions>
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:51846975-51a0-4171-abe4-a636091b184d">
-      <id>CVE-2026-92389</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92389</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92389</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00257</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>libcurl&#39;s TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle&#39;s persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2b535d99-fe4f-4b2f-b77a-796680e2d3da">
+    <vulnerability bom-ref="urn:uuid:f67028fd-f4a9-4edd-9d80-855bc05d026c">
       <id>CVE-2005-2541</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33752,103 +34364,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:aad5412a-f18d-45cc-b51f-d473bde3de46">
-      <id>CVE-2026-92390</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92390</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00257</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When invoked with `--remote-header-name` (`-J`), curl fails to preserve its documented anti-clobbering protection if an intermediate 103 Early Hints response precedes the final HTTP response, or if an `ETag` header is processed before `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S) server to overwrite an existing local file specified in the `Content-Disposition` header despite the presence of the `-J` non-overwrite constraint.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7c21a73b-ce44-4a27-9d42-e454d6577acb">
-      <id>CVE-2026-92390</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-92390</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-92390</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00257</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When invoked with `--remote-header-name` (`-J`), curl fails to preserve its documented anti-clobbering protection if an intermediate 103 Early Hints response precedes the final HTTP response, or if an `ETag` header is processed before `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S) server to overwrite an existing local file specified in the `Content-Disposition` header despite the presence of the `-J` non-overwrite constraint.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ac9a57b6-1682-4055-9a89-318b11db4f06">
+    <vulnerability bom-ref="urn:uuid:b234fcca-d1cb-4daf-a4df-d44b6befdd69">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33892,7 +34408,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:51ef7971-6b2d-4fec-b27a-807e7470d8fd">
+    <vulnerability bom-ref="urn:uuid:b127521b-39dc-479e-8415-9857461aea1f">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33936,7 +34452,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1dde5e4e-5c95-47cd-8094-18d525f314f0">
+    <vulnerability bom-ref="urn:uuid:310555ec-3837-4941-8617-2740da79d963">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -33980,7 +34496,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dc5b9ea3-1c68-45ef-9894-b9e41cfc185e">
+    <vulnerability bom-ref="urn:uuid:3d546ccf-0cf3-468b-985c-ef65c93a8479">
       <id>CVE-2026-54411</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34024,295 +34540,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2bbbfd84-6d17-4f77-a96c-9e5bfe4aa580">
-      <id>CVE-2026-107929</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107929</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00239</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When `CURLOPT_INTERFACE` (or the command line tool&#39;s `--interface` option) is set with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that binding is not part of the connection reuse key, so a later transfer asking for a different source can silently reuse an existing connection and go out from the earlier transfer&#39;s source address</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1bb58a8f-21b9-4f74-9582-bee6b8c10586">
-      <id>CVE-2026-107929</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-107929</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-107929</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>8.1</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00239</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When `CURLOPT_INTERFACE` (or the command line tool&#39;s `--interface` option) is set with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that binding is not part of the connection reuse key, so a later transfer asking for a different source can silently reuse an existing connection and go out from the earlier transfer&#39;s source address</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:df8047f2-d187-4cc6-bf60-4f94f0a174a0">
-      <id>CVE-2026-87865</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-87865</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.4</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00244</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated initial entry can cause host key validation to report a key *mismatch* as a *missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5c45aa28-3b57-4c2f-9d64-d9d9bea7ae02">
-      <id>CVE-2026-87865</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-87865</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-87865</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.4</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00244</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated initial entry can cause host key validation to report a key *mismatch* as a *missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5bdc7613-185c-464c-a448-d6abc7fb874d">
-      <id>CVE-2026-94266</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-94266</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00237</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>libcurl could accidentally return a URL for `curl_easy_getinfo()`&#39;s `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:bd36c581-f787-414d-8538-f9fc348223ae">
-      <id>CVE-2026-94266</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-94266</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-94266</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00237</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>libcurl could accidentally return a URL for `curl_easy_getinfo()`&#39;s `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc2-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6ee1e9da-97cc-44f1-ada9-89ea625cbff7">
+    <vulnerability bom-ref="urn:uuid:19e417ee-b8fa-459a-95f6-06cf07bb80d4">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34354,7 +34582,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7fac1daa-5f0a-4800-91b9-ec81382f0be2">
+    <vulnerability bom-ref="urn:uuid:2e30f6cd-cab7-47ab-a043-906b57a6276f">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34396,7 +34624,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cf9757a4-15e0-41a9-9d06-a9414015da1f">
+    <vulnerability bom-ref="urn:uuid:76cd3f3d-0ef7-40cd-ae26-fe314b5b1b50">
       <id>CVE-2019-1010022</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34438,103 +34666,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1623f50a-5447-4cfa-84dc-f063d18f5cca">
-      <id>CVE-2026-86415</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-86415</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00216</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>libcurl&#39;s connection cache match function never considers the automatic client certificate option, so a cached, already authenticated Schannel connection can be handed to a transfer that got redirected to a different origin, even though the code explicitly switched off the auto client cert option for that transfer to prevent exactly this.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/curl@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=38948bfd6e1d2bb5</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:24c667cd-213f-4548-9554-3d0795f60867">
-      <id>CVE-2026-86415</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-86415</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-86415</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7.5</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</vector>
-        </rating>
-        <rating>
-          <source>
-            <name>FIRST</name>
-            <url>https://www.first.org/epss/</url>
-          </source>
-          <score>0.00216</score>
-          <method>other</method>
-        </rating>
-      </ratings>
-      <description>libcurl&#39;s connection cache match function never considers the automatic client certificate option, so a cached, already authenticated Schannel connection can be handed to a transfer that got redirected to a different origin, even though the code explicitly switched off the auto client cert option for that transfer to prevent exactly this.</description>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libcurl4t64@8.22.0-1?arch=amd64&amp;distro=debian&amp;package-id=30d9d5e8b034a30a&amp;upstream=curl</ref>
-          <versions>
-            <version>
-              <version>8.22.0-1</version>
-              <status>affected</status>
-            </version>
-            <version>
-              <range>vers:deb/&gt;=8.23.0~rc1-1</range>
-              <status>unaffected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:46bbca49-63cb-41d9-af46-c02ad9dd0926">
+    <vulnerability bom-ref="urn:uuid:3db9dbfb-ce40-4461-ae15-d7ea42c5a0c6">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34576,7 +34708,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:06043808-4006-42f0-b1b2-d7d32a5e06af">
+    <vulnerability bom-ref="urn:uuid:033a20c0-2cf7-40ce-a774-184ea4d1a35c">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34618,7 +34750,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7cbff73b-15b4-4ba5-bac6-fc4fc190457f">
+    <vulnerability bom-ref="urn:uuid:a39ba5c1-aaff-49fb-963d-fef8cccbd721">
       <id>CVE-2019-1010024</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34660,7 +34792,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a25bd2b7-1e87-4c20-82ec-75514b5a281f">
+    <vulnerability bom-ref="urn:uuid:5e9bb432-2a72-411d-8ae2-6b9bbc5ced3c">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34702,7 +34834,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:091785d5-d86f-4b6e-ab67-2460947048d7">
+    <vulnerability bom-ref="urn:uuid:6bbefee5-6e71-4711-936b-7fa326e31279">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34744,7 +34876,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5e6f65d0-0537-496f-9c65-a69a8dfbc8cf">
+    <vulnerability bom-ref="urn:uuid:9672710e-5f3a-413a-ad7c-9581bf76d939">
       <id>CVE-2019-1010023</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34786,7 +34918,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e73c4c4a-2d3b-43df-810b-947f2f05eac5">
+    <vulnerability bom-ref="urn:uuid:fba0b8b4-25f9-4a21-b504-6778a9fe181e">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34830,7 +34962,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a730ad64-c6d8-464c-b8e8-c2aad4b9bd7d">
+    <vulnerability bom-ref="urn:uuid:7805186a-c8c8-4273-918a-521254218346">
       <id>CVE-2024-56433</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34874,7 +35006,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:40dd7466-6abd-4a31-95ca-466362f5bec7">
+    <vulnerability bom-ref="urn:uuid:6549ad9e-87b1-4fb5-9e1b-f93888b33b0b">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34916,7 +35048,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3e17fe01-9b4a-4c40-9a58-557cf606a782">
+    <vulnerability bom-ref="urn:uuid:7ea79376-171a-4173-8cb3-35379d01a0c4">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -34958,7 +35090,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:521c94d6-c1ef-4e81-873c-566c583ac62d">
+    <vulnerability bom-ref="urn:uuid:4bbaf297-69f8-4725-9c94-06608fde3745">
       <id>CVE-2010-4756</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35000,7 +35132,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ed48df86-95d3-4b41-8926-8b68e85138b6">
+    <vulnerability bom-ref="urn:uuid:af9057c6-d07c-49f6-abe1-af7c6d7d327f">
       <id>CVE-2020-15719</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35042,7 +35174,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6e7c1660-cbf8-4626-925f-fb826e7553ed">
+    <vulnerability bom-ref="urn:uuid:a30dfeda-a112-4d8f-8bb4-ad4544f5adcc">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35084,7 +35216,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:86707fd1-e6a7-4d49-bbb6-1e7099c3e15c">
+    <vulnerability bom-ref="urn:uuid:fde7c2e6-6e36-4e57-b9a7-a76aa0c9d3fa">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35126,7 +35258,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d651f078-a7c1-41ec-896a-4825af25e739">
+    <vulnerability bom-ref="urn:uuid:9baddc36-ef42-4065-934c-5e40cde9a9cf">
       <id>CVE-2019-1010025</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35168,7 +35300,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:370c4f91-7aae-432e-a668-b053588be9b3">
+    <vulnerability bom-ref="urn:uuid:75d03834-805f-4959-86d5-ab5e640ea703">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35210,7 +35342,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b809c8f3-df37-4d29-9c79-1870e939ad39">
+    <vulnerability bom-ref="urn:uuid:8ffdc14c-013c-40b0-b246-0e953042ee85">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35252,7 +35384,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c2624b9c-d122-40e6-a3a6-2857125c23e1">
+    <vulnerability bom-ref="urn:uuid:db701dfa-f6fd-4061-883f-6ac5e46f478a">
       <id>CVE-2019-9192</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35294,7 +35426,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1766c28c-9699-4d3b-9f45-068c48ca8a55">
+    <vulnerability bom-ref="urn:uuid:00e522a5-8341-47c1-b6b2-e908c98218d2">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35336,7 +35468,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a3343559-be14-44e7-84c7-cfe2490589f3">
+    <vulnerability bom-ref="urn:uuid:c6cf2c08-b52c-4c7e-b82e-678b0e73c602">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35378,7 +35510,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:8840edbb-8538-472d-b15d-114a9bc35f7d">
+    <vulnerability bom-ref="urn:uuid:9a9308f8-6dc6-4584-98fe-ec309700208b">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35420,7 +35552,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2dc3318d-2c8a-4a55-82e1-d31e77f1c8ad">
+    <vulnerability bom-ref="urn:uuid:6683760d-8bbb-4cdc-9e57-d9bd32285000">
       <id>CVE-2018-5709</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35462,7 +35594,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:61751a47-d334-4e59-9627-da79ba628f52">
+    <vulnerability bom-ref="urn:uuid:1941d659-7c27-4dae-be28-aab0b4cc90ac">
       <id>CVE-2026-15534</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35506,7 +35638,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:865d4a7c-e899-45c7-88d9-ad4e83fa4bdc">
+    <vulnerability bom-ref="urn:uuid:c9b0f8ef-3645-40f0-a151-1b6584d19af7">
       <id>CVE-2026-18508</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35550,7 +35682,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:b8641f57-1ccf-43c8-bcce-683b61e22465">
+    <vulnerability bom-ref="urn:uuid:1149ae6a-d9fd-4c96-b29f-82b059d2b4ba">
       <id>CVE-2026-42250</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35594,7 +35726,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5af8be27-c749-480f-bf7c-78f266f8a2b1">
+    <vulnerability bom-ref="urn:uuid:39665e32-37a0-4983-b983-1e0bd48c5891">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35636,7 +35768,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:aac389a6-423e-4c8a-b932-6938be6b9af7">
+    <vulnerability bom-ref="urn:uuid:5673e741-fb5c-4a68-b964-0cff2170a810">
       <id>CVE-2011-3374</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35678,7 +35810,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ad3c6691-458b-4273-981f-4ec689a8ecea">
+    <vulnerability bom-ref="urn:uuid:830e016d-468a-4671-9150-c109a626a957">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35720,7 +35852,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:5883a0b0-30fb-457e-9400-949886355e50">
+    <vulnerability bom-ref="urn:uuid:e2be1b9c-96ae-4751-b3c8-2898d2bd62b4">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35762,7 +35894,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:7126e53a-abf6-4ce2-98c8-27e686efc139">
+    <vulnerability bom-ref="urn:uuid:e9754c2e-7b5e-4953-9db4-e4d6455ebf72">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35804,7 +35936,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dcc7ae53-ec21-4989-948a-cd967c889640">
+    <vulnerability bom-ref="urn:uuid:f1d93848-c7a4-4cef-8709-5ada44f9d8b1">
       <id>CVE-2024-26461</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35846,7 +35978,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:30d9818f-9d3f-47e7-bfd7-42bf28a7c79f">
+    <vulnerability bom-ref="urn:uuid:91de2ee1-06e3-4e8f-b7fd-a2768d157fe1">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35890,7 +36022,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:139d98dc-8f8f-4473-af5a-afc2b18a86f8">
+    <vulnerability bom-ref="urn:uuid:285cdf40-8acb-4e82-998c-85ab8c007693">
       <id>CVE-2026-40228</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35934,7 +36066,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1027e6dd-56fb-4e59-a37f-5fe88a7570b2">
+    <vulnerability bom-ref="urn:uuid:8a2e1b7b-fbde-48bd-90d0-3ebb0eba50e8">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -35976,7 +36108,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:65f20441-c91f-4b47-af4b-5d93ec0c9db6">
+    <vulnerability bom-ref="urn:uuid:d1159700-d56c-4db1-91d1-45514db6cf1b">
       <id>CVE-2007-5686</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36018,7 +36150,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:eafb4979-0650-45fa-950b-1fa197821d4c">
+    <vulnerability bom-ref="urn:uuid:0850f50d-408f-4ddf-9fa0-3b59407ece08">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36060,7 +36192,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:25aa4a20-4fcd-4cb7-b535-5851c45ab4e9">
+    <vulnerability bom-ref="urn:uuid:e89f0949-5c49-4fed-a411-c2fc643f6d26">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36102,7 +36234,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ae302f02-85fd-4123-8a5c-fd33601a91c6">
+    <vulnerability bom-ref="urn:uuid:4dc8a6e2-3f61-4e6b-b521-d0415a5ae39c">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36144,7 +36276,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:cbddaa53-7650-4171-8059-ee66b6901b06">
+    <vulnerability bom-ref="urn:uuid:de4e9377-fb79-4c17-8089-321edda4d312">
       <id>CVE-2024-26458</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36186,7 +36318,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:61e353ca-6138-481e-93a3-9870910ebf76">
+    <vulnerability bom-ref="urn:uuid:3adb9a26-d5b0-42eb-be24-31efd8494b25">
       <id>CVE-2026-18477</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36230,7 +36362,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1c994131-718d-42c7-bc7c-44ce1c31b8af">
+    <vulnerability bom-ref="urn:uuid:3d199d5a-3174-4aab-ba43-31326ba699a7">
       <id>CVE-2011-4116</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36272,7 +36404,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:3ef53c8b-18dd-47b5-98b8-b294773aeb9e">
+    <vulnerability bom-ref="urn:uuid:81c79d1c-af28-4cd4-ba65-4a792ca1501d">
       <id>CVE-2026-87866</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36318,7 +36450,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a741fe3d-80cd-4952-b444-ead0629f105c">
+    <vulnerability bom-ref="urn:uuid:cebda268-7acd-4258-b5db-9edab46c441a">
       <id>CVE-2026-87866</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36364,7 +36496,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2c228d2e-2b03-45bb-80a3-cd5d752d2fc2">
+    <vulnerability bom-ref="urn:uuid:9143accf-f3da-4bc5-bb5a-dbc0bfb2af0f">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36406,7 +36538,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ce2471f6-e640-4824-9ad3-0fb61338bcc5">
+    <vulnerability bom-ref="urn:uuid:43d205e2-ce6d-4033-8a67-bac8075c207f">
       <id>CVE-2013-4392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36448,7 +36580,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f71c575a-d89e-44e9-8136-80a7721a585c">
+    <vulnerability bom-ref="urn:uuid:5e87afe6-745b-48b0-86dc-89c21473da95">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36490,7 +36622,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:64163be6-b9e8-4874-9cce-bc206f557bde">
+    <vulnerability bom-ref="urn:uuid:5568a450-dcc9-4dab-9bf4-f63f54bb7512">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36532,7 +36664,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:24338469-0bd2-4111-9af6-4109856e0ab3">
+    <vulnerability bom-ref="urn:uuid:96671ef6-f414-4db2-9971-eb4bb62d8226">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36574,7 +36706,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:aa33882d-b45c-42d6-a941-fc1f20c04b1c">
+    <vulnerability bom-ref="urn:uuid:f968b309-9d12-42d0-b170-c70a45c2588c">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36616,7 +36748,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a20b1649-ff24-4561-a4a2-666d5e4c2b34">
+    <vulnerability bom-ref="urn:uuid:16eee7ad-3f13-4cd5-9661-7612fb82d99b">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36658,7 +36790,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fd6efd85-a59d-439e-9970-134d4928fa21">
+    <vulnerability bom-ref="urn:uuid:b659a046-c87f-4d54-b927-a4efebacbd78">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36700,7 +36832,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a77dd94a-ffa4-4105-ab30-4f951613e8c8">
+    <vulnerability bom-ref="urn:uuid:1f47ae5d-7600-4efb-acf4-25c24dac6829">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36742,7 +36874,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:a2ebbe38-78fa-4ac7-a2b8-93d228706403">
+    <vulnerability bom-ref="urn:uuid:44979952-c240-41df-aa78-0dc60dc15602">
       <id>CVE-2022-0563</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36784,7 +36916,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:82eff48a-fa27-4720-919f-f79531b66073">
+    <vulnerability bom-ref="urn:uuid:1d27bcf4-aeb7-4272-9c2e-36e4a0a7cc7d">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36826,7 +36958,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:ee41a686-e5b8-4852-8e45-921693aeed0c">
+    <vulnerability bom-ref="urn:uuid:4fb7866f-07c7-4565-9000-34631f078dcb">
       <id>CVE-2023-31439</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36868,7 +37000,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:83f2e58d-0bb9-46ee-ab20-1bbbd52af1fb">
+    <vulnerability bom-ref="urn:uuid:062b107c-12de-4e6c-8fee-3b1dfdc6ad7a">
       <id>CVE-2017-14159</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36910,7 +37042,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d9accef1-63b9-4a2b-b086-15fddbe50941">
+    <vulnerability bom-ref="urn:uuid:21dab662-a986-44b9-b9ec-5a739453443b">
       <id>CVE-2017-18018</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36952,7 +37084,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:081a21c3-607b-4aa6-a303-8ad6bfb1e226">
+    <vulnerability bom-ref="urn:uuid:cac94961-bb6e-4695-ae14-e864a3ed0e00">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -36994,7 +37126,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:c2754ee7-1c96-4e8c-af5e-4d1cc9a10b1d">
+    <vulnerability bom-ref="urn:uuid:f2df7822-1b6e-4734-9e4d-aaeace4c3f37">
       <id>CVE-2023-31437</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37036,7 +37168,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:e968e854-f387-4bf1-9f1d-8339600ac62d">
+    <vulnerability bom-ref="urn:uuid:9e66e1c1-2416-4fd1-a2c5-1e815da8964d">
       <id>CVE-2026-53910</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37078,7 +37210,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:42a7e090-8f9e-4d3c-b987-408719215c4a">
+    <vulnerability bom-ref="urn:uuid:0516265a-5ab8-4a0d-8ed0-c0a618e01bb4">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37120,7 +37252,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:2679d98b-184d-482e-9b90-a0b0efc735b7">
+    <vulnerability bom-ref="urn:uuid:2636cd85-e81c-4e53-ac1a-c6f8a3f05119">
       <id>CVE-2023-31438</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37162,7 +37294,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:fe905b2e-4497-43ba-ad28-72a5ffe94adf">
+    <vulnerability bom-ref="urn:uuid:528104a7-09d3-4067-bc6c-a74cb04de97d">
       <id>CVE-2025-5278</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37204,7 +37336,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:1c20d605-2cc0-4125-b577-4b1d121580d4">
+    <vulnerability bom-ref="urn:uuid:ec650a7f-06c8-4bd7-a3b8-03332c701f4a">
       <id>CVE-2026-56392</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37246,7 +37378,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dffad1bd-36b0-4561-a49f-7e170b890e0f">
+    <vulnerability bom-ref="urn:uuid:b9bdc737-d5f6-4a42-83fa-5d3fb20d6ba6">
       <id>CVE-2026-22185</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37288,7 +37420,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:6482cff0-5301-498f-b5ec-ebc95d27837c">
+    <vulnerability bom-ref="urn:uuid:cf5f1f93-5bdc-4b54-93bb-a845762db350">
       <id>CVE-2026-56391</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37330,7 +37462,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:41cfe258-574a-4f82-ab2b-d48ab1a3cd6a">
+    <vulnerability bom-ref="urn:uuid:96d48fd7-dc22-48d2-8490-283c9c342d05">
       <id>CVE-2026-102474</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37372,7 +37504,7 @@
         </target>
       </affects>
     </vulnerability>
-    <vulnerability bom-ref="urn:uuid:dc4a31aa-bd76-4227-9eac-3076ba18a70d">
+    <vulnerability bom-ref="urn:uuid:8bebaf5c-6dce-4c26-bdd2-ce2dccd1ef86">
       <id>CVE-2026-102473</id>
       <source>
         <name>debian-distro-debian-unstable</name>
@@ -37408,111 +37540,6 @@
           <versions>
             <version>
               <version>0.5.12-12</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:45fe83ff-bc1f-41d9-83dc-8dd50a275ce5">
-      <id>CVE-2026-84243</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-84243</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-bin@2.43-7?arch=amd64&amp;distro=debian&amp;package-id=dc3f48400d31e994&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-7</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:f7e4770d-cdc2-470c-b7fb-713e42e70ea4">
-      <id>CVE-2026-84243</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-84243</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc-gconv-modules-extra@2.43-7?arch=amd64&amp;distro=debian&amp;package-id=35e83c0ffe516ded&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-7</version>
-              <status>affected</status>
-            </version>
-          </versions>
-        </target>
-      </affects>
-    </vulnerability>
-    <vulnerability bom-ref="urn:uuid:d59ff120-98de-4438-b636-a534929793bb">
-      <id>CVE-2026-84243</id>
-      <source>
-        <name>debian-distro-debian-unstable</name>
-        <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
-      </source>
-      <references>
-        <reference>
-          <id>CVE-2026-84243</id>
-          <source>
-            <name>debian-distro-debian-unstable</name>
-            <url>https://security-tracker.debian.org/tracker/CVE-2026-84243</url>
-          </source>
-        </reference>
-      </references>
-      <ratings>
-        <rating>
-          <score>7</score>
-          <severity>high</severity>
-          <method>CVSSv31</method>
-          <vector>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H</vector>
-        </rating>
-      </ratings>
-      <affects>
-        <target>
-          <ref>pkg:deb/debian/libc6@2.43-7?arch=amd64&amp;distro=debian&amp;package-id=9cdc119bd93005b7&amp;upstream=glibc</ref>
-          <versions>
-            <version>
-              <version>2.43-7</version>
               <status>affected</status>
             </version>
           </versions>
